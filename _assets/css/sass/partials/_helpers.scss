@@ -1,0 +1,107 @@
+// ============================
+//	Helpers Partial File for:
+//	Author: Shane Griffiths
+//	Project Contributors:
+//
+//	* Intructions
+//	---------------------------
+//	1. Useful classes can be used inline with html or use to inerhit into other selectors via %placeholders, @extend or mixins.
+//		i.e. <a href="#" class="button uppercase blue"></a>
+//		.button{
+//			@extend %blue;
+//		}
+//
+//============================ */
+
+/**
+ * As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
+.media{
+    display:block;
+}
+.img{
+    float:left;
+    margin-right:Xpx;
+}
+/* Reversed image location (right instead of left). */
+.img-rev{
+    float:right;
+    margin-left:Xpx;
+}
+.img img{
+    display:block;
+}
+.body{
+    overflow:hidden;
+}
+.body > :last-child{
+    margin-bottom:0;
+}
+
+
+/**
+ * Simple floats
+ */
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float: right;
+}
+
+
+/**
+ * Basic Image replacement
+ */
+.ir {
+	background-color: transparent;
+	border: 0;
+	overflow: hidden;
+	/* IE 6/7 fallback */
+	*text-indent: -9999px;
+}
+.ir:before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 100%;
+}
+
+
+/**
+ * Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
+ */
+.media:before,
+.media:after,
+.cf:before,
+.cf:after{
+    content:"";
+    display:table;
+}
+.media:after,
+.cf:after{
+    clear:both;
+}
+.media,
+.cf{
+    zoom:1;
+}
+.top-border{
+    border-top: 1px solid $border-grey;
+}
+
+
+/**
+ * Server info
+ */
+ .server-info{
+    position: fixed;
+    font-size:14px;
+    color: #333;
+    font-weight: 100;
+    background-color: pink;
+    padding: 4px;
+    z-index: 5;
+    top: 28px;
+    left: 0;
+}

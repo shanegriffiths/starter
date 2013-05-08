@@ -1,0 +1,52 @@
+// ============================
+//	Settings Partial File for:
+//	Author: Shane Griffiths
+//	Project Contributors:
+//
+//	* Intructions
+//	---------------------------
+//	1. Project Specific settings.
+//	2. Set colours, fonts, base units etc etc.
+//
+//============================ */
+
+
+/* ==========================================
+	Type Based Settings
+============================================*/
+@mixin heading-font {
+	font-family: "din-condensed-web-n4", "din-condensed-web";
+	font-weight: 400;
+}
+@mixin body-font($type: regular, $style: normal){
+	$value: 0;
+	@if $style == italic {
+		$value: 'i';
+	} @else {
+		$value: 'n';
+}
+@if $type == thin {
+	font-family: "proxima-nova-alt-#{$value}1", "proxima-nova-alt";
+	font-weight: 100;
+}
+@if $type == light {
+	font-family: "proxima-nova-alt-#{$value}3", "proxima-nova-alt";
+	font-weight: 300;
+} @else if $type == regular {
+	font-family: "proxima-nova-alt-#{$value}4", "proxima-nova-alt";
+	font-weight: 400;
+} @else if $type == bold {
+	font-family: "proxima-nova-alt-#{$value}7", "proxima-nova-alt";
+	font-weight: 700;
+}
+	font-style: $style;
+}
+
+
+/* ==========================================
+	Color Settings
+============================================*/
+$primary-color: ;
+
+
+

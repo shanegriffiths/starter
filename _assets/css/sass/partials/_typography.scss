@@ -1,0 +1,72 @@
+// ============================
+//  Typography Partial File for:
+//  Author: Shane Griffiths
+//  Project Contributors:
+//
+//  * Intructions
+//  ---------------------------
+//  1. Project Specific type styles.
+//  2. This is specificially for headings, paragraphs etc. Not layouts, lists or links. Add those to other sections
+//
+//============================ */
+
+
+/* ==========================================
+		Global Styles
+============================================*/
+h1,h2,h3,h4,h5,h6{
+	margin-top: 0;
+	padding-top: 0;
+	@include heading-font;
+}
+
+
+/* ==========================================
+	Large Heading Styles
+============================================*/
+.giga{
+
+}
+.mega{
+
+}
+.kilo{
+
+}
+
+
+/* ==========================================
+	Headings Detail
+============================================*/
+h1, .alpha{
+
+}
+h2, .beta{
+
+}
+h3, .gamma{
+
+}
+h4, .delta,
+
+}
+h5, .epsilon{
+
+}
+h6, .zeta{
+
+}
+
+
+/* ==========================================
+	Micro Copy
+============================================*/
+small, .small{
+
+}
+.milli{
+
+}
+.bigger{
+
+}

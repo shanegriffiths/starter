@@ -1,0 +1,26 @@
+// ============================
+//	Base Sass File for: PROJECT
+//	Author: Shane Griffiths
+//	Project Contributors:
+//
+//	* Intructions
+//	---------------------------
+//	1. This file is the base to our Sass styles. All partials will be imported into this document. The final CSS file is compiled from this.
+//	2. This is where HTML base elements are styled. Do not use classes or IDs in here (instead use _components.scss). Do not use type styles here (instead use typography.scss).
+//	3. Use this file for everything else; such as: imgs, quotes, lists, links, sections, articles etc
+//
+//============================ */
+
+//Add Bourbon
+@import "bourbon";
+
+@import "sass/partials/_settings.scss";
+@import "sass/partials/_mixins.scss";
+@import "sass/partials/_helpers.scss";
+@import "sass/partials/_elements.scss";
+@import "sass/partials/_typography.scss";
+@import "sass/partials/_images.scss";
+@import "sass/partials/_grids.scss";
+@import "sass/partials/_layout.scss";
+@import "sass/partials/_components.scss";
+@import "sass/partials/_forms.scss";

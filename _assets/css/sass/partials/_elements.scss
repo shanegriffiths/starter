@@ -1,0 +1,91 @@
+// ============================
+//	Elements Sass File for:
+//	Author: Shane Griffiths
+//	Project Contributors:
+//
+//	* Intructions
+//	---------------------------
+//	2. This is where HTML base elements are styled. Do not use classes or IDs in here (instead use _components.scss). Do not use type styles here (instead use typography.scss).
+//	3. Use this file for everything else; such as: imgs, quotes, lists, links, sections, articles etc
+//
+//============================ */
+
+
+/* ==========================================
+    Useful
+============================================*/
+::-moz-selection {
+    background: ;
+    text-shadow: none;
+    color: white;
+}
+::selection {
+    background: $primary-orange;
+    text-shadow: none;
+    color: white;
+}
+.chromeframe {
+    margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0;
+}
+html{
+	font-size: 16px; //This is the base font setting.
+	overflow-y:scroll;
+}
+body{
+    background-color: white;
+}
+
+
+/* ==========================================
+	Links
+============================================*/
+a{
+    text-decoration: none;
+    -webkit-transition: all 0.1s linear;  /* Chrome 1-25, Safari 3.2+ */
+    -moz-transition: all 0.1s linear;    /* Firefox 4-15 */
+    -o-transition: all 0.1s linear;     /* Opera 10.50–12.00 */
+    transition: all 0.1s linear;        /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+    outline: none;
+    border:none;
+
+    &:hover,
+    &:focus,
+    &:active{
+        text-decoration:underline;
+        outline: none;
+        border:none;
+    }
+ }
+
+
+/* ==========================================
+    Paragraphs
+============================================*/
+p {
+
+}
+
+
+/* ==========================================
+	Tables
+============================================*/
+
+
+/* ==========================================
+    Lists
+============================================*/
+ul,ol{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+/* ==========================================
+    Images
+============================================*/
+img {
+    max-width: 100%;
+}
+
+
