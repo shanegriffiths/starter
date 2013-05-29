@@ -33,3 +33,4 @@ wp-content/w3tc/*
 *.log
 SCB-Prototype.sublime-project
 SCB-Prototype.sublime-workspace
+/starter.sublime-workspace
