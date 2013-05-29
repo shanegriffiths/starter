@@ -31,3 +31,5 @@ wp-content/wp-cache-config.php
 wp-content/cache/*
 wp-content/w3tc/*
 *.log
+SCB-Prototype.sublime-project
+SCB-Prototype.sublime-workspace
