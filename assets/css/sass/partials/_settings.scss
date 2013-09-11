@@ -18,7 +18,7 @@
 	font-family: "din-condensed-web-n4", "din-condensed-web";
 	font-weight: 400;
 }
-@mixin body-font($type: regular, $style: normal){
+@mixin body-font($type: regular, $style: normal) {
 	$value: 0;
 	@if $style == italic {
 		$value: 'i';
@@ -46,7 +46,11 @@
 /* ==========================================
 	Color Settings
 ============================================*/
-//$primary-color: ;
+$primary-color: red;
 
 
+/* ==========================================
+	Variables
+============================================*/
+$margin: 10px;
 

@@ -1,0 +1,128 @@
+// ============================
+//	Mixins Partial File for:
+//	Author: Shane Griffiths
+//	Project Contributors:
+//
+//	* Intructions
+//	---------------------------
+//	1. Useful mixins used on all projects. Include project specific ones towards the bottom of the document.
+//
+//============================ */
+
+
+/* ==========================================
+	Type and List Based Mixins
+============================================*/
+@mixin font-size($size: 16) {
+  font-size: $size + px;
+  font-size: $size / 16 + rem;
+}
+
+// Mixins for list style types
+@mixin unordered {
+	list-style-position: outside;
+	list-style-type: disc;
+}
+
+@mixin unordered-inside {
+	list-style-position: inside;
+	list-style-type: disc;
+}
+
+@mixin ordered {
+	list-style-position: outside;
+	list-style-type: decimal;
+}
+
+@mixin ordered-inside {
+	list-style-position: inside;
+	list-style-type: decimal;
+}
+
+@mixin nobullet {
+	list-style-type: none;
+}
+
+@mixin list-reset{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* ==========================================
+	Style Mixins
+============================================*/
+@mixin rounded($value: 1) {
+	border-radius: $value + px;
+}
+
+@mixin box-shadow($x: 3, $y: 3, $blur: 5, $spread: 6, $r: 0, $g: 0, $b: 0, $a: 0.5) {
+    -webkit-box-shadow: $x + px $y + px $blur + px $spread + px rgba($r, $g, $b, $a);
+    -moz-box-shadow: $x + px $y + px $blur + px $spread + px rgba($r, $g, $b, $a);
+    box-shadow: $x + px $y + px $blur + px $spread + px rgba($r, $g, $b, $a);
+}
+
+@mixin transition ($prop: all, $time: 1, $ease: linear) {
+    -webkit-transition: $prop $time + s $ease;
+    -moz-transition: $prop $time + s $ease;
+    -o-transition: $prop $time + s $ease;
+    -ms-transition: $prop $time + s $ease;
+    transition: $prop $time + s $ease;
+}
+
+@mixin rotate ($rotate: 90) {
+    -webkit-transform: rotate($rotate + deg);
+    -moz-transform: rotate($rotate + deg);
+    -o-transform: rotate($rotate + deg);
+    -ms-transform: rotate($rotate + deg);
+    transform: rotate($rotate + deg);
+}
+
+@mixin scale ($scale: 1) {
+    -webkit-transform: scale($scale);
+    -moz-transform: scale($scale);
+    -o-transform: scale($scale);
+    -ms-transform: scale($scale);
+    transform: scale($scale);
+}
+
+@mixin skew ($skew: 1) {
+    -webkit-transform: skew($skew + deg);
+    -moz-transform: skew($skew + deg);
+    -o-transform: skew($skew + deg);
+    -ms-transform: skew($skew + deg);
+    transform: skew($skew + deg);
+}
+
+@mixin translate ($translate: 10) {
+    -webkit-transform: translate($translate + px);
+    -moz-transform: translate($translate + px);
+    -o-transform: translate($translate + px);
+    -ms-transform: translate($translate + px);
+    transform: translate($translate + px);
+}
+
+
+/* ==========================================
+	Color Based Mixins
+============================================*/
+@mixin back-color($color, $value: 1) {
+	background-color: $color;
+	background-color: rgba($color, $value);
+}
+
+@mixin font-color($color, $value: 1) {
+	color: $color;
+	color: rgba($color, $value);
+}
+
+@mixin gradient ($origin: left, $start: #ffffff, $stop: #000000) {
+    background-color: $start;
+    background-image: -webkit-linear-gradient($origin, $start, $stop);
+    background-image: -moz-linear-gradient($origin, $start, $stop);
+    background-image: -o-linear-gradient($origin, $start, $stop);
+    background-image: -ms-linear-gradient($origin, $start, $stop);
+    background-image: linear-gradient($origin, $start, $stop);
+}
+

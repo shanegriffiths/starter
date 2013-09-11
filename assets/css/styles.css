@@ -1,0 +1,244 @@
+/* ==========================================
+	Type Based Settings
+============================================*/
+/* ==========================================
+	Color Settings
+============================================*/
+/* ==========================================
+	Variables
+============================================*/
+/* ==========================================
+	Type and List Based Mixins
+============================================*/
+/* ==========================================
+	Style Mixins
+============================================*/
+/* ==========================================
+	Color Based Mixins
+============================================*/
+/**
+ * As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ */
+.media {
+  display: block; }
+
+.img {
+  float: left; }
+
+/* Reversed image location (right instead of left). */
+.img-rev {
+  float: right; }
+
+.img img {
+  display: block; }
+
+.body {
+  overflow: hidden; }
+
+.body > :last-child {
+  margin-bottom: 0; }
+
+/**
+ * Simple floats
+ */
+.pull-left {
+  float: left; }
+
+.pull-right {
+  float: right; }
+
+/**
+ * Basic Image replacement
+ */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE 6/7 fallback */
+  *text-indent: -9999px; }
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 100%; }
+
+/**
+ * Big up @necolas: nicolasgallagher.com/micro-clearfix-hack
+ */
+.media:before,
+.media:after,
+.cf:before,
+.cf:after {
+  content: "";
+  display: table; }
+
+.media:after,
+.cf:after {
+  clear: both; }
+
+.media,
+.cf {
+  zoom: 1; }
+
+.top-border {
+  border-top: 1px solid grey; }
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+/**
+ * Server info - banner that displays while editing local site
+ */
+.server-info {
+  position: fixed;
+  font-size: 14px;
+  color: #333;
+  font-weight: 100;
+  background-color: pink;
+  padding: 4px;
+  z-index: 5;
+  top: 28px;
+  left: 0; }
+
+/* ==========================================
+    Useful
+============================================*/
+::-moz-selection {
+  text-shadow: none;
+  color: white; }
+
+::selection {
+  text-shadow: none;
+  color: white; }
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: black;
+  padding: 0.2em 0; }
+
+html {
+  font-size: 16px;
+  overflow-y: scroll; }
+
+body {
+  background-color: white; }
+
+/* ==========================================
+	Links
+============================================*/
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.1s linear;
+  /* Chrome 1-25, Safari 3.2+ */
+  -moz-transition: all 0.1s linear;
+  /* Firefox 4-15 */
+  -o-transition: all 0.1s linear;
+  /* Opera 10.50 - 12.00 */
+  transition: all 0.1s linear;
+  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+  outline: none;
+  border: none; }
+  a:hover, a:focus, a:active {
+    text-decoration: underline;
+    outline: none;
+    border: none; }
+
+/* ==========================================
+    Paragraphs
+============================================*/
+/* ==========================================
+	Tables
+============================================*/
+/* ==========================================
+    Lists
+============================================*/
+ul, ol {
+  margin: 0;
+  padding: 0; }
+
+/* ==========================================
+    Images
+============================================*/
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  height: auto;
+  width: auto; }
+
+/* ==========================================
+		Global Styles
+============================================*/
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  padding-top: 0;
+  font-family: "din-condensed-web-n4", "din-condensed-web";
+  font-weight: 400; }
+
+/* ==========================================
+	Large Heading Styles
+============================================*/
+/* ==========================================
+	Headings Detail
+============================================*/
+/* ==========================================
+	Micro Copy
+============================================*/
+/* ==========================================
+	GLOBAL LAYOUTS
+============================================*/
+.wrapper {
+  max-width: 61.875em;
+  margin: 0 auto; }
+  .wrapper.relative {
+    position: relative; }
+
+/* ==========================================
+	HEADER
+============================================*/
+/* ==========================================
+	SLIDER (OVERRIDES)
+============================================*/
+/* ==========================================
+	GRIDS
+============================================*/
+/* ==========================================
+	FOOTER
+============================================*/
+/* ==========================================
+	Site Wide Components
+============================================*/
+ /* ==========================================
+	Page Specific
+============================================*/

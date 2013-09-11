@@ -7,3 +7,6 @@
 --
 
 Basic boilerplate for starting new HTML and CSS projects.
+
+- Using CodeKit includes.
+- Using Sass.
