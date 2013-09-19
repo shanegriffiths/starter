@@ -16,36 +16,36 @@
 /**
  * As per: stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
-.media{
-    display:block;
+.media {
+    display: block;
 }
-.img{
-    float:left;
-    margin-right:Xpx;
+.img {
+    float: left;
+    //margin-right: px;
 }
 /* Reversed image location (right instead of left). */
-.img-rev{
-    float:right;
-    margin-left:Xpx;
+.img-rev {
+    float: right;
+    //margin-left: px;
 }
-.img img{
-    display:block;
+.img img {
+    display: block;
 }
-.body{
-    overflow:hidden;
+.body {
+    overflow: hidden;
 }
-.body > :last-child{
-    margin-bottom:0;
+.body > :last-child {
+    margin-bottom: 0;
 }
 
 
 /**
  * Simple floats
  */
-.pull-left{
-    float:left;
+.pull-left {
+    float: left;
 }
-.pull-right{
+.pull-right {
     float: right;
 }
 
@@ -74,19 +74,19 @@
 .media:before,
 .media:after,
 .cf:before,
-.cf:after{
-    content:"";
-    display:table;
+.cf:after {
+    content: "";
+    display: table;
 }
 .media:after,
-.cf:after{
-    clear:both;
+.cf:after {
+    clear: both;
 }
 .media,
-.cf{
-    zoom:1;
+.cf {
+    zoom: 1;
 }
-.top-border{
+.top-border {
     border-top: 1px solid grey;
 }
 
@@ -132,11 +132,11 @@
 
 
 /**
- * Server info
+ * Server info - banner that displays while editing local site
  */
- .server-info{
+ .server-info {
     position: fixed;
-    font-size:14px;
+    font-size: 14px;
     color: #333;
     font-weight: 100;
     background-color: pink;
