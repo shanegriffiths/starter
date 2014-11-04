@@ -18,7 +18,7 @@
 		<meta http-equiv="cleartype" content="on">
 
 		<!-- STYLEGUIDE ASSETS -->
-		<link rel="stylesheet" type="text/css" href="/assets/css/screen.min.css" />
+		<link rel="stylesheet" type="text/css" href="/assets/css/styles.min.css" />
 
 	</head>
 
