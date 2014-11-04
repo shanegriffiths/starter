@@ -1,39 +1,14 @@
-<?php
+<?php include'header.php' ?>
 
-// initialise the style guide
-require 'styleguide/init.php';
+    <main>
 
-// get the url without start / end slashes
-$url = trim($_SERVER['REQUEST_URI'], '/');
+        <div class="wrapper">
 
-// build up the template path
-$template_path = '_templates/pages/' . $url;
+            <h2>Ready to go.</h2>
+			<a href="/styleguide" class="btn btn--highlight">Styleguide</a>
 
-// attempt to find a file based on the specified URL
-// the default file path is NULL, if this remains throw 404
+        </div>
 
-$file_path = NULL;
+    </main>
 
-if ( is_file($template_path . 'index.php') ) {
-	$file_path = $template_path . 'index.php';
-}
-
-if ( is_file($template_path . '.php') ) {
-	$file_path = $template_path . '.php';
-}
-
-// throw a 404?
-if ( $file_path === NULL ) {
-
-	// pass back the 404 status code
-	header("HTTP/1.0 404 Not Found");
-
-	// and output the 404 template
-	$file_path = '404.php';
-	
-}
-
-// build output
-include $_SERVER['DOCUMENT_ROOT'] . '/_templates/_header.php';
-include $file_path;
-include $_SERVER['DOCUMENT_ROOT'] . '/_templates/_footer.php';
+<?php include 'footer.php' ?>
