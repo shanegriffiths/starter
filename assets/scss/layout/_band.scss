@@ -1,0 +1,35 @@
+/*------------------------------------*\
+	$BAND
+	A spacer class to apply vertical rythym
+\*------------------------------------*/
+
+.band {
+	margin-bottom: $space;
+	margin-top: $space;
+	@extend .cf;
+}
+
+.band--thin {
+	margin-bottom: $space / 2;
+	margin-top: $space / 2;
+}
+
+.band--thick {
+	margin-bottom: $space;
+	margin-top: $space;
+
+	@include mq(M) {
+		margin-bottom: $space * 2;
+		margin-top: $space * 2;
+	}
+}
+
+.band--extra-thick {
+	margin-bottom: $space * 3;
+	margin-top: $space * 3;
+}
+
+.band--double-thick {
+	margin-bottom: $space * 4;
+	margin-top: $space * 4;
+}

@@ -1,0 +1,22 @@
+/*------------------------------------*\
+	$LISTS
+\*------------------------------------*/
+
+.nav {
+	list-style-type: none;
+}
+
+.nav--list li {
+	display: block;
+	float: none;
+}
+
+.nav--icon li {
+	margin-right: $space / 2;
+}
+
+.inline-list {
+	li {
+		display: inline-block;
+	}
+}

@@ -1,0 +1,152 @@
+/*------------------------------------*\
+    $MIXINS
+	All mixins are kept here
+\*------------------------------------*/
+
+/* ==========================================
+	Font Mixins
+============================================*/
+
+/**
+ * [$type regular, italic or bold]
+ */
+@mixin font--body($type: null) {
+
+	font-family: "Georgia", serif;
+
+	@if $type != null {
+		font-style: $type;
+	}
+
+}
+
+/**
+ * [$style regular or italic]
+ * [$old_ie true will enable typekit font names]
+ */
+
+$weights: (
+	light: 300,
+	regular: 400,
+	semi-bold: 600,
+	bold: 700,
+	extra-bold: 800
+);
+
+@mixin font--heading($weight: normal, $style: normal, $old_ie: false) {
+
+	@if $old_ie == true {
+
+		$typekit_style: if($style == 'normal', 'n', 'i');
+		$typekit_weight: map-get($weights, $weight) / 100;
+
+		font-family: "jaf-bernino-sans-condensed-#{$typekit_style}#{$typekit_prefix}", "jaf-bernino-sans-condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+	} @else {
+		font-family: "jaf-bernino-sans-condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	}
+
+	font-weight: map-get($weights, $weight);
+	font-style: $style;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* ==========================================
+    Type and List Based Mixins
+============================================*/
+
+@mixin font-size($size: $base-font-size) {
+	font-size: $size + px;
+	font-size: $size / $base-font-size + rem;
+}
+
+// Generates em value based on the root font size
+// otherwise supply different value
+@function em($value, $size: $base-font-size) {
+	@return $value / $size + em;
+}
+
+
+/* ==========================================
+    Color Based Mixins
+============================================*/
+
+@function color($colour, $opacity: 1) {
+
+	@if $opacity < 1 {
+		@return rgba(map-get($colours, $colour), $opacity);
+	} @else {
+		@return map-get($colours, $colour);
+	}
+
+}
+
+
+/* ==========================================
+    SVG Fallback
+============================================*/
+
+@mixin svg($path) {
+	background-image: url($path + '.svg');
+
+	.no-svg & {
+		background-image: url($path + '.png');
+		background-size: 100%;
+	}
+}
+
+
+/* ==========================================
+    Media Queries
+============================================*/
+
+
+/**
+ * Pass in a value or a breakpoint letter
+ */
+@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
+
+	@if map-has-key($breakpoints, $point) {
+		$point: map-get($breakpoints, $point);
+	}
+
+    @if $IE9 == true{
+
+        .lt-ie9 {
+            @content;
+        }
+
+        @media screen and (#{$query1}-#{$query2}: $point + px) {
+            @content;
+        }
+
+    } @else {
+
+        @media screen and (#{$query1}-#{$query2}: $point + px) {
+            @content;
+        }
+
+    }
+
+}
+
+
+/**
+ * Example of use
+ *
+
+    .example {
+        @include font-size(12);
+
+        @include mq(400) {
+            @include font-size(14);
+        }
+
+        @include mq(M) {
+            @include font-size(18);
+        }
+    }
+
+ *
+ */

@@ -1,0 +1,60 @@
+/*------------------------------------*\
+    $BASE
+    The Base HTML styling
+\*------------------------------------*/
+
+html {
+    font-size: $base-font-size + px;
+}
+
+body {
+	background-color: white;
+    padding: 0;
+    margin: 0;
+    color: $copy;
+    line-height: 1.5;
+    @include font--body;
+
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+main {
+}
+
+/* Text-Related Elements */
+
+p,
+ul,
+ol,
+dl {
+    margin-bottom: $space; //27px - Typically the margin-bottom matches the line-height.
+}
+
+small {
+}
+
+/* Blockquote */
+blockquote {
+
+    p {
+    }
+}
+
+/* Horizontal Rule */
+hr {
+}
+
+abbr {
+}
+
+strong {
+}
+
+i,
+em {
+}

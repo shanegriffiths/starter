@@ -1,0 +1,71 @@
+/*------------------------------------*\
+    $VARIABLES
+    This is where all variables are stored
+\*------------------------------------*/
+
+/* ==========================================
+    Brand Colours
+============================================*/
+$brand: #353535;
+
+
+/* ==========================================
+    UI Colours
+============================================*/
+$ui-grey: #ccc;
+
+
+/* ==========================================
+    Social Colours
+============================================*/
+// These are picked directly from the appropriate brands
+
+$social-colors: (
+    youtube: #CC181E,
+    twitter: #00ACEE,
+    facebook: #3B5998,
+    google: #DD4B39,
+    linkedin: #007BB6,
+);
+
+
+/* ==========================================
+    Button Colours
+============================================*/
+$button-colors: (
+    green: green,
+    pink: pink,
+    red: red,
+    blue: blue
+);
+
+
+/* ==========================================
+    Typography Settings
+============================================*/
+$base-font-size: 18;
+$copy: #333;
+$copy--alt: #878787;
+$border-radius: 4px;
+
+
+/* ==========================================
+    Layout Settings
+============================================*/
+$max-width: 1240;
+$space: 1.5em;
+
+$breakpoints: (
+    M: 640,
+    L: 1024
+);
+
+
+/* ==========================================
+    Z-Index
+============================================*/
+// Here we can denote a solid z-index hierarchy through the main elements
+
+$z-index: (
+
+);

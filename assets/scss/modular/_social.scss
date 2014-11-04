@@ -1,0 +1,18 @@
+/*------------------------------------*\
+    $SOCIAL
+    Styling for anything that is related to social sharing
+\*------------------------------------*/
+
+@each $service, $color in $social-colors {
+
+    .social__#{$service} {
+        color: $color;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: darken($color, 10%);
+        }
+    }
+
+}
