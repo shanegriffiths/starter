@@ -254,6 +254,48 @@ figure {
 \*------------------------------------*/
 
 /*------------------------------------*\
+	$DEMO
+	All classes relating to showcasing the demo objects
+\*------------------------------------*/
+
+.demo__block {
+	background-color: white;
+	border: 1px solid gray;
+	color: gray;
+}
+
+.demo__grid {
+	margin-bottom: 20px;
+}
+
+.demo__grid span {
+	display: block;
+	border: 1px solid gray;
+	color: gray;
+	text-align: center;
+}
+
+.demo--list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.demo__block--space {
+	padding: 1.5em;
+}
+
+.demo__block--space-margin {
+	margin-bottom: 1.5em;
+}
+
+.demo__block--space-double {
+	padding: 3em;
+}
+
+/*------------------------------------*\
     $GLOBAL ELEMENTS
 \*------------------------------------*/
 
@@ -703,7 +745,7 @@ tbody tr:nth-child(odd) {
 .wrapper {
 	padding: 0 10px;
 	margin: 0 auto;
-	max-width: 1240;
+	max-width: 1240px;
 }
 
 /*------------------------------------*\

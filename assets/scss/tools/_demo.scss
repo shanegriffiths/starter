@@ -1,0 +1,42 @@
+/*------------------------------------*\
+	$DEMO
+	All classes relating to showcasing the demo objects
+\*------------------------------------*/
+
+
+.demo__block {
+	background-color: white;
+	border: 1px solid gray;
+	color: gray;
+}
+
+.demo__grid {
+	margin-bottom: 20px;
+}
+
+.demo__grid span {
+	display: block;
+	border: 1px solid gray;
+	color: gray;
+	text-align: center;
+}
+
+.demo--list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.demo__block--space {
+	padding: $space;
+}
+
+.demo__block--space-margin {
+	margin-bottom: $space;
+}
+
+.demo__block--space-double {
+	padding: $space * 2;
+}
