@@ -560,7 +560,11 @@ label {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"] {
 	font-size: 14px;
 	font-size: 0.77778rem;
 	padding: 0.71429em;
@@ -585,8 +589,19 @@ textarea {
 	background-color: white;
 }
 
+input[type="text"]:hover,
 input[type="text"]:focus,
+input[type="email"]:hover,
 input[type="email"]:focus,
+input[type="password"]:hover,
+input[type="password"]:focus,
+input[type="search"]:hover,
+input[type="search"]:focus,
+input[type="url"]:hover,
+input[type="url"]:focus,
+input[type="number"]:hover,
+input[type="number"]:focus,
+textarea:hover,
 textarea:focus {
 	box-shadow: none;
 	outline: none;

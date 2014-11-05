@@ -15,7 +15,11 @@ label {
 }
 
 input[type="text"],
-input[type="email"] {
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"] {
 	@include font-size(14);
 	padding: em(10,14);
 	width: 100%;
@@ -38,13 +42,21 @@ textarea {
 	background-color: white;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-	box-shadow: none;
-	outline: none;
-	border: solid 1px blue;
-	background-color: white;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+textarea {
+
+	&:hover,
+	&:focus {
+		box-shadow: none;
+		outline: none;
+		border: solid 1px blue;
+		background-color: white;
+	}
 }
 
 input[type="text"].valid,
