@@ -5,8 +5,8 @@
 	<p>Donec id elit non mi porta gravida at eget metus. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
 
 	<ul class="link-list">
-		<li><a href="#" class="btn-text">Read ofcoms latest 2014 report</a></li>
-		<li><a href="#" class="btn-text">About our methodology</a></li>
+		<li><a href="#" class="btn-text">Link</a></li>
+		<li><a href="#" class="btn-text">Link</a></li>
 	</ul>
 
 </div>

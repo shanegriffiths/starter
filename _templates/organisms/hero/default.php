@@ -8,8 +8,8 @@
 
 			<div class="col S-all M-all L-6">
 
-				<h1 class="has-strap">We're global leaders in broadband measurement.</h1>
-				<h2 class="strap">We provide accurate broadband performance information for consumers, governments and ISPs</h2>
+				<h1 class="has-strap">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</h1>
+				<h2 class="strap">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</h2>
 
 			</div> <!-- / .col -->
 
