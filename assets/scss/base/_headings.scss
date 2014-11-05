@@ -9,36 +9,81 @@ h3, .gamma,
 h4, .delta,
 h5, .epsilon,
 h6, .zeta {
+	@include font--heading;
+	margin-bottom: .6em;
+	line-height: 1.2;
 
+	&.has-strap {
+		margin-bottom: .3em;
+	}
+}
+
+.strap {
+	font-style: italic;
 }
 
 .giga {
-}
-
-.giga__strap {
+	@include font-size(40);
 }
 
 
 h1, .alpha {
+	@include font-size(35);
+
+	@include mq(M) {
+		@include font-size(50);
+	}
 }
 
 h2, .beta {
+	@include font-size(30);
+
+	@include mq(M) {
+		@include font-size(35);
+	}
+
+	&.strap {
+		@include font-size(28);
+
+		@include mq(M) {
+			@include font-size(33);
+		}
+	}
 }
 
 h3, .gamma {
+	@include font-size(25);
+
+	@include mq(M) {
+		@include font-size(30);
+	}
+
+	&.strap {
+		@include font-size(23);
+	}
 }
 
 h4, .delta {
+	@include font-size(20);
+
+	&.strap {
+		@include font-size(13);
+		margin-bottom: em(27, 13);
+	}
 }
 
 h5, .epsilon {
+	@include font-size(18);
 }
 
 .text--mini {
+	@include font-size(16);
 }
 
 .text--micro {
+	@include font-size(14);
 }
 
 .text--nano {
+	@include font-size(12);
 }

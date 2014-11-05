@@ -78,11 +78,7 @@ figure {
 \*------------------------------------*/
 
 /* ==========================================
-    Brand Colours
-============================================*/
-
-/* ==========================================
-    UI Colours
+    Main Colours
 ============================================*/
 
 /* ==========================================
@@ -493,6 +489,113 @@ tbody tr a:active {
 	$HEADINGS
 	Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
 \*------------------------------------*/
+
+h1,
+.alpha,
+h2,
+.beta,
+h3,
+.gamma,
+h4,
+.delta,
+h5,
+.epsilon,
+h6,
+.zeta {
+	font-family: "jaf-bernino-sans-condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	margin-bottom: .6em;
+	line-height: 1.2;
+}
+
+h1.has-strap,
+.alpha.has-strap,
+h2.has-strap,
+.beta.has-strap,
+h3.has-strap,
+.gamma.has-strap,
+h4.has-strap,
+.delta.has-strap,
+h5.has-strap,
+.epsilon.has-strap,
+h6.has-strap,
+.zeta.has-strap {
+	margin-bottom: .3em;
+}
+
+.strap {
+	font-style: italic;
+}
+
+.giga {
+	font-size: 40px;
+	font-size: 2.22222rem;
+}
+
+h1,
+.alpha {
+	font-size: 35px;
+	font-size: 1.94444rem;
+}
+
+h2,
+.beta {
+	font-size: 30px;
+	font-size: 1.66667rem;
+}
+
+h2.strap,
+.beta.strap {
+	font-size: 28px;
+	font-size: 1.55556rem;
+}
+
+h3,
+.gamma {
+	font-size: 25px;
+	font-size: 1.38889rem;
+}
+
+h3.strap,
+.gamma.strap {
+	font-size: 23px;
+	font-size: 1.27778rem;
+}
+
+h4,
+.delta {
+	font-size: 20px;
+	font-size: 1.11111rem;
+}
+
+h4.strap,
+.delta.strap {
+	font-size: 13px;
+	font-size: 0.72222rem;
+	margin-bottom: 2.07692em;
+}
+
+h5,
+.epsilon {
+	font-size: 18px;
+	font-size: 1rem;
+}
+
+.text--mini {
+	font-size: 16px;
+	font-size: 0.88889rem;
+}
+
+.text--micro {
+	font-size: 14px;
+	font-size: 0.77778rem;
+}
+
+.text--nano {
+	font-size: 12px;
+	font-size: 0.66667rem;
+}
 
 /*------------------------------------*\
 	$LISTS
@@ -1227,6 +1330,30 @@ input[type="submit"].btn--highlight:active {
 	display: block;
 	margin-left: 0;
 	width: 100%;
+}
+
+h1,
+.alpha {
+	font-size: 50px;
+	font-size: 2.77778rem;
+}
+
+h2,
+.beta {
+	font-size: 35px;
+	font-size: 1.94444rem;
+}
+
+h2.strap,
+.beta.strap {
+	font-size: 33px;
+	font-size: 1.83333rem;
+}
+
+h3,
+.gamma {
+	font-size: 30px;
+	font-size: 1.66667rem;
 }
 
 th {
