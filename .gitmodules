@@ -1,3 +1,5 @@
 [submodule "styleguide"]
 	path = styleguide
 	url = git@github.com:theideabureau/style-guide-core.git
+	ignore = all
+	fetchRecurseSubmodules = true
