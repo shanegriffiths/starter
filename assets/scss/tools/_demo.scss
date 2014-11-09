@@ -5,9 +5,13 @@
 
 
 .demo__block {
-	background-color: white;
-	border: 1px solid gray;
-	color: gray;
+	background-color: #CFD7DB;
+	border: 1px solid darken(#CFD7DB, 20%);
+	color: #333;
+	@include font-size(12);
+	p, span {
+		@include font-size(12);
+	}
 }
 
 .demo__grid {
@@ -16,8 +20,6 @@
 
 .demo__grid span {
 	display: block;
-	border: 1px solid gray;
-	color: gray;
 	text-align: center;
 }
 
