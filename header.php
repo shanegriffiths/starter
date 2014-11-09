@@ -38,7 +38,7 @@
 	<!-- <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">-->
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-	<link rel="stylesheet" href="/assets/css/styles.min.css" />
+	<link rel="stylesheet" href="/assets/css/styles.css" />
 
 	<script src="assets/js/libs/modernizr.js"></script>
 
@@ -52,7 +52,7 @@
 
 			<h1>The Boilerplate</h1>
 
-		    <nav class="site-nav" role="navigation">
+		    <!-- <nav class="site-nav" role="navigation">
 
 				<ul>
 
@@ -68,8 +68,9 @@
 
 				</ul>
 
-			</nav> <!-- / .site-nav -->
+			</nav>
 
-		</div> <!-- / .wrapper -->
+		</div> -->
+		<!-- / .wrapper -->
 
 	</header> <!-- / .site-header -->

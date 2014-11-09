@@ -4,8 +4,7 @@
 
         <div class="wrapper">
 
-            <h2>Ready to go.</h2>
-            <a href="/styleguide" class="btn btn--highlight">Styleguide</a>
+            <a href="/styleguide" class="btn">Access the Styleguide</a>
 
         </div>
 

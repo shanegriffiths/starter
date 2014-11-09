@@ -1,10 +1,11 @@
-	<footer class="site-footer">
+	<!-- <footer class="site-footer">
 
 		<div class="wrapper">
 			<p>Made by The Idea Bureau</p>
 		</div>
 
-	</footer> <!-- / .site-footer -->
+	</footer> -->
+	 <!-- / .site-footer -->
 
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
