@@ -9,37 +9,17 @@ fieldset, form {
 	margin: 0;
 }
 
-label {
+label, legend {
 	display: block;
-	margin-bottom: $space / 2;
+	margin-bottom: 0;
+	@include font-size(13);
+	text-transform: uppercase;
+	color: color(ui-rich-blue);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="search"],
-input[type="url"],
-input[type="number"] {
-	@include font-size(14);
-	padding: em(10,14);
-	width: 100%;
-	border: solid 1px gray;
-	box-shadow: inset 0 0 10px rgba(black, .05);
-	margin-bottom: $space / 2;
-	line-height: 1;
-	color: gray;
-	background-color: white;
-}
-
-textarea {
-	@include font-size(14);
-	padding: em(10,14);
-	border: solid 1px gray;
-	box-shadow: inset 0 0 10px rgba(black, .05);
-	line-height: 1.5;
-	color: gray;
-	width: 100%;
-	background-color: white;
+abbr[title="Required"] {
+	color: color(brand-red);
+	@include font--body(bold);
 }
 
 input[type="text"],
@@ -48,14 +28,55 @@ input[type="password"],
 input[type="search"],
 input[type="url"],
 input[type="number"],
+input[type="color"],
+input[type="number"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+textarea {
+	@include font--heading(regular);
+	@include font-size(16);
+	padding: em(20) em(10);
+	width: 100%;
+	border: 1px solid grey;
+	margin-bottom: $space / 2;
+	line-height: 1;
+	color: color(alt-body);
+	background-color: white;
+	border-radius: $border-radius;
+}
+
+input[type="color"] {
+	width: auto;
+}
+
+textarea {
+	line-height: 1.5;
+}
+
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+input[type="color"],
+input[type="number"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
 textarea {
 
 	&:hover,
 	&:focus {
 		box-shadow: none;
 		outline: none;
-		border: solid 1px blue;
-		background-color: white;
+		border: solid 1px color(ui-blue-grey);
+		background-color: #FAFAFA;
 	}
 }
 
@@ -66,3 +87,26 @@ input[type="email"].valid {
 input[type="text"].not-valid,
 input[type="email"].not-valid {
 }
+
+
+/* ==========================================
+	Placeholder Styles
+============================================*/
+
+::-webkit-input-placeholder {
+   color: #333;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+ 	color: #333;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #333;
+}
+
+:-ms-input-placeholder {
+   color: #333;
+}
+
+
