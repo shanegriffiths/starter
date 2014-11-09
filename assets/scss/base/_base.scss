@@ -11,7 +11,7 @@ body {
 	background-color: white;
     padding: 0;
     margin: 0;
-    color: $copy;
+    color: color(body);
     line-height: 1.5;
     @include font--body;
 
@@ -23,48 +23,101 @@ body {
 	-ms-text-size-adjust: 100%;
 }
 
-/* Text-Related Elements */
+
+/* ==========================================
+	Test Related Elements
+============================================*/
 
 p,
 ul,
 ol,
 dl {
-    margin-bottom: $space; //27px - Typically the margin-bottom matches the line-height.
+    margin-bottom: $space; //24px - Typically the margin-bottom matches the line-height.
+}
+
+.text--bigger {
+	@include font-size(18);
+}
+
+.text--mini {
+	@include font-size(14);
+}
+
+.text--micro {
+	@include font-size(12);
+}
+
+.text--nano {
+	@include font-size(10);
 }
 
 small {
 	@extend .text--mini;
 }
 
-/* Blockquote */
+.text--style-italic {
+	font-style: italic;
+}
+
+
+/* ==========================================
+	Blockquote
+============================================*/
+
 blockquote {
-    padding: 10px 20px;
-    margin: 0 0 20px;
-    font-size: 17.5px;
+    padding: em(10, 20) em(20, 20);
+    margin: 0 0 em(20, 29);
+    @include font-size(20);
     border-left: 5px solid #eee;
 
     p {
         @include font--heading;
-        margin-bottom: .5em;
+        margin-bottom: $space / 2;
     }
 
     footer {
         display: block;
         line-height: 1.4;
-        color: #777;
     }
 }
 
-/* Horizontal Rule */
+
+/* ==========================================
+	Horizontal Rule
+============================================*/
+
 hr {
+	border: 0px solid color(border-grey);
+	border-top-width: 1px;
+	height: 1px;
+	margin: 0 0 1em 0;
 }
+
+
+/* ==========================================
+	Misc
+============================================*/
 
 abbr {
 }
 
-strong {
+strong, b {
+	@include font--body(semi-bold);
 }
 
 i,
 em {
+	font-style: italic;
 }
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
