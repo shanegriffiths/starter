@@ -1,41 +1,102 @@
 <p>Demo of how the grid classes work</p>
 
 <div class="row">
-	<div class="col S-all / demo__grid">
-		<span>S-all</span>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
 	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">One Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
+	<div class="col S-1 M-1 L-1 / demo__grid">
+		<span class="demo__block">1 Col</span>
+	</div>
+
 </div>
 
 <div class="row">
 
-	<div class="col S-all M-3 / demo__grid">
-		<span>S-all M-3</span>
+	<div class="col S-2 M-3 L-6 / demo__grid">
+		<span class="demo__block">Half Col</span>
 	</div>
 
-	<div class="col S-all M-3 / demo__grid">
-		<span>S-all M-3</span>
+	<div class="col S-2 M-3 L-6 / demo__grid">
+		<span class="demo__block">Half Col</span>
 	</div>
+
 </div>
 
 <div class="row">
 
-	<div class="col S-hide L-6 / demo__grid">
-		<span>S-hide L-6</span>
+	<div class="col S-1 M-2 L-3 / demo__grid">
+		<span class="demo__block">Col</span>
 	</div>
 
-	<div class="col S-all L-6 / demo__grid">
-		<span>S-all L-6</span>
+	<div class="col S-1 M-2 L-3 / demo__grid">
+		<span class="demo__block">Col</span>
 	</div>
+
+	<div class="col S-1 M-2 L-3 / demo__grid">
+		<span class="demo__block">Col</span>
+	</div>
+
+	<div class="col S-1 M-hide L-3 / demo__grid">
+		<span class="demo__block">Col</span>
+	</div>
+
 </div>
 
 <div class="row">
 
-	<div class="col S-all M-3 L-hide / demo__grid">
-		<span>S-all M-3 L-hide</span>
+	<div class="col S-1 M-2 L-4 / demo__grid">
+		<span class="demo__block">Col</span>
 	</div>
 
-	<div class="col S-all M-3 L-hide / demo__grid">
-		<span>S-all M-3 L-hide</span>
+	<div class="col S-1 M-2 L-4 / demo__grid">
+		<span class="demo__block">Col</span>
 	</div>
+
+	<div class="col S-1 M-2 L-4 / demo__grid">
+		<span class="demo__block">Col</span>
+	</div>
+
 
 </div>
