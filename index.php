@@ -1,14 +1,14 @@
-<?php include'header.php' ?>
+<?php include('header.php'); ?>
 
     <main>
 
         <div class="wrapper">
 
             <h2>Ready to go.</h2>
-			<a href="/styleguide" class="btn btn--highlight">Styleguide</a>
+            <a href="/styleguide" class="btn btn--highlight">Styleguide</a>
 
         </div>
 
     </main>
 
-<?php include 'footer.php' ?>
+<?php include('footer.php'); ?>
