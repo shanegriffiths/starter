@@ -4,21 +4,8 @@
 \*------------------------------------*/
 
 /* ==========================================
-	Font Mixins
+	Body Font Mixins
 ============================================*/
-
-/**
- * [$type regular, italic or bold]
- */
-@mixin font--body($type: null) {
-
-	font-family: "Georgia", serif;
-
-	@if $type != null {
-		font-style: $type;
-	}
-
-}
 
 /**
  * [$style regular or italic]
@@ -29,21 +16,20 @@ $weights: (
 	light: 300,
 	regular: 400,
 	semi-bold: 600,
-	bold: 700,
-	extra-bold: 800
+	bold: 700
 );
 
-@mixin font--heading($weight: normal, $style: normal, $old_ie: false) {
+@mixin font--body($weight: regular, $style: normal, $old_ie: false) {
 
 	@if $old_ie == true {
 
 		$typekit_style: if($style == 'normal', 'n', 'i');
 		$typekit_weight: map-get($weights, $weight) / 100;
 
-		font-family: "jaf-bernino-sans-condensed-#{$typekit_style}#{$typekit_prefix}", "jaf-bernino-sans-condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: "open-sans-#{$typekit_style}#{$typekit_prefix}", "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
 	} @else {
-		font-family: "jaf-bernino-sans-condensed", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	}
 
 	font-weight: map-get($weights, $weight);
@@ -51,7 +37,33 @@ $weights: (
 	-webkit-font-smoothing: antialiased;
 }
 
+/* ==========================================
+	Heading Font Mixins
+============================================*/
 
+$heading-weights: (
+	regular: 400,
+	medium: 500,
+	semi-bold: 600
+);
+
+@mixin font--heading($heading-weight: semi-bold, $style: normal, $old_ie: false) {
+
+	@if $old_ie == true {
+
+		$typekit_style: if($style == 'normal', 'n', 'i');
+		$typekit_weight: map-get($heading-weights, $heading-weight) / 100;
+
+		font-family: "proxima-nova-soft-#{$typekit_style}#{$typekit_prefix}", "proxima-nova-soft", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+	} @else {
+		font-family: "proxima-nova-soft", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	}
+
+	font-weight: map-get($heading-weights, $heading-weight);
+	font-style: $style;
+	-webkit-font-smoothing: antialiased;
+}
 /* ==========================================
     Type and List Based Mixins
 ============================================*/
