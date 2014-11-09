@@ -75,15 +75,3 @@ h4, .delta {
 h5, .epsilon {
 	@include font-size(18);
 }
-
-.text--mini {
-	@include font-size(16);
-}
-
-.text--micro {
-	@include font-size(14);
-}
-
-.text--nano {
-	@include font-size(12);
-}
