@@ -87,8 +87,8 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			scripts: {
-				src: 'assets/js/script.js',
-				dest: 'assets/js/script.min.js'
+				src: 'assets/js/main.js',
+				dest: 'assets/js/main.min.js'
 			},
 		},
 		jshint: {
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 				reporter: require('jshint-stylish'),
 				smarttabs: true
 			},
-			target: ['assets/js/script.js']
+			target: ['assets/js/main.js']
 		},
 		modernizr: {
 
@@ -134,7 +134,7 @@ module.exports = function(grunt) {
 
 			// When parseFiles = true, this task will crawl all *.js, *.css, *.scss files, except files that are in node_modules/.
 			// You can override this by defining a "files" array below.
-			"files" : [ 'assets/js/script.js', 'assets/css/styles.css' ],
+			"files" : [ 'assets/js/main.js', 'assets/css/styles.css' ],
 
 			// When parseFiles = true, matchCommunityTests = true will attempt to
 			// match user-contributed tests.
@@ -180,7 +180,7 @@ module.exports = function(grunt) {
 			},
 			scripts: {
 				files: ['assets/js/*.js', 'assets/js/**/*.js'],
-				tasks: ['modernizr', 'jshint', 'notify:scripts'],
+				tasks: ['modernizr', 'jshint', 'uglify', 'notify:scripts'],
 				options: {
 					spawn: false
 				},
