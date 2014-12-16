@@ -16,6 +16,12 @@
 	<meta http-equiv="cleartype" content="on">
 
 	<!--
+	TODO: Set Android Lollipop colour on Chrome
+	-->
+
+	<meta name="theme-color" content="#db5945">
+
+	<!--
 	TODO: Set MS Windows 8 tile icon and colour
 	-->
 
