@@ -5,15 +5,6 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-		// shell: {
-		// 	remove: {
-		// 		command: [
-		// 			'rm -rf assets/css/*',
-        //             'rm -rf assets/js/*',
-	    //         ].join('&&')
-		//
-		// 	}
-		// },
 		imagemin: {
 			dynamic: {
 				files: [{
@@ -194,7 +185,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-svgmin');
@@ -206,8 +196,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks("grunt-modernizr");
 	grunt.loadNpmTasks("grunt-newer");
-	grunt.loadNpmTasks('grunt-combine-media-queries');
-	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-notify');
 
 	grunt.registerTask('default', ['imagemin', 'svgmin', 'sass', 'autoprefixer', 'csslint', 'cmq', 'cssmin', 'modernizr', 'uglify', 'jshint', 'notify:default']);
