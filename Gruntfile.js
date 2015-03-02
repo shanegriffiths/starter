@@ -89,6 +89,27 @@ module.exports = function(grunt) {
 			},
 			target: ['assets/js/main.js']
 		},
+		responsive_images: {
+			compileImages: {
+				options: {
+					sizes: [{
+						width: 320,
+					},{
+						width: 640,
+					},{
+						width: 1024,
+					},{
+						width: 1920,
+					}]
+				},
+				files: [{
+					expand: true,
+					src: ['*.{jpg,gif,png}'],
+					cwd: 'assets/img/',
+					dest: 'assets/img/srcset/'
+				}]
+			}
+		},
 		modernizr: {
 
 			// [REQUIRED] Path to the build you're using for development.
@@ -194,6 +215,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-autoprefixer');
+	grunt.loadNpmTasks('grunt-responsive-images');
 	grunt.loadNpmTasks("grunt-modernizr");
 	grunt.loadNpmTasks("grunt-newer");
 	grunt.loadNpmTasks('grunt-notify');
