@@ -2,7 +2,7 @@
 
 	<div class="wrapper">
 
-		<?php sg_include(['molecules', 'navigation', 'primary-nav']); ?>
+		<?php SG_Core::include_part(['molecules', 'navigation', 'primary-nav']); ?>
 
 		<div class="row">
 

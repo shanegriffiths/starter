@@ -1,6 +1,6 @@
 <!-- Begin .header -->
 <header class="header cf">
 
-	<?php sg_include(['molecules', 'navigation', 'secondary-nav']); ?>
+	<?php SG_Core::include_part(['molecules', 'navigation', 'secondary-nav']); ?>
 
 </header>
