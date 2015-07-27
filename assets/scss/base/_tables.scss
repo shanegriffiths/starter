@@ -16,7 +16,7 @@ th {
 
 	@include mq(M) {
 		@include font-size(12);
-		@include font--heading(bold);
+		@include primary-font(bold);
 		text-transform: uppercase;
 		background-color: gray;
 		color: white;
@@ -48,7 +48,7 @@ td {
 
 		@include mq(M) {
 			@include font-size(14);
-			@include font--body;
+			@include primary-font;
 			margin-top: 1em;
 			letter-spacing: 0;
 			color: inherit;
@@ -85,7 +85,7 @@ thead tr {
 
 tbody tr {
 	@include font-size(14);
-	@include font--body;
+	@include primary-font;
 	background-color: gray;
 	color: black;
 	text-decoration: none;

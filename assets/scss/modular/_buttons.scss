@@ -6,7 +6,7 @@
 button,
 input[type="submit"] {
 	@include font-size(13);
-	@include font--heading(bold);
+	@include primary-font(bold);
 	padding: em(7,13) em(30, 13);
 	border: 1px solid gray;
 	display: inline-block;
@@ -132,7 +132,7 @@ input[type="submit"] {
 /* Simple text based links */
 .btn-text {
 	@include font-size(12);
-	@include font--body(bold);
+	@include primary-font(bold);
 	color: blue;
 	display: inline-block;
 	text-decoration: none;

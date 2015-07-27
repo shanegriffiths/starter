@@ -13,13 +13,14 @@
  */
 
 $weights: (
+	thin: 100,
 	light: 300,
-	regular: 400,
-	semi-bold: 600,
-	bold: 700
+	normal: 400,
+	bold: 700,
+	ultra-bold: 900
 );
 
-@mixin font--body($weight: regular, $style: normal, $old_ie: false) {
+@mixin primary-font($weight: regular, $style: normal, $old_ie: false) {
 
 	@if $old_ie == true {
 
@@ -37,33 +38,7 @@ $weights: (
 	-webkit-font-smoothing: antialiased;
 }
 
-/* ==========================================
-	Heading Font Mixins
-============================================*/
 
-$heading-weights: (
-	regular: 400,
-	medium: 500,
-	semi-bold: 600
-);
-
-@mixin font--heading($heading-weight: semi-bold, $style: normal, $old_ie: false) {
-
-	@if $old_ie == true {
-
-		$typekit_style: if($style == 'normal', 'n', 'i');
-		$typekit_weight: map-get($heading-weights, $heading-weight) / 100;
-
-		font-family: "proxima-nova-soft-#{$typekit_style}#{$typekit_prefix}", "proxima-nova-soft", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-
-	} @else {
-		font-family: "proxima-nova-soft", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	}
-
-	font-weight: map-get($heading-weights, $heading-weight);
-	font-style: $style;
-	-webkit-font-smoothing: antialiased;
-}
 /* ==========================================
     Type and List Based Mixins
 ============================================*/

@@ -19,7 +19,7 @@ label, legend {
 
 abbr[title="Required"] {
 	color: color(brand-red);
-	@include font--body(bold);
+	@include primary-font(bold);
 }
 
 input[type="text"],
@@ -37,7 +37,7 @@ input[type="week"],
 input[type="datetime"],
 input[type="datetime-local"],
 textarea {
-	@include font--heading(regular);
+	@include primary-font(regular);
 	@include font-size(16);
 	padding: em(20) em(10);
 	width: 100%;

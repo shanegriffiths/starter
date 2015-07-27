@@ -9,7 +9,7 @@ h3, .gamma,
 h4, .delta,
 h5, .epsilon,
 h6, .zeta {
-	@include font--heading;
+	@include primary-font;
 	margin-bottom: .6em;
 	line-height: 1.2;
 
