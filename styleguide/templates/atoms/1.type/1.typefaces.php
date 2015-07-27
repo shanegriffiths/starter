@@ -2,7 +2,7 @@
 
 	<div class="demo__block--space-margin">
 
-		<h4 class="sg-heading">Lato <?php echo $weight; ?></h4>
+		<h4 class="sg-heading">Primary <?php echo $weight; ?></h4>
 		<h1 class="primary-font--<?php echo $weight; ?>">Grumpy wizards make toxic brew for the evil Queen and Jack.</h1>
 		<h2 class="primary-font--<?php echo $weight; ?>">Grumpy wizards make toxic brew for the evil Queen and Jack.</h2>
 		<h3 class="primary-font--<?php echo $weight; ?>">Grumpy wizards make toxic brew for the evil Queen and Jack.</h3>
