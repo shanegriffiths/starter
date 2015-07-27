@@ -42,3 +42,32 @@
 .demo__block--space-double {
 	padding: $space * 2;
 }
+
+
+//******************
+// STYLEGUIDE TITLES
+
+.sg-heading {
+	@include primary-font(bold, normal);
+	text-transform: uppercase;
+	@include font-size(14);
+	padding: em(2);
+	border-left: 10px solid black;
+	padding-left: em(10);
+	margin-bottom: $space;
+	margin-top: $space * 2;
+}
+
+
+ //**********
+// TYPEFACES
+
+$demo--typeface: "thin" "light" "normal" "bold" "ultra-bold";
+
+@each $item in $demo--typeface {
+
+	.primary-font--#{$item} {
+		@include primary-font(#{$item}, normal);
+	}
+
+}
