@@ -16,5 +16,5 @@
 <hr />
 
 <span class="sg-note">With <code>.has-strap</code> class added. Only add this class when you'd like to add a strapline under the main title. The strapline underneath is a standard <code>h2</code> with <code>.strap</code> applied</span>
-<h1 class="has-strap">Client Portfolio</h1>
-<h2 class="strap">We’re lucky to have a fantastic network of clients who share our vision.</h2>
+<h1 class="has-strap">Example Heading</h1>
+<h2 class="strap">A paragraph (from the Greek paragraphos, "to write beside" or "written beside").</h2>
