@@ -494,7 +494,8 @@ em {
 /*------------------------------------*    LINKS
 \*------------------------------------*/
 a {
-  text-decoration: underline; }
+  text-decoration: underline;
+  word-wrap: break-word; }
   a:hover,
   a:focus {
     text-decoration: none; }
