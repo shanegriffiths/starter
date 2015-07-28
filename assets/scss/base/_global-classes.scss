@@ -1,28 +1,30 @@
 /*------------------------------------*\
-    $GLOBAL CLASSES
-    Helper classes
+    GLOBAL CLASSES
 \*------------------------------------*/
 
-/* Clearfix */
+ //*********
+// CLEARFIX
+
 .cf {
     *zoom: 1;
 }
+
 .cf:before, .cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    display: table;
 }
 
 .cf:after {
     clear: both;
 }
 
-/* Completely remove from the flow and screen readers. */
+// Completely remove from the flow and screen readers.
 .is-hidden {
     display: none !important;
     visibility: hidden !important;
 }
 
-/* Completely remove from the flow but leave available to screen readers. */
+// Completely remove from the flow but leave available to screen readers.
 .is-visually-hidden {
     position: absolute !important;
     overflow: hidden;
@@ -33,7 +35,10 @@
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* Floats */
+
+ //*******
+// FLOATS
+
 .pull-right {
 	float: right;
 }
@@ -42,7 +47,10 @@
 	float: left;
 }
 
-/* Text-Align */
+
+ //***************
+// TEXT ALIGNMENT
+
 .align-right {
 	text-align: right;
 }
@@ -54,6 +62,10 @@
 .align-left {
 	text-align: left;
 }
+
+
+ //******
+// MEDIA
 
 .img, .img--wide {
     width: 100%;

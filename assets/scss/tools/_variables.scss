@@ -1,54 +1,54 @@
 /*------------------------------------*\
-    $VARIABLES
-    This is where all variables are stored
+	VARIABLES
 \*------------------------------------*/
 
-/* ==========================================
-    Main Colours
-============================================*/
+ //********
+// COLOURS
+
 $colours: (
-    brand: #353535,
-    ui-grey: #ccc
+    'body': #777777,
+    'brand': #353535,
+    'ui-grey': #cccccc,
+    'copy': #333333,
+    'copy--alt': #878787
 );
 
 
-/* ==========================================
-    Social Colours
-============================================*/
-// These are picked directly from the appropriate brands
+ //***************
+// SOCIAL COLOURS
 
 $social-colors: (
-    youtube: #CC181E,
-    twitter: #00ACEE,
-    facebook: #3B5998,
-    google: #DD4B39,
-    linkedin: #007BB6,
+    'youtube': #CC181E,
+    'twitter': #00ACEE,
+    'facebook': #3B5998,
+    'google': #DD4B39,
+    'linkedin': #007BB6,
 );
 
 
-/* ==========================================
-    Button Colours
-============================================*/
+ //***************
+// BUTTON COLOURS
+
 $button-colors: (
-    green: green,
-    pink: pink,
-    red: red,
-    blue: blue
+    'green': green,
+    'pink': pink,
+    'red': red,
+    'blue': blue
 );
 
 
-/* ==========================================
-    Typography Settings
-============================================*/
+ //**************
+// TYPE SETTINGS
+
 $base-font-size: 18;
-$copy: #333;
-$copy--alt: #878787;
+$copy: map-get($colours, 'copy');
+$copy--alt: map-get($colours, 'copy--alt');
 $border-radius: 4px;
 
 
-/* ==========================================
-    Layout Settings
-============================================*/
+ //****************
+// LAYOUT SETTINGS
+
 $max-width: 1240;
 $space: 1.5em;
 
@@ -58,9 +58,9 @@ $breakpoints: (
 );
 
 
-/* ==========================================
-    Z-Index
-============================================*/
+ //********
+// Z-INDEX
+
 // Here we can denote a solid z-index hierarchy through the main elements
 
 $z-index: (

@@ -1,6 +1,5 @@
 /*------------------------------------*\
-    $BASE
-    The Base HTML styling
+    BASE
 \*------------------------------------*/
 
 html {
@@ -11,7 +10,7 @@ body {
 	background-color: white;
     padding: 0;
     margin: 0;
-    color: color(body);
+    color: color('body');
     line-height: 1.5;
     @include primary-font;
 
@@ -24,15 +23,14 @@ body {
 }
 
 
-/* ==========================================
-	Test Related Elements
-============================================*/
+ //**********************
+// TEST RELATED ELEMENTS
 
 p,
 ul,
 ol,
 dl {
-    margin-bottom: $space; //24px - Typically the margin-bottom matches the line-height.
+    margin-bottom: $space; // Typically the margin-bottom matches the line-height.
 }
 
 .text--bigger {
@@ -60,9 +58,8 @@ small {
 }
 
 
-/* ==========================================
-	Blockquote
-============================================*/
+ //***********
+// BLOCKQUOTE
 
 blockquote {
     padding: em(10, 20) em(20, 20);
@@ -82,26 +79,25 @@ blockquote {
 }
 
 
-/* ==========================================
-	Horizontal Rule
-============================================*/
+ //****************
+// HORIZONTAL RULE
 
 hr {
-	border: 0px solid color(border-grey);
+	border: 0px solid color('border-grey');
 	border-top-width: 1px;
 	height: 1px;
 	margin: 0 0 1em 0;
 }
 
 
-/* ==========================================
-	Misc
-============================================*/
+ //*****
+// MISC
 
 abbr {
 }
 
-strong, b {
+strong,
+b {
 	@include primary-font(bold);
 }
 

@@ -1,5 +1,5 @@
 /*------------------------------------*\
-	$LISTS
+	LISTS
 \*------------------------------------*/
 
 .nav {
@@ -15,8 +15,6 @@
 	margin-right: $space / 2;
 }
 
-.inline-list {
-	li {
-		display: inline-block;
-	}
+.inline-list li {
+	display: inline-block;
 }

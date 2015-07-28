@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $TABLES
+    TABLES
 \*------------------------------------*/
 
 table {
@@ -18,7 +18,7 @@ th {
 		@include font-size(12);
 		@include primary-font(bold);
 		text-transform: uppercase;
-		background-color: gray;
+		background-color: color('ui-grey');
 		color: white;
 		letter-spacing: 2px;
 		padding: 1em;
@@ -41,7 +41,7 @@ td {
 	&:first-child {
 		@include font-size(12);
 		text-transform: uppercase;
-		background-color: gray;
+		background-color: color('ui-grey');
 		color: white;
 		letter-spacing: 2px;
 		padding-left: em(5,12);
@@ -86,12 +86,12 @@ thead tr {
 tbody tr {
 	@include font-size(14);
 	@include primary-font;
-	background-color: gray;
+	background-color: color('ui-grey');
 	color: black;
 	text-decoration: none;
 	padding: em(14, 14);
 
 	&:nth-child(odd) {
-		background: #fff;
+		background: color('body');
 	}
 }

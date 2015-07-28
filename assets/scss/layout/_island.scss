@@ -1,8 +1,8 @@
 /*------------------------------------*\
-	$ISLAND
-	The island object is used to create a standard square shaped widget.
-	This object will handle padding, colour, text shadow etc.
+	ISLAND
 \*------------------------------------*/
+// The island object is used to create a standard square shaped widget.
+// This object will handle padding, colour, text shadow etc.
 
 .island {
 	margin-bottom: $space / 2;
@@ -26,7 +26,7 @@
 }
 
 .island--cloud {
-	border: 1px solid gray;
+	border: 1px solid color('ui-grey');
 	padding: em(10);
 	box-shadow: inset 0 0 10px rgba(black, .05);
 

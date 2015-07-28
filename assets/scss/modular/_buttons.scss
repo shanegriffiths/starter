@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $BUTTONS
+    BUTTONS
 \*------------------------------------*/
 
 .btn,
@@ -8,10 +8,10 @@ input[type="submit"] {
 	@include font-size(13);
 	@include primary-font(bold);
 	padding: em(7,13) em(30, 13);
-	border: 1px solid gray;
+	border: 1px solid color('ui-grey');
 	display: inline-block;
 	line-height: 1;
-	color: gray;
+	color: color('ui-grey');
 	background-color: white;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -24,52 +24,52 @@ input[type="submit"] {
 
 	&:hover,
 	&:focus {
-		background-color: gray;
+		background-color: color('ui-grey');
 		color: white;
 		text-decoration: none;
 	}
 
 	&:active {
-		background-color: lighten(gray, 15%);
+		background-color: lighten(color('ui-grey'), 15%);
 		color: white;
 	}
 
 
-	// alternative
+	// Alternative
 	&.btn--alt {
-		background-color: gray;
+		background-color: color('ui-grey');
 		color: white;
 
 		&:hover,
 		&:focus {
 			background-color: white;
-			color: gray;
+			color: color('ui-grey');
 		}
 
 		&:active {
 			background-color: darken(white, 15%);
-			color: gray;
+			color: color('ui-grey');
 		}
 	}
 
-	//Call to action
+	// Call to action
 	&.btn--cta {
 		color: white;
 		background-color: orange;
 		border-color: white;
 	}
 
-	// wide
+	// Wide
 	&.btn--wide {
 		width: 100%;
 	}
 
-	// fixed width
+	// Fixed width
 	&.btn--fixed-width {
 		width: em(500, 13);
 	}
 
-	// transparent
+	// Transparent
 	&.btn--transparent {
 		color: white;
 		background-color: transparent;
@@ -78,7 +78,7 @@ input[type="submit"] {
 		&:hover,
 		&:focus {
 			background-color: white;
-			color: gray;
+			color: color('ui-grey');
 			text-decoration: none;
 		}
 
@@ -87,19 +87,19 @@ input[type="submit"] {
 		}
 	}
 
-	// disabled
+	// Disabled
 	&.btn--disabled,
 	&[disabled] {
-		color: gray;
+		color: color('ui-grey');
 		background-color: white;
-		border-color: gray;
+		border-color: color('ui-grey');
 		cursor: default;
 		pointer-events: none;
 
 		&:hover,
 		&:focus {
 			background-color: white;
-			color: gray;
+			color: color('ui-grey');
 			text-decoration: none;
 		}
 
@@ -107,7 +107,7 @@ input[type="submit"] {
 		}
 	}
 
-	// highlight
+	// Highlight
 	&.btn--highlight {
 		@include font-size(12);
 		background-color: blue;
@@ -129,7 +129,7 @@ input[type="submit"] {
 	}
 }
 
-/* Simple text based links */
+// Simple text based links
 .btn-text {
 	@include font-size(12);
 	@include primary-font(bold);

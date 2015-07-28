@@ -1,16 +1,9 @@
 /*------------------------------------*\
-    $MIXINS
-	All mixins are kept here
+    GLOBAL MIXINS
 \*------------------------------------*/
 
-/* ==========================================
-	Body Font Mixins
-============================================*/
-
-/**
- * [$style regular or italic]
- * [$old_ie true will enable typekit font names]
- */
+ //*****************
+// FONT DECLARATION
 
 $weights: (
 	thin: 100,
@@ -39,9 +32,8 @@ $weights: (
 }
 
 
-/* ==========================================
-    Type and List Based Mixins
-============================================*/
+ //***************************
+// TYPE AND LIST BASED MIXINS
 
 @mixin font-size($size: $base-font-size) {
 	font-size: $size + px;
@@ -55,9 +47,8 @@ $weights: (
 }
 
 
-/* ==========================================
-    Color Based Mixins
-============================================*/
+ //*******************
+// COLOR BASED MIXINS
 
 @function color($colour, $opacity: 1) {
 
@@ -70,9 +61,8 @@ $weights: (
 }
 
 
-/* ==========================================
-    SVG Fallback
-============================================*/
+ //*************
+// SVG FALLBACK
 
 @mixin svg($path) {
 	background-image: url($path + '.svg');
@@ -84,14 +74,10 @@ $weights: (
 }
 
 
-/* ==========================================
-    Media Queries
-============================================*/
+ //**************
+// MEDIA QUERIES
 
-
-/**
- * Pass in a value or a breakpoint letter
- */
+// Pass in a value or a breakpoint letter
 @mixin mq($point, $IE9: false, $query1: min, $query2: width) {
 
 	@if map-has-key($breakpoints, $point) {
