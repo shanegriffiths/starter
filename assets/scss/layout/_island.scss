@@ -5,33 +5,15 @@
 // This object will handle padding, colour, text shadow etc.
 
 .island {
-	margin-bottom: $space / 2;
+	padding: em(10);
+	margin-bottom: $space;
+
+	@include mq(M) {
+		padding: em(25);
+	}
 
 	img {
 		width: 100%;
-	}
-}
-
-.island--box {
-	padding: em(10);
-
-	@include mq(M) {
-		padding: em(25);
-	}
-
-}
-
-.island--box-flat-bottom {
-	padding-bottom: 0
-}
-
-.island--cloud {
-	border: 1px solid color('ui-grey');
-	padding: em(10);
-	box-shadow: inset 0 0 10px rgba(black, .05);
-
-	@include mq(M) {
-		padding: em(25);
 	}
 }
 
@@ -44,4 +26,15 @@
 	@include mq(M) {
 		padding: em(50) em(50) em(100) em(50);
 	}
+}
+
+// Island with zero margin-bottom
+.island--flat-bottom {
+	padding-bottom: 0
+}
+
+// Island with a border around it
+.island--bordered {
+	border: 1px solid color('brand');
+	padding: em(10);
 }
