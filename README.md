@@ -33,7 +33,7 @@ We have a generator for Yeoman that scaffolds this workstation.
 4. Install node packages. Run...
 
 	```
-	npm install
+	$ npm install
 	```
 
 ## Assets
