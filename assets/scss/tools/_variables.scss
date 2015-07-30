@@ -8,9 +8,6 @@
 $colours: (
     'body': #777777,
     'brand': #353535,
-    'ui-grey': #cccccc,
-    'copy': #333333,
-    'copy--alt': #878787
 );
 
 
@@ -40,9 +37,8 @@ $button-colors: (
  //**************
 // TYPE SETTINGS
 
-$base-font-size: 18;
-$copy: map-get($colours, 'copy');
-$copy--alt: map-get($colours, 'copy--alt');
+$base-font-size: 16;
+$copy: map-get($colours, 'body');
 $border-radius: 4px;
 
 
