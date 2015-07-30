@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 table {
-	background: white;
+	background: color('white');
 	width: 100%;
 	text-align: left;
 	border-spacing: 0px;
@@ -18,10 +18,10 @@ th {
 		@include font-size(12);
 		@include primary-font(bold);
 		text-transform: uppercase;
-		background-color: color('ui-grey');
-		color: white;
+		background-color: color('brand');
+		color: color('white');
 		letter-spacing: 2px;
-		padding: 1em;
+		padding: em(10, 12);
 		display: table-cell;
 	}
 }
@@ -29,10 +29,10 @@ th {
 td {
 	display: block;
 	text-align: left;
-	padding: em(10);
+	padding: em(10, 12);
 
 	@include mq(M) {
-		padding: 1em;
+		padding: em(10, 12);
 		display: table-cell;
 	}
 }
@@ -41,7 +41,7 @@ td {
 	&:first-child {
 		@include font-size(12);
 		text-transform: uppercase;
-		background-color: color('ui-grey');
+		background-color: color('brand');
 		color: white;
 		letter-spacing: 2px;
 		padding-left: em(5,12);
@@ -49,7 +49,7 @@ td {
 		@include mq(M) {
 			@include font-size(14);
 			@include primary-font;
-			margin-top: 1em;
+			margin-top: em(10, 14);
 			letter-spacing: 0;
 			color: inherit;
 			background: inherit;
@@ -86,8 +86,8 @@ thead tr {
 tbody tr {
 	@include font-size(14);
 	@include primary-font;
-	background-color: color('ui-grey');
-	color: black;
+	background-color: color('brand');
+	color: color('black');
 	text-decoration: none;
 	padding: em(14, 14);
 

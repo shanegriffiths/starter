@@ -10,11 +10,11 @@ h4, .delta,
 h5, .epsilon,
 h6, .zeta {
 	@include primary-font;
-	margin-bottom: .6em;
+	margin-bottom: $space / 2;
 	line-height: 1.2;
 
 	&.has-strap {
-		margin-bottom: .3em;
+		margin-bottom: $space / 4;
 	}
 }
 
