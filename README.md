@@ -30,6 +30,12 @@ We have a generator for Yeoman that scaffolds this workstation.
 	$ yo the-idea-bureau-scaffolder
 	```
 
+4. Install node packages. Run...
+
+	```
+	npm install
+	```
+
 ## Assets
 
 The assets directory is used to contain front-end files such as CSS (Sass), JavaScript, images, fonts etc.
