@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-    //*********************
+     //********************
     // SVG ERROR REPORTING
-    //
+
     // <img src="example.svg" data-fallback="example.png">
 
     if ( ! Modernizr.svg ) {
@@ -20,7 +20,7 @@ $(document).ready(function() {
     }
 
 
-    //***************
+     //***************
     // SCROLL TO TOP
 
     $('.to-top').on('click', function(e) {
