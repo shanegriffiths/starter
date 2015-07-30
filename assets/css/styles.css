@@ -530,9 +530,12 @@ h5, .epsilon {
 ul {
   list-style: disc; }
 
-ol.no-bullet,
-ul.no-bullet {
-  list-style-type: none; }
+ol,
+ul {
+  margin-bottom: 1.5em; }
+  ol.no-bullet,
+  ul.no-bullet {
+    list-style-type: none; }
 
 ul ul,
 ol ol {
@@ -751,67 +754,6 @@ tbody tr {
   tbody tr:nth-child(odd) {
     background: #333333; }
 
-/*------------------------------------*    $LAYOUT
-\*------------------------------------*/
-/*------------------------------------*	BAND
-\*------------------------------------*/
-.band {
-  margin-bottom: 1.5em; }
-
-.band--thin {
-  margin-bottom: 0.75em; }
-
-.band--thick {
-  margin-bottom: 3em; }
-
-.band--extra-thick {
-  margin-bottom: 4.5em; }
-
-.band--double-thick {
-  margin-bottom: 6em; }
-
-/*------------------------------------*    FOOTER
-\*------------------------------------*/
-/*------------------------------------*	HEADER
-\*------------------------------------*/
-/*------------------------------------*    HERO
-\*------------------------------------*/
-/*------------------------------------*	ISLAND
-\*------------------------------------*/
-.island {
-  padding: 0.625em;
-  margin-bottom: 1.5em; }
-  @media screen and (min-width: 640px) {
-    .island {
-      padding: 1.5625em; } }
-  .island img {
-    width: 100%; }
-
-.island--thin {
-  padding: 0.75em; }
-
-@media screen and (min-width: 640px) {
-  .island--thick {
-    padding: 3.125em 3.125em 6.25em 3.125em; } }
-
-.island--flat-bottom {
-  padding-bottom: 0; }
-
-.island--bordered {
-  border: 1px solid #353535;
-  padding: 0.625em; }
-
-/*------------------------------------*    LAYOUT
-\*------------------------------------*/
-.wrapper {
-  padding: 0 0.625em;
-  margin: 0 auto;
-  max-width: 1240px; }
-
-/*------------------------------------*    NAVIGATION
-\*------------------------------------*/
-/*------------------------------------*    $MODULAR
-\*------------------------------------*/
 /*------------------------------------*    BUTTONS
 \*------------------------------------*/
 .button, button, input[type="submit"] {
@@ -937,23 +879,71 @@ input.button--blue:active,
 input.button--blue:focus {
   background: #74CAE9; }
 
+/*------------------------------------*    $LAYOUT
+\*------------------------------------*/
+/*------------------------------------*	BAND
+\*------------------------------------*/
+.band {
+  margin-bottom: 1.5em; }
+
+.band--thin {
+  margin-bottom: 0.75em; }
+
+.band--thick {
+  margin-bottom: 3em; }
+
+.band--extra-thick {
+  margin-bottom: 4.5em; }
+
+.band--double-thick {
+  margin-bottom: 6em; }
+
+/*------------------------------------*    FOOTER
+\*------------------------------------*/
+/*------------------------------------*	HEADER
+\*------------------------------------*/
+/*------------------------------------*    HERO
+\*------------------------------------*/
+/*------------------------------------*	ISLAND
+\*------------------------------------*/
+.island {
+  padding: 0.625em;
+  margin-bottom: 1.5em; }
+  @media screen and (min-width: 640px) {
+    .island {
+      padding: 1.5625em; } }
+  .island img {
+    width: 100%; }
+
+.island--thin {
+  padding: 0.75em; }
+
+@media screen and (min-width: 640px) {
+  .island--thick {
+    padding: 3.125em 3.125em 6.25em 3.125em; } }
+
+.island--flat-bottom {
+  padding-bottom: 0; }
+
+.island--bordered {
+  border: 1px solid #353535;
+  padding: 0.625em; }
+
+/*------------------------------------*    LAYOUT
+\*------------------------------------*/
+.wrapper {
+  padding: 0 0.625em;
+  margin: 0 auto;
+  max-width: 1240px; }
+
+/*------------------------------------*    NAVIGATION
+\*------------------------------------*/
+/*------------------------------------*    SIDEBAR
+\*------------------------------------*/
+/*------------------------------------*    $MODULAR
+\*------------------------------------*/
 /*------------------------------------*	ICONS
 \*------------------------------------*/
-/*------------------------------------*	LISTS
-\*------------------------------------*/
-.nav {
-  list-style-type: none; }
-
-.nav--list li {
-  display: block;
-  float: none; }
-
-.nav--icon li {
-  margin-right: 0.75em; }
-
-.inline-list li {
-  display: inline-block; }
-
 /*------------------------------------*	MEDIA OBJECT
 \*------------------------------------*/
 .media {
@@ -972,43 +962,41 @@ input.button--blue:focus {
   overflow: hidden;
   display: block; }
 
-/*------------------------------------*    SIDEBAR
-\*------------------------------------*/
 /*------------------------------------*    SOCIAL
 \*------------------------------------*/
-.social__youtube {
+.social--youtube {
   color: #CC181E; }
-  .social__youtube:hover,
-  .social__youtube:active,
-  .social__youtube:focus {
+  .social--youtube:hover,
+  .social--youtube:active,
+  .social--youtube:focus {
     color: #9e1317; }
 
-.social__twitter {
+.social--twitter {
   color: #00ACEE; }
-  .social__twitter:hover,
-  .social__twitter:active,
-  .social__twitter:focus {
+  .social--twitter:hover,
+  .social--twitter:active,
+  .social--twitter:focus {
     color: #0087bb; }
 
-.social__facebook {
+.social--facebook {
   color: #3B5998; }
-  .social__facebook:hover,
-  .social__facebook:active,
-  .social__facebook:focus {
+  .social--facebook:hover,
+  .social--facebook:active,
+  .social--facebook:focus {
     color: #2d4373; }
 
-.social__google {
+.social--google {
   color: #DD4B39; }
-  .social__google:hover,
-  .social__google:active,
-  .social__google:focus {
+  .social--google:hover,
+  .social--google:active,
+  .social--google:focus {
     color: #c23321; }
 
-.social__linkedin {
+.social--linkedin {
   color: #007BB6; }
-  .social__linkedin:hover,
-  .social__linkedin:active,
-  .social__linkedin:focus {
+  .social--linkedin:hover,
+  .social--linkedin:active,
+  .social--linkedin:focus {
     color: #005983; }
 
 /*------------------------------------*	$TOOLS
