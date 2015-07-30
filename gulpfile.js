@@ -38,9 +38,7 @@ gulp.task('scss', function () {
 	return gulp.src('./assets/scss/*.scss')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(globbing({ extensions: ['.scss'] }))
-		.pipe(sass().on('error', function (err) {
-			return notify().write(err);
-		}))
+		.pipe(sass())
 		.pipe(autoprefixer('last 2 versions'))
 		.pipe(gulp.dest('assets/css'))
 		.pipe(concat('styles.min.css'))
@@ -69,9 +67,7 @@ gulp.task('scss:bs', function () {
 	return gulp.src('./assets/scss/*.scss')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(globbing({ extensions: ['.scss'] }))
-		.pipe(sass().on('error', function (err) {
-			return notify().write(err);
-		}))
+		.pipe(sass())
 		.pipe(autoprefixer('last 2 versions'))
 		.pipe(gulp.dest('assets/css'))
 		.pipe(browserSync.reload({stream: true}))
