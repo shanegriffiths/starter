@@ -4,7 +4,7 @@
 
 @each $service, $color in $social-colors {
 
-    .social__#{$service} {
+    .social--#{$service} {
         color: $color;
 
         &:hover,
