@@ -8,6 +8,28 @@ Project features:
 - Style guide ready
 - Includes numerous style and behavior techniques
 
+## Up and Running
+
+We have a generator for Yeoman that scaffolds this workstation.
+
+1. Install [Yeoman](http://yeoman.io)
+
+	```
+	$ npm install -g yo
+	```
+
+2. Install the [generator](https://www.npmjs.com/package/generator-the-idea-bureau-scaffolder)
+
+	```
+	$ npm install -g generator-the-idea-bureau-scaffolder
+	```
+
+3. Run it
+
+	```
+	$ yo the-idea-bureau-scaffolder
+	```
+
 ## Assets
 
 The assets directory is used to contain front-end files such as CSS (Sass), JavaScript, images, fonts etc.
