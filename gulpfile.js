@@ -110,7 +110,17 @@ gulp.task('default', ['watch']);
 
 gulp.task('watch', function () {
 	livereload.listen();
-	gulp.watch('styleguide/templates/**/**/*.php', ['markup']);
-	gulp.watch('assets/scss/**/*.scss', ['scss']);
-	gulp.watch('assets/js/*.js', ['js']);
+	gulp.watch('styleguide/templates/**/**/*.php', ['markup', 'modernizr']);
+	gulp.watch('assets/scss/**/*.scss', ['scss', 'modernizr']);
+	gulp.watch('assets/js/*.js', ['js', 'modernizr']);
+});
+
+
+var modernizr = require('gulp-modernizr');
+
+gulp.task('modernizr', function() {
+  gulp.src('assets/js/main.js')
+    .pipe(modernizr())
+    .pipe(uglify())
+    .pipe(gulp.dest("assets/js/libs/"))
 });
