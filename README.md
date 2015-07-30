@@ -6,7 +6,8 @@ Project features:
 
 - Gulp enabled
 - Style guide ready
-- Includes numerous style and behavior techniques
+- Includes numerous style and behaviour techniques
+- [Editorconfig](http://editorconfig.org/)
 
 ## Up and Running
 
