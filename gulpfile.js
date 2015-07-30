@@ -6,6 +6,7 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	notify = require("gulp-notify"),
 	browserSync = require('browser-sync').create(),
+	plumber = require('gulp-plumber'),
 
 	// styles
 	sass = require('gulp-sass'),
@@ -19,12 +20,23 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify');
 
 
+ //**************
+// ERROR HANDLER
+
+function onError(err) {
+	console.log(err);
+	notify().write(err)
+	this.emit('end');
+};
+
+
  //******
 // TASKS
 
 gulp.task('scss', function () {
 
 	return gulp.src('./assets/scss/*.scss')
+		.pipe(plumber({ errorHandler: onError }))
 		.pipe(globbing({ extensions: ['.scss'] }))
 		.pipe(sass().on('error', function (err) {
 			return notify().write(err);
@@ -41,6 +53,7 @@ gulp.task('scss', function () {
 gulp.task('js', function () {
 
 	return gulp.src('assets/js/main.js')
+		.pipe(plumber({ errorHandler: onError }))
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'))
 		.pipe(uglify())
@@ -54,6 +67,7 @@ gulp.task('js', function () {
 gulp.task('scss:bs', function () {
 
 	return gulp.src('./assets/scss/*.scss')
+		.pipe(plumber({ errorHandler: onError }))
 		.pipe(globbing({ extensions: ['.scss'] }))
 		.pipe(sass().on('error', function (err) {
 			return notify().write(err);
