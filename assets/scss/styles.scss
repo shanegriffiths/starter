@@ -14,20 +14,17 @@ partial in the specified directory .
 
 
 /*------------------------------------*\
-    $REQUIREMENTS
+    $GLOBAL
 \*------------------------------------*/
-@import "tools/reset";
-@import "tools/mixins";
-@import "tools/variables";
-@import "tools/grid";
-@import "tools/fonts";
-
-// Load in demo css
-@import "tools/demo";
+@import "_global/reset";
+@import "_global/fonts";
+@import "_global/mixins";
+@import "_global/variables";
+@import "_global/grid";
 
 
 /*------------------------------------*\
-    $GLOBAL ELEMENTS
+    $BASE ELEMENTS
 \*------------------------------------*/
 @import "base/base";
 @import "base/links";
@@ -51,6 +48,13 @@ partial in the specified directory .
 
 
 /*------------------------------------*\
+	$TOOLS
+\*------------------------------------*/
+@import "tools/styleguide"; // Demo CSS for the styleguide
+
+
+/*------------------------------------*\
 	$PRINT STYLES
 \*------------------------------------*/
 @import "base/print";
+
