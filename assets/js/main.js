@@ -1,36 +1,36 @@
 $(document).ready(function() {
 
-     //********************
-    // SVG ERROR REPORTING
+	 //********************
+	// SVG ERROR REPORTING
 
-    // <img src="example.svg" data-fallback="example.png">
+	// <img src="example.svg" data-fallback="example.png">
 
-    if ( ! Modernizr.svg ) {
+	if ( ! Modernizr.svg ) {
 
-        $('img[data-fallback]').each(function() {
+		$('img[data-fallback]').each(function() {
 
-            // cache image element
-            var $img = $(this);
+			// cache image element
+			var $img = $(this);
 
-            // replace svg with fallback
-            $img.attr('src', $img.data('fallback'));
+			// replace svg with fallback
+			$img.attr('src', $img.data('fallback'));
 
-        });
+		});
 
-    }
+	}
 
 
-     //***************
-    // SCROLL TO TOP
+	 //***************
+	// SCROLL TO TOP
 
-    $('.to-top').on('click', function(e) {
+	$('.to-top').on('click', function(e) {
 
-        e.preventDefault();
+		e.preventDefault();
 
-        $('html, body').animate({
-            scrollTop: 0
-        }, 1000);
+		$('html, body').animate({
+			scrollTop: 0
+		}, 1000);
 
-    });
+	});
 
 });
