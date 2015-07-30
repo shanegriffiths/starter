@@ -2,6 +2,7 @@ var gulp = require('gulp'),
 
 	// general
 	watch = require('gulp-watch'),
+	livereload = require('gulp-livereload'),
 	rename = require('gulp-rename')
 	concat = require('gulp-concat'),
 	notify = require("gulp-notify"),
@@ -44,6 +45,7 @@ gulp.task('scss', function () {
 		.pipe(concat('styles.min.css'))
 		.pipe(minifyCss({compatibility: 'ie8'}))
 		.pipe(gulp.dest('assets/css'))
+		.pipe(livereload())
 		.pipe(notify("Sass Compiled"));
 
 });
@@ -58,7 +60,16 @@ gulp.task('js', function () {
 		.pipe(rename({
 			extname: '.min.js'
 		}))
-		.pipe(gulp.dest('assets/js/'));
+		.pipe(gulp.dest('assets/js/'))
+		.pipe(livereload());
+
+});
+
+gulp.task('markup', function () {
+
+	return gulp.src('styleguide/templates/**/**/*.php')
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(livereload());
 
 });
 
@@ -74,6 +85,7 @@ gulp.task('scss:bs', function () {
 		.pipe(concat('styles.min.css'))
 		.pipe(minifyCss({compatibility: 'ie8'}))
 		.pipe(gulp.dest('assets/css'))
+		.pipe(livereload())
 		.pipe(notify("Sass Compiled"));
 
 });
@@ -97,6 +109,8 @@ gulp.task('bs', function () {
 gulp.task('default', ['watch']);
 
 gulp.task('watch', function () {
+	livereload.listen();
+	gulp.watch('styleguide/templates/**/**/*.php', ['markup']);
 	gulp.watch('assets/scss/**/*.scss', ['scss']);
 	gulp.watch('assets/js/*.js', ['js']);
 });
