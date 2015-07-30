@@ -9,8 +9,7 @@ var gulp = require('gulp'),
 	minifyCss = require('gulp-minify-css'),
 	globbing = require('gulp-css-globbing'),
 	notify = require("gulp-notify"),
-	watch = require('gulp-watch'),
-	scsslint = require('gulp-scss-lint');
+	watch = require('gulp-watch');
 
 
 gulp.task('scss', function () {
@@ -55,7 +54,7 @@ gulp.task('watch', function () {
 gulp.task('bs', function () {
 
 	browserSync.init({
-        proxy: "dev.frontendboilerplate.com",
+		proxy: "dev.frontendboilerplate.com",
 		host: "localhost"
     });
 
