@@ -17,8 +17,8 @@ partial in the specified directory .
     $REQUIREMENTS
 \*------------------------------------*/
 @import "tools/reset";
-@import "tools/variables";
 @import "tools/mixins";
+@import "tools/variables";
 @import "tools/grid";
 @import "tools/fonts";
 
@@ -29,7 +29,6 @@ partial in the specified directory .
 /*------------------------------------*\
     $GLOBAL ELEMENTS
 \*------------------------------------*/
-@import "base/global-classes";
 @import "base/base";
 @import "base/links";
 @import "base/headings";
@@ -37,7 +36,6 @@ partial in the specified directory .
 @import "base/media";
 @import "base/forms";
 @import "base/tables";
-@import "base/animation";
 
 
 /*------------------------------------*\
