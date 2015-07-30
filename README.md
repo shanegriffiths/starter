@@ -46,8 +46,12 @@ Gulp is used to process Sass, JavaScript and image files.
 
 Gulp will watch the files within the assets directory and compile as necessary.
 
+## Browser Sync and Live Reload
+
 [BrowserSync](http://www.browsersync.io/) has been included with the gulp build, simply change the proxy url in the gulpfile.js and run:
 -   `gulp bs`
+
+Currently there is no support for Live Reload
 
 ## Style Guide Structure
 
