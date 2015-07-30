@@ -2,12 +2,16 @@
 	VARIABLES
 \*------------------------------------*/
 
+
  //********
 // COLOURS
 
 $colours: (
-    'body': #777777,
+    'body': #333333,
     'brand': #353535,
+    'white': #FFFFFF,
+    'black': #000000,
+    'grey': #777777,
 );
 
 
@@ -25,20 +29,28 @@ $social-colors: (
 
  //***************
 // BUTTON COLOURS
+// There are two arrays here. the names need to match up else the
+// styleguide colours output fails
 
 $button-colors: (
-    'green': green,
-    'pink': pink,
-    'red': red,
-    'blue': blue
+	'green': #92D016,
+	'orange': #FF811A,
+	'pink': #F61AFF,
+	'blue': #1169A4,
 );
 
+$button-colors-light: (
+	'green': #BCD469,
+	'orange': #FFB17F,
+	'pink': #E87EFE,
+	'blue': #74CAE9,
+);
 
  //**************
 // TYPE SETTINGS
 
 $base-font-size: 16;
-$copy: map-get($colours, 'body');
+$copy: color('body');
 $border-radius: 4px;
 
 
@@ -46,7 +58,7 @@ $border-radius: 4px;
 // LAYOUT SETTINGS
 
 $max-width: 1240;
-$space: 1.5em;
+$space: 1.5em; // NOTE: This is needs to be changed depending on the lineheight of the <p>
 
 $breakpoints: (
     M: 640,
