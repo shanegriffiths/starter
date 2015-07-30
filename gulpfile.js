@@ -1,5 +1,3 @@
-// note: http://alfanso.com/minify-your-final-css-file-using-gulp-js/
-
 var gulp = require('gulp'),
 	browserSync = require('browser-sync').create(),
 	concat = require('gulp-concat'),
