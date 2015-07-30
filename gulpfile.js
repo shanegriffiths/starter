@@ -1,17 +1,26 @@
 var gulp = require('gulp'),
-	browserSync = require('browser-sync').create(),
+
+	// general
+	watch = require('gulp-watch'),
+	rename = require('gulp-rename')
 	concat = require('gulp-concat'),
-	scsslint = require('gulp-scss-lint'),
+	notify = require("gulp-notify"),
+	browserSync = require('browser-sync').create(),
+
+	// styles
 	sass = require('gulp-sass'),
+	scsslint = require('gulp-scss-lint'),
 	autoprefixer = require('gulp-autoprefixer'),
 	minifyCss = require('gulp-minify-css'),
 	globbing = require('gulp-css-globbing'),
-	notify = require("gulp-notify"),
-	watch = require('gulp-watch'),
-	scsslint = require('gulp-scss-lint'),
+
+	// scripts
 	jshint = require('gulp-jshint'),
-	uglify = require('gulp-uglify'),
-	rename = require('gulp-rename');
+	uglify = require('gulp-uglify');
+
+
+ //******
+// TASKS
 
 gulp.task('scss', function () {
 
@@ -59,13 +68,6 @@ gulp.task('scss:bs', function () {
 
 });
 
-gulp.task('default', ['watch']);
-
-gulp.task('watch', function () {
-	gulp.watch('assets/scss/**/*.scss', ['scss']);
-	gulp.watch('assets/js/*.js', ['js']);
-});
-
 gulp.task('bs', function () {
 
 	browserSync.init({
@@ -76,4 +78,15 @@ gulp.task('bs', function () {
 	gulp.watch('assets/scss/**/*.scss', ['scss:bs']);
 	gulp.watch("./*.html").on('change', browserSync.reload);
 
+});
+
+
+ //******
+// WATCH
+
+gulp.task('default', ['watch']);
+
+gulp.task('watch', function () {
+	gulp.watch('assets/scss/**/*.scss', ['scss']);
+	gulp.watch('assets/js/*.js', ['js']);
 });
