@@ -2,175 +2,111 @@
     BUTTONS
 \*------------------------------------*/
 
-.btn,
-button,
-input[type="submit"] {
-	@include font-size(13);
-	@include primary-font(bold);
-	padding: em(7,13) em(30, 13);
-	border: 1px solid color('ui-grey');
+.button, button, input[type="submit"] {
 	display: inline-block;
-	line-height: 1;
-	color: color('ui-grey');
-	background-color: white;
-	text-transform: uppercase;
-	text-decoration: none;
+	border: none;
+	@include font-size(14);
 	border-radius: $border-radius;
-	text-align: center;
-	cursor: pointer;
-	letter-spacing: 2px;
-	transition: color .2s,
-				background-color .2s;
-
-	&:hover,
-	&:focus {
-		background-color: color('ui-grey');
-		color: white;
-		text-decoration: none;
-	}
-
-	&:active {
-		background-color: lighten(color('ui-grey'), 15%);
-		color: white;
-	}
-
-
-	// Alternative
-	&.btn--alt {
-		background-color: color('ui-grey');
-		color: white;
-
-		&:hover,
-		&:focus {
-			background-color: white;
-			color: color('ui-grey');
-		}
-
-		&:active {
-			background-color: darken(white, 15%);
-			color: color('ui-grey');
-		}
-	}
-
-	// Call to action
-	&.btn--cta {
-		color: white;
-		background-color: orange;
-		border-color: white;
-	}
-
-	// Wide
-	&.btn--wide {
-		width: 100%;
-	}
-
-	// Fixed width
-	&.btn--fixed-width {
-		width: em(500, 13);
-	}
-
-	// Transparent
-	&.btn--transparent {
-		color: white;
-		background-color: transparent;
-		border-color: white;
-
-		&:hover,
-		&:focus {
-			background-color: white;
-			color: color('ui-grey');
-			text-decoration: none;
-		}
-
-		&:active {
-			background-color: rgba(white, .8);
-		}
-	}
-
-	// Disabled
-	&.btn--disabled,
-	&[disabled] {
-		color: color('ui-grey');
-		background-color: white;
-		border-color: color('ui-grey');
-		cursor: default;
-		pointer-events: none;
-
-		&:hover,
-		&:focus {
-			background-color: white;
-			color: color('ui-grey');
-			text-decoration: none;
-		}
-
-		&:active {
-		}
-	}
-
-	// Highlight
-	&.btn--highlight {
-		@include font-size(12);
-		background-color: blue;
-		border-color: blue;
-		color: white;
-		padding: 0.75em 1.5em;
-		border-radius: 0;
-
-		&:hover,
-		&:focus {
-			background-color: white;
-			color: blue;
-		}
-
-		&:active {
-			background-color: blue;
-			color: white;
-		}
-	}
-}
-
-// Simple text based links
-.btn-text {
-	@include font-size(12);
-	@include primary-font(bold);
-	color: blue;
-	display: inline-block;
+	padding: em(10, 14) em(15, 14);
 	text-decoration: none;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	line-height: 1.3;
-	margin-bottom: 1.3em;
-	transition: color .2s,
-				background-color .2s;
+	margin-bottom: $space / 2;
+	font-weight: bold;
+	color: color('white');
+	text-align: center;
+	vertical-align: middle;
+	white-space: nowrap;
+	background: color('brand');
+	cursor: pointer;
 
 	&:hover,
+	&:active,
 	&:focus {
-		color: lighten(blue, 15%);
-	}
-
-	&:active {
+		background: lighten(color('brand'), 10%);
 	}
 }
 
-// Output each button colour as a button class
-@each $button, $color in $button-colors {
-	.btn--#{$button} {
-		background-color: $color;
 
+ //*************
+// BUTTON SIZES
+
+.button--small {
+	@include font-size(12);
+	padding: em(5,12) em(8,12);
+}
+
+.button--medium {
+	@include font-size(16);
+	padding: em(15,16) em(20,16);
+}
+
+.button--large {
+	@include font-size(18);
+	padding: em(20,18) em(25,18);
+}
+
+// This is often used inside the hero sections
+.button--huge {
+	@include font-size(22);
+	padding: em(25,20) em(100,20);
+}
+
+
+ //***********
+// VARIATIONS
+
+// Uppercase
+.button--uppercase {
+	text-transform: uppercase;
+}
+
+// Full bleed
+.button--block {
+	display: block;
+}
+
+// Left Align
+.button--left {
+	text-align: left;
+}
+
+// Remove the Margin
+.button--flatten {
+	margin-bottom: 0;
+}
+
+// Sub-heading within buttons
+// Must be used with a span element
+
+.button__sub-text {
+	display: block;
+	font-size: 75%;
+	font-style: italic;
+}
+
+.button--disabled {
+	cursor: default;
+	pointer-events: none;
+	background: color('grey');
+	color: color(white);
+}
+
+ //**************
+// COLOR OPTIONS
+
+@each $name, $color in $button-colors {
+
+	.button--#{$name} {
+		background: $color;
+	}
+
+	a.button--#{$name},
+	button.button--#{$name},
+	input.button--#{$name} {
 		&:hover,
 		&:active,
 		&:focus {
-			color: $color;
-			border: 1px solid $color;
-		}
-
-		&.btn--solid {
-			&:hover,
-			&:active,
-			&:focus {
-				color: white;
-				background-color: darken($color, 15%);
-			}
+			background: map-get($button-colors-light, $name);
 		}
 	}
+
 }
