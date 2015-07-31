@@ -11,7 +11,7 @@ body {
     padding: 0;
     margin: 0;
     color: color('body');
-    line-height: 1.5;
+    line-height: $space;
     @include primary-font;
 
 	text-rendering: optimizeLegibility;
@@ -23,13 +23,30 @@ body {
 }
 
 
+ //***************
+// TEXT ALIGNMENT
+
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+
  //**********************
-// TEST RELATED ELEMENTS
+// TEXT RELATED ELEMENTS
 
 p,
 ul,
 ol,
 dl {
+	line-height: $space;
     margin-bottom: $space; // Typically the margin-bottom matches the line-height.
 }
 
@@ -57,13 +74,26 @@ small {
 	font-style: italic;
 }
 
+abbr {
+}
+
+strong,
+b {
+	@include primary-font(bold);
+}
+
+i,
+em {
+	font-style: italic;
+}
+
 
  //***********
 // BLOCKQUOTE
 
 blockquote {
     padding: em(10, 20) em(20, 20);
-    margin: 0 0 em(20, 29);
+    margin: 0 0 em(20, 20);
     @include font-size(20);
     border-left: 5px solid color('border-color');
 
@@ -74,7 +104,6 @@ blockquote {
 
     footer {
         display: block;
-        line-height: 1.4;
     }
 }
 
@@ -90,28 +119,63 @@ hr {
 }
 
 
- //*****
-// MISC
-
-abbr {
-}
-
-strong,
-b {
-	@include primary-font(bold);
-}
-
-i,
-em {
-	font-style: italic;
-}
+ //************
+// MISC STYLES
 
 ::-moz-selection {
-    background: color('selection');
+    background: color('brand');
     text-shadow: none;
 }
 
 ::selection {
-    background: color('selection');
+    background: color('brand');
     text-shadow: none;
+}
+
+
+ //*********
+// CLEARFIX
+
+.cf {
+    *zoom: 1;
+}
+
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+// Completely remove from the flow and screen readers.
+
+.is-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+// Completely remove from the flow but leave available to screen readers.
+
+.is-visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+ //*******
+// FLOATS
+
+.pull-right {
+	float: right;
+}
+
+.pull-left {
+	float: left;
 }

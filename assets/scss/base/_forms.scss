@@ -15,11 +15,11 @@ legend {
 	margin-bottom: 0;
 	@include font-size(13);
 	text-transform: uppercase;
-	color: color('ui-grey');
+	color: color('brand');
 }
 
 abbr[title="Required"] {
-	color: color('ui-grey');
+	color: color('brand');
 	@include primary-font(bold);
 }
 
@@ -42,7 +42,7 @@ textarea {
 	@include font-size(16);
 	padding: em(20) em(10);
 	width: 100%;
-	border: 1px solid color('ui-grey');
+	border: 1px solid color('brand');
 	margin-bottom: $space / 2;
 	line-height: 1;
 	color: color('body');
@@ -55,7 +55,7 @@ input[type="color"] {
 }
 
 textarea {
-	line-height: 1.5;
+	line-height: $space;
 }
 
 input[type="password"],
@@ -76,8 +76,8 @@ textarea {
 	&:focus {
 		box-shadow: none;
 		outline: none;
-		border: solid 1px color('ui-grey');
-		background-color: color('body');
+		border: solid 1px color('brand');
+		background-color: color('brand');
 	}
 }
 
@@ -94,17 +94,17 @@ input[type="email"].not-valid {
 // PLACEHOLDER STYLES
 
 ::-webkit-input-placeholder {
-   color: color('placeholder');
+   color: color('brand');
 }
 
 :-moz-placeholder { /* Firefox 18- */
- 	color: color('placeholder');
+ 	color: color('brand');
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: color('placeholder');
+   color: color('brand');
 }
 
 :-ms-input-placeholder {
-   color: color('placeholder');
+   color: color('brand');
 }
