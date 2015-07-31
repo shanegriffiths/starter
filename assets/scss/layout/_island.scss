@@ -24,13 +24,13 @@
 .island--thick {
 
 	@include mq(M) {
-		padding: em(50) em(50) em(100) em(50);
+		padding: em(50) em(50) em(100);
 	}
 }
 
 // Island with zero margin-bottom
 .island--flat-bottom {
-	padding-bottom: 0
+	padding-bottom: 0;
 }
 
 // Island with a border around it

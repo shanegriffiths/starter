@@ -16,46 +16,45 @@ partial in the specified directory .
 /*------------------------------------*\
     $GLOBAL
 \*------------------------------------*/
-@import "_global/reset";
-@import "_global/fonts";
-@import "_global/mixins";
-@import "_global/variables";
-@import "_global/grid";
+@import '_global/reset';
+@import '_global/fonts';
+@import '_global/mixins';
+@import '_global/variables';
+@import '_global/grid';
 
 
 /*------------------------------------*\
     $BASE ELEMENTS
 \*------------------------------------*/
-@import "base/base";
-@import "base/links";
-@import "base/headings";
-@import "base/lists";
-@import "base/media";
-@import "base/forms";
-@import "base/tables";
-@import "base/buttons";
+@import 'base/base';
+@import 'base/links';
+@import 'base/headings';
+@import 'base/lists';
+@import 'base/media';
+@import 'base/forms';
+@import 'base/tables';
+@import 'base/buttons';
 
 
 /*------------------------------------*\
     $LAYOUT
 \*------------------------------------*/
-@import "layout/*";
+@import 'layout/*';
 
 
 /*------------------------------------*\
     $MODULAR
 \*------------------------------------*/
-@import "modular/*";
+@import 'modular/*';
 
 
 /*------------------------------------*\
 	$TOOLS
 \*------------------------------------*/
-@import "tools/styleguide"; // Demo CSS for the styleguide
+@import 'tools/styleguide'; // Demo CSS for the styleguide
 
 
 /*------------------------------------*\
 	$PRINT STYLES
 \*------------------------------------*/
-@import "base/print";
-
+@import 'base/print';

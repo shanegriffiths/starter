@@ -140,8 +140,9 @@ hr {
     *zoom: 1;
 }
 
-.cf:before, .cf:after {
-    content: " ";
+.cf:before,
+.cf:after {
+    content: ' ';
     display: table;
 }
 

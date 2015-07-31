@@ -53,7 +53,7 @@ td {
 		@include font-size(12);
 		text-transform: uppercase;
 		background-color: color('brand');
-		color: white;
+		color: color('white');
 		letter-spacing: 2px;
 		padding-left: em(5, 12);
 

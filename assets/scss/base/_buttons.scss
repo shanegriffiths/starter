@@ -2,9 +2,11 @@
     BUTTONS
 \*------------------------------------*/
 
-.button, button, input[type="submit"] {
+.button,
+button,
+input[type="submit"] {
 	display: inline-block;
-	border: none;
+	border: 0;
 	@include font-size(14);
 	border-radius: $border-radius;
 	padding: em(10, 14) em(15, 14);
@@ -31,23 +33,23 @@
 
 .button--small {
 	@include font-size(12);
-	padding: em(5,12) em(8,12);
+	padding: em(5, 12) em(8, 12);
 }
 
 .button--medium {
 	@include font-size(16);
-	padding: em(15,16) em(20,16);
+	padding: em(15, 16) em(20, 16);
 }
 
 .button--large {
 	@include font-size(18);
-	padding: em(20,18) em(25,18);
+	padding: em(20, 18) em(25, 18);
 }
 
 // This is often used inside the hero sections
 .button--huge {
 	@include font-size(22);
-	padding: em(25,20) em(100,20);
+	padding: em(25, 20) em(100, 20);
 }
 
 
@@ -87,7 +89,7 @@
 	cursor: default;
 	pointer-events: none;
 	background: color('grey');
-	color: color(white);
+	color: color('white');
 }
 
  //**************
