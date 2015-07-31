@@ -8,6 +8,7 @@ var gulp = require('gulp'),
 	notify = require("gulp-notify"),
 	browserSync = require('browser-sync').create(),
 	plumber = require('gulp-plumber'),
+	modernizr = require('gulp-modernizr'),
 
 	// styles
 	sass = require('gulp-sass'),
@@ -33,6 +34,13 @@ function onError(err) {
 
  //******
 // TASKS
+
+gulp.task('modernizr', function() {
+  gulp.src('assets/js/main.js')
+    .pipe(modernizr())
+    .pipe(uglify())
+    .pipe(gulp.dest("assets/js/libs/"))
+});
 
 gulp.task('scss', function () {
 
