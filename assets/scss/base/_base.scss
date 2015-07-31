@@ -7,7 +7,7 @@ html {
 }
 
 body {
-	background-color: white;
+	background-color: color('white');
     padding: 0;
     margin: 0;
     color: color('body');
@@ -65,7 +65,7 @@ blockquote {
     padding: em(10, 20) em(20, 20);
     margin: 0 0 em(20, 29);
     @include font-size(20);
-    border-left: 5px solid #eee;
+    border-left: 5px solid color('border-color');
 
     p {
         @include primary-font;
@@ -83,10 +83,10 @@ blockquote {
 // HORIZONTAL RULE
 
 hr {
-	border: 0px solid color('body');
+	border: 0 solid color('body');
 	border-top-width: 1px;
 	height: 1px;
-	margin: 0 0 1em 0;
+	margin: 0 0 1em;
 }
 
 
@@ -107,11 +107,11 @@ em {
 }
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: color('selection');
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: color('selection');
     text-shadow: none;
 }

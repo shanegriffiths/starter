@@ -9,8 +9,9 @@
     *zoom: 1;
 }
 
-.cf:before, .cf:after {
-    content: " ";
+.cf:before,
+.cf:after {
+    content: ' ';
     display: table;
 }
 
@@ -67,6 +68,7 @@
  //******
 // MEDIA
 
-.img, .img--wide {
+.img,
+.img--wide {
     width: 100%;
 }

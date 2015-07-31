@@ -31,7 +31,7 @@ $old_ie_support: false;
 
 	&:before,
 	&:after {
-		content: " "; /* 1 */
+		content: ' '; /* 1 */
 		display: table; /* 2 */
 	}
 
@@ -55,7 +55,7 @@ $old_ie_support: false;
 	$one_col: (100% - ($gutter_pc * ($max_columns - 1))) / $max_columns;
 
 	display: block;
-	width:($one_col * $num) + ($gutter_pc * ($num - 1));
+	width: ($one_col * $num) + ($gutter_pc * ($num - 1));
 
 }
 
@@ -97,7 +97,7 @@ $old_ie_support: false;
 
 @each $grid in $grids {
 
-	/* #{nth($grid, 1)}-grid */
+	// #{nth($grid, 1)}-grid
 
 	// have we got a prefix *and* an mq breakpoint?
 	@if length($grid) > 2 {

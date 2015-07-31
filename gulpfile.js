@@ -16,6 +16,7 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	minifyCss = require('gulp-minify-css'),
 	globbing = require('gulp-css-globbing'),
+	scsslint = require('gulp-scss-lint'),
 
 	// scripts
 	jshint = require('gulp-jshint'),
@@ -56,6 +57,11 @@ gulp.task('scss', function () {
 		.pipe(livereload())
 		.pipe(notify("Sass Compiled"));
 
+});
+
+gulp.task('scss-lint', function() {
+	gulp.src('assets/scss/**/*.scss')
+		.pipe(scsslint({'config': 'lint.yml'}));
 });
 
 gulp.task('js', function () {
@@ -105,7 +111,7 @@ gulp.task('bs', function () {
 		host: "localhost"
 	});
 
-	gulp.watch('assets/scss/**/*.scss', ['scss:bs']);
+	gulp.watch('assets/scss/**/*.scss', ['scss:bs', 'scss-lint', 'modernizr']);
 	gulp.watch("./*.html").on('change', browserSync.reload);
 
 });
@@ -119,16 +125,6 @@ gulp.task('default', ['watch']);
 gulp.task('watch', function () {
 	livereload.listen();
 	gulp.watch('styleguide/templates/**/**/*.php', ['markup', 'modernizr']);
-	gulp.watch('assets/scss/**/*.scss', ['scss', 'modernizr']);
+	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint', 'modernizr']);
 	gulp.watch('assets/js/*.js', ['js', 'modernizr']);
-});
-
-
-var modernizr = require('gulp-modernizr');
-
-gulp.task('modernizr', function() {
-  gulp.src('assets/js/main.js')
-    .pipe(modernizr())
-    .pipe(uglify())
-    .pipe(gulp.dest("assets/js/libs/"))
 });

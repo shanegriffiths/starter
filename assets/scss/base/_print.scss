@@ -8,7 +8,7 @@
     *:before,
     *:after {
         background: transparent !important;
-        color: #000 !important; // Black prints faster: http://www.sanbeiji.com/archives/953
+        color: color('black') !important; // Black prints faster: http://www.sanbeiji.com/archives/953
         box-shadow: none !important;
         text-shadow: none !important;
     }
@@ -19,11 +19,11 @@
     }
 
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: ' (' attr(href) ')';
     }
 
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: ' (' attr(title) ')';
     }
 
     /*
@@ -33,12 +33,12 @@
 
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
-        content: "";
+        content: '';
     }
 
     pre,
     blockquote {
-        border: 1px solid #999;
+        border: 1px solid color('grey');
         page-break-inside: avoid;
     }
 

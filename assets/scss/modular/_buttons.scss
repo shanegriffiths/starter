@@ -7,12 +7,12 @@ button,
 input[type="submit"] {
 	@include font-size(13);
 	@include primary-font(bold);
-	padding: em(7,13) em(30, 13);
+	padding: em(7, 13) em(30, 13);
 	border: 1px solid color('ui-grey');
 	display: inline-block;
 	line-height: 1;
 	color: color('ui-grey');
-	background-color: white;
+	background-color: color('white');
 	text-transform: uppercase;
 	text-decoration: none;
 	border-radius: $border-radius;
@@ -25,38 +25,38 @@ input[type="submit"] {
 	&:hover,
 	&:focus {
 		background-color: color('ui-grey');
-		color: white;
+		color: color('white');
 		text-decoration: none;
 	}
 
 	&:active {
 		background-color: lighten(color('ui-grey'), 15%);
-		color: white;
+		color: color('white');
 	}
 
 
 	// Alternative
 	&.btn--alt {
 		background-color: color('ui-grey');
-		color: white;
+		color: color('white');
 
 		&:hover,
 		&:focus {
-			background-color: white;
+			background-color: color('white');
 			color: color('ui-grey');
 		}
 
 		&:active {
-			background-color: darken(white, 15%);
+			background-color: darken(color('white'), 15%);
 			color: color('ui-grey');
 		}
 	}
 
 	// Call to action
 	&.btn--cta {
-		color: white;
-		background-color: orange;
-		border-color: white;
+		color: color('white');
+		background-color: color('orange');
+		border-color: color('white');
 	}
 
 	// Wide
@@ -71,19 +71,19 @@ input[type="submit"] {
 
 	// Transparent
 	&.btn--transparent {
-		color: white;
+		color: color('white');
 		background-color: transparent;
-		border-color: white;
+		border-color: color('white');
 
 		&:hover,
 		&:focus {
-			background-color: white;
+			background-color: color('white');
 			color: color('ui-grey');
 			text-decoration: none;
 		}
 
 		&:active {
-			background-color: rgba(white, .8);
+			background-color: rgba(color('white'), .8);
 		}
 	}
 
@@ -91,14 +91,14 @@ input[type="submit"] {
 	&.btn--disabled,
 	&[disabled] {
 		color: color('ui-grey');
-		background-color: white;
+		background-color: color('white');
 		border-color: color('ui-grey');
 		cursor: default;
 		pointer-events: none;
 
 		&:hover,
 		&:focus {
-			background-color: white;
+			background-color: color('white');
 			color: color('ui-grey');
 			text-decoration: none;
 		}
@@ -110,21 +110,21 @@ input[type="submit"] {
 	// Highlight
 	&.btn--highlight {
 		@include font-size(12);
-		background-color: blue;
-		border-color: blue;
-		color: white;
-		padding: 0.75em 1.5em;
+		background-color: color('blue');
+		border-color: color('blue');
+		color: color('white');
+		padding: .75em 1.5em;
 		border-radius: 0;
 
 		&:hover,
 		&:focus {
-			background-color: white;
-			color: blue;
+			background-color: color('white');
+			color: color('blue');
 		}
 
 		&:active {
-			background-color: blue;
-			color: white;
+			background-color: color('blue');
+			color: color('white');
 		}
 	}
 }
@@ -133,7 +133,7 @@ input[type="submit"] {
 .btn-text {
 	@include font-size(12);
 	@include primary-font(bold);
-	color: blue;
+	color: color('blue');
 	display: inline-block;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -145,7 +145,7 @@ input[type="submit"] {
 
 	&:hover,
 	&:focus {
-		color: lighten(blue, 15%);
+		color: lighten(color('blue'), 15%);
 	}
 
 	&:active {
@@ -168,7 +168,7 @@ input[type="submit"] {
 			&:hover,
 			&:active,
 			&:focus {
-				color: white;
+				color: color('white');
 				background-color: darken($color, 15%);
 			}
 		}
