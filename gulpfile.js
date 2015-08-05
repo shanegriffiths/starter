@@ -38,7 +38,13 @@ function onError(err) {
 
 gulp.task('modernizr', function() {
   gulp.src('assets/js/main.js')
-    .pipe(modernizr())
+    .pipe(modernizr({ options: [
+        "setClasses",
+        "addTest",
+        "html5printshiv",
+        "testProp",
+        "fnBind"
+    ] }))
     .pipe(uglify())
     .pipe(gulp.dest("assets/js/libs/"))
 });
