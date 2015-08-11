@@ -16,7 +16,6 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	minifyCss = require('gulp-minify-css'),
 	globbing = require('gulp-css-globbing'),
-	scsslint = require('gulp-scss-lint'),
 
 	// scripts
 	jshint = require('gulp-jshint'),
