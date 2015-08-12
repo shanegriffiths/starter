@@ -5,30 +5,43 @@
  //*****************
 // FONT DECLARATION
 
+ //*****************
+// FONT DECLARATION
+
 $weights: (
-	thin: 100,
+	hairline: 100,
+	thin: 200,
 	light: 300,
 	normal: 400,
+	medium: 500,
+	semibold: 600,
 	bold: 700,
-	ultra-bold: 900
+	heavy: 800,
+	black: 900
 );
 
-@mixin primary-font($weight: regular, $style: normal, $old_ie: false) {
+@mixin primary-font($weight: normal, $style: normal) {
 
-	@if $old_ie == true {
+	$font-weight: map-get($weights, $weight);
 
-		$typekit_style: if($style == 'normal', 'n', 'i');
-		$typekit_weight: map-get($weights, $weight) / 100;
-
-		font-family: "open-sans-#{$typekit_style}#{$typekit_prefix}", "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-
-	} @else {
-		font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	@if ( $font-weight == null ) {
+		@error 'Font weight "#{$weight}" passed to `primary-font` mixin does not exist';
+		@return false;
 	}
 
-	font-weight: map-get($weights, $weight);
+	@if ( $style != 'normal' and $style != 'italic' ) {
+		@error 'Font style "#{$style}" passed to `primary-font` mixin is invalid';
+		@return false;
+	}
+
+	$font-family: 'lato-' + str-slice($style, 0, 1) + ($font-weight / 100);
+
+	font-family: $font-family, lato, "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-weight: $font-weight;
 	font-style: $style;
+
 	-webkit-font-smoothing: antialiased;
+
 }
 
 
@@ -52,10 +65,17 @@ $weights: (
 
 @function color($colour, $opacity: 1) {
 
+	$color: map-get($colours, $colour);
+
+	@if ( $color == null ) {
+		@error 'Colour "#{$colour}" passed to `color` mixin does not exist';
+		@return false;
+	}
+
 	@if $opacity < 1 {
-		@return rgba(map-get($colours, $colour), $opacity);
+		@return rgba($color, $opacity);
 	} @else {
-		@return map-get($colours, $colour);
+		@return $color;
 	}
 
 }
