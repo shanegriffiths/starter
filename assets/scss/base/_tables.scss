@@ -29,7 +29,7 @@ th {
 
 	@include mq(M) {
 		@include font-size(12);
-		@include primary-font(bold);
+		@include font(primary, bold);
 		text-transform: uppercase;
 		background-color: color('brand');
 		color: color('white');
@@ -59,7 +59,7 @@ td {
 
 		@include mq(M) {
 			@include font-size(14);
-			@include primary-font;
+			@include font;
 			margin-top: em(10, 14);
 			letter-spacing: 0;
 			color: inherit;
@@ -81,7 +81,7 @@ thead tr {
 
 tbody tr {
 	@include font-size(14);
-	@include primary-font;
+	@include font;
 	background-color: color('brand');
 	color: color('black');
 	text-decoration: none;

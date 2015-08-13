@@ -49,7 +49,7 @@
 // STYLEGUIDE TITLES
 
 .sg-heading {
-	@include primary-font(bold, normal);
+	@include font(primary, bold, normal);
 	text-transform: uppercase;
 	@include font-size(14);
 	padding: em(2);
@@ -63,12 +63,12 @@
  //**********
 // TYPEFACES
 
-$demo--typeface: 'thin' 'light' 'normal' 'bold' 'ultra-bold';
+$demo--typeface: 'light' 'regular' 'semibold' 'bold';
 
 @each $item in $demo--typeface {
 
 	.primary-font--#{$item} {
-		@include primary-font(#{$item}, normal);
+		@include font(primary, #{$item}, normal);
 	}
 
 }

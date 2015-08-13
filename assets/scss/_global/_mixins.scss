@@ -5,30 +5,34 @@
  //*****************
 // FONT DECLARATION
 
-$weights: (
-	thin: 100,
-	light: 300,
-	normal: 400,
-	bold: 700,
-	ultra-bold: 900
-);
+@mixin font($family: primary, $weight: regular, $style: normal) {
 
-@mixin primary-font($weight: regular, $style: normal, $old_ie: false) {
+	$font-choice: map-get($fonts, $family);
+	$font: map-get($font-choice, family);
 
-	@if $old_ie == true {
-
-		$typekit_style: if($style == 'normal', 'n', 'i');
-		$typekit_weight: map-get($weights, $weight) / 100;
-
-		font-family: "open-sans-#{$typekit_style}#{$typekit_prefix}", "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-
-	} @else {
-		font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	@if $font == null {
+		@error 'Incorrect use of fonts';
 	}
 
-	font-weight: map-get($weights, $weight);
+	$fallback: map-get($font-choice, fallback);
+	$weights: map-get($font-choice, weights);
+	$weight: map-get($weights, $weight);
+	$typekit: map-get($font-choice, typekit);
+
+	font-weight: $weight;
 	font-style: $style;
 	-webkit-font-smoothing: antialiased;
+
+	@if $typekit == true {
+
+		$typekit_style: if($style == 'normal', 'n', 'i');
+		$typekit_weight: $weight / 100;
+
+		font-family: "#{$font}-#{$typekit_style}#{$typekit_weight}", $font, $fallback;
+
+	} @else {
+		font-family: $font, $fallback;
+	}
 }
 
 

@@ -292,9 +292,10 @@ body {
   margin: 0;
   color: #777;
   line-height: 1.5em;
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -338,10 +339,10 @@ dl {
 
 strong,
 b {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 700;
   font-style: normal;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 i,
 em {
@@ -354,9 +355,10 @@ blockquote {
   font-size: 1.25rem;
   border-left: 5px solid #eee; }
   blockquote p {
-    font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
+    font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
     margin-bottom: 0.75em; }
   blockquote footer {
     display: block; }
@@ -464,9 +466,10 @@ h5,
 .epsilon,
 h6,
 .zeta {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   margin-bottom: 0.75em;
   line-height: 1.2; }
   h1.has-strap,
@@ -605,10 +608,10 @@ legend {
 
 abbr[title="Required"] {
   color: #353535;
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 700;
   font-style: normal;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 input[type="text"],
 input[type="email"],
@@ -625,9 +628,10 @@ input[type="week"],
 input[type="datetime"],
 input[type="datetime-local"],
 textarea {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   font-size: 16px;
   font-size: 1rem;
   padding: 1.25em 0.625em;
@@ -713,10 +717,10 @@ th {
     th {
       font-size: 12px;
       font-size: 0.75rem;
-      font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
       font-weight: 700;
       font-style: normal;
       -webkit-font-smoothing: antialiased;
+      font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
       text-transform: uppercase;
       background-color: #353535;
       color: #FFF;
@@ -744,9 +748,10 @@ td {
       td:first-child {
         font-size: 14px;
         font-size: 0.875rem;
-        font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        font-weight: 400;
         font-style: normal;
         -webkit-font-smoothing: antialiased;
+        font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
         margin-top: 0.71429em;
         letter-spacing: 0;
         color: inherit;
@@ -764,9 +769,10 @@ thead tr {
 tbody tr {
   font-size: 14px;
   font-size: 0.875rem;
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   background-color: #353535;
   color: #000;
   text-decoration: none;
@@ -1062,10 +1068,10 @@ input.button--blue:focus {
   padding: 3em; }
 
 .sg-heading {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 700;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   text-transform: uppercase;
   font-size: 14px;
   font-size: 0.875rem;
@@ -1075,35 +1081,29 @@ input.button--blue:focus {
   margin-bottom: 1.5em;
   margin-top: 3em; }
 
-.primary-font--thin {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased; }
-
 .primary-font--light {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
   font-style: normal;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n3", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
-.primary-font--normal {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+.primary-font--regular {
   font-weight: 400;
   font-style: normal;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
+
+.primary-font--semibold {
+  font-weight: 600;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n6", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 .primary-font--bold {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: 700;
   font-style: normal;
-  -webkit-font-smoothing: antialiased; }
-
-.primary-font--ultra-bold {
-  font-family: "open-sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 /*------------------------------------*	$PRINT STYLES
 \*------------------------------------*/

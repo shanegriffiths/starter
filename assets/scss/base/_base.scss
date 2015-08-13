@@ -12,7 +12,7 @@ body {
     margin: 0;
     color: color('body');
     line-height: $space;
-    @include primary-font;
+    @include font;
 
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
@@ -79,7 +79,7 @@ abbr {
 
 strong,
 b {
-	@include primary-font(bold);
+	@include font(primary, bold);
 }
 
 i,
@@ -98,7 +98,7 @@ blockquote {
     border-left: 5px solid color('border-color');
 
     p {
-        @include primary-font;
+        @include font;
         margin-bottom: $space / 2;
     }
 
