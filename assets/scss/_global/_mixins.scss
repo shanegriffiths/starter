@@ -15,8 +15,18 @@
 	}
 
 	$fallback: map-get($font-choice, fallback);
-	$weights: map-get($font-choice, weights);
-	$weight: map-get($weights, $weight);
+	$weight: map-get(map-get($font-choice, weights), $weight);
+
+	@if ($weight == null) {
+		@error 'Font weight "#{$weight}" passed to `font` mixin does not exist';
+		@return false;
+	}
+
+	@if ($style != 'normal' and $style != 'italic') {
+		@error 'Font style "#{$style}" passed to `font` mixin is invalid';
+		@return false;
+	}
+
 	$typekit: map-get($font-choice, typekit);
 
 	font-weight: $weight;
@@ -24,12 +34,7 @@
 	-webkit-font-smoothing: antialiased;
 
 	@if $typekit == true {
-
-		$typekit_style: if($style == 'normal', 'n', 'i');
-		$typekit_weight: $weight / 100;
-
-		font-family: "#{$font}-#{$typekit_style}#{$typekit_weight}", $font, $fallback;
-
+		font-family: "#{$font}-" +  + str-slice($style, 0, 1) + ($weight / 100), $font, $fallback;
 	} @else {
 		font-family: $font, $fallback;
 	}

@@ -295,7 +295,7 @@ body {
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
+  font-family: "Open Sans-+n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
@@ -342,7 +342,7 @@ b {
   font-weight: 700;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
+  font-family: "Open Sans-+n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 i,
 em {
@@ -358,7 +358,7 @@ blockquote {
     font-weight: 400;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
-    font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
+    font-family: "Open Sans-+n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
     margin-bottom: 0.75em; }
   blockquote footer {
     display: block; }
@@ -469,7 +469,7 @@ h6,
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
+  font-family: "Open Sans-+n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   margin-bottom: 0.75em;
   line-height: 1.2; }
   h1.has-strap,
@@ -611,7 +611,7 @@ abbr[title="Required"] {
   font-weight: 700;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
+  font-family: "Open Sans-+n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 input[type="text"],
 input[type="email"],
@@ -631,7 +631,7 @@ textarea {
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
+  font-family: "Open Sans-+n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   font-size: 16px;
   font-size: 1rem;
   padding: 1.25em 0.625em;
@@ -720,7 +720,7 @@ th {
       font-weight: 700;
       font-style: normal;
       -webkit-font-smoothing: antialiased;
-      font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
+      font-family: "Open Sans-+n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
       text-transform: uppercase;
       background-color: #353535;
       color: #FFF;
@@ -751,7 +751,7 @@ td {
         font-weight: 400;
         font-style: normal;
         -webkit-font-smoothing: antialiased;
-        font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
+        font-family: "Open Sans-+n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
         margin-top: 0.71429em;
         letter-spacing: 0;
         color: inherit;
@@ -772,7 +772,7 @@ tbody tr {
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
+  font-family: "Open Sans-+n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   background-color: #353535;
   color: #000;
   text-decoration: none;
@@ -1071,7 +1071,7 @@ input.button--blue:focus {
   font-weight: 700;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
+  font-family: "Open Sans-+n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif";
   text-transform: uppercase;
   font-size: 14px;
   font-size: 0.875rem;
@@ -1085,25 +1085,25 @@ input.button--blue:focus {
   font-weight: 300;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n3", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
+  font-family: "Open Sans-+n3", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 .primary-font--regular {
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
+  font-family: "Open Sans-+n4", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 .primary-font--semibold {
   font-weight: 600;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n6", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
+  font-family: "Open Sans-+n6", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 .primary-font--bold {
   font-weight: 700;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans-n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
+  font-family: "Open Sans-+n7", "Open Sans", "Helvetica Neue" "Helvetica" "Arial" "sans-serif"; }
 
 /*------------------------------------*	$PRINT STYLES
 \*------------------------------------*/
