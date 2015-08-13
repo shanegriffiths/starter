@@ -61,10 +61,17 @@
 
 @function color($colour, $opacity: 1) {
 
+	$color: map-get($colours, $colour);
+
+	@if ($color == null) {
+		@error 'Colour "#{$colour}" passed to `color` mixin does not exist';
+		@return false;
+	}
+
 	@if $opacity < 1 {
-		@return rgba(map-get($colours, $colour), $opacity);
+		@return rgba($color, $opacity);
 	} @else {
-		@return map-get($colours, $colour);
+		@return $color;
 	}
 
 }
