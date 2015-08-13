@@ -1,4 +1,4 @@
-<footer class="main-footer image-dotted-map">
+<footer class="main-footer">
 
 	<div class="wrapper / footer__nav">
 
@@ -8,7 +8,7 @@
 
 				<ul class="nav nav--list">
 
-					<li><a href="#" class="footer-logo"><img src="/assets/img/logo.svg" data-fallback="/assets/img/logo.png" alt="Sam Knows Logo" /></a></li>
+					<li><a href="#" class="footer-logo"><img src="/assets/img/logo.svg" data-fallback="/assets/img/logo.png"></a></li>
 					<li><a href="#">Home</a></li>
 					<li><a href="#">About</a></li>
 					<li><a href="#">Blog</a></li>

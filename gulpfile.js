@@ -16,7 +16,6 @@ var gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	minifyCss = require('gulp-minify-css'),
 	globbing = require('gulp-css-globbing'),
-	scsslint = require('gulp-scss-lint'),
 
 	// scripts
 	jshint = require('gulp-jshint'),
@@ -38,7 +37,13 @@ function onError(err) {
 
 gulp.task('modernizr', function() {
   gulp.src('assets/js/main.js')
-    .pipe(modernizr())
+    .pipe(modernizr({ options: [
+        "setClasses",
+        "addTest",
+        "html5printshiv",
+        "testProp",
+        "fnBind"
+    ] }))
     .pipe(uglify())
     .pipe(gulp.dest("assets/js/libs/"))
 });
