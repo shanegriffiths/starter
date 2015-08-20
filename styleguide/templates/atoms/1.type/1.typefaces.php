@@ -1,4 +1,4 @@
-<?php foreach ( ['light' 'regular' 'semibold' 'bold'] as $weight ) : ?>
+<?php foreach ( ['light', 'regular', 'semibold', 'bold'] as $weight ) : ?>
 
 	<div class="demo__block--space-margin">
 
