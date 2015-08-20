@@ -34,7 +34,10 @@
 	-webkit-font-smoothing: antialiased;
 
 	@if $typekit == true {
-		font-family: "#{$font}-" +  + str-slice($style, 0, 1) + ($weight / 100), $font, $fallback;
+		// replace all spaces with dashes
+		$typekit-font: str_replace(to-lower-case($font), ' ', '-');
+
+		font-family: "#{$typekit-font}-" + str-slice($style, 0, 1) + ($weight / 100), $font, $fallback;
 	} @else {
 		font-family: $font, $fallback;
 	}
@@ -57,7 +60,7 @@
 
 
  //*******************
-// COLOR BASED MIXINS
+// COLOR BASED FUNCTIONS
 
 @function color($colour, $opacity: 1) {
 
@@ -74,6 +77,20 @@
 		@return $color;
 	}
 
+}
+
+
+ //***************
+// STRING REPLACE
+
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
 }
 
 
