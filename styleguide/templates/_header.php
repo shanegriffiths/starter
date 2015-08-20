@@ -38,3 +38,6 @@
 		<!-- For everything else -->
 		<!-- <link rel="shortcut icon" href="/assets/img/favicons/favicon.ico">-->
 		<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<!-- STYLEGUIDE ASSETS -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
