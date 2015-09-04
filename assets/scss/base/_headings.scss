@@ -15,7 +15,7 @@ h5,
 .epsilon,
 h6,
 .zeta {
-	@include primary-font;
+	@include font;
 	margin-bottom: $space / 2;
 	line-height: 1.2;
 

@@ -5,43 +5,42 @@
  //*****************
 // FONT DECLARATION
 
- //*****************
-// FONT DECLARATION
+@mixin font($family: primary, $weight: regular, $style: normal) {
 
-$weights: (
-	hairline: 100,
-	thin: 200,
-	light: 300,
-	normal: 400,
-	medium: 500,
-	semibold: 600,
-	bold: 700,
-	heavy: 800,
-	black: 900
-);
+	$font-choice: map-get($fonts, $family);
+	$font: map-get($font-choice, family);
 
-@mixin primary-font($weight: normal, $style: normal) {
+	@if $font == null {
+		@error 'Incorrect use of fonts';
+	}
 
-	$font-weight: map-get($weights, $weight);
+	$fallback: map-get($font-choice, fallback);
+	$weight: map-get(map-get($font-choice, weights), $weight);
 
-	@if ( $font-weight == null ) {
-		@error 'Font weight "#{$weight}" passed to `primary-font` mixin does not exist';
+	@if ($weight == null) {
+		@error 'Font weight "#{$weight}" passed to `font` mixin does not exist';
 		@return false;
 	}
 
-	@if ( $style != 'normal' and $style != 'italic' ) {
-		@error 'Font style "#{$style}" passed to `primary-font` mixin is invalid';
+	@if ($style != 'normal' and $style != 'italic') {
+		@error 'Font style "#{$style}" passed to `font` mixin is invalid';
 		@return false;
 	}
 
-	$font-family: 'lato-' + str-slice($style, 0, 1) + ($font-weight / 100);
+	$typekit: map-get($font-choice, typekit);
 
-	font-family: $font-family, lato, "Helvetica Neue", Helvetica, arial, sans-serif;
-	font-weight: $font-weight;
+	font-weight: $weight;
 	font-style: $style;
-
 	-webkit-font-smoothing: antialiased;
 
+	@if $typekit == true {
+		// replace all spaces with dashes
+		$typekit-font: str_replace(to-lower-case($font), ' ', '-');
+
+		font-family: "#{$typekit-font}-" + str-slice($style, 0, 1) + ($weight / 100), $font, $fallback;
+	} @else {
+		font-family: $font, $fallback;
+	}
 }
 
 
@@ -61,13 +60,13 @@ $weights: (
 
 
  //*******************
-// COLOR BASED MIXINS
+// COLOR BASED FUNCTIONS
 
 @function color($colour, $opacity: 1) {
 
 	$color: map-get($colours, $colour);
 
-	@if ( $color == null ) {
+	@if ($color == null) {
 		@error 'Colour "#{$colour}" passed to `color` mixin does not exist';
 		@return false;
 	}
@@ -78,6 +77,20 @@ $weights: (
 		@return $color;
 	}
 
+}
+
+
+ //***************
+// STRING REPLACE
+
+@function str-replace($string, $search, $replace: '') {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
 }
 
 

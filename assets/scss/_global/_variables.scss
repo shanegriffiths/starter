@@ -71,6 +71,33 @@ $breakpoints: (
 );
 
 
+ //******
+// FONTS
+
+$fonts: (
+    primary: (
+        family: 'Open Sans',
+        fallback: 'Helvetica Neue' 'Helvetica' 'Arial' 'sans-serif',
+        weights: (
+            light: 300,
+            regular: 400,
+            semibold: 600,
+            bold: 700
+        ),
+        typekit: true
+    ),
+    secondary: (
+        family: 'Gotham',
+        fallback: 'Courier' 'Times New Roman' 'serif',
+        weights: (
+            regular: 400,
+            bold: 700
+        ),
+        typekit: false
+    )
+);
+
+
  //********
 // Z-INDEX
 
