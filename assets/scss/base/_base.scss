@@ -23,22 +23,6 @@ body {
 }
 
 
- //***************
-// TEXT ALIGNMENT
-
-.align-right {
-	text-align: right;
-}
-
-.align-center {
-	text-align: center;
-}
-
-.align-left {
-	text-align: left;
-}
-
-
  //**********************
 // TEXT RELATED ELEMENTS
 
@@ -172,6 +156,10 @@ hr {
 }
 
 
+/*------------------------------------*\
+	HELPERS
+\*------------------------------------*/
+
  //*******
 // FLOATS
 
@@ -181,4 +169,34 @@ hr {
 
 .pull-left {
 	float: left;
+}
+
+
+ //***************
+// TEXT ALIGNMENT
+
+.align-right {
+	text-align: right;
+}
+
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+
+ //***************
+// INLINE SPACING
+
+// Used to provide some spacing between two inline elements (like 2 buttons side-by-side)
+
+.inline-space {
+	margin-right: em(10);
+}
+
+.inline-space--double {
+	margin-right: em(20);
 }

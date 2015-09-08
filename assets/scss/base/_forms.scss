@@ -16,6 +16,7 @@ legend {
 	@include font-size(13);
 	text-transform: uppercase;
 	color: color('brand');
+	cursor: pointer;
 }
 
 abbr[title="Required"] {
