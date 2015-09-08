@@ -36,7 +36,7 @@ function onError(err) {
 // TASKS
 
 gulp.task('modernizr', function() {
-  gulp.src('assets/js/main.js')
+  gulp.src(['assets/js/main.js', 'assets/css/styles.css'])
     .pipe(modernizr({ options: [
         "setClasses",
         "addTest",
