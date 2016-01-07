@@ -19,6 +19,7 @@
 
 		<meta name="theme-color" content="#1A9DD8">
 
+		<link rel="mask-icon" color="red" href="/mask-icon.svg">
 
 		<meta name="msapplication-TileImage" content="">
 		<meta name="msapplication-TileColor" content="#1A9DD8">
