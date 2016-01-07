@@ -9,6 +9,8 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync').create(),
 	plumber = require('gulp-plumber'),
 	modernizr = require('gulp-modernizr'),
+	svgstore = require('gulp-svgstore'),
+	svgmin = require('gulp-svgmin'),
 
 	// styles
 	sass = require('gulp-sass'),
@@ -34,6 +36,14 @@ function onError(err) {
 
  //******
 // TASKS
+
+gulp.task('svgstore', function () {
+    return gulp
+        .src('assets/img/icons/*.svg')
+		.pipe(svgmin())
+        .pipe(svgstore({ inlineSvg: true }))
+        .pipe(gulp.dest('assets/img/'));
+});
 
 gulp.task('modernizr', function() {
   gulp.src(['assets/js/main.js', 'assets/css/styles.css'])
