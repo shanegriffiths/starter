@@ -42,3 +42,11 @@
 
 		<!-- STYLEGUIDE ASSETS -->
 		<link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+
+	</head>
+
+	<body>
+
+		<div style="display: none;">
+			<?php require_once('assets/img/icons.svg'); ?>
+		</div>

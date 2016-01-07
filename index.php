@@ -26,7 +26,7 @@
 		<!--
 		TODO: Set tab design on Safari
 		-->
-		
+
 		<link rel="mask-icon" color="red" href="/mask-icon.svg">
 
 		<!--
@@ -59,6 +59,10 @@
 	</head>
 
 	<body>
+
+		<div style="display: none;">
+			<?php require_once('assets/img/icons.svg'); ?>
+		</div>
 
 	    <header class="site-header">
 
