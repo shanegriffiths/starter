@@ -1,0 +1,78 @@
+html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}blockquote,body,div,figure,footer,form,h1,h2,h3,h4,h5,h6,header,html,iframe,label,legend,nav,object,p,section,table{margin:0;padding:0}article,figure,footer,header,hgroup,nav,section{display:block}button::-moz-focus-inner{padding:0;border:0}input{-webkit-appearance:none;-moz-appearance:none}
+
+body {
+	font-family: Helvetica, sans-serif;
+	color: #333;
+}
+
+aside {
+	width: 320px;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 100vh;
+	background: #232629;
+	float: left;
+	padding: 2em;
+	color: white;
+}
+
+aside h1 {
+	font-weight: normal;
+}
+
+aside ol {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+aside ol ol {
+	padding-left: 1.5em;
+}
+
+aside li {
+	padding: .5em 0;
+}
+
+aside a {
+	color: #878a8c;
+	text-decoration: none;
+}
+
+aside a:hover {
+	color: white;
+}
+
+main {
+	float: left;
+	width: calc( 100% - 320px );
+	padding: 2em;
+	background: #EDEFF0;
+	min-height: 100vh;
+}
+
+.sg-section {
+	border-radius: 5px;
+	background: white;
+	box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+}
+
+.sg-panel {
+	padding: 1em;
+	border-bottom: 1px solid #DCDEDF;
+}
+
+.sg-panel:last-child {
+	border-bottom: 0;
+}
+
+.sg-panel__title h1 {
+	font-weight: normal;
+	line-height: 1;
+}
+
+.sg-panel__description {
+	font-size: .8rem;
+	color: #878a8c;
+}
