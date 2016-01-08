@@ -21,7 +21,10 @@ var gulp = require('gulp'),
 
 	// scripts
 	jshint = require('gulp-jshint'),
-	uglify = require('gulp-uglify');
+	uglify = require('gulp-uglify'),
+
+	// styleguide
+	directoryMap = require("gulp-directory-map");
 
 
  //**************
@@ -36,6 +39,16 @@ function onError(err) {
 
  //******
 // TASKS
+
+gulp.task('templates', function() {
+
+	gulp.src('styleguide/templates/**/*.php')
+		.pipe(directoryMap({
+			filename: 'paths.json'
+		}))
+		.pipe(gulp.dest('styleguide'));
+
+});
 
 gulp.task('svgstore', function () {
     return gulp
@@ -139,7 +152,7 @@ gulp.task('default', ['watch']);
 
 gulp.task('watch', function () {
 	livereload.listen();
-	gulp.watch('styleguide/templates/**/**/*.php', ['markup', 'modernizr']);
+	gulp.watch('styleguide/templates/**/**/*.php', ['markup', 'modernizr', 'templates']);
 	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint', 'modernizr']);
 	gulp.watch('assets/js/*.js', ['js', 'modernizr']);
 });
