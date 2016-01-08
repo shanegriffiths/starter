@@ -45,19 +45,19 @@ function upper(word){
 
 var doTree = function(data) {
 
-	var stuff = [];
+	var items = [];
 
 	$.each(data, function(key, value) {
 
 		var hasChildren = typeof value !== "string",
 			item = {
-				name: key.replace('.php', ''),
+				name: key.replace('.html', ''),
 				order: 9999
 			};
 
 		// check if the name has a priority
-		if ( item.name.match('^[0-9][.]') !== null ) {
-			item.order = item.name.split('.')[0];
+		if ( item.name.match('^[0-9]+[.]') !== null ) {
+			item.order = parseInt(item.name.split('.')[0]);
 			item.name = item.name.substring(item.name.indexOf('.') + 1);
 		}
 
@@ -65,13 +65,24 @@ var doTree = function(data) {
 			item.children = doTree(value);
 		}
 
+		if ( ! hasChildren ) {
+
+			$.get('/styleguide/templates/' + value).done(function(html) {
+				item.html = html;
+			});
+
+		}
+
 		item.name = titleCaps(makeFriendlyName(item.name));
 
-		stuff.push(item);
+		items.push(item);
 
 	});
 
-	return stuff;
+	// sort the items by their order
+	items.sort(function(a, b) { return a.order - b.order });
+
+	return items;
 
 };
 
@@ -99,6 +110,9 @@ var demo = new Vue({
 });
 
 $.getJSON('./paths.json').done(function(data) {
-	console.log({children: doTree(data)});
+
+	// apply the file structure to the vue app
 	demo.treeData = {children: doTree(data)};
+
+
 });
