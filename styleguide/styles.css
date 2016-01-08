@@ -13,12 +13,45 @@ aside {
 	height: 100vh;
 	background: #232629;
 	float: left;
-	padding: 2em;
 	color: white;
+}
+
+.aside__pane {
+	padding: 1.5em;
+	border-bottom: 1px solid #444;
+}
+
+.aside__pane:last-child {
+	border-bottom: 0;
 }
 
 aside h1 {
 	font-weight: normal;
+}
+
+aside [type=search] {
+	border: 0;
+	background: none;
+	font-size: 1.1rem;
+	font-weight: 300;
+	color: #878a8c;
+	width: 100%;
+}
+
+aside [type=search]:focus {
+	outline: 0;
+}
+
+::-webkit-input-placeholder {
+	color: #666;
+}
+
+::-moz-placeholder {
+	color: #666;
+}
+
+:-ms-input-placeholder {
+	color: #666;
 }
 
 aside ol {
