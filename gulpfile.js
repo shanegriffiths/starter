@@ -42,7 +42,7 @@ function onError(err) {
 
 gulp.task('templates', function() {
 
-	gulp.src('styleguide/templates/**/*.php')
+	gulp.src('styleguide/templates/**/*.html')
 		.pipe(directoryMap({
 			filename: 'paths.json'
 		}))
@@ -109,7 +109,7 @@ gulp.task('js', function () {
 
 gulp.task('markup', function () {
 
-	return gulp.src('styleguide/templates/**/**/*.php')
+	return gulp.src('styleguide/templates/**/**/*.html')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(livereload());
 
@@ -152,7 +152,7 @@ gulp.task('default', ['watch']);
 
 gulp.task('watch', function () {
 	livereload.listen();
-	gulp.watch('styleguide/templates/**/**/*.php', ['markup', 'modernizr', 'templates']);
+	gulp.watch('styleguide/templates/**/**/*.html', ['markup', 'modernizr', 'templates']);
 	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint', 'modernizr']);
 	gulp.watch('assets/js/*.js', ['js', 'modernizr']);
 });
