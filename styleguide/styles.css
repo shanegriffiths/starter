@@ -7,7 +7,7 @@ body {
 }
 
 .sg-nav,
-main {
+.sg-main {
 	height: 100vh;
 	overflow-y: scroll;
 }
@@ -91,7 +91,7 @@ main {
 	color: white;
 }
 
-main {
+.sg-main {
 	flex: 1;
 	padding: 2em;
 	background: #EDEFF0;
