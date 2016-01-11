@@ -11,23 +11,6 @@
 </head>
 <body>
 
-	<!-- item template -->
-	<template id="item-template">
-
-		<li v-for="item in model.children">
-
-			<a href="#">
-				{{item.name}}
-			</a>
-
-			<ol v-if="this.hasChildren(item)">
-				<tree :model="item"></tree>
-			</ol>
-
-		</li>
-
-	</template>
-
 	<aside>
 
 		<div class="aside__pane">
@@ -47,35 +30,56 @@
 		</div>
 
 	</aside>
-
+<!--
 	<main>
+		<pattern :model="flatTree()"></pattern>
+	</main>
+ -->
+	<!-- item template -->
+	<template id="item-template">
 
-		<div class="sg-section">
+		<li v-for="item in model.items">
+
+			<a href="#">
+				{{item.name}}
+			</a>
+
+			<ol v-if="this.hasChildren(item)">
+				<tree :model="item"></tree>
+			</ol>
+
+		</li>
+
+	</template>
+
+	<template id="pattern-template">
+
+		<div class="sg-section" v-for="pattern in model">
+
+		<pre>{{ pattern | json }}</pre>
 
 			<div class="sg-panel sg-panel__title">
-				<h1>Buttons</h1>
+				<h1>{{ pattern.name }}</h1>
 			</div>
-
+<!--
 			<div class="sg-panel sg-panel__description">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, sit, voluptatibus?</p>
-			</div>
+			</div> -->
 
 			<div class="sg-panel sg-panel__example">
-				<button>Default</button>
+				{{ pattern.html }}
 			</div>
 
-			<div class="sg-panel sg-panel__code">
+		<!-- 	<div class="sg-panel sg-panel__code">
 				<pre><code class="language-markup">&lt;button>Default&lt;/button></code></pre>
-			</div>
+			</div> -->
 
 		</div>
 
-	</main>
+	</template>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.13/vue.js"></script>
-
-
 	<script src="dist/main.js"></script>
 	<script src="prism.js"></script>
 
