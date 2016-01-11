@@ -40,7 +40,7 @@ function lower(word){
 }
 
 function upper(word){
- 	return word.substr(0,1).toUpperCase() + word.substr(1);
+	return word.substr(0,1).toUpperCase() + word.substr(1);
 }
 
 var doTree = function(data) {
@@ -67,6 +67,8 @@ var doTree = function(data) {
 
 		if ( ! hasChildren ) {
 
+			item.path = value;
+
 			$.get('/styleguide/templates/' + value).done(function(html) {
 				item.html = html;
 			});
@@ -86,6 +88,31 @@ var doTree = function(data) {
 
 };
 
+// get just files from the
+var flattenTree = function(tree) {
+
+	var files = [];
+
+	if ( typeof tree.items !== "undefined" ) {
+
+		$.each(tree.items, function(key, value) {
+
+			if ( typeof value.filepath !== "undefined" ) {
+				files.push(value);
+			}
+
+			if ( typeof value.items !== "undefined" ) {
+				Array.prototype.push.apply(files, flattenTree(value));
+			}
+
+		});
+
+	}
+
+	return files;
+
+};
+
 // define the item component
 Vue.component('tree', {
 	template: '#item-template',
@@ -94,7 +121,20 @@ Vue.component('tree', {
 	},
 	methods: {
 		hasChildren: function(items) {
-			return typeof items.children !== "undefined";
+			return typeof items.items !== "undefined";
+		}
+	}
+});
+
+// define the item pattern
+Vue.component('pattern', {
+	template: '#pattern-template',
+	props: {
+		model: Array
+	},
+	methods: {
+		hasChildren: function(item) {
+			return typeof item.items !== "undefined";
 		}
 	}
 });
@@ -103,16 +143,48 @@ Vue.component('tree', {
 
 // boot up the demo
 var demo = new Vue({
+
 	el: 'body',
+
+	ready: function() {
+		this.fetchData();
+	},
+
 	data: {
-		treeData: {children: []}
+		treeData: {items: {}},
+		flatTreeData: [],
+	},
+
+	methods: {
+		fetchData: function() {
+
+			$.getJSON('./paths.json').done(function(data) {
+
+				// apply the file structure to the vue app
+				demo.treeData = data;
+
+				demo.flatTreeData = flattenTree(data);
+
+				this.$nextTick(function() {
+
+					$.get('/assets/css/styles.min.css', function(css) {
+
+						$('style[scoped]').html(css);
+
+						var DOMContentLoaded_event = document.createEvent("Event");
+						DOMContentLoaded_event.initEvent("DOMContentLoaded", true, true);
+						window.document.dispatchEvent(DOMContentLoaded_event);
+
+					});
+
+				});
+
+			}.bind(this));
+
+
+		}
 	}
 });
 
-$.getJSON('./paths.json').done(function(data) {
-
-	// apply the file structure to the vue app
-	demo.treeData = {children: doTree(data)};
 
 
-});

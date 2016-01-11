@@ -5,14 +5,18 @@ body {
 	color: #333;
 	display: flex;
 }
+/*
+[class*=" sg-"], [class^="sg-"] {
+	all: unset;
+}*/
 
-aside,
-main {
+.sg-nav,
+.sg-main {
 	height: 100vh;
 	overflow-y: scroll;
 }
 
-aside {
+.sg-nav {
 	min-width: 250px;
 	position: relative;
 	overflow-x: hidden;
@@ -20,29 +24,39 @@ aside {
 	color: white;
 }
 
-.aside__pane {
+.sg-nav__pane {
 	padding: 1.5em;
 	border-bottom: 1px solid #444;
 }
 
-.aside__pane:last-child {
+.sg-nav__pane:last-child {
 	border-bottom: 0;
 }
 
-aside h1 {
+.sg-panel__title h1,
+.sg-nav h1 {
+	font-size: 1.5rem;
 	font-weight: normal;
+	line-height: 1;
 }
 
-aside [type=search] {
+.sg-nav input[type=search] {
 	border: 0;
 	background: none;
 	font-size: 1.1rem;
 	font-weight: 300;
 	color: #878a8c;
 	width: 100%;
+	padding: initial;
+	margin: initial;
 }
 
-aside [type=search]:focus {
+.sg-nav input[type=search]:hover {
+	background: none;
+	border: 0;
+}
+
+.sg-nav input[type=search]:focus {
 	outline: 0;
 }
 
@@ -58,30 +72,32 @@ aside [type=search]:focus {
 	color: #666;
 }
 
-aside ol {
+.sg-nav ol {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 
-aside ol ol {
-	padding-left: 1.5em;
+.sg-nav ol ol {
+	padding-left: 1em;
 }
 
-aside li {
-	padding: .5em 0;
+.sg-nav li {
+	padding: 0;
 }
 
-aside a {
+.sg-nav a {
+	display: block;
+	margin: .5em 0;
 	color: #878a8c;
 	text-decoration: none;
 }
 
-aside a:hover {
+.sg-nav a:hover {
 	color: white;
 }
 
-main {
+.sg-main {
 	flex: 1;
 	padding: 2em;
 	background: #EDEFF0;
@@ -102,11 +118,6 @@ main {
 
 .sg-panel:last-child {
 	border-bottom: 0;
-}
-
-.sg-panel__title h1 {
-	font-weight: normal;
-	line-height: 1;
 }
 
 .sg-panel__description {
