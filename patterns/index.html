@@ -39,7 +39,7 @@
 	<!-- item template -->
 	<template id="item-template">
 
-		<li v-for="item in model.items" v-if="item.display === true">
+		<li v-for="item in model.items" v-show="item.display === true">
 
 			<a href="#{{item.url}}">
 				{{item.name}}
@@ -82,7 +82,7 @@
 
 	<template id="pattern-template">
 
-		<div class="sg-section" v-for="pattern in model" id="{{ pattern.url }}" v-if="pattern.display === true">
+		<div class="sg-section" v-for="pattern in model" id="{{ pattern.url }}" v-show="pattern.display === true">
 
 			<div class="sg-panel sg-panel__title">
 
