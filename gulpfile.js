@@ -145,14 +145,57 @@ gulp.task('bs', function () {
 });
 
 
+ //*********************
+// PATTERN LIBRARY APP
+
+gulp.task('pattern-styles', function () {
+
+	return gulp.src('patterns/app/scss/**/*.scss')
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(globbing({ extensions: ['.scss'] }))
+		.pipe(sass())
+		.pipe(autoprefixer('last 2 versions'))
+		.pipe(gulp.dest('patterns/build/css'))
+		.pipe(concat('styles.min.css'))
+		.pipe(minifyCss({compatibility: 'ie8'}))
+		.pipe(livereload())
+		.pipe(notify("Pattern Styles Compiled"));
+
+});
+
+gulp.task('pattern-scripts', function () {
+
+	return gulp.src('patterns/app/js/main.js')
+		.pipe(plumber({ errorHandler: onError }))
+		.pipe(jshint())
+		.pipe(jshint.reporter('jshint-stylish'))
+		.pipe(uglify())
+		.pipe(rename({
+			extname: '.min.js'
+		}))
+		.pipe(gulp.dest('patterns/build/js'))
+		.pipe(livereload())
+		.pipe(notify("Pattern Scripts Compiled"));
+
+});
+
+
  //******
 // WATCH
 
 gulp.task('default', ['watch']);
 
 gulp.task('watch', function () {
+
 	livereload.listen();
+
+	// boilerplate
 	gulp.watch('styleguide/templates/**/**/*.html', ['markup', 'modernizr', 'templates']);
 	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint', 'modernizr']);
 	gulp.watch('assets/js/*.js', ['js', 'modernizr']);
+
+	// pattern library (app only)
+	gulp.watch('patterns/app/scss/**/*.scss', ['pattern-styles']);
+	gulp.watch('patterns/app/js/*.js', ['pattern-scripts']);
+
 });

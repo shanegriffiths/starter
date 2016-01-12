@@ -3,73 +3,117 @@ html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}blockquote,body,d
 body {
 	font-family: Helvetica, sans-serif;
 	color: #333;
+	display: flex;
 }
 
-aside {
-	width: 320px;
+.sg-nav,
+.sg-main {
+	height: 100vh;
+	overflow-y: scroll;
+}
+
+.sg-nav {
+	min-width: 250px;
 	position: relative;
 	overflow-x: hidden;
-	overflow-y: scroll;
-	height: 100vh;
 	background: #232629;
-	float: left;
-	padding: 2em;
 	color: white;
 }
 
-aside h1 {
-	font-weight: normal;
+.sg-nav__pane {
+	padding: 1.5em;
+	border-bottom: 1px solid #444;
 }
 
-aside ol {
+.sg-nav__pane:last-child {
+	border-bottom: 0;
+}
+
+.sg-panel__title h1,
+.sg-nav h1 {
+	font-size: 1.5rem;
+	font-weight: normal;
+	line-height: 1;
+}
+
+.sg-nav input[type=search] {
+	border: 0;
+	background: none;
+	font-size: 1.1rem;
+	font-weight: 300;
+	color: #878a8c;
+	width: 100%;
+	padding: initial;
+	margin: initial;
+}
+
+.sg-nav input[type=search]:hover {
+	background: none;
+	border: 0;
+}
+
+.sg-nav input[type=search]:focus {
+	outline: 0;
+}
+
+::-webkit-input-placeholder {
+	color: #666;
+}
+
+::-moz-placeholder {
+	color: #666;
+}
+
+:-ms-input-placeholder {
+	color: #666;
+}
+
+.sg-nav ol {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
 }
 
-aside ol ol {
-	padding-left: 1.5em;
+.sg-nav ol ol {
+	padding-left: 1em;
 }
 
-aside li {
-	padding: .5em 0;
+.sg-nav li {
+	padding: 0;
 }
 
-aside a {
+.sg-nav a {
+	display: block;
+	margin: .5em 0;
 	color: #878a8c;
 	text-decoration: none;
 }
 
-aside a:hover {
+.sg-nav a:hover {
 	color: white;
 }
 
-main {
-	float: left;
-	width: calc( 100% - 320px );
+.sg-main {
+	flex: 1;
 	padding: 2em;
 	background: #EDEFF0;
-	min-height: 100vh;
 }
 
 .sg-section {
 	border-radius: 5px;
 	background: white;
 	box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+	margin-bottom: 1em;
 }
 
 .sg-panel {
 	padding: 1em;
 	border-bottom: 1px solid #DCDEDF;
+	overflow: scroll;
 }
 
 .sg-panel:last-child {
 	border-bottom: 0;
-}
-
-.sg-panel__title h1 {
-	font-weight: normal;
-	line-height: 1;
 }
 
 .sg-panel__description {
