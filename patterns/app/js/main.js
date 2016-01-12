@@ -152,10 +152,13 @@ var demo = new Vue({
 
 	data: {
 		treeData: {items: {}},
-		flatTreeData: [],
 		search: ''
 	},
-
+	computed: {
+		flatTreeData: function () {
+			return flattenTree(this.treeData);
+		}
+	},
 	methods: {
 		filterPatterns: function() {
 			this.treeData = this.setFilter(this.treeData, this.search);
