@@ -153,9 +153,50 @@ var demo = new Vue({
 	data: {
 		treeData: {items: {}},
 		flatTreeData: [],
+		search: ''
 	},
 
 	methods: {
+		filterPatterns: function() {
+			this.treeData = this.setFilter(this.treeData, this.search);
+		},
+		setFilter: function(map, search) {
+
+			var re = new RegExp(search, "gi");
+
+			$.each(map.items, function(key, value) {
+
+				var changes = false;
+
+				map.items[key].display = true;
+
+				if ( map.items[key].name.match(re) === null ) {
+					map.items[key].display = false;
+				}
+
+				if ( typeof map.items[key].items !== "undefined" ) {
+
+					map.items[key] = this.setFilter(map.items[key], search);
+
+					$.each(map.items[key].items, function(key, value) {
+
+						if ( value.display === true ) {
+							changes = true;
+						}
+
+					});
+
+				}
+
+				if ( changes === true ) {
+					map.items[key].display = true;
+				}
+
+			}.bind(this));
+
+			return map;
+
+		},
 		fetchData: function() {
 
 			$.getJSON('./paths.json').done(function(data) {
