@@ -23,7 +23,7 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify'),
 
-	// styleguide
+	// pattern library
 	directoryMap = require("gulp-directory-map");
 
 
@@ -42,11 +42,11 @@ function onError(err) {
 
 gulp.task('templates', function() {
 
-	gulp.src('styleguide/templates/**/*.html')
+	gulp.src('patterns/templates/**/*.html')
 		.pipe(directoryMap({
 			filename: 'paths.json'
 		}))
-		.pipe(gulp.dest('styleguide'));
+		.pipe(gulp.dest('patterns'));
 
 });
 
@@ -103,14 +103,6 @@ gulp.task('js', function () {
 			extname: '.min.js'
 		}))
 		.pipe(gulp.dest('assets/js/'))
-		.pipe(livereload());
-
-});
-
-gulp.task('markup', function () {
-
-	return gulp.src('styleguide/templates/**/**/*.html')
-		.pipe(plumber({ errorHandler: onError }))
 		.pipe(livereload());
 
 });
@@ -190,7 +182,7 @@ gulp.task('watch', function () {
 	livereload.listen();
 
 	// boilerplate
-	gulp.watch('styleguide/templates/**/**/*.html', ['markup', 'modernizr', 'templates']);
+	gulp.watch('patterns/templates/**/*.html', ['templates']);
 	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint', 'modernizr']);
 	gulp.watch('assets/js/*.js', ['js', 'modernizr']);
 
