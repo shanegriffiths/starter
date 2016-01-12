@@ -82,7 +82,7 @@
 
 	<template id="pattern-template">
 
-		<div class="sg-section" v-for="pattern in model" id="{{ pattern.url }}">
+		<div class="sg-section" v-for="pattern in model" id="{{ pattern.url }}" v-if="pattern.display === true">
 
 			<div class="sg-panel sg-panel__title">
 
