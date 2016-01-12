@@ -139,7 +139,7 @@ Vue.component('pattern', {
 	}
 });
 
-
+var css = null;
 
 // boot up the demo
 var demo = new Vue({
@@ -154,11 +154,22 @@ var demo = new Vue({
 		treeData: {items: {}},
 		search: ''
 	},
+
 	computed: {
 		flatTreeData: function () {
 			return flattenTree(this.treeData);
 		}
 	},
+
+	watch: {
+		'treeData':  {
+			handler: function() {
+				this.applyCSS();
+			},
+			deep: true
+		}
+	},
+
 	methods: {
 		filterPatterns: function() {
 			this.treeData = this.setFilter(this.treeData, this.search);
@@ -200,6 +211,39 @@ var demo = new Vue({
 			return map;
 
 		},
+		getCSS: function() {
+
+			// set the CSS var to empty to signify it's no longer
+			// null, and thus we don't need to keep re-fetching
+
+			css = '';
+
+			$.get('/assets/css/styles.min.css', function(data) {
+
+				// apply the response to the css var
+				css = data;
+
+				// apply the styles
+				this.applyCSS();
+
+			}.bind(this));
+
+		},
+		applyCSS: function() {
+
+			if ( css !== null ) {
+
+				$('style[scoped]').html(css);
+
+				var DOMContentLoaded_event = document.createEvent("Event");
+				DOMContentLoaded_event.initEvent("DOMContentLoaded", true, true);
+				window.document.dispatchEvent(DOMContentLoaded_event);
+
+			} else {
+				this.getCSS();
+			}
+
+		},
 		fetchData: function() {
 
 			$.getJSON('./paths.json').done(function(data) {
@@ -210,21 +254,10 @@ var demo = new Vue({
 				demo.flatTreeData = flattenTree(data);
 
 				this.$nextTick(function() {
-
-					$.get('/assets/css/styles.min.css', function(css) {
-
-						$('style[scoped]').html(css);
-
-						var DOMContentLoaded_event = document.createEvent("Event");
-						DOMContentLoaded_event.initEvent("DOMContentLoaded", true, true);
-						window.document.dispatchEvent(DOMContentLoaded_event);
-
-					});
-
+					this.applyCSS();
 				});
 
 			}.bind(this));
-
 
 		}
 	}
