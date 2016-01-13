@@ -24,7 +24,7 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 
 	// pattern library
-	directoryMap = require("gulp-directory-map");
+	patternLibrary = require("gulp-theideabureau-pattern-library");
 
 
  //**************
@@ -43,7 +43,7 @@ function onError(err) {
 gulp.task('templates', function() {
 
 	gulp.src('patterns/templates/**/*.html')
-		.pipe(directoryMap({
+		.pipe(patternLibrary({
 			filename: 'paths.json'
 		}))
 		.pipe(gulp.dest('patterns'));
