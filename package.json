@@ -1,6 +1,6 @@
 {
   "name": "front-end-boilerplate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "devDependencies": {
     "browser-sync": "^2.8.0",
     "gulp": "^3.9.0",
