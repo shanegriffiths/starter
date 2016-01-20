@@ -218,7 +218,7 @@ var demo = new Vue({
 
 			css = '';
 
-			$.get('/assets/css/styles.min.css', function(data) {
+			$.get(css_url, function(data) {
 
 				// apply the response to the css var
 				css = data;
