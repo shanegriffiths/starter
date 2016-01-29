@@ -7,7 +7,7 @@
 	<title>The Idea Bureau - Patern Library</title>
 
 	<link rel="stylesheet" href="/patterns/libs/prism/prism.css">
-	<link rel="stylesheet" href="http://theideabureau.github.io/pattern-library/patterns/build/css/styles.css">
+	<link rel="stylesheet" href="/patterns/build/css/styles.css">
 
 </head>
 <body>
@@ -105,7 +105,7 @@
 			<div class="sg-panel sg-panel__example">
 
 				<div>
-					<style scoped></style>
+					<style scoped v-if="pattern.isComponent !== true"></style>
 					<div v-html="pattern.contents"></div>
 				</div>
 
@@ -124,7 +124,7 @@
 	<script src="/patterns/libs/prism/prism.js"></script>
 	<script src="/patterns/libs/scoper/scoper.min.js"></script>
 	<script src="/patterns/libs/vue/dist/vue.js"></script>
-	<script src="http://theideabureau.github.io/pattern-library/patterns/build/js/main.min.js"></script>
+	<script src="/patterns/build/js/main.min.js"></script>
 
 </body>
 </html>

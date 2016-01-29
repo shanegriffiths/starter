@@ -1,0 +1,21 @@
+{
+	"type": "colours",
+	"colours": [
+		{
+			"label": "youtube",
+			"hex": "#CC181E"
+		},
+		{
+			"label": "twitter",
+			"hex": "#00ACEE"
+		},
+		{
+			"label": "google",
+			"hex": "#DD4B39"
+		},
+		{
+			"label": "linkedin",
+			"hex": "#007BB6"
+		}
+	]
+}
