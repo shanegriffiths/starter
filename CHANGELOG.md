@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ### CHANGED
 - Added Bureau logo to sidebar
 - Improved vue data structure and performance
+- Improved chrome styles
 
 ## [0.1.0] - 2016-04-20
 

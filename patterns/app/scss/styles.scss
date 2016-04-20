@@ -36,7 +36,7 @@ body {
 
 .sg-panel__title h1,
 .sg-nav h1 {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	font-weight: normal;
 	line-height: 1;
 }
@@ -100,7 +100,7 @@ body {
 
 .sg-main {
 	flex: 1;
-	padding: 2em;
+	padding: 1em;
 	background: #EDEFF0;
 }
 
@@ -124,6 +124,34 @@ body {
 .sg-panel__description {
 	font-size: .8rem;
 	color: #878a8c;
+}
+
+
+ //************
+// BREADCRUMBS
+
+.sg-breadcrumbs span {
+	color: #D0D0D0;
+}
+
+.sg-breadcrumbs span:after {
+	content: " / ";
+	margin: 0 5px;
+}
+
+.sg-breadcrumbs span:last-child:after {
+	content: normal;
+}
+
+.sg-breadcrumbs a {
+	text-decoration: none;
+	color: #333;
+}
+
+.sg-breadcrumbs a:hover,
+.sg-breadcrumbs a:focus,
+.sg-breadcrumbs a:active {
+	text-decoration: underline;
 }
 
 

@@ -55,33 +55,6 @@
 
 	</template>
 
-	<style>
-
-		.sg-breadcrumbs span {
-			color: #D0D0D0;
-		}
-
-		.sg-breadcrumbs span:after {
-			content: " / ";
-		}
-
-		.sg-breadcrumbs span:last-child:after {
-			content: normal;
-		}
-
-		.sg-breadcrumbs a {
-			text-decoration: none;
-			color: #333;
-		}
-
-		.sg-breadcrumbs a:hover,
-		.sg-breadcrumbs a:focus,
-		.sg-breadcrumbs a:active {
-			text-decoration: underline;
-		}
-
-	</style>
-
 	<template id="pattern-template">
 
 		<div v-if="this.hasChildren(item)" id="{{ item.url }}">

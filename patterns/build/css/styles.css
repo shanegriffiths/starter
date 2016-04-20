@@ -52,7 +52,7 @@ body {
 
 .sg-panel__title h1,
 .sg-nav h1 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: normal;
   line-height: 1; }
 
@@ -107,7 +107,7 @@ body {
   -webkit-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  padding: 2em;
+  padding: 1em;
   background: #EDEFF0; }
 
 .sg-section {
@@ -127,6 +127,25 @@ body {
 .sg-panel__description {
   font-size: .8rem;
   color: #878a8c; }
+
+.sg-breadcrumbs span {
+  color: #D0D0D0; }
+
+.sg-breadcrumbs span:after {
+  content: " / ";
+  margin: 0 5px; }
+
+.sg-breadcrumbs span:last-child:after {
+  content: normal; }
+
+.sg-breadcrumbs a {
+  text-decoration: none;
+  color: #333; }
+
+.sg-breadcrumbs a:hover,
+.sg-breadcrumbs a:focus,
+.sg-breadcrumbs a:active {
+  text-decoration: underline; }
 
 .sg-colour {
   position: relative;
