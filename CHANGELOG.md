@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### CHANGED
+- Added Bureau logo to sidebar
+
 ## [0.1.0] - 2016-04-20
 
 ### CHANGED

@@ -44,6 +44,9 @@ body {
   padding: 1.5em;
   border-bottom: 1px solid #444; }
 
+.sg-nav__heading {
+  text-align: center; }
+
 .sg-nav__pane:last-child {
   border-bottom: 0; }
 
