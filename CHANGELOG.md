@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.1.0] - 2016-04-20
+
 ### CHANGED
 - Enabled category anchors
 
