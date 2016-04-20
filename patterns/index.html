@@ -7,7 +7,7 @@
 	<title>The Idea Bureau - Patern Library</title>
 
 	<link rel="stylesheet" href="/patterns/libs/prism/prism.css">
-	<link rel="stylesheet" href="//theideabureau.github.io/pattern-library/patterns/build/css/styles.css">
+	<link rel="stylesheet" href="/patterns/build/css/styles.css">
 
 </head>
 <body>
@@ -21,7 +21,7 @@
 		</div>
 
 		<div class="sg-nav__pane">
-			<input type="search" placeholder="Search" v-model="search" @keyup="filterPatterns">
+			<input type="search" placeholder="Search" v-model="search" v-on:keyup="filterPatterns" v-on:search="filterPatterns">
 		</div>
 
 		<div class="sg-nav__pane">
@@ -35,7 +35,17 @@
 	</aside>
 
 	<main class="sg-main">
-		<pattern :model="flatTreeData"></pattern>
+
+		<div v-for="item in flatTreeData">
+
+			<div v-if="item.type === 'heading'" id="{{ item.url }}"></div>
+
+			<div v-else>
+				<pattern :pattern="item"></pattern>
+			</div>
+
+		</div>
+
 	</main>
 
 	<!-- item template -->
@@ -84,7 +94,7 @@
 
 	<template id="pattern-template">
 
-		<div class="sg-section" v-for="pattern in model" id="{{ pattern.url }}" v-show="pattern.display === true">
+		<div class="sg-section" id="{{ pattern.url }}" v-show="pattern.display === true">
 
 			<div class="sg-panel sg-panel__title">
 
@@ -124,7 +134,7 @@
 	<script src="/patterns/libs/prism/prism.js"></script>
 	<script src="/patterns/libs/scoper/scoper.min.js"></script>
 	<script src="/patterns/libs/vue/dist/vue.js"></script>
-	<script src="//theideabureau.github.io/pattern-library/patterns/build/js/main.min.js"></script>
+	<script src="/patterns/build/js/main.min.js"></script>
 
 </body>
 </html>
