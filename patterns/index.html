@@ -35,7 +35,17 @@
 	</aside>
 
 	<main class="sg-main">
-		<pattern :model="flatTreeData"></pattern>
+
+		<div v-for="item in flatTreeData">
+
+			<div v-if="item.type === 'heading'" id="{{ item.url }}"></div>
+
+			<div v-else>
+				<pattern :pattern="item"></pattern>
+			</div>
+
+		</div>
+
 	</main>
 
 	<!-- item template -->
@@ -84,7 +94,7 @@
 
 	<template id="pattern-template">
 
-		<div class="sg-section" v-for="pattern in model" id="{{ pattern.url }}" v-show="pattern.display === true">
+		<div class="sg-section" id="{{ pattern.url }}" v-show="pattern.display === true">
 
 			<div class="sg-panel sg-panel__title">
 

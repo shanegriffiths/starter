@@ -98,11 +98,23 @@ var flattenTree = function(tree) {
 		$.each(tree.items, function(key, value) {
 
 			if ( typeof value.filepath !== "undefined" ) {
-				files.push(value);
+
+				files.push($.extend(true, {
+					type: 'pattern'
+				}, value));
+
 			}
 
 			if ( typeof value.items !== "undefined" ) {
+
+				files.push({
+					type: 'heading',
+					name: value.name,
+					url: value.url
+				});
+
 				Array.prototype.push.apply(files, flattenTree(value));
+
 			}
 
 		});
@@ -176,7 +188,7 @@ Vue.component('tree', {
 Vue.component('pattern', {
 	template: '#pattern-template',
 	props: {
-		model: Array
+		pattern: Object
 	},
 	methods: {
 		hasChildren: function(item) {
