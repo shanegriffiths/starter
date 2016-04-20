@@ -35,21 +35,11 @@
 	</aside>
 
 	<main class="sg-main">
-
-		<div v-for="item in flatTreeData">
-
-			<div v-if="item.type === 'heading'" id="{{ item.url }}"></div>
-
-			<div v-else>
-				<pattern :pattern="item"></pattern>
-			</div>
-
-		</div>
-
+		<pattern v-for="item in treeData.items" :item="item"></pattern>
 	</main>
 
-	<!-- item template -->
-	<template id="item-template">
+	<!-- tree template -->
+	<template id="tree-template">
 
 		<li v-for="item in model.items" v-show="item.display === true">
 
@@ -94,37 +84,45 @@
 
 	<template id="pattern-template">
 
-		<div class="sg-section" id="{{ pattern.url }}" v-show="pattern.display === true">
+		<div v-if="this.hasChildren(item)" id="{{ item.url }}">
+			<pattern v-for="patterns in item.items" :item="patterns"></pattern>
+		</div>
 
-			<div class="sg-panel sg-panel__title">
+		<div v-else>
 
-				<h1 class="sg-breadcrumbs">
+			<div class="sg-section" id="{{ item.url }}" v-show="item.display === true">
 
-					<span v-for="breadcrumb in pattern.breadcrumbs">
-						<a href="#{{ breadcrumb.url }}">{{ breadcrumb.label }}</a>
-					</span>
+				<div class="sg-panel sg-panel__title">
 
-				</h1>
+					<h1 class="sg-breadcrumbs">
 
-			</div>
-<!--
-			<div class="sg-panel sg-panel__description">
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, sit, voluptatibus?</p>
-			</div> -->
+						<span v-for="breadcrumb in item.breadcrumbs">
+							<a href="#{{ breadcrumb.url }}">{{ breadcrumb.label }}</a>
+						</span>
 
-			<div class="sg-panel sg-panel__example">
+					</h1>
 
-				<div>
-					<style scoped v-if="pattern.isComponent !== true"></style>
-					<div v-html="pattern.contents"></div>
+				</div>
+			<!--
+				<div class="sg-panel sg-panel__description">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, sit, voluptatibus?</p>
+				</div> -->
+
+				<div class="sg-panel sg-panel__example">
+
+					<div>
+						<style scoped v-if="item.isComponent !== true"></style>
+						<div v-html="item.contents"></div>
+					</div>
+
 				</div>
 
-			</div>
+				<!--
+				<div class="sg-panel sg-panel__code">
+					<pre><code class="language-markup">{{ item.contents }}</code></pre>
+				</div> -->
 
-			<!--
-			<div class="sg-panel sg-panel__code">
-				<pre><code class="language-markup">{{ pattern.contents }}</code></pre>
-			</div> -->
+			</div>
 
 		</div>
 

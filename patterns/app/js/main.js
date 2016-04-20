@@ -43,88 +43,6 @@ function upper(word){
 	return word.substr(0,1).toUpperCase() + word.substr(1);
 }
 
-var doTree = function(data) {
-
-	var items = [];
-
-	$.each(data, function(key, value) {
-
-		var hasChildren = typeof value !== "string",
-			item = {
-				name: key.replace('.html', ''),
-				order: 9999
-			};
-
-		// check if the name has a priority
-		if ( item.name.match('^[0-9]+[.]') !== null ) {
-			item.order = parseInt(item.name.split('.')[0]);
-			item.name = item.name.substring(item.name.indexOf('.') + 1);
-		}
-
-		if ( hasChildren ) {
-			item.children = doTree(value);
-		}
-
-		if ( ! hasChildren ) {
-
-			item.path = value;
-
-			$.get('/styleguide/templates/' + value).done(function(html) {
-				item.html = html;
-			});
-
-		}
-
-		item.name = titleCaps(makeFriendlyName(item.name));
-
-		items.push(item);
-
-	});
-
-	// sort the items by their order
-	items.sort(function(a, b) { return a.order - b.order; });
-
-	return items;
-
-};
-
-// get just files from the
-var flattenTree = function(tree) {
-
-	var files = [];
-
-	if ( typeof tree.items !== "undefined" ) {
-
-		$.each(tree.items, function(key, value) {
-
-			if ( typeof value.filepath !== "undefined" ) {
-
-				files.push($.extend(true, {
-					type: 'pattern'
-				}, value));
-
-			}
-
-			if ( typeof value.items !== "undefined" ) {
-
-				files.push({
-					type: 'heading',
-					name: value.name,
-					url: value.url
-				});
-
-				Array.prototype.push.apply(files, flattenTree(value));
-
-			}
-
-		});
-
-	}
-
-	return files;
-
-};
-
 var parseComponent = function(file) {
 
 	var component = JSON.parse(file.contents),
@@ -173,7 +91,7 @@ var parseComponents = function(data) {
 
 // define the item component
 Vue.component('tree', {
-	template: '#item-template',
+	template: '#tree-template',
 	props: {
 		model: Object
 	},
@@ -188,7 +106,7 @@ Vue.component('tree', {
 Vue.component('pattern', {
 	template: '#pattern-template',
 	props: {
-		pattern: Object
+		item: Object
 	},
 	methods: {
 		hasChildren: function(item) {
@@ -210,13 +128,8 @@ var demo = new Vue({
 
 	data: {
 		treeData: {items: {}},
+		flatTreeData: [],
 		search: ''
-	},
-
-	computed: {
-		flatTreeData: function () {
-			return flattenTree(this.treeData);
-		}
 	},
 
 	watch: {
@@ -311,8 +224,6 @@ var demo = new Vue({
 
 				// apply the file structure to the vue app
 				demo.treeData = data;
-
-				demo.flatTreeData = flattenTree(data);
 
 				this.$nextTick(function() {
 					this.applyCSS();
