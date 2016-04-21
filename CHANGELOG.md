@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### CHANGED
+- Removed superfluous patterns
+
 ## [0.1.1] - 2016-04-20
 
 ### CHANGED
