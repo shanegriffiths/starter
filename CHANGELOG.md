@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 
 ### CHANGED
 - Removed superfluous patterns
+- On refresh the pattern library scrolls to the existing hash
 
 ## [0.1.1] - 2016-04-20
 

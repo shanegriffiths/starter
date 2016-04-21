@@ -202,20 +202,16 @@ var demo = new Vue({
 		},
 		applyCSS: function() {
 
-			if ( css !== null ) {
+			$('style[scoped]').html(css);
 
-				$('style[scoped]').html(css);
-
-				var DOMContentLoaded_event = document.createEvent("Event");
-				DOMContentLoaded_event.initEvent("DOMContentLoaded", true, true);
-				window.document.dispatchEvent(DOMContentLoaded_event);
-
-			} else {
-				this.getCSS();
-			}
+			var DOMContentLoaded_event = document.createEvent("Event");
+			DOMContentLoaded_event.initEvent("DOMContentLoaded", true, true);
+			window.document.dispatchEvent(DOMContentLoaded_event);
 
 		},
 		fetchData: function() {
+
+			this.getCSS();
 
 			$.getJSON('./paths.json').done(function(data) {
 
@@ -225,8 +221,22 @@ var demo = new Vue({
 				// apply the file structure to the vue app
 				demo.treeData = data;
 
+				// after we've rendered the fetched data...
 				this.$nextTick(function() {
+
+					// ... apply the css to all elements
 					this.applyCSS();
+
+					// ... and if a hash was given, jump to it
+					if ( window.location.hash ) {
+
+						var hash = window.location.hash;
+
+						window.location.hash = '';
+						window.location.hash = hash.replace('#', '');
+
+					}
+
 				});
 
 			}.bind(this));
