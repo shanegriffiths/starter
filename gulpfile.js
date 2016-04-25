@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	scsslint = require('gulp-scss-lint'),
 	autoprefixer = require('gulp-autoprefixer'),
-	minifyCss = require('gulp-minify-css'),
+	cleanCss = require('gulp-clean-css'),
 	globbing = require('gulp-css-globbing'),
 
 	// scripts
@@ -80,7 +80,7 @@ gulp.task('scss', function () {
 		.pipe(autoprefixer('last 2 versions'))
 		.pipe(gulp.dest('assets/css'))
 		.pipe(concat('styles.min.css'))
-		.pipe(minifyCss({compatibility: 'ie8'}))
+		.pipe(cleanCss({compatibility: 'ie8'}))
 		.pipe(gulp.dest('assets/css'))
 		.pipe(livereload())
 		.pipe(notify("Sass Compiled"));
@@ -117,7 +117,7 @@ gulp.task('scss:bs', function () {
 		.pipe(gulp.dest('assets/css'))
 		.pipe(browserSync.reload({stream: true}))
 		.pipe(concat('styles.min.css'))
-		.pipe(minifyCss({compatibility: 'ie8'}))
+		.pipe(cleanCss({compatibility: 'ie8'}))
 		.pipe(gulp.dest('assets/css'))
 		.pipe(livereload())
 		.pipe(notify("Sass Compiled"));
@@ -149,7 +149,7 @@ gulp.task('pattern-styles', function () {
 		.pipe(autoprefixer('last 2 versions'))
 		.pipe(gulp.dest('patterns/build/css'))
 		.pipe(concat('styles.min.css'))
-		.pipe(minifyCss({compatibility: 'ie8'}))
+		.pipe(cleanCss({compatibility: 'ie8'}))
 		.pipe(livereload())
 		.pipe(notify("Pattern Styles Compiled"));
 
