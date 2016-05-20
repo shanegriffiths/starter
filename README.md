@@ -31,7 +31,7 @@ Gulp will watch the files within the assets directory and compile as necessary.
 [BrowserSync](http://www.browsersync.io/) has been included with the gulp build, simply change the proxy url in the gulpfile.js and run:
 -   `gulp bs`
 
-Currently there is no support for Live Reload
+Install the [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) Chrome Extension and run `gulp watch`
 
 ## Style Guide Structure
 
