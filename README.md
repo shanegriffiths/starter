@@ -1,6 +1,6 @@
 # Pattern Library
 
-Version 0.1.2
+Version 0.1.3
 
 Created to be the starting point of our projects, Pattern Library is a simple gulp driven output of web elements.
 
