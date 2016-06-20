@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- Added run sequencing for Modernizr
+
 ## [0.1.2] - 2016-04-21
 
 ### CHANGED

@@ -2,6 +2,7 @@ var gulp = require('gulp'),
 
 	// general
 	watch = require('gulp-watch'),
+	runSequence = require('run-sequence'),
 	livereload = require('gulp-livereload'),
 	rename = require('gulp-rename')
 	concat = require('gulp-concat'),
@@ -174,6 +175,18 @@ gulp.task('pattern-scripts', function () {
 
  //******
 // WATCH
+
+// post deploy, for deploying to the server
+gulp.task('post-deploy', function(callback) {
+
+	// use run sequence to make sure modernizr isn't called prematurely
+	runSequence(
+		['templates', 'scss', 'js'],
+		'modernizr',
+		callback
+	);
+
+});
 
 gulp.task('default', ['watch']);
 
