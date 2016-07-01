@@ -35,6 +35,12 @@ Install the [LiveReload](https://chrome.google.com/webstore/detail/livereload/jn
 
 ## Style Guide Structure
 
+To setup a redirect to the styleguide inside a WordPress build, edit the `.htaccess` as follows:
+```
+# Styleguide redirect
+Redirect 301 /styleguide /wp-content/themes/__THEME__/patterns
+```
+
 The styleguide template structure loosely follows that of Brad Frost's [Pattern Lab](http://patternlab.io/about.html), in that we use the following template levels:
 
 - **Atoms**
