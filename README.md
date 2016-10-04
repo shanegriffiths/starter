@@ -1,37 +1,54 @@
-# Pattern Library
+# Web boilerplate and pattern library
 
 Version 0.1.3
 
-Created to be the starting point of our projects, Pattern Library is a simple gulp driven output of web elements.
+This is the boilerplate for our web based projects.
 
-## Setup
-
-```
-$ npm install
-```
-
-## Assets
-
-The assets directory is used to contain front-end files such as CSS (Sass), JavaScript, images, fonts etc.
-
-Gulp is used to process Sass, JavaScript and image files.
+## Required assets in order to run the boilerplate
 
 - [Install node](http://nodejs.org/download/)
 - [Install gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 - [Install sass](http://sass-lang.com/install)
 - [Install sass globbing](https://github.com/chriseppstein/sass-globbing)
-- Run the following commands within this directory:
-  - `npm install`
-  - `gulp`
+
+## Setup process
+
+1. Clone the repository and fire up terminal inside the root folder
+
+2. Type the following command:
+
+```
+$ npm install
+```
+3. The npm command should install without error. Next, run:
+
+```
+$ npm run
+```
+You will then be presented with the scripts you have available to launch.
+
+* **Build** - This is a one-time run script which builds alls assets. This script is mainly run in the post-deploy process.
+* **Watch** - This is the development scripts. You will mostly use this during development. It'll enable LiveReload and compile all JS, Sass and HTML as you work.
+* **Modernizr** - This is a dedicated script which runs Modernizr. Remember to manually add your test conditiions to the `gulp file`
+
+Choose a command to run:
+
+```
+$ 
+```
 
 Gulp will watch the files within the assets directory and compile as necessary.
 
-## Browser Sync and Live Reload
+## Live Reload
 
-[BrowserSync](http://www.browsersync.io/) has been included with the gulp build, simply change the proxy url in the gulpfile.js and run:
--   `gulp bs`
+In order to use livereload, we need to install the chrome plugin (or whatever you use)
 
-Install the [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) Chrome Extension and run `gulp watch`
+ 1. [Install LiveReload for chrome ](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
+ 2. Enable the plugin in the Browser.
+
+## Modernizr
+
+Modernizr functionality is provided in this boilerplate. Modernizr doesn't work inside the `Watch` script. Instead you need to manually set the tests you want to add inside the gulpfile then use the `Modernizr` script to run.
 
 ## Style Guide Structure
 
