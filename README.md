@@ -71,6 +71,8 @@ The styleguide template structure loosely follows that of Brad Frost's [Pattern 
 
 The styleguide is generated through comments in the `.scss` that follow a simple structure detailed below. The generation is on-the-fly through `npm run watch` or manual via `npm run styleguide`.
 
+There is a boolean flag in the gulpfile incase you would rather not use the styleguide.
+
 ~~~
 /*
 
