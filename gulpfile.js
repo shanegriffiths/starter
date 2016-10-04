@@ -77,7 +77,7 @@ gulp.task('js', function () {
 
 });
 
-gulp.task('modernizr', ['scss', 'js'], function() {
+gulp.task('modernizr', function() {
 
 	// checks both compiled js and css files for modernizr tests
 
@@ -89,6 +89,9 @@ gulp.task('modernizr', ['scss', 'js'], function() {
 				"html5printshiv",
 				"testProp",
 				"fnBind"
+			],
+			tests: [
+				'fontface'
 			]
 		}))
 		.pipe(uglify())
@@ -165,18 +168,7 @@ gulp.task('pattern-scripts', function () {
 // TASKS
 
 // post deploy, for deploying to the server
-gulp.task('post-deploy', function(callback) {
-
-	// use run sequence to make sure modernizr isn't called prematurely
-	runSequence(
-		['templates', 'scss', 'js'],
-		'modernizr',
-		callback
-	);
-
-});
-
-gulp.task('default', ['watch']);
+gulp.task('post-deploy', ['templates', 'scss', 'js']);
 
 // default watch, for normal development
 gulp.task('default', ['watch']);
@@ -185,8 +177,8 @@ gulp.task('watch', function () {
 	livereload.listen();
 
 	// boilerplate
-	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint', 'modernizr']);
-	gulp.watch('assets/js/*.js', ['js', 'modernizr']);
+	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint']);
+	gulp.watch('assets/js/*.js', ['js']);
 
 	// pattern library
 	gulp.watch(['patterns/templates/**/*.html', 'patterns/templates/**/*.json'], ['templates']);
