@@ -17,7 +17,8 @@
 	"homepage": "https://github.com/theideabureau/pattern-library",
 	"scripts": {
 		"build": "gulp post-deploy",
-		"watch": "gulp watch"
+		"watch": "gulp watch",
+		"modernizr": "gulp modernizr"
 	},
 	"devDependencies": {
 		"babel": "^6.1.18",
