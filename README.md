@@ -1,19 +1,19 @@
-# Web boilerplate and pattern library
-
-Version 0.1.3
+# Web boilerplate and style guide
 
 This is the boilerplate for our web based projects.
 
-## Required assets in order to run the boilerplate
+## **Installation**
+
+### Required assets in order to run the boilerplate
 
 - [Install node](http://nodejs.org/download/)
 - [Install gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 - [Install sass](http://sass-lang.com/install)
 - [Install sass globbing](https://github.com/chriseppstein/sass-globbing)
 
-## Setup process
+### Setup process
 
-1. Clone the repository and fire up terminal inside the root folder
+1. Clone the repository and fire up a terminal window inside the root folder
 
 2. Type the following command:
 
@@ -25,41 +25,72 @@ $ npm install
 ```
 $ npm run
 ```
-You will then be presented with the scripts you have available to launch.
+You will then be presented with the development scripts you have available to run.
 
-* **Build** - This is a one-time run script which builds alls assets. This script is mainly run in the post-deploy process.
-* **Watch** - This is the development scripts. You will mostly use this during development. It'll enable LiveReload and compile all JS, Sass and HTML as you work.
-* **Modernizr** - This is a dedicated script which runs Modernizr. Remember to manually add your test conditiions to the `gulp file`
+* **Build** - This is a one-time run script which generates all of the assets. This script is mainly run in the post-deploy process.
+* **Watch** - This enables the watch task on all assets, and triggers LiveReload.
+* **Modernizr** - This is a dedicated script which runs Modernizr. Remember to manually add your test conditiions to the `gulpfile`
+* **Styleguide** - This will generate a fresh styleguide under `/styleguide/`.
 
-Choose a command to run:
+---
 
-```
-$ 
-```
+## **Optional Extras**
 
-Gulp will watch the files within the assets directory and compile as necessary.
+### Live Reload
 
-## Live Reload
+In order to use livereload, you need to install the browser-extension. We use [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).
 
-In order to use livereload, we need to install the chrome plugin (or whatever you use)
-
- 1. [Install LiveReload for chrome ](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en)
- 2. Enable the plugin in the Browser.
-
-## Modernizr
+### Modernizr
 
 Modernizr functionality is provided in this boilerplate. Modernizr doesn't work inside the `Watch` script. Instead you need to manually set the tests you want to add inside the gulpfile then use the `Modernizr` script to run.
 
-## Style Guide Structure
+---
 
-The styleguide template structure loosely follows that of Brad Frost's [Pattern Lab](http://patternlab.io/about.html), in that we use the following template levels:
+## **Asset Structure**
 
-- **Atoms**
-- **Molecules**
-- **Organisms**
-- **Templates**
-- **Pages**
+We take inspiration from the [SMACSS architecture](https://smacss.com/).
 
-An explanation of this model can be found on the [Pattern Lab](http://patternlab.io/about.html) website.
+- **Base**
+- **Layout**
+- **Modular**
+- **Tools**
 
-In the styleguide the **pages** templates are important as these are exposed without the styleguide interface when accessed via the root URL.
+---
+
+## **Style Guide**
+
+### Structure
+
+The styleguide template structure loosely follows that of Brad Frost's [Pattern Lab](http://patternlab.io/about.html), in that we take inspiration for the following template levels:
+
+- **Base** - This represents the atomic level (base styles)
+- **Components** - This represents the modular UI components
+- **Layout** - This represents structural framework components
+
+### Usage
+
+The styleguide is generated through comments in the `.scss` that follow a simple structure detailed below. The generation is on-the-fly through `npm run watch` or manual via `npm run styleguide`.
+
+~~~
+/*
+
+---
+name: Title Here
+category:
+ - Category
+ - Category/Title
+---
+
+## Markdown description
+
+Hello Component!
+
+* Use the `.alt--class` modifier.
+
+```html
+<span>HTML Example</span>
+<span class="alt--class">HTML Example</span>
+```
+
+*/
+~~~
