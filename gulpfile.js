@@ -22,12 +22,30 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify'),
 
-	// pattern library
-	patternLibrary = require("gulp-theideabureau-pattern-library");
+	// styleguide
+	aigis = require('gulp-aigis');
+
+
+ //**************
+// ERROR HANDLER
+
+function onError(err) {
+	console.log(err);
+	notify().write(err)
+	this.emit('end');
+};
+
 
 
  //******
 // TASKS
+
+gulp.task('styleguide', function() {
+	return gulp
+		.src('./styleguide_config.yml')
+		.pipe(aigis())
+		.pipe(notify("Styleguide Generated"));
+});
 
 gulp.task('scss', function () {
 
@@ -176,22 +194,10 @@ gulp.task('watch', function () {
 	livereload.listen();
 
 	// boilerplate
-	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint']);
+	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint', 'styleguide']);
 	gulp.watch('assets/js/*.js', ['js']);
 
 	// pattern library
-	gulp.watch(['patterns/templates/**/*.html', 'patterns/templates/**/*.json'], ['templates']);
-	gulp.watch('patterns/app/scss/**/*.scss', ['pattern-styles']);
-	gulp.watch('patterns/app/js/*.js', ['pattern-scripts']);
+	gulp.watch(['styleguide_assets/aigis_assets/css/**/*.css', 'styleguide_assets/template_ejs/*.ejs'], ['styleguide']);
 
 });
-
-
- //**************
-// ERROR HANDLER
-
-function onError(err) {
-	console.log(err);
-	notify().write(err)
-	this.emit('end');
-};
