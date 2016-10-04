@@ -41,7 +41,6 @@
 		"gulp-uglify": "^1.2.0",
 		"gulp-watch": "^4.2.4",
 		"jshint-stylish": "^1.0.2",
-		"run-sequence": "^1.2.2"
 	},
 	"dependencies": {
     	"babel-polyfill": "^6.3.14",

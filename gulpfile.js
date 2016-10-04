@@ -2,7 +2,6 @@ var gulp = require('gulp'),
 
 	// general
 	watch = require('gulp-watch'),
-	runSequence = require('run-sequence'),
 	livereload = require('gulp-livereload'),
 	rename = require('gulp-rename')
 	concat = require('gulp-concat'),
