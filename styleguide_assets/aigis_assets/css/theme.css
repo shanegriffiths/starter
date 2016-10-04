@@ -52,9 +52,9 @@ tag:
   text-decoration: none;
   color: inherit; }
 .aigis-header img {
-  width: 120px; }
+  height: 60px; }
 .aigis-welcome {
-	width: 150px;
+	width: 30vw;
 	position: absolute;
 	top: 50%;
 	left: 50%;
