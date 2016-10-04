@@ -1,3 +1,17 @@
+/*--------------------------------------------------*\
+	
+	Are you using the Styleguide?
+
+	if false, please remove /styleguide_assets/
+
+\*--------------------------------------------------*/
+
+var is_styleguide = true;
+
+ //***************
+// Begin Gulpfile
+
+
 var gulp = require('gulp'),
 
 	// general
@@ -133,20 +147,37 @@ gulp.task('svgstore', function() {
  //******
 // TASKS
 
-// post deploy, for deploying to the server
-gulp.task('post-deploy', ['styles', 'scripts', 'styleguide']);
+// if using styleguide
+if ( is_styleguide === true ) {
 
-// default watch, for normal development
-gulp.task('default', ['watch']);
-gulp.task('watch', function () {
+	// post deploy, for deploying to the server
+	gulp.task('post-deploy', ['styles', 'scripts', 'styleguide']);
 
-	livereload.listen();
+	gulp.task('watch', function () {
 
-	// boilerplate
-	gulp.watch('src/styles/**/*.scss', ['styles', 'scss-lint', 'styleguide']);
-	gulp.watch('src/scripts/*.js', ['scripts']);
+		livereload.listen();
 
-	// pattern library
-	gulp.watch(['styleguide_src/aigis_src/styles/**/*.css', 'styleguide_src/template_ejs/*.ejs'], ['styleguide']);
+		// boilerplate
+		gulp.watch('src/styles/**/*.scss', ['styles', 'scss-lint', 'styleguide']);
+		gulp.watch('src/scripts/*.js', ['scripts']);
 
-});
+		// pattern library
+		gulp.watch(['styleguide_src/aigis_src/styles/**/*.css', 'styleguide_src/template_ejs/*.ejs'], ['styleguide']);
+
+	});
+
+} else {
+
+	gulp.task('post-deploy', ['styles', 'scripts']);
+
+	gulp.task('watch', function () {
+
+		livereload.listen();
+
+		// boilerplate
+		gulp.watch('src/styles/**/*.scss', ['styles', 'scss-lint']);
+		gulp.watch('src/scripts/*.js', ['scripts']);
+
+	});
+
+}
