@@ -24,6 +24,25 @@
 
 <% } else { %>
 
-	<img class="aigis-welcome" src="<%- root %>aigis_assets/images/bureau-crest-with-text.svg">
+	<% if(html.length) { %>
+
+		<h1>All Colours</h1>
+
+		<p>Below you can find all references to colours used throughout the project. This includes:</p>
+
+		<ul>
+			<li>_variables.scss</li>
+			<li>CSS comments</li>
+			<li>Keywords</li>
+			<li>RGBA</li>
+		</ul>
+
+		<%- html %>
+
+	<% } else { %>
+
+		<img class="aigis-welcome" src="<%- root %>aigis_assets/images/bureau-crest-with-text.svg">
+
+	<% } %>
 
 <% } %>

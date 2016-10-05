@@ -14,7 +14,7 @@ dependencies:
 template_dir: ./styleguide_assets/template_ejs
 template_engine: ejs
 
-color_palette: false
+color_palette: true
 
 output_collection:
  - category
