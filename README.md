@@ -34,6 +34,12 @@ You will then be presented with the development scripts you have available to ru
 
 ---
 
+To run one of the above tasks, simply choose one of them and type the following:
+
+```
+$ npm run watch
+```
+
 ## **Optional Extras**
 
 ### Live Reload
