@@ -1,0 +1,54 @@
+/*
+
+Atomic design is philosophically complimentary with these CSS approaches:
+
+* SMACSS by Jonathan Snook http://smacss.com/
+* OOCSS by Nicole Sullivan http://oocss.org/
+* BEM CSS Methology : http://bem.info/method/
+* CSS Guidelines by Harry Roberts : http://cssguidelin.es/
+
+Sass Globbing is used so an import utilising an asterisk (*) will use every
+partial in the specified directory .
+
+*/
+
+
+/*------------------------------------*\
+    $TOOLS
+\*------------------------------------*/
+@import 'tools/reset';
+@import 'tools/fonts';
+@import 'tools/mixins';
+@import 'tools/variables';
+@import 'tools/grid';
+
+
+/*------------------------------------*\
+    $BASE ELEMENTS
+\*------------------------------------*/
+@import 'base/base';
+@import 'base/utilities';
+@import 'base/links';
+@import 'base/headings';
+@import 'base/lists';
+@import 'base/media';
+@import 'base/forms';
+@import 'base/tables';
+
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+@import 'layout/*';
+
+
+/*------------------------------------*\
+    $MODULAR
+\*------------------------------------*/
+@import 'modular/*';
+
+
+/*------------------------------------*\
+	$PRINT STYLES
+\*------------------------------------*/
+@import 'base/print';

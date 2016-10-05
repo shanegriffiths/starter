@@ -1,0 +1,96 @@
+/*
+
+---
+name: Service Card
+category:
+ - Components
+ - Components/Service Card
+---
+
+This is a card that's used to act as a call-to-action for the services offered, it consists of:
+- An icon
+- A title
+- A description
+- [Optional] A Button
+
+```html
+<div class="service-card">
+	<img class="service-card__icon" src="http://placehold.it/100" />
+	<h3 class="service-card__title">We Offer This</h3>
+	<p class="service-card__copy">Do you want to know more?</p>
+	<a class="button button--green button--ghost">Find out more</a>
+</div>
+```
+
+*/
+
+.service-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	padding: em(40) 0;
+
+	color: color('black');
+	text-align: center;
+
+	@include mq(M) {
+	    padding: em(40) 0;
+	}
+
+	@include mq(L) {
+	    padding: em(80, $large-font-size) 0;
+	}
+}
+
+.service-card__icon {
+	height: em(60);
+
+	margin-bottom: em(48);
+
+	transition: transform .2s ease;
+
+	@include mq(M) {
+	    margin-bottom: em(32);
+	}
+
+	@include mq(L) {
+		height: em(70, $large-font-size);
+
+		margin-bottom: em(48, $large-font-size);
+	}
+}
+
+.service-card__title {
+	@include font-size(18, 15, 22);
+	color: color('black');
+
+	margin-bottom: .5em;
+
+	@include mq(M) {
+	    margin-bottom: .8em;
+	}
+
+	@include mq(L) {
+	    margin-bottom: 1em;
+	}
+}
+
+.service-card__copy {
+	@include font-size(16, 14, 18);
+
+	max-width: 60%;
+
+	.service-card--panel & {
+		margin-bottom: 0;
+	}
+
+	@include mq(M) {
+	    max-width: 75%;
+	}
+
+	@include mq(XL) {
+	    max-width: 60%;
+	}
+}

@@ -1,0 +1,137 @@
+/*
+
+---
+name: Hero
+category:
+ - Components
+ - Components/Hero
+---
+
+This is the default hero with just a title, hero's can also contain:
+- Paragraph copy
+- Buttons
+- Image left
+
+```html
+<section class="hero">
+	<div class="wrapper">
+		<div class="hero__content">
+			<h1>We are <span class="is-grey">The Idea Bureau</span></h1>
+		</div>
+	</div>
+</section>
+```
+
+### Slim
+
+The slim variation has reduced padding top and bottom.
+
+```html
+<section class="hero hero--slim">
+	<div class="wrapper">
+		<div class="hero__content">
+			<h1>We are <span class="is-grey">The Idea Bureau</span></h1>
+		</div>
+	</div>
+</section>
+```
+
+### With Extras
+
+This hero includes a paragraph and some buttons.
+
+```html
+<section class="hero hero--slim">
+	<div class="wrapper">
+		<div class="hero__content">
+			<h1>We are <span class="is-grey">The Idea Bureau</span></h1>
+			<p>Want to find out more?</p>
+			<a class="button">Our People</a>
+			<a class="button button--ghost">Contact us</a>
+		</div>
+	</div>
+</section>
+```
+
+*/
+
+.hero {
+	padding: em(50) 0;
+
+	background-color: color('white');
+
+	text-align: center;
+
+	@include mq(M) {
+	    padding: em(67) 0;
+
+		text-align: left;
+	}
+
+	@include mq(XL) {
+	    padding: em(110, $large-font-size) 0;
+	}
+}
+
+.hero--slim {
+	padding: em(24) 0;
+
+	@include mq(M) {
+	    padding: em(49) 0;
+	}
+
+	@include mq(XL) {
+	    padding: em(53, $large-font-size) 0;
+	}
+}
+
+.hero__content {
+
+	@include mq(M) {
+	    max-width: 80%;
+	}
+
+	@include mq(L) {
+	    max-width: 90%;
+	}
+
+	@include mq(XL) {
+	    max-width: 60%;
+	}
+
+	h1 {
+		margin-bottom: em(13, 20);
+
+		@include mq(M) {
+		    margin-bottom: em(25, 30);
+		}
+
+		@include mq(L) {
+		    margin-bottom: em(31, 46);
+		}
+	}
+
+	p {
+		@include font('secondary', 'bold');
+		@include font-size(15, 16, 22);
+		letter-spacing: .1px;
+
+		margin-bottom: em(24, 15);
+
+		@include mq(M) {
+			margin-bottom: em(24, 16);
+		}
+
+		@include mq(L) {
+			margin-bottom: em(27, 22);
+		}
+	}
+
+	.button:nth-of-type(1) {
+		margin-right: em(20);
+
+		@include mq(L) {
+		    margin-right: em(60, $large-font-size);
+		}
+	}
+}

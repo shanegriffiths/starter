@@ -1,4 +1,10 @@
+# System
 .DS_Store
-node_modules/
 .sass-cache/
-styleguide/core
+node_modules/
+
+# Styleguide
+styleguide/
+
+# Assets
+dist/

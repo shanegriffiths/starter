@@ -1,0 +1,278 @@
+/*
+
+---
+name: Header
+category:
+ - Layout
+ - Layout/Header
+---
+
+This is a presentation preview of the main header, the style changes slightly at the different breakpoints, and when the page is scrolled.
+
+
+```html
+<header class="site-header__container">
+
+	<div class="wrapper wrapper--padded">
+
+		<div class="site-header">
+
+			<div class="site-header__logo">
+				<a href="/">
+					<img class="logo logo--desktop" src="../../../aigis_assets/images/bureau-crest-with-text.svg">
+					<img class="logo logo--desktop logo--desktop-scrolled" src="../../../aigis_assets/images/bureau-crest-with-text.svg">
+					<img class="logo logo--mobile" src="../../../aigis_assets/images/bureau-crest-with-text.svg">
+				</a>
+			</div>
+
+			<nav class="site-nav__container">
+
+				<ul class="nav / site-nav">
+
+					<li>
+						<a href="#">About</a>
+					</li>
+
+					<li>
+						<a href="#">Our Work</a>
+					</li>
+
+					<li>
+						<a href="#">Our People</a>
+					</li>
+
+					<li>
+						<a href="#">Contact</a>
+					</li>
+
+				</ul> <!-- / .site-nav -->
+
+			</nav> <!-- / .site-nav__container -->
+
+		</div>
+
+		<div class="hamburger">
+			<div class="hamburger-box">
+				<div class="hamburger-inner"></div>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+```
+
+*/
+
+.site-header__spacer {
+	height: em(63);
+
+	background: color('white');
+
+	@include mq(M) {
+	    height: em(80);
+	}
+
+	@include mq(L) {
+	    height: em(90, $large-font-size);
+	}
+
+	@include mq(XL) {
+	    height: em(99, $large-font-size);
+	}
+}
+
+.site-header__container {
+	background: color('white');
+
+	padding: em(10) 0;
+	padding-right: em(17);
+
+	@include mq(M) {
+	    padding: em(19) 0;
+	}
+
+	@include mq(XL) {
+	    padding: em(25) 0;
+	}
+}
+
+.site-header__container--fixed {
+	position: fixed;
+	top: 0;
+	z-index: 99;
+	width: 100%;
+	transition: all .2s ease;
+}
+
+.site-header__container--scrolling {
+	background: rgba(color('grey'), .95);
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
+
+	@include mq(M) {
+		padding: em(16) 0;
+	}
+
+	@include mq(XL) {
+		padding: em(16, $large-font-size) 0;
+	}
+
+	.site-header__logo {
+
+		@include mq(M) {
+		    height: em(40);
+		}
+
+		@include mq(L) {
+		    height: em(40, $large-font-size);
+		}
+	}
+
+	.logo--desktop {
+		opacity: 0;
+	}
+
+	.logo--desktop-scrolled {
+		opacity: 1;
+	}
+}
+
+.site-header {
+
+	@include mq(XL) {
+	    display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.site-header__logo {
+	position: relative;
+	float: left;
+	width: em(43);
+	transition: all .2s ease;
+
+	@include mq(M) {
+		width: em(132);
+		height: em(42);
+	}
+
+	@include mq(XL) {
+	    width: em(150, $large-font-size);
+		height: em(42, $large-font-size);
+	}
+}
+
+.logo {
+	transition: opacity .2s ease;
+}
+
+.logo--mobile {
+
+	@include mq(M) {
+    	display: none;
+	}
+}
+
+.logo--desktop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+
+	@include mq(M) {
+	    display: block;
+	}
+}
+
+.logo--desktop-scrolled {
+	opacity: 0;
+}
+
+.site-nav__container {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+
+	padding-top: em(96);
+	background: color('white');
+	text-align: center;
+
+	transform: translateX(100%);
+	opacity: 0;
+	transition: all .2s ease;
+
+	.menu-active & {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	@include mq(M) {
+	    width: em(352);
+		left: auto;
+
+		padding-left: em(30);
+
+		text-align: left;
+	}
+
+	@include mq(XL) {
+		position: static;
+		top: auto;
+		right: auto;
+		left: auto;
+		bottom: auto;
+		transform: none;
+		opacity: 1;
+		width: auto;
+
+		background: none;
+		display: block;
+		float: right;
+		padding-top: 0;
+		padding-left: 0;
+	}
+
+	.site-nav {
+		position: relative;
+
+		li {
+			padding-left: 0;
+			margin-top: em(24);
+
+			@include mq(XL) {
+				margin-top: 0;
+				margin-left: em(46, $large-font-size);
+				float: left;
+				text-transform: uppercase;
+			}
+
+			&:first-child {
+				margin-top: 0;
+
+				@include mq(XL) {
+				    display: none;
+				}
+			}
+		}
+
+		a {
+			@include font('secondary', 'bold');
+			@include font-size(28, 28, 28, 14);
+			color: color('black');
+			text-decoration: none;
+			display: block;
+
+			&.active,
+			&:hover,
+			&:active,
+			&:focus {
+				color: color('grey');
+				text-decoration: none;
+			}
+		}
+	}
+}

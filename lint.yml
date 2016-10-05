@@ -94,7 +94,7 @@ linters:
 
   MergeableSelector:
     enabled: true
-    force_nesting: true
+    force_nesting: false
 
   NameFormat:
     enabled: false
@@ -103,7 +103,7 @@ linters:
 
   NestingDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 4
     ignore_parent_selectors: false
 
   PlaceholderInExtend:
@@ -145,7 +145,7 @@ linters:
 
   SelectorDepth:
     enabled: true
-    max_depth: 3
+    max_depth: 4
 
   SelectorFormat:
     enabled: true

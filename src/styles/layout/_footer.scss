@@ -1,0 +1,98 @@
+/*
+
+---
+name: Footer
+category:
+ - Layout
+ - Layout/Footer
+---
+
+```html
+<footer class="site-footer">
+
+	<div class="wrapper wrapper--padded">
+
+		<section class="row">
+
+			<div class="col S-all M-4">
+
+				<h6 class="is-grey is-uppercase">Address</h6>
+
+				<address class="site-footer__address">
+					<ul class="is-plain">
+						<li>Number 4</li>
+						<li>The Crescent</li>
+						<li>Taunton</li>
+						<li>TA1 4EA</li>
+					</ul>
+				</address>
+
+				<ul class="is-plain">
+					<li>Email: <a href="mailto:hello@theideabureau.co">hello@theideabureau.co</a></li>
+				</ul>
+
+			</div>
+
+			<div class="site-footer__colophon / col S-hide M-all">
+				<span>&copy; 2016 The Idea Bureau. All rights reserved.</span>
+				<span class="pull-right">Designed and Built by <a href="https://theideabureau.co">The Idea Bureau</a></span>
+			</div>
+
+		</section>
+
+	</div>
+
+</footer>
+```
+
+*/
+
+.site-footer {
+	background-color: color('white');
+	color: color('black');
+
+	padding: em(42) 0 em(50);
+
+	@include mq(M) {
+	    padding: em(48) 0 em(24);
+	}
+
+	@include mq(L) {
+	    padding: em(81) 0 em(27);
+	}
+
+	a {
+		@extend %reverse-underline;
+		color: inherit;
+	}
+
+	h6 {
+		margin-bottom: 10px;
+	}
+}
+
+.site-footer__address {
+	margin-bottom: 40px;
+
+	@include mq(M) {
+	    margin-bottom: 20px;
+	}
+
+	@include mq(L) {
+	    margin-bottom: 40px;
+	}
+}
+
+.site-footer__colophon {
+	@include font-size(10, 10, 12);
+	clear: both;
+	margin-top: 38px;
+
+	@include mq(L) {
+	    margin-top: 54px;
+	}
+
+	a {
+		@include font($weight: 'bold');
+	}
+}

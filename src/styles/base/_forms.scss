@@ -1,0 +1,156 @@
+/*
+
+---
+name: Input
+category:
+ - Base
+ - Base/Forms
+---
+
+## Default Styling
+
+This is the default markup and styling for a form input fields.
+
+```html
+<input type="text" placeholder="text" />
+<input type="search" placeholder="search" />
+<input type="number" placeholder="number" />
+<input type="range" />
+<input type="date" />
+<textarea placeholder="Text area"></textarea>
+```
+
+*/
+
+fieldset,
+form {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+
+label,
+legend {
+	@include font-size(13);
+	color: color('black');
+	text-transform: uppercase;
+
+	display: block;
+	margin-bottom: 0;
+
+	cursor: pointer;
+}
+
+abbr[title="Required"] {
+	@include font('primary', 'bold');
+	color: color('black');
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+input[type="color"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+textarea {
+	@include font('primary', 'regular');
+	@include font-size(12, 12, 14);
+	color: color('black');
+	background-color: color('white');
+
+	width: 100%;
+	border: 1px solid color('black');
+	border-radius: $border-radius;
+	padding: em(10) em(6);
+	margin-bottom: $space / 2;
+
+	&:focus {
+		box-shadow: none;
+		outline: none;
+	}
+
+	@include mq(L) {
+	    padding: em(16, 14) em(12, 14);
+	}
+}
+
+input[type="color"] {
+	width: 1em;
+}
+
+textarea {
+	line-height: $space;
+}
+
+input[type="text"].valid,
+input[type="email"].valid {
+}
+
+input[type="text"].not-valid,
+input[type="email"].not-valid {
+}
+
+
+ //*******************
+// PLACEHOLDER STYLES
+
+::-webkit-input-placeholder {
+   color: color('grey');
+}
+
+:-moz-placeholder { /* Firefox 18- */
+ 	color: color('grey');
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: color('grey');
+}
+
+:-ms-input-placeholder {
+   color: color('grey');
+}
+
+
+/*
+
+---
+name: Flex Input
+category:
+ - Base
+ - Base/Forms
+---
+
+## Default Styling
+
+This allows you to have a button in the same row as its input field.
+
+```html
+<form class="flex-input">
+	<input type="text" placeholder="text" />
+	<button>Submit</button>
+</form>
+```
+
+*/
+
+.flex-input {
+	display: flex;
+
+	input {
+		border-right: 0;
+		border-radius: $border-radius 0 0 $border-radius;
+	}
+
+	button {
+		padding: 0 1em;
+
+		border-radius: 0 $border-radius $border-radius 0;
+	}
+}

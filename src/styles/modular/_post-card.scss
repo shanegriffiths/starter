@@ -1,0 +1,123 @@
+/*
+
+---
+name: Post Card
+category:
+ - Components
+ - Components/Post Card
+---
+
+This is the default card object that links to a news post.
+
+```html
+<article class="post-card">
+	<a class="post-card__link">
+		<h2 class="post-card__title">This is a post object</h2>
+		<time class="post-card__date">10th February 2016</time>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis at unde libero voluptate quia repudiandae consectetur possimus sit blanditiis harum! Ad, consequuntur fuga itaque natus tenetur omnis, obcaecati dolores aliquam&hellip;</p>
+		<span class="post-object__more">Read more</span>
+	</a>
+</article>
+<article class="post-card">
+	<a class="post-card__link">
+		<h2 class="post-card__title">This is a post object</h2>
+		<time class="post-card__date">10th February 2016</time>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis at unde libero voluptate quia repudiandae consectetur possimus sit blanditiis harum! Ad, consequuntur fuga itaque natus tenetur omnis, obcaecati dolores aliquam&hellip;</p>
+		<span class="post-object__more">Read more</span>
+	</a>
+</article>
+<article class="post-card">
+	<a class="post-card__link">
+		<h2 class="post-card__title">This is a post object</h2>
+		<time class="post-card__date">10th February 2016</time>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis at unde libero voluptate quia repudiandae consectetur possimus sit blanditiis harum! Ad, consequuntur fuga itaque natus tenetur omnis, obcaecati dolores aliquam&hellip;</p>
+		<span class="post-object__more">Read more</span>
+	</a>
+</article>
+```
+
+*/
+
+.post-card__link {
+	color: color('black');
+	text-decoration: none;
+
+	display: block;
+
+	padding-bottom: em(30);
+	margin-bottom: em(30);
+	border-bottom: 1px solid color('black');
+
+	@include mq(L) {
+		padding-bottom: em(54, $large-font-size);
+		margin-bottom: em(54, $large-font-size);
+		transition: box-shadow .2s ease;
+	}
+
+
+	&:hover,
+	&:active,
+	&:focus {
+		text-decoration: none;
+
+		@include mq(L) {
+		    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, .1);
+		}
+	}
+
+	.post-card:last-child & {
+		padding-bottom: 0;
+		margin-bottom: 0;
+		border-bottom: 0;
+	}
+}
+
+.post-card__title {
+	@extend .gamma;
+	color: color('black');
+	margin-bottom: em(5, 15);
+
+	@include mq(M) {
+	    margin-bottom: em(14, 19);
+	}
+
+	@include mq(L) {
+	    margin-bottom: em(14, 35);
+	}
+}
+
+.post-card__date {
+	@include font-size(14, 18, 20);
+	@include font('secondary');
+	color: color('black');
+
+	display: block;
+
+	margin-bottom: em(10, 14);
+
+	@include mq(M) {
+	    margin-bottom: em(27, 18);
+	}
+
+	@include mq(L) {
+	    margin-bottom: em(27, 20);
+	}
+}
+
+.post-card p {
+	letter-spacing: .1px;
+	margin-bottom: em(15);
+
+	@include mq(L) {
+		padding-right: $space;
+	    margin-bottom: em(15, $large-font-size);
+	}
+}
+
+.post-object__more {
+	@include font-size(14, 14, 14);
+	@include font($weight: 'bold');
+	color: color('black');
+	letter-spacing: .1px;
+	line-height: 1;
+}

@@ -1,54 +1,108 @@
-# Pattern Library
+# Web boilerplate and style guide
 
-Version 0.1.3
+This is the boilerplate for our web based projects.
 
-Created to be the starting point of our projects, Pattern Library is a simple gulp driven output of web elements.
+## **Installation**
 
-## Setup
-
-```
-$ npm install
-```
-
-## Assets
-
-The assets directory is used to contain front-end files such as CSS (Sass), JavaScript, images, fonts etc.
-
-Gulp is used to process Sass, JavaScript and image files.
+### Required assets in order to run the boilerplate
 
 - [Install node](http://nodejs.org/download/)
 - [Install gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 - [Install sass](http://sass-lang.com/install)
 - [Install sass globbing](https://github.com/chriseppstein/sass-globbing)
-- Run the following commands within this directory:
-  - `npm install`
-  - `gulp`
 
-Gulp will watch the files within the assets directory and compile as necessary.
+### Setup process
 
-## Browser Sync and Live Reload
+1. Clone the repository and fire up a terminal window inside the root folder
 
-[BrowserSync](http://www.browsersync.io/) has been included with the gulp build, simply change the proxy url in the gulpfile.js and run:
--   `gulp bs`
+2. Type the following command:
 
-Install the [LiveReload](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en) Chrome Extension and run `gulp watch`
-
-## Style Guide Structure
-
-To setup a redirect to the styleguide inside a WordPress build, edit the `.htaccess` as follows:
 ```
-# Styleguide redirect
-Redirect 301 /styleguide /wp-content/themes/__THEME__/patterns
+$ npm install
+```
+3. The npm command should install without error. Next, run:
+
+```
+$ npm run
+```
+You will then be presented with the development scripts you have available to run.
+
+* **Build** - This is a one-time run script which generates all of the assets. This script is mainly run in the post-deploy process.
+* **Watch** - This enables the watch task on all assets, and triggers LiveReload.
+* **Modernizr** - This is a dedicated script which runs Modernizr. Remember to manually add your test conditiions to the `gulpfile`
+* **Styleguide** - This will generate a fresh styleguide under `/styleguide/`.
+
+---
+
+To run one of the above tasks, re-run the `$ npm run` command and add the task name, for example:
+
+```
+$ npm run watch
 ```
 
-The styleguide template structure loosely follows that of Brad Frost's [Pattern Lab](http://patternlab.io/about.html), in that we use the following template levels:
+## **Optional Extras**
 
-- **Atoms**
-- **Molecules**
-- **Organisms**
-- **Templates**
-- **Pages**
+### Live Reload
 
-An explanation of this model can be found on the [Pattern Lab](http://patternlab.io/about.html) website.
+In order to use livereload, you need to install the browser-extension. We use [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).
 
-In the styleguide the **pages** templates are important as these are exposed without the styleguide interface when accessed via the root URL.
+### Modernizr
+
+Modernizr functionality is provided in this boilerplate. Modernizr doesn't work inside the `Watch` script. Instead you need to manually set the tests you want to add inside the gulpfile then use the `Modernizr` script to run.
+
+---
+
+## **Asset Structure**
+
+We take inspiration from the [SMACSS architecture](https://smacss.com/).
+
+- **Base**
+- **Layout**
+- **Modular**
+- **Tools**
+
+---
+
+## **Style Guide**
+
+### Background
+
+The styleguide we use is a custom, re-themed version of [Aigis](https://pxgrid.github.io/aigis/).
+
+### Structure
+
+The styleguide template structure loosely follows that of Brad Frost's [Pattern Lab](http://patternlab.io/about.html), in that we take inspiration for the following template levels:
+
+- **Base** - This represents the atomic level (base styles)
+- **Components** - This represents the modular UI components
+- **Layout** - This represents structural framework components
+
+### Usage
+
+The styleguide is generated through comments in the `.scss` that follow a simple structure detailed below. The generation is on-the-fly through `npm run watch` or manual via `npm run styleguide`.
+
+There is a boolean flag in the gulpfile incase you would rather not use the styleguide.
+
+~~~
+/*
+
+---
+name: Title Here
+category:
+ - Category
+ - Category/Title
+---
+
+## Markdown description
+
+Hello Component!
+
+* Use the `.alt--class` modifier.
+
+```html
+<span>HTML Example</span>
+<span class="alt--class">HTML Example</span>
+```
+
+*/
+~~~

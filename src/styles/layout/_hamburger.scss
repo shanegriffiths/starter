@@ -1,0 +1,143 @@
+/*
+
+---
+name: Hamburger
+category:
+ - Layout
+ - Layout/Hamburger
+---
+
+The hamburger animates on click to a cross. It is used to show the menu on smaller screens. Here we're using the `.hamburger--demo` class for presentation purposes only.
+
+```html
+<div class="hamburger hamburger--demo">
+	<div class="hamburger-box">
+		<div class="hamburger-inner"></div>
+	</div>
+</div>
+<div class="menu-active">
+	<div class="hamburger hamburger--demo">
+		<div class="hamburger-box">
+			<div class="hamburger-inner"></div>
+		</div>
+	</div>
+</div>
+```
+
+*/
+
+.hamburger--demo {
+	display: block !important;
+	position: static !important;
+	float: left !important;
+	margin-right: $space;
+}
+
+.hamburger {
+	overflow: visible;
+	height: 30px;
+	float: right;
+	position: fixed;
+	top: 18px;
+	right: 18px;
+	z-index: 100;
+	cursor: pointer;
+	transition: top .2s ease;
+
+	@include mq(M) {
+		top: 23px;
+		right: 34px;
+
+		.site-header__container--scrolling & {
+			top: 19px;
+		}
+	}
+
+	@include mq(L) {
+	    top: 26px;
+
+		.site-header__container--scrolling & {
+			top: 24px;
+		}
+	}
+
+	@include mq(XL) {
+		display: none;
+	}
+
+	.menu-active & {
+		.hamburger-inner {
+			transform: rotate(45deg);
+			transition-delay: .14s;
+			transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+
+			&,
+			&:before,
+			&:after {
+				border-radius: 0;
+				height: 6px;
+			}
+
+			&:before {
+				top: 0;
+				opacity: 0;
+				transition: top .1s ease,
+							opacity .1s .14s ease;
+			}
+
+			&:after {
+				width: 30px;
+				bottom: 0;
+				transform: rotate(-90deg);
+				transition: bottom .1s ease,
+							transform .1s .14s cubic-bezier(.215, .61, .355, 1);
+			}
+		}
+	}
+}
+
+.hamburger-box {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px;
+	transition-duration: .1s;
+	transition-timing-function: cubic-bezier(.55, .055, .675, .19);
+
+	&,
+	&:before,
+	&:after {
+		width: 30px;
+		height: 4px;
+		background-color: color('black');
+		border-radius: 1px;
+		position: absolute;
+		transition-property: transform;
+		transition-duration: .15s;
+		transition-timing-function: ease;
+	}
+
+	&:before,
+	&:after {
+		content: '';
+		display: block;
+	}
+
+	&:before {
+		top: -10px;
+		transition: top .1s .14s ease,
+					opacity .1s ease;
+	}
+
+	&:after {
+		bottom: -10px;
+		transition: bottom .1s .14s ease,
+					transform .1s cubic-bezier(.55, .055, .675, .19);
+	}
+}

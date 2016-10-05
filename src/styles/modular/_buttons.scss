@@ -1,0 +1,171 @@
+/*
+
+---
+name: Buttons
+category:
+ - Components
+ - Components/Buttons
+---
+
+## Button Sizes
+
+Buttons are created by either using the `.button` class, button element, or submit input. Use the `.button--large` modifier to use a bigger button style.
+
+```html
+<a class="button">Button</a>
+<a class="button button--large">Button</a>
+```
+
+## Variations
+
+### Colour
+
+* Use the `.button--grey` modifier.
+
+```html
+<a class="button button--grey">Button</a>
+<a class="button button--large button--grey">Button</a>
+```
+
+### Style
+
+* Use the `.button--ghost` modifier.
+
+```html
+<a class="button button--ghost">Button</a>
+<a class="button button--ghost button--grey">Button</a>
+```
+
+*/
+
+.button,
+button,
+input[type="submit"] {
+	@include font('secondary', 'bold');
+	@include font-size(12, 16, 18);
+	background: color('black');
+	color: color('white');
+	text-align: center;
+	text-decoration: none;
+	line-height: 1.3;
+
+	display: inline-block;
+	padding: em(7, 12) em(22.5, 12);
+	margin-bottom: $space / 2;
+	vertical-align: middle;
+
+	border: 2px solid color('black');
+	border-radius: 2px;
+
+	cursor: pointer;
+
+	transition: background .2s ease,
+				color .2s ease;
+
+	@include mq(M) {
+	    padding: em(10, 16) em(35, 16);
+	}
+
+	@include mq(L) {
+	    padding: em(12, 18) em(41, 18);
+		line-height: 1.1;
+		border-radius: 4px;
+	}
+
+	svg {
+		width: 1em;
+		height: 1em;
+		fill: currentColor;
+
+		@include mq(L) {
+			width: 1.3em;
+			height: 1.3em;
+		}
+	}
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: transparent;
+		color: color('black');
+
+		svg {
+			fill: currentColor;
+		}
+	}
+}
+
+
+ //*****************
+// Sizes Variations
+
+.button--large {
+	@include font-size(14, 16, 20);
+	line-height: 1.4;
+
+	padding: em(10, 14) em(20, 14);
+
+	@include mq(M) {
+		line-height: 1.3;
+	    padding: em(10, 16) em(35, 16);
+	}
+
+	@include mq(L) {
+		line-height: 1;
+	    padding: em(20, 20) em(62, 20);
+	}
+}
+
+
+ //*****************
+// Style Variations
+
+.button--ghost {
+	@include font('secondary', 'regular');
+	background: transparent;
+	color: color('black');
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: color('black');
+		color: color('white');
+	}
+}
+
+
+ //******************
+// Colour Variations
+
+.button--grey {
+	background: color('grey');
+	border-color: color('grey');
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: color('white');
+		color: color('grey');
+	}
+}
+
+.button--ghost.button--grey {
+	background: transparent;
+	color: color('grey');
+	border-color: color('grey');
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: color('grey');
+		color: color('white');
+	}
+}
+
+
+ //*****************
+// Style Variations
+
+.button--flat {
+	margin: 0;
+}
