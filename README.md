@@ -34,7 +34,7 @@ You will then be presented with the development scripts you have available to ru
 
 ---
 
-To run one of the above tasks, simply choose one of them and type the following:
+To run one of the above tasks, re-run the `$ npm run` command and add the task name, for example:
 
 ```
 $ npm run watch
