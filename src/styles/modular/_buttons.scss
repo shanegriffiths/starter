@@ -1,6 +1,49 @@
-/*------------------------------------*\
-    BUTTONS
-\*------------------------------------*/
+/*
+
+---
+name: Buttons
+category:
+ - Components
+ - Components/Buttons
+---
+
+## Button Sizes
+
+Buttons are created by either using the `.button` class, button element, or submit input. Use the `.button--large` modifier to use a bigger button style.
+
+```html
+<a class="button">Button</a>
+<a class="button button--large">Button</a>
+```
+
+---
+name: Variations
+category:
+ - Components
+ - Components/Buttons
+---
+
+## Variations
+
+### Colour
+
+* Use the `.button--green` modifier.
+
+```html
+<a class="button button--green">Button</a>
+<a class="button button--large button--green">Button</a>
+```
+
+### Style
+
+* Use the `.button--ghost` modifier.
+
+```html
+<a class="button button--ghost">Button</a>
+<a class="button button--ghost button--green">Button</a>
+```
+
+*/
 
 .button,
 button,

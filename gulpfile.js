@@ -1,3 +1,17 @@
+/*--------------------------------------------------*\
+	
+	Are you using the Styleguide?
+
+	if false, please remove /styleguide_assets/
+
+\*--------------------------------------------------*/
+
+var is_styleguide = true;
+
+ //***************
+// Begin Gulpfile
+
+
 var gulp = require('gulp'),
 
 	// general
@@ -47,20 +61,20 @@ gulp.task('styleguide', function() {
 		.pipe(notify("Styleguide Generated"));
 });
 
-gulp.task('scss', function () {
+gulp.task('styles', function () {
 
 	// compile all scss files references in styles.css
 
 	return gulp
-		.src('./assets/scss/styles.scss')
+		.src('./src/styles/styles.scss')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(globbing({ extensions: ['.scss'] }))
 		.pipe(sass())
 		.pipe(autoprefixer('last 2 versions'))
-		.pipe(gulp.dest('assets/css'))
+		.pipe(gulp.dest('dist/styles'))
 		.pipe(concat('styles.min.css'))
 		.pipe(cleanCss({compatibility: 'ie8'}))
-		.pipe(gulp.dest('assets/css'))
+		.pipe(gulp.dest('dist/styles'))
 		.pipe(livereload())
 		.pipe(notify("Sass Compiled"));
 
@@ -71,16 +85,16 @@ gulp.task('scss-lint', function() {
 	// lint the styles whilst developing
 
 	return gulp
-		.src('assets/scss/**/*.scss')
+		.src('src/styles/**/*.scss')
 		.pipe(scsslint({'config': 'lint.yml'}));
 
 });
 
-gulp.task('js', function () {
+gulp.task('scripts', function () {
 
 	// lint and uglify the main scripts file
 
-	return gulp.src('assets/js/main.js')
+	return gulp.src('src/scripts/main.js')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(jshint())
 		.pipe(jshint.reporter('jshint-stylish'))
@@ -88,7 +102,7 @@ gulp.task('js', function () {
 		.pipe(rename({
 			extname: '.min.js'
 		}))
-		.pipe(gulp.dest('assets/js/'))
+		.pipe(gulp.dest('dist/scripts/'))
 		.pipe(livereload())
 		.pipe(notify("JS Compiled"));
 
@@ -98,7 +112,7 @@ gulp.task('modernizr', function() {
 
 	// checks both compiled js and css files for modernizr tests
 
-	gulp.src(['assets/js/main.js', 'assets/css/styles.css'])
+	gulp.src(['src/scripts/main.js', 'src/styles/styles.css'])
 		.pipe(modernizr({
 			options: [
 				"setClasses",
@@ -112,7 +126,7 @@ gulp.task('modernizr', function() {
 			]
 		}))
 		.pipe(uglify())
-		.pipe(gulp.dest("assets/js/libs/"));
+		.pipe(gulp.dest("dist/scripts/"));
 
 });
 
@@ -122,61 +136,10 @@ gulp.task('svgstore', function() {
 	// the compiled svg file will need including below the <body> tag
 
     return gulp
-        .src('assets/img/icons/*.svg')
+        .src('src/images/icons/*.svg')
 		.pipe(svgmin())
         .pipe(svgstore({ inlineSvg: true }))
-        .pipe(gulp.dest('assets/img/'));
-
-});
-
-
- //****************
-// PATTERN LIBRARY
-
-gulp.task('templates', function() {
-
-	// compiles templates into a pattern library json file
-
-	return gulp.src(['patterns/templates/**/*.html', 'patterns/templates/**/*.json'])
-		.pipe(patternLibrary({
-			filename: 'paths.json'
-		}))
-		.pipe(gulp.dest('patterns'));
-
-});
-
-gulp.task('pattern-styles', function () {
-
-	// compiles the styles associated to the pattern library *only*
-
-	return gulp.src('patterns/app/scss/**/*.scss')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(globbing({ extensions: ['.scss'] }))
-		.pipe(sass())
-		.pipe(autoprefixer('last 2 versions'))
-		.pipe(gulp.dest('patterns/build/css'))
-		.pipe(concat('styles.min.css'))
-		.pipe(cleanCss({compatibility: 'ie8'}))
-		.pipe(livereload())
-		.pipe(notify("Pattern Styles Compiled"));
-
-});
-
-gulp.task('pattern-scripts', function () {
-
-	// compiles the scripts associated to the pattern library *only*
-
-	return gulp.src('patterns/app/js/main.js')
-		.pipe(plumber({ errorHandler: onError }))
-		.pipe(jshint())
-		.pipe(jshint.reporter('jshint-stylish'))
-		.pipe(uglify())
-		.pipe(rename({
-			extname: '.min.js'
-		}))
-		.pipe(gulp.dest('patterns/build/js'))
-		.pipe(livereload())
-		.pipe(notify("Pattern Scripts Compiled"));
+        .pipe(gulp.dest('dist/images/'));
 
 });
 
@@ -184,20 +147,37 @@ gulp.task('pattern-scripts', function () {
  //******
 // TASKS
 
-// post deploy, for deploying to the server
-gulp.task('post-deploy', ['templates', 'scss', 'js']);
+// if using styleguide
+if ( is_styleguide === true ) {
 
-// default watch, for normal development
-gulp.task('default', ['watch']);
-gulp.task('watch', function () {
+	// post deploy, for deploying to the server
+	gulp.task('post-deploy', ['styles', 'scripts', 'styleguide']);
 
-	livereload.listen();
+	gulp.task('watch', function () {
 
-	// boilerplate
-	gulp.watch('assets/scss/**/*.scss', ['scss', 'scss-lint', 'styleguide']);
-	gulp.watch('assets/js/*.js', ['js']);
+		livereload.listen();
 
-	// pattern library
-	gulp.watch(['styleguide_assets/aigis_assets/css/**/*.css', 'styleguide_assets/template_ejs/*.ejs'], ['styleguide']);
+		// boilerplate
+		gulp.watch('src/styles/**/*.scss', ['styles', 'scss-lint', 'styleguide']);
+		gulp.watch('src/scripts/*.js', ['scripts']);
 
-});
+		// pattern library
+		gulp.watch(['styleguide_src/aigis_src/styles/**/*.css', 'styleguide_src/template_ejs/*.ejs'], ['styleguide']);
+
+	});
+
+} else {
+
+	gulp.task('post-deploy', ['styles', 'scripts']);
+
+	gulp.task('watch', function () {
+
+		livereload.listen();
+
+		// boilerplate
+		gulp.watch('src/styles/**/*.scss', ['styles', 'scss-lint']);
+		gulp.watch('src/scripts/*.js', ['scripts']);
+
+	});
+
+}
