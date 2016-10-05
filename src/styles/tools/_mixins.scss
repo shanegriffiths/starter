@@ -47,9 +47,33 @@
  //***************************
 // TYPE AND LIST BASED MIXINS
 
-@mixin font-size($size: $base-font-size) {
+@mixin font-size($size: $base-font-size, $M-size: null, $L-size: null, $XL-size: null) {
 	font-size: $size + px;
 	font-size: $size / $base-font-size + rem;
+
+	@if ($M-size != null) {
+
+		@include mq(M) {
+			font-size: $M-size + px;
+			font-size: $M-size / $base-font-size + rem;
+		}
+	}
+
+	@if ($L-size != null) {
+
+		@include mq(L) {
+			font-size: $L-size + px;
+			font-size: $L-size / $large-font-size + rem;
+		}
+	}
+
+	@if ($XL-size != null) {
+
+		@include mq(XL) {
+			font-size: $XL-size + px;
+			font-size: $XL-size / $large-font-size + rem;
+		}
+	}
 }
 
 // Generates em value based on the root font size
@@ -91,19 +115,6 @@
 	}
 
 	@return $string;
-}
-
-
- //*************
-// SVG FALLBACK
-
-@mixin svg($path) {
-	background-image: url($path + '.svg');
-
-	.no-svg & {
-		background-image: url($path + '.png');
-		background-size: 100%;
-	}
 }
 
 
@@ -156,3 +167,28 @@
 
  *
  */
+
+
+ //**********************
+// Maintain Aspect Ratio
+//
+// https://css-tricks.com/snippets/sass/maintain-aspect-ratio-mixin/
+
+@mixin aspect-ratio($width, $height) {
+	position: relative;
+
+	&:before {
+		display: block;
+		content: '';
+		width: 100%;
+		padding-top: ($height / $width) * 100%;
+	}
+
+	> .content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}

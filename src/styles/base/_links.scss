@@ -16,6 +16,19 @@ a {
     }
 }
 
+%reverse-underline {
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: underline;
+	}
+
+	&:active {
+		text-decoration: none;
+	}
+}
+
 h1,
 h2,
 h3,

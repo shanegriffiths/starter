@@ -1,6 +1,49 @@
-/*------------------------------------*\
-	LISTS
-\*------------------------------------*/
+/*
+
+---
+name: Lists
+category:
+ - Base
+ - Base/Lists
+---
+
+## Unordered List
+
+This is just a plain unordered list, no special classes have been applied.
+
+```html
+<ul>
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ul>
+```
+
+## Ordered List
+
+This is just a plain ordered list, no special classes have been applied.
+
+```html
+<ol>
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ol>
+```
+
+## Plain List
+
+Using the `.is-plain` class on any list to remove margin and padding.
+
+```html
+<ul class="is-plain">
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ul>
+```
+
+*/
 
 ul {
 	list-style: disc;
@@ -10,8 +53,11 @@ ol,
 ul {
 	margin-bottom: $space;
 
-	&.no-bullet {
+	&.is-plain {
 		list-style-type: none;
+
+		margin: 0;
+		padding: 0;
 	}
 }
 

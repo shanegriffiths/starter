@@ -16,22 +16,15 @@ Buttons are created by either using the `.button` class, button element, or subm
 <a class="button button--large">Button</a>
 ```
 
----
-name: Variations
-category:
- - Components
- - Components/Buttons
----
-
 ## Variations
 
 ### Colour
 
-* Use the `.button--green` modifier.
+* Use the `.button--grey` modifier.
 
 ```html
-<a class="button button--green">Button</a>
-<a class="button button--large button--green">Button</a>
+<a class="button button--grey">Button</a>
+<a class="button button--large button--grey">Button</a>
 ```
 
 ### Style
@@ -40,7 +33,7 @@ category:
 
 ```html
 <a class="button button--ghost">Button</a>
-<a class="button button--ghost button--green">Button</a>
+<a class="button button--ghost button--grey">Button</a>
 ```
 
 */
@@ -48,110 +41,131 @@ category:
 .button,
 button,
 input[type="submit"] {
-	display: inline-block;
-	border: 0;
-	@include font-size(14);
-	border-radius: $border-radius;
-	padding: em(10, 14) em(15, 14);
-	text-decoration: none;
-	margin-bottom: $space / 2;
-	font-weight: bold;
+	@include font('secondary', 'bold');
+	@include font-size(12, 16, 18);
+	background: color('black');
 	color: color('white');
 	text-align: center;
+	text-decoration: none;
+	line-height: 1.3;
+
+	display: inline-block;
+	padding: em(7, 12) em(22.5, 12);
+	margin-bottom: $space / 2;
 	vertical-align: middle;
-	white-space: nowrap;
-	background: color('brand');
+
+	border: 2px solid color('black');
+	border-radius: 2px;
+
 	cursor: pointer;
+
+	transition: background .2s ease,
+				color .2s ease;
+
+	@include mq(M) {
+	    padding: em(10, 16) em(35, 16);
+	}
+
+	@include mq(L) {
+	    padding: em(12, 18) em(41, 18);
+		line-height: 1.1;
+		border-radius: 4px;
+	}
+
+	svg {
+		width: 1em;
+		height: 1em;
+		fill: currentColor;
+
+		@include mq(L) {
+			width: 1.3em;
+			height: 1.3em;
+		}
+	}
 
 	&:hover,
 	&:active,
 	&:focus {
-		background: lighten(color('brand'), 10%);
-	}
-}
+		background: transparent;
+		color: color('black');
 
-
- //*************
-// BUTTON SIZES
-
-.button--small {
-	@include font-size(12);
-	padding: em(5, 12) em(8, 12);
-}
-
-.button--medium {
-	@include font-size(16);
-	padding: em(15, 16) em(20, 16);
-}
-
-.button--large {
-	@include font-size(18);
-	padding: em(20, 18) em(25, 18);
-}
-
-// This is often used inside the hero sections
-.button--huge {
-	@include font-size(22);
-	padding: em(25, 20) em(100, 20);
-}
-
-
- //***********
-// VARIATIONS
-
-// Uppercase
-.button--uppercase {
-	text-transform: uppercase;
-}
-
-// Full bleed
-.button--block {
-	display: block;
-}
-
-// Left Align
-.button--left {
-	text-align: left;
-}
-
-// Remove the Margin
-.button--flatten {
-	margin-bottom: 0;
-}
-
-// Sub-heading within buttons
-// Must be used with a span element
-
-.button__sub-text {
-	display: block;
-	font-size: 75%;
-	font-style: italic;
-}
-
-.button--disabled {
-	cursor: default;
-	pointer-events: none;
-	background: color('grey');
-	color: color('white');
-}
-
- //**************
-// COLOR OPTIONS
-
-@each $name, $color in $button-colors {
-
-	.button--#{$name} {
-		background: $color;
-	}
-
-	a.button--#{$name},
-	button.button--#{$name},
-	input.button--#{$name} {
-		&:hover,
-		&:active,
-		&:focus {
-			background: map-get($button-colors-light, $name);
+		svg {
+			fill: currentColor;
 		}
 	}
+}
 
+
+ //*****************
+// Sizes Variations
+
+.button--large {
+	@include font-size(14, 16, 20);
+	line-height: 1.4;
+
+	padding: em(10, 14) em(20, 14);
+
+	@include mq(M) {
+		line-height: 1.3;
+	    padding: em(10, 16) em(35, 16);
+	}
+
+	@include mq(L) {
+		line-height: 1;
+	    padding: em(20, 20) em(62, 20);
+	}
+}
+
+
+ //*****************
+// Style Variations
+
+.button--ghost {
+	@include font('secondary', 'regular');
+	background: transparent;
+	color: color('black');
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: color('black');
+		color: color('white');
+	}
+}
+
+
+ //******************
+// Colour Variations
+
+.button--grey {
+	background: color('grey');
+	border-color: color('grey');
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: color('white');
+		color: color('grey');
+	}
+}
+
+.button--ghost.button--grey {
+	background: transparent;
+	color: color('grey');
+	border-color: color('grey');
+
+	&:hover,
+	&:active,
+	&:focus {
+		background: color('grey');
+		color: color('white');
+	}
+}
+
+
+ //*****************
+// Style Variations
+
+.button--flat {
+	margin: 0;
 }

@@ -1,0 +1,35 @@
+/*
+
+---
+name: Image Block
+category:
+ - Components
+ - Components/Image Block
+---
+
+This component contains an image with some text overlayed and is normally half of a row.
+
+```html
+<section class="image-block" style="background-image: url(http://unsplash.it/g/818/261?blur)">
+	<h3>Section Title</h3>
+	<p>The quick fox jumps over the lazy lorem ipsum</p>
+</section>
+```
+
+*/
+
+.image-block {
+	color: color('white');
+	padding: em(16) em(20) em(47);
+
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	@include mq(M) {
+	    padding: em(28) em(35);
+	}
+
+	@include mq(L) {
+	    padding: em(54, $large-font-size) em(64, $large-font-size);
+	}
+}

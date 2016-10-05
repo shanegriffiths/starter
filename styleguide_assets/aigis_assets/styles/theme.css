@@ -6,7 +6,7 @@ category: body
 
 ```html
 <p>
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+The quick fox jumps over the lazy dog. The quick fox jumps over the lazy dog. The quick fox jumps over the lazy dog.
 </p>
 ```
 
@@ -202,14 +202,25 @@ tag: latest
   border-right: 1px solid #F7F6F4; }
 .aigis-sidemenu__heading {
   font-size: 20px;
-  margin: 12px 0;
+  margin: 0;
   color: #424242;
   font-weight: normal;
-  padding-left: 10px;
+  padding-left: 0;
   line-height: 1em; }
 .aigis-sidemenu__heading a {
-  color: inherit;
-  text-decoration: none; }
+  text-decoration: none;
+  padding: 20px;
+  border-top: 1px solid #F7F6F4;
+  display: block;
+  position: relative;
+  color: #424242;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 0;
+  outline: none; }
+.aigis-sidemenu__heading a:hover {
+	text-decoration: none; }
 
 .aigis-preview .aigis-sidemenu {
   position: relative;
@@ -244,7 +255,7 @@ tag: latest
   font-size: 20px;
   padding: 0;
   margin: 0; }
-.aigis-categoryList li a{
+.aigis-categoryList li a {
   display: block;
   position: relative;
   padding: 3px 10px 3px 10px;
@@ -256,7 +267,8 @@ tag: latest
   outline: none;
   text-decoration: none; }
 
-.aigis-categoryList li:hover a[href]:hover{
+.aigis-categoryList li:hover a[href]:hover,
+.aigis-sidemenu__heading a:hover {
   color: #424242; }
 .aigis-categoryList li[data-path-depth] [data-tree-current] {
   background-color: #F7F6F4;
@@ -429,3 +441,22 @@ body {
   font-size: 30px; }
 .aigis-contents__body > h3 {
   font-size: 24px; }
+
+
+.aigis-colorPalette {
+	width: 21%;
+	float: left;
+	margin: 2%;
+	border-radius: 4px;
+	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .24);
+	overflow: hidden;
+}
+
+.aigis-colorPalette__color {
+	width: 100%;
+	height: 80px;
+}
+
+.aigis-colorPalette__label {
+	padding: 16px 13px;
+}

@@ -13,8 +13,8 @@ $gutter_pc: 0;
 // format: (prefix, columns, [breakpoint])
 
 $grids: (
-	(S, 4),
-	(M, 6, map-get($breakpoints, M)),
+	(S, 12),
+	(M, 12, map-get($breakpoints, M)),
 	(L, 12, map-get($breakpoints, L))
 );
 

@@ -1,18 +1,19 @@
-/*------------------------------------*\
-    BASE
-\*------------------------------------*/
-
 html {
     font-size: $base-font-size + px;
+
+	@include mq(L) {
+	    font-size: $large-font-size + px;
+	}
 }
 
 body {
-	background-color: color('white');
+	@include font;
+	line-height: $space;
+	color: color('black');
+
+	margin: 0;
     padding: 0;
-    margin: 0;
-    color: color('body');
-    line-height: $space;
-    @include font;
+	background-color: color('white');
 
 	text-rendering: optimizeLegibility;
 	-moz-osx-font-smoothing: grayscale;
@@ -20,11 +21,60 @@ body {
 	-webkit-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+
+	@include mq(M) {
+
+		// apply the overlay
+		&:after {
+			content: '';
+			background: color('black');
+			opacity: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+			// width of the side-menu
+			right: 396px;
+			bottom: 0;
+			z-index: 100;
+			transition: opacity .2s ease;
+			pointer-events: none;
+		}
+
+		&.menu-active:after {
+			opacity: .5;
+		}
+	}
 }
 
 
- //**********************
-// TEXT RELATED ELEMENTS
+/*
+
+---
+name: Paragraph
+category:
+ - Base
+ - Base/Paragraph
+---
+
+## Base Type Styles
+
+All of the spacing throughout the website is based from the type styling, conforming to a rule of 1.5 times the font-size.
+
+```html
+<p>The <em>quick</em> fox jumped over the <strong>lazy</strong> dog</p>
+<small>The quick fox jumped over the lazy dog</small>
+```
+
+### Example Paragraphs
+
+Here you can see two paragraphs of generated lorem-ipsum to get a feel of the line-height and spacing.
+
+```html
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu porttitor mauris. Duis a viverra dolor, lacinia porta massa. Aliquam faucibus libero viverra rhoncus lobortis. Quisque malesuada euismod lorem ac luctus. Sed sit amet nunc tellus. Suspendisse maximus nunc sed mi vehicula rutrum. Praesent lobortis euismod turpis sit amet venenatis. Nullam eu enim suscipit, accumsan arcu ut, fringilla odio. Pellentesque ultrices accumsan leo, sit amet vulputate ipsum feugiat id. Pellentesque a pharetra quam. Aliquam rutrum, turpis hendrerit varius pulvinar, libero nisi congue augue, in condimentum diam urna volutpat lectus. Praesent at ipsum a lacus accumsan accumsan. Integer mollis velit ac urna efficitur, eget ultricies nisl posuere. Nullam elementum nunc ac ante fermentum, ac consequat felis scelerisque. Cras dui lacus, posuere semper magna et, ornare porta arcu.
+<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin sit amet erat accumsan, sagittis metus eget, bibendum nisl. Curabitur dolor enim, bibendum id libero non, cursus iaculis libero. Vivamus orci nisl, posuere vel nibh eu, maximus ullamcorper augue. Vivamus scelerisque laoreet tristique. Donec ut urna lacus. Morbi et nisi sit amet leo vehicula pharetra sed ut elit. Pellentesque tincidunt, quam ut viverra tincidunt, lorem risus facilisis sapien, at gravida lorem dui fermentum arcu. Nam varius felis risus. Morbi a ipsum imperdiet, posuere lorem quis, tincidunt augue. Sed sed metus vitae nunc ullamcorper elementum. Vestibulum ornare augue tellus, vel accumsan augue euismod at. Quisque vitae convallis dolor, id tempus ipsum. Phasellus nisl ante, ullamcorper sit amet tortor at, suscipit venenatis sapien. Sed commodo odio in dolor tempus, eget rhoncus mauris bibendum.</p>
+```
+
+*/
 
 p,
 ul,
@@ -34,28 +84,12 @@ dl {
     margin-bottom: $space; // Typically the margin-bottom matches the line-height.
 }
 
-.text--bigger {
-	@include font-size(18);
-}
-
-.text--mini {
-	@include font-size(14);
-}
-
-.text--micro {
-	@include font-size(12);
-}
-
-.text--nano {
-	@include font-size(10);
-}
-
 small {
-	@extend .text--mini;
+	font-size: .8rem;
 }
 
-.text--style-italic {
-	font-style: italic;
+address {
+	font-style: normal;
 }
 
 abbr {
@@ -63,7 +97,7 @@ abbr {
 
 strong,
 b {
-	@include font(primary, bold);
+	@include font('primary', 'bold');
 }
 
 i,
@@ -71,15 +105,65 @@ em {
 	font-style: italic;
 }
 
+time {
+	@include font('secondary', 'semibold');
+	@include font-size(14, 16, 16);
+	color: color('black');
+	letter-spacing: .1px;
+	line-height: 1;
 
- //***********
-// BLOCKQUOTE
+	display: block;
+	margin-bottom: 1em;
+
+	@include mq(M) {
+	    margin-bottom: em(14, 16);
+	}
+}
+
+
+ //**********
+// SELECTION
+
+::-moz-selection {
+   background: color('black');
+   color: color('white');
+   text-shadow: none;
+}
+
+::selection {
+   background: color('black');
+   color: color('white');
+   text-shadow: none;
+}
+
+
+/*
+
+---
+name: Blockquote
+category:
+ - Base
+ - Base/Blockquote
+---
+
+## Default Styling
+
+This is the default markup and styling for a blockquote.
+
+```html
+<blockquote>
+	<p>The quick fox jumped over</p>
+	<footer> - The Lazy dog</footer>
+</blockquote>
+```
+
+*/
 
 blockquote {
     padding: em(10, 20) em(20, 20);
     margin: 0 0 em(20, 20);
     @include font-size(20);
-    border-left: 5px solid color('border-color');
+    border-left: 5px solid color('black');
 
     p {
         @include font;
@@ -92,111 +176,33 @@ blockquote {
 }
 
 
- //****************
-// HORIZONTAL RULE
+/*
+
+---
+name: Horizontal Rule
+category:
+ - Base
+ - Base/Horizontal Rule
+---
+
+## Default Styling
+
+This is the default markup and styling for a horizontal rule.
+
+```html
+<hr>
+```
+
+*/
 
 hr {
-	border: 0 solid color('body');
+	border-style: solid;
+	border-color: color('black');
 	border-top-width: 1px;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	border-left-width: 0;
+
 	height: 1px;
 	margin: 0 0 1em;
-}
-
-
- //************
-// MISC STYLES
-
-::-moz-selection {
-    background: color('brand');
-    color: color('white');
-    text-shadow: none;
-}
-
-::selection {
-    background: color('brand');
-    color: color('white');
-    text-shadow: none;
-}
-
-
- //*********
-// CLEARFIX
-
-.cf {
-    *zoom: 1;
-}
-
-.cf:before,
-.cf:after {
-    content: ' ';
-    display: table;
-}
-
-.cf:after {
-    clear: both;
-}
-
-// Completely remove from the flow and screen readers.
-
-.is-hidden {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-// Completely remove from the flow but leave available to screen readers.
-
-.is-visually-hidden {
-    position: absolute !important;
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-}
-
-
-/*------------------------------------*\
-	HELPERS
-\*------------------------------------*/
-
- //*******
-// FLOATS
-
-.pull-right {
-	float: right;
-}
-
-.pull-left {
-	float: left;
-}
-
-
- //***************
-// TEXT ALIGNMENT
-
-.align-right {
-	text-align: right;
-}
-
-.align-center {
-	text-align: center;
-}
-
-.align-left {
-	text-align: left;
-}
-
-
- //***************
-// INLINE SPACING
-
-// Used to provide some spacing between two inline elements (like 2 buttons side-by-side)
-
-.inline-space {
-	margin-right: em(10);
-}
-
-.inline-space--double {
-	margin-right: em(20);
 }

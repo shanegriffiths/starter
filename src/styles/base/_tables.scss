@@ -3,10 +3,12 @@
 \*------------------------------------*/
 
 table {
+	color: color('black');
 	background: color('white');
 	width: 100%;
-	text-align: left;
+	text-align: center;
 	border-spacing: 0;
+	border-right: 1px solid color('black');
 
 	&:before {
 		// this is where the magic happens
@@ -23,49 +25,36 @@ table {
 }
 
 th {
-	padding: 0;
+	padding: 13px;
 	display: block;
-	text-align: left;
 
 	@include mq(M) {
-		@include font-size(12);
-		@include font(primary, bold);
-		text-transform: uppercase;
-		background-color: color('brand');
-		color: color('white');
-		letter-spacing: 2px;
-		padding: em(10, 12);
+		@include font-size(13, 16, 22);
+		@include font('secondary', 'bold');
+		background-color: color('black');
+		padding: 8px;
 		display: table-cell;
+	}
+
+	@include mq(L) {
+		@include font($weight: 'semibold');
+		padding: 16px;
 	}
 }
 
 td {
 	display: block;
-	text-align: left;
-	padding: em(10, 12);
+	border-bottom: 1px solid color('black');
+	border-left: 1px solid color('black');
+	padding: 10px;
 
 	@include mq(M) {
-		padding: em(10, 12);
+		padding: 17px;
 		display: table-cell;
 	}
 
-	&:first-child {
-		@include font-size(12);
-		text-transform: uppercase;
-		background-color: color('brand');
-		color: color('white');
-		letter-spacing: 2px;
-		padding-left: em(5, 12);
-
-		@include mq(M) {
-			@include font-size(14);
-			@include font;
-			margin-top: em(10, 14);
-			letter-spacing: 0;
-			color: inherit;
-			background: inherit;
-			text-transform: none;
-		}
+	@include mq(L) {
+	    padding: 30px;
 	}
 }
 
@@ -80,14 +69,5 @@ thead tr {
 }
 
 tbody tr {
-	@include font-size(14);
-	@include font;
-	background-color: color('brand');
-	color: color('black');
-	text-decoration: none;
 	padding: em(14, 14);
-
-	&:nth-child(odd) {
-		background: color('body');
-	}
 }
