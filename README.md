@@ -59,6 +59,10 @@ We take inspiration from the [SMACSS architecture](https://smacss.com/).
 
 ## **Style Guide**
 
+### Background
+
+The styleguide we use is a custom, re-themed version of [Aigis](https://pxgrid.github.io/aigis/).
+
 ### Structure
 
 The styleguide template structure loosely follows that of Brad Frost's [Pattern Lab](http://patternlab.io/about.html), in that we take inspiration for the following template levels:
