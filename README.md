@@ -56,10 +56,10 @@ Modernizr functionality is provided in this boilerplate. Modernizr doesn't work 
 
 We take inspiration from the [SMACSS architecture](https://smacss.com/).
 
-- **Base**
-- **Layout**
-- **Modular**
-- **Tools**
+- **Base** - Base elements and utilities
+- **Layout** - Spacing, major UI components, and layout structures
+- **Modular** - All repeatable UI components
+- **Tools** - Setup, Variables, Mixins, Fonts, Grid
 
 ---
 
