@@ -82,6 +82,20 @@ tag: latest
   line-height: 1.75;
   color: #727272; }
 
+.aigis-module {
+	*zoom: 1;
+}
+
+.aigis-module:before,
+.aigis-module:after {
+	content: ' ';
+	display: table;
+}
+
+.aigis-module:after {
+	clear: both;
+}
+
 /*
 ---
 name: Preview
