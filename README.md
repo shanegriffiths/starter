@@ -1,5 +1,7 @@
 # Web boilerplate and style guide
 
+Version: 0.1.4
+
 This is the boilerplate for our web based projects.
 
 ## **Installation**
