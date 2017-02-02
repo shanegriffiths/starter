@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+- Added issue template
+
 ## [0.1.3] - 2016-06-20
 
 ### Added
