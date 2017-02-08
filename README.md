@@ -108,3 +108,26 @@ Hello Component!
 
 */
 ~~~
+
+## **HTACCESS**
+
+### Maintenance
+
+```
+ErrorDocument 503 /maintenance.html
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /maintenance.html [R=503,L]
+
+# Bureau IP
+RewriteCond %{REMOTE_ADDR} !^81\.174\.165\.192$
+```
+
+### Styleguide redirect
+
+```
+Redirect 301 /styleguide /wp-content/themes/\__theme__/styleguide
+```
