@@ -114,14 +114,13 @@ There is a boolean flag in the gulpfile incase you would rather not use the styl
 ```
 ErrorDocument 503 /maintenance.html
 
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule .* /maintenance.html [R=503,L]
-
-# Bureau IP
-RewriteCond %{REMOTE_ADDR} !^81\.174\.165\.192$
+# Remove hash's to enable maintenance document
+# RewriteEngine On
+# RewriteBase /
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REMOTE_ADDR} !^81\.174\.165\.192$
+# RewriteRule .* /maintenance.html [R=503,L]
 ```
 
 ### Style guide redirect
