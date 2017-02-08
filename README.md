@@ -126,7 +126,7 @@ RewriteRule .* /maintenance.html [R=503,L]
 RewriteCond %{REMOTE_ADDR} !^81\.174\.165\.192$
 ```
 
-### Styleguide redirect
+### Style guide redirect
 
 ```
 Redirect 301 /styleguide /wp-content/themes/\__theme__/styleguide
