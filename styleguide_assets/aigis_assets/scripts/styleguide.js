@@ -18,6 +18,18 @@ class Styleguide {
 
 		});
 
+		this.menu_items = Array.from( document.querySelectorAll('li[data-path-depth="0"] > a') );
+
+		this.menu_items.forEach(menu_item => menu_item.addEventListener('click', this.toggleMenu.bind(menu_item.parentNode), false) );
+
+	}
+
+	toggleMenu() {
+
+		event.preventDefault();
+
+		this.classList.toggle('is-active');
+
 	}
 
 	clickHandler() {
@@ -35,15 +47,14 @@ class Styleguide {
 	initialisePage() {
 
 		// get all preview sections
-		const previews = document.querySelectorAll('.aigis-preview');
-		const previewsArray = [].slice.call(previews);
+		const previews = Array.from( document.querySelectorAll('.aigis-preview') );
 
 		// !! forces a boolean value
 		// this checks that there are preview elements before continuing
-		if ( !! previewsArray.length ) {
+		if ( !! previews.length ) {
 
 			// add a click handler to each
-			previewsArray.forEach(preview => preview.addEventListener('click', this.clickHandler.bind(preview), false));
+			previews.forEach(preview => preview.addEventListener('click', this.clickHandler.bind(preview), false));
 
 		}
 
