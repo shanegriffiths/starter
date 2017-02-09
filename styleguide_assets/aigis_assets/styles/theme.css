@@ -296,8 +296,18 @@ tag: latest
   border-bottom: 1px solid #F7F6F4;
   margin-bottom: -1px;
 }
+.aigis-categoryList li[data-path-depth='0'] > a:after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 32px;
+  content: '';
+  width: 10px;
+  height: 7px;
+  background: url('../images/down-arrow.svg') center / cover no-repeat;
 }
 .aigis-categoryList ul[data-path-depth='1'] {
+  display: none;
   font-size: 16px;
   padding: 16px 0;
   border-bottom: 1px solid #F7F6F4;
@@ -306,6 +316,10 @@ tag: latest
 .aigis-categoryList li.is-active ul[data-path-depth='1'],
 .aigis-categoryList li[data-path-depth] [data-tree-current] + ul {
   display: block;
+}
+.aigis-categoryList li.is-active > a:after,
+.aigis-categoryList li[data-path-depth] [data-tree-current]:after {
+  transform: translateY(-50%) rotate(.5turn);
 }
 .aigis-categoryList ul[data-path-depth='1'] a {
   color: #727272;
