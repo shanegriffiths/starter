@@ -19,7 +19,8 @@
 		"build": "gulp post-deploy",
 		"watch": "gulp watch",
 		"modernizr": "gulp modernizr",
-		"styleguide": "gulp styleguide"
+		"styleguide": "gulp styleguide",
+		"deploy-styleguide": "gh-pages -d styleguide"
 	},
 	"devDependencies": {
 		"babel": "^6.1.18",
