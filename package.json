@@ -8,7 +8,7 @@
 	},
 	"author": {
 		"name": "The Idea Bureau",
-	    "url": "https://theideabureau.co"
+		"url": "https://theideabureau.co"
 	},
 	"license": "MIT",
 	"bugs": {
@@ -22,12 +22,12 @@
 		"styleguide": "gulp styleguide"
 	},
 	"devDependencies": {
-		"webpack": "^2.1.0-beta.25",
 		"babel": "^6.1.18",
 		"babel-core": "^6.14.0",
-    	"babel-loader": "^6.2.5",
-    	"babel-preset-es2015": "^6.3.13",
+		"babel-loader": "^6.2.5",
+		"babel-preset-es2015": "^6.3.13",
 		"gulp": "^3.9.0",
+		"gulp-aigis": "^1.1.2",
 		"gulp-autoprefixer": "^2.2.0",
 		"gulp-clean-css": "^2.0.6",
 		"gulp-concat": "^2.5.2",
@@ -46,14 +46,15 @@
 		"gulp-uglify": "^1.2.0",
 		"gulp-watch": "^4.2.4",
 		"jshint-stylish": "^1.0.2",
-		"gulp-aigis": "^1.1.2",
 		"node-aigis": "1.1.3",
-    	"node-libs-browser": "1.0.0"
+		"node-libs-browser": "1.0.0",
+		"webpack": "^2.1.0-beta.25"
 	},
 	"dependencies": {
-    	"babel-polyfill": "^6.3.14",
-		"lodash": "^4.2.1",
+		"babel-polyfill": "^6.3.14",
+		"gh-pages": "^0.12.0",
 		"jquery": "^3.1.1",
+		"lodash": "^4.2.1",
 		"vue": "1.0.26"
 	}
 }
