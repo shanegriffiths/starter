@@ -36,7 +36,7 @@
 .aigis-contents__body {
 	position: relative;
 	min-height: 100vh;
-	padding: 3em;
+	padding: 6.5rem 8.75rem;
 	margin: 0 auto;
 }
 
@@ -83,7 +83,7 @@
 }
 
 .aigis-header {
-	padding: 52px 10px;
+	padding: 50px 10px;
 	text-align: center;
 }
 
@@ -162,28 +162,26 @@
 .aigis-module > pre {
 	background-color: #F7F6F4;
 	color: #4C4C4C;
-	font-size: 14px;
+	font-size: 1rem;
 	position: relative;
-	padding: .5em;
-	border-radius: 3px;
-	margin: 0 auto 80px;
+	padding: 1rem;
+	border-radius: 2px;
+	margin: 0 auto calc(3em - 1px);
 	overflow: scroll;
 	border: 1px solid #ECECEC;
 }
 
 .aigis-preview {
 	border: 1px solid #ECECEC;
-	border-radius: 3px;
-	border-radius: 3px 3px 0 0;
-	padding: 1rem;
-	margin: 0;
-	margin-top: 10px;
+	border-radius: 2px;
+	border-radius: 2px 2px 0 0;
+	padding: 1.5rem;
+	margin-top: -1px;
 }
 
 .aigis-preview + pre {
-	border-radius: 0 0 3px 3px;
-	border-top: none;
-	margin-top: 0;
+	border-radius: 0 0 2px 2px;
+	margin-top: -1px;
 }
 
 .aigis-sidemenu {
@@ -341,21 +339,21 @@
 .aigis-module > h4 {
 	font-weight: normal;
 	color: #4C4C4C;
+	line-height: 1.3333333;
 }
 
 .aigis-module__heading {
-	font-size: 38px;
-	padding-bottom: 0.3em;
-	line-height: 1.225;
+	font-size: 2.25rem;
+	margin-bottom: 1.11111em;
 	position: relative;
 }
 
 .aigis-module > h2 {
-	font-size: 24px;
+	font-size: 1.5rem;
 }
 
 .aigis-module > h3 {
-	font-size: 20px;
+	font-size: 1.125rem;
 }
 
 .aigis-module > p a {
