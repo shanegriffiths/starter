@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+
+		<title>Styleguide</title>
+
+		<!-- <script src="https://use.typekit.net/jaj0dkp.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script> -->
+
+		<link href="../../aigis_assets/styles/highlight/prism.css" rel="stylesheet">
+		<link href="../../aigis_assets/styles/theme.css" rel="stylesheet">
+		<link href="../../../dist/styles/styles.css" rel="stylesheet">
+
+	</head>
+<body>
+
+	<div class="aigis-container" id="styleguide-app">
+
+		<div class="aigis-sidemenu">
+  <header class="aigis-header">
+    <a href="../../index.html"><img src="../../aigis_assets/images/bureau-shield.svg" alt=""></a>
+  </header>
+  <h2 class="aigis-sidemenu__heading"><a href="../../color.html">🎨 Colours</a></h2>
+  <nav class="aigis-categoryList">
+    <ul data-path-depth="0"><li data-path-depth="0"><a href="../../category/Base/index.html">Base</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../category/Base/Blockquote/index.html">Blockquote</a></li><li data-path-depth="1"><a href="../../category/Base/Forms/index.html">Forms</a></li><li data-path-depth="1"><a href="../../category/Base/Headings/index.html">Headings</a></li><li data-path-depth="1"><a href="../../category/Base/Horizontal-Rule/index.html">Horizontal Rule</a></li><li data-path-depth="1"><a href="../../category/Base/Lists/index.html">Lists</a></li><li data-path-depth="1"><a href="../../category/Base/Paragraph/index.html">Paragraph</a></li><li data-path-depth="1"><a href="../../category/Base/Utilities/index.html">Utilities</a></li></ul></li><li data-path-depth="0"><a href="../../category/Components/index.html">Components</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../category/Components/Buttons/index.html">Buttons</a></li><li data-path-depth="1"><a href="../../category/Components/Content-Block/index.html">Content Block</a></li><li data-path-depth="1"><a href="../../category/Components/Dropdown/index.html">Dropdown</a></li><li data-path-depth="1"><a href="../../category/Components/Hero/index.html">Hero</a></li><li data-path-depth="1"><a href="../../category/Components/Image-Block/index.html">Image Block</a></li><li data-path-depth="1"><a href="../../category/Components/Newsletter-Signup/index.html">Newsletter Signup</a></li><li data-path-depth="1"><a href="../../category/Components/Post-Card/index.html">Post Card</a></li><li data-path-depth="1"><a href="../../category/Components/Service-Card/index.html">Service Card</a></li></ul></li><li data-path-depth="0"><a href="../../category/Layout/index.html" data-tree-current>Layout</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../category/Layout/Footer/index.html">Footer</a></li><li data-path-depth="1"><a href="../../category/Layout/Hamburger/index.html">Hamburger</a></li><li data-path-depth="1"><a href="../../category/Layout/Header/index.html">Header</a></li><li data-path-depth="1"><a href="../../category/Layout/Media-Object/index.html">Media Object</a></li></ul></li></ul>
+  </nav>
+</div>
+
+
+		<div class="aigis-contents">
+
+			<div class="aigis-contents__body">
+				<header class="aigis-timestamp">8th February 2017 🕓</header>
+				
+
+	<div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Footer">
+					Footer
+				</h1>
+
+				<div class="aigis-module__filepath">
+					/src/styles/layout/_footer.scss
+				</div>
+
+				<div class="aigis-preview">
+  <footer class="site-footer">
+    <div class="wrapper wrapper--padded">
+        <section class="row">
+            <div class="col S-all M-4">
+                <h6 class="is-grey is-uppercase">Address</h6> <address class="site-footer__address">
+                    <ul class="is-plain">
+                        <li>Number 4</li>
+                        <li>The Crescent</li>
+                        <li>Taunton</li>
+                        <li>TA1 4EA</li>
+                    </ul>
+                </address>
+                <ul class="is-plain">
+                    <li>Email: <a href="mailto:hello@theideabureau.co">hello@theideabureau.co</a></li>
+                </ul>
+            </div>
+            <div class="site-footer__colophon / col S-hide M-all"> <span>&copy; 2016 The Idea Bureau. All rights reserved.</span> <span class="pull-right">Designed and Built by <a href="https://theideabureau.co">The Idea Bureau</a></span> </div>
+        </section>
+    </div>
+</footer></div>
+
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>footer</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>site-footer<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper wrapper--padded<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>row<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>col S-all M-4<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>h6</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>is-grey is-uppercase<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Address<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>h6</span><span class="token punctuation" >></span></span>
+
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>address</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>site-footer__address<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>ul</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>is-plain<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>Number 4<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+                        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>The Crescent<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+                        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>Taunton<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+                        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>TA1 4EA<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >></span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>address</span><span class="token punctuation" >></span></span>
+
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>ul</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>is-plain<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>Email: <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>mailto:hello@theideabureau.co<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>hello@theideabureau.co<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >></span></span>
+
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>site-footer__colophon / col S-hide M-all<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span><span class="token punctuation" >></span></span><span class="token entity" title="&copy;">&amp;copy;</span> 2016 The Idea Bureau. All rights reserved.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>span</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>pull-right<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Designed and Built by <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>https://theideabureau.co<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>The Idea Bureau<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>span</span><span class="token punctuation" >></span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >></span></span>
+
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>footer</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Hamburger">
+					Hamburger
+				</h1>
+
+				<div class="aigis-module__filepath">
+					/src/styles/layout/_hamburger.scss
+				</div>
+
+				<p>The hamburger animates on click to a cross. It is used to show the menu on smaller screens. Here we&#39;re using the <code>.hamburger--demo</code> class for presentation purposes only.</p>
+<div class="aigis-preview">
+  <div class="hamburger hamburger--demo">
+    <div class="hamburger-box">
+        <div class="hamburger-inner"></div>
+    </div>
+</div>
+<div class="menu-active">
+    <div class="hamburger hamburger--demo">
+        <div class="hamburger-box">
+            <div class="hamburger-inner"></div>
+        </div>
+    </div>
+</div></div>
+
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger hamburger--demo<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger-box<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger-inner<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>menu-active<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger hamburger--demo<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger-box<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger-inner<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Header">
+					Header
+				</h1>
+
+				<div class="aigis-module__filepath">
+					/src/styles/layout/_header.scss
+				</div>
+
+				<p>This is a presentation preview of the main header, the style changes slightly at the different breakpoints, and when the page is scrolled.</p>
+<div class="aigis-preview">
+  <header class="site-header__container">
+    <div class="wrapper wrapper--padded">
+        <div class="site-header">
+            <div class="site-header__logo">
+                <a href="/"> <img class="logo logo--desktop" src="../../../aigis_assets/images/bureau-crest-with-text.svg"> <img class="logo logo--desktop logo--desktop-scrolled" src="../../../aigis_assets/images/bureau-crest-with-text.svg"> <img class="logo logo--mobile"
+                        src="../../../aigis_assets/images/bureau-crest-with-text.svg"> </a>
+            </div>
+            <nav class="site-nav__container">
+                <ul class="nav / site-nav">
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="#">Our Work</a> </li>
+                    <li> <a href="#">Our People</a> </li>
+                    <li> <a href="#">Contact</a> </li>
+                </ul>
+                <!-- / .site-nav -->
+            </nav>
+            <!-- / .site-nav__container -->
+        </div>
+        <div class="hamburger">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </div>
+    </div>
+</header></div>
+
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>header</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>site-header__container<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>wrapper wrapper--padded<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>site-header<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>site-header__logo<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>/<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>img</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>logo logo--desktop<span class="token punctuation" >"</span></span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>../../../aigis_assets/images/bureau-crest-with-text.svg<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>img</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>logo logo--desktop logo--desktop-scrolled<span class="token punctuation" >"</span></span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>../../../aigis_assets/images/bureau-crest-with-text.svg<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>img</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>logo logo--mobile<span class="token punctuation" >"</span></span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>../../../aigis_assets/images/bureau-crest-with-text.svg<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>nav</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>site-nav__container<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>ul</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>nav / site-nav<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>
+                        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>About<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>
+                        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Our Work<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>
+                        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Our People<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>li</span><span class="token punctuation" >></span></span>
+                        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>a</span> <span class="token attr-name" >href</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>#<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>Contact<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>a</span><span class="token punctuation" >></span></span>
+                    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>li</span><span class="token punctuation" >></span></span>
+
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>ul</span><span class="token punctuation" >></span></span> <span class="token comment" spellcheck="true">&lt;!-- / .site-nav --></span>
+
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>nav</span><span class="token punctuation" >></span></span> <span class="token comment" spellcheck="true">&lt;!-- / .site-nav__container --></span>
+
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger-box<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+                <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>hamburger-inner<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+            <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>header</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Media Object">
+					Media Object
+				</h1>
+
+				<div class="aigis-module__filepath">
+					/src/styles/modular/_media-object.scss
+				</div>
+
+				<p>This object is used with other objects to create floated elements. <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/" title="null">Read more about it.</a></p>
+<div class="aigis-preview">
+  <section class="media">
+    <div class="media__object"> <img src="http://placehold.it/76x63" alt="" /> </div>
+    <div class="media__body">
+        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    </div>
+</section></div>
+
+<pre><code class="lang-html"><span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>section</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>media<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>media__object<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>img</span> <span class="token attr-name" >src</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>http://placehold.it/76x63<span class="token punctuation" >"</span></span> <span class="token attr-name" >alt</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span><span class="token punctuation" >"</span></span> <span class="token punctuation" >/></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>div</span> <span class="token attr-name" >class</span><span class="token attr-value" ><span class="token punctuation" >=</span><span class="token punctuation" >"</span>media__body<span class="token punctuation" >"</span></span><span class="token punctuation" >></span></span>
+        <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;</span>p</span><span class="token punctuation" >></span></span>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit.<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>p</span><span class="token punctuation" >></span></span>
+    <span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>div</span><span class="token punctuation" >></span></span>
+<span class="token tag" ><span class="token tag" ><span class="token punctuation" >&lt;/</span>section</span><span class="token punctuation" >></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+	</div>
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<script src="../../aigis_assets/scripts/styleguide.js"></script>
+	<script src="../../../dist/scripts/main.min.js"></script>
+
+</body>
+</html>
