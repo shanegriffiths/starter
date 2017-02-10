@@ -112,6 +112,8 @@ There is a boolean flag in the gulpfile incase you would rather not use the styl
 ### Maintenance
 
 ```
+# This sets the server 503 error document
+# It is essential for the following code block
 ErrorDocument 503 /maintenance.html
 
 # Remove hash's to enable maintenance document
