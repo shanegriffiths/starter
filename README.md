@@ -116,14 +116,12 @@ Hello Component!
 ```
 ErrorDocument 503 /maintenance.html
 
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule .* /maintenance.html [R=503,L]
-
-# Bureau IP
-RewriteCond %{REMOTE_ADDR} !^81\.174\.165\.192$
+# RewriteEngine On
+# RewriteBase /
+# RewriteCond %{REMOTE_ADDR} !^81\.174\.165\.192$
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule .* /maintenance.html [R=503,L]
 ```
 
 ### Style guide redirect
