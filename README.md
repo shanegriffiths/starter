@@ -116,13 +116,22 @@ There is a boolean flag in the gulpfile incase you would rather not use the styl
 # It is essential for the following code block
 ErrorDocument 503 /maintenance.html
 
-# Remove hash's to enable maintenance document
-# RewriteEngine On
-# RewriteBase /
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteCond %{REMOTE_ADDR} !^81\.174\.165\.192$
-# RewriteRule .* /maintenance.html [R=503,L]
+# Remove hashes to enable maintenance document
+<IfModule mod_rewrite.c>
+
+       	# RewriteEngine On
+
+       	# RewriteBase /
+
+       	# RewriteCond %{REMOTE_ADDR} !^81\.174\.165\.192$
+
+       	# RewriteCond %{REQUEST_URI} !/maintenance.html [NC]
+       	# RewriteCond %{REQUEST_URI} !\.(svg|gif|jpe?g?|png)$ [NC]
+
+       	# RewriteRule .* /maintenance.html [R=503,L]
+
+</IfModule>
+
 ```
 
 ### Style guide redirect
