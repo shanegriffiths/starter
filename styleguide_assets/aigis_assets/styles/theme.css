@@ -166,7 +166,7 @@
 	position: relative;
 	padding: 1rem;
 	border-radius: 2px;
-	margin: 0 auto calc(3em - 1px);
+	margin: 0 auto calc(3rem - 1px);
 	overflow: scroll;
 	border: 1px solid #ECECEC;
 }
