@@ -18,9 +18,53 @@ class Styleguide {
 
 		});
 
-		this.menu_items = Array.from( document.querySelectorAll('li[data-path-depth="0"] > a') );
+		this.setActiveDropdown();
+		this.initialiseMenu();
 
-		this.menu_items.forEach(menu_item => menu_item.addEventListener('click', this.toggleMenu.bind(menu_item.parentNode), false) );
+	}
+
+	setActiveDropdown() {
+
+		// search up through the menu to expand the current dropdown
+		let current_item = document.querySelector('[data-tree-current]');
+		let searching = true;
+
+		while (searching) {
+
+			// if the current item is the top-level parent
+			// set active class and stop searching
+			if ( current_item.dataset.pathDepth === '0' ) {
+				current_item.classList.add('is-active');
+				searching = false;
+			} else {
+				current_item = current_item.parentNode;
+			}
+
+		}
+	}
+
+	initialiseMenu() {
+
+		// save the top-level menu items
+		let menu_items = Array.from( document.querySelectorAll('li[data-path-depth="0"] > a') );
+
+		// create a span element for the menu dropdown
+		let dropdown_element = document.createElement('span');
+		dropdown_element.classList.add('menu-toggle');
+
+		// loop through each top-level menu item
+		menu_items.forEach(menu_item => {
+
+			// clone the dropdown span so it can be appended
+			let arrow = dropdown_element.cloneNode();
+
+			// add a click event to the dropdown item
+			arrow.addEventListener('click', this.toggleMenu.bind(menu_item.parentNode), false);
+
+			// append the dropdown item
+			menu_item.appendChild(arrow);
+
+		});
 
 	}
 
