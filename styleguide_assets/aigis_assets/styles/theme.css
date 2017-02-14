@@ -379,12 +379,17 @@
 	color: #000;
 	padding-right: 5px;
 	padding-left: 5px;
+.aigis-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: white;
+	opacity: .5;
 }
 
-.aigis-module__filepath {
+.aigis-modal.is-active {
 	display: block;
-	text-align: right;
-	margin-top: -15px;
-	font-size: 12px;
-	color: #ADADAD;
 }
