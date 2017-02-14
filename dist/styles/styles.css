@@ -1,0 +1,2815 @@
+/*
+
+Atomic design is philosophically complimentary with these CSS approaches:
+
+* SMACSS by Jonathan Snook http://smacss.com/
+* OOCSS by Nicole Sullivan http://oocss.org/
+* BEM CSS Methology : http://bem.info/method/
+* CSS Guidelines by Harry Roberts : http://cssguidelin.es/
+
+Sass Globbing is used so an import utilising an asterisk (*) will use every
+partial in the specified directory .
+
+*/
+/*------------------------------------*    $TOOLS
+\*------------------------------------*/
+/*------------------------------------*    RESET
+\*------------------------------------*/
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+html,
+body,
+div,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+form,
+legend,
+label,
+table,
+header,
+footer,
+nav,
+section,
+figure {
+  margin: 0;
+  padding: 0; }
+
+header,
+footer,
+nav,
+section,
+article,
+hgroup,
+figure {
+  display: block; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+/*------------------------------------*	FONTS
+\*------------------------------------*/
+/*------------------------------------*    GLOBAL MIXINS
+\*------------------------------------*/
+/**
+ * Example of use
+ *
+
+    .example {
+        @include font-size(12);
+
+        @include mq(400) {
+            @include font-size(14);
+        }
+
+        @include mq(M) {
+            @include font-size(18);
+        }
+    }
+
+ *
+ */
+/*------------------------------------*	VARIABLES
+\*------------------------------------*/
+/*------------------------------------* * THE IDEA BUREAU - GRID
+ * https://github.com/theideabureau/grid
+\*------------------------------------*/
+.row {
+  margin-left: -1.5rem;
+  *zoom: 1; }
+  .row:before, .row:after {
+    content: ' ';
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  .row:after {
+    clear: both; }
+
+.col {
+  border: 0 solid transparent;
+  float: left;
+  box-sizing: border-box;
+  background-clip: padding-box !important;
+  border-left-width: 1.5rem;
+  margin-left: 0;
+  padding: 0 0; }
+
+.S-hide {
+  display: none; }
+
+.S-1 {
+  display: block;
+  width: 8.33333%; }
+
+.row--clearfix .S-1:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-1:nth-child(12n+1) {
+  clear: left; }
+
+.S-2 {
+  display: block;
+  width: 16.66667%; }
+
+.row--clearfix .S-2:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-2:nth-child(6n+1) {
+  clear: left; }
+
+.S-3 {
+  display: block;
+  width: 25%; }
+
+.row--clearfix .S-3:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-3:nth-child(4n+1) {
+  clear: left; }
+
+.S-4 {
+  display: block;
+  width: 33.33333%; }
+
+.row--clearfix .S-4:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-4:nth-child(3n+1) {
+  clear: left; }
+
+.S-5 {
+  display: block;
+  width: 41.66667%; }
+
+.row--clearfix .S-5:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-5:nth-child(2n+1) {
+  clear: left; }
+
+.S-6 {
+  display: block;
+  width: 50%; }
+
+.row--clearfix .S-6:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-6:nth-child(2n+1) {
+  clear: left; }
+
+.S-7 {
+  display: block;
+  width: 58.33333%; }
+
+.row--clearfix .S-7:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-7:nth-child(1n+1) {
+  clear: left; }
+
+.S-8 {
+  display: block;
+  width: 66.66667%; }
+
+.row--clearfix .S-8:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-8:nth-child(1n+1) {
+  clear: left; }
+
+.S-9 {
+  display: block;
+  width: 75%; }
+
+.row--clearfix .S-9:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-9:nth-child(1n+1) {
+  clear: left; }
+
+.S-10 {
+  display: block;
+  width: 83.33333%; }
+
+.row--clearfix .S-10:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-10:nth-child(1n+1) {
+  clear: left; }
+
+.S-11 {
+  display: block;
+  width: 91.66667%; }
+
+.row--clearfix .S-11:nth-child(n) {
+  clear: none; }
+
+.row--clearfix .S-11:nth-child(1n+1) {
+  clear: left; }
+
+.S-all {
+  display: block;
+  margin-left: 0;
+  width: 100%; }
+
+@media screen and (min-width: 640px) {
+  .M-hide {
+    display: none; }
+  .M-1 {
+    display: block;
+    width: 8.33333%; }
+  .row--clearfix .M-1:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-1:nth-child(12n+1) {
+    clear: left; }
+  .M-2 {
+    display: block;
+    width: 16.66667%; }
+  .row--clearfix .M-2:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-2:nth-child(6n+1) {
+    clear: left; }
+  .M-3 {
+    display: block;
+    width: 25%; }
+  .row--clearfix .M-3:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-3:nth-child(4n+1) {
+    clear: left; }
+  .M-4 {
+    display: block;
+    width: 33.33333%; }
+  .row--clearfix .M-4:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-4:nth-child(3n+1) {
+    clear: left; }
+  .M-5 {
+    display: block;
+    width: 41.66667%; }
+  .row--clearfix .M-5:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-5:nth-child(2n+1) {
+    clear: left; }
+  .M-6 {
+    display: block;
+    width: 50%; }
+  .row--clearfix .M-6:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-6:nth-child(2n+1) {
+    clear: left; }
+  .M-7 {
+    display: block;
+    width: 58.33333%; }
+  .row--clearfix .M-7:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-7:nth-child(1n+1) {
+    clear: left; }
+  .M-8 {
+    display: block;
+    width: 66.66667%; }
+  .row--clearfix .M-8:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-8:nth-child(1n+1) {
+    clear: left; }
+  .M-9 {
+    display: block;
+    width: 75%; }
+  .row--clearfix .M-9:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-9:nth-child(1n+1) {
+    clear: left; }
+  .M-10 {
+    display: block;
+    width: 83.33333%; }
+  .row--clearfix .M-10:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-10:nth-child(1n+1) {
+    clear: left; }
+  .M-11 {
+    display: block;
+    width: 91.66667%; }
+  .row--clearfix .M-11:nth-child(n) {
+    clear: none; }
+  .row--clearfix .M-11:nth-child(1n+1) {
+    clear: left; }
+  .M-all {
+    display: block;
+    margin-left: 0;
+    width: 100%; } }
+
+@media screen and (min-width: 1024px) {
+  .L-hide {
+    display: none; }
+  .L-1 {
+    display: block;
+    width: 8.33333%; }
+  .row--clearfix .L-1:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-1:nth-child(12n+1) {
+    clear: left; }
+  .L-2 {
+    display: block;
+    width: 16.66667%; }
+  .row--clearfix .L-2:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-2:nth-child(6n+1) {
+    clear: left; }
+  .L-3 {
+    display: block;
+    width: 25%; }
+  .row--clearfix .L-3:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-3:nth-child(4n+1) {
+    clear: left; }
+  .L-4 {
+    display: block;
+    width: 33.33333%; }
+  .row--clearfix .L-4:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-4:nth-child(3n+1) {
+    clear: left; }
+  .L-5 {
+    display: block;
+    width: 41.66667%; }
+  .row--clearfix .L-5:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-5:nth-child(2n+1) {
+    clear: left; }
+  .L-6 {
+    display: block;
+    width: 50%; }
+  .row--clearfix .L-6:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-6:nth-child(2n+1) {
+    clear: left; }
+  .L-7 {
+    display: block;
+    width: 58.33333%; }
+  .row--clearfix .L-7:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-7:nth-child(1n+1) {
+    clear: left; }
+  .L-8 {
+    display: block;
+    width: 66.66667%; }
+  .row--clearfix .L-8:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-8:nth-child(1n+1) {
+    clear: left; }
+  .L-9 {
+    display: block;
+    width: 75%; }
+  .row--clearfix .L-9:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-9:nth-child(1n+1) {
+    clear: left; }
+  .L-10 {
+    display: block;
+    width: 83.33333%; }
+  .row--clearfix .L-10:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-10:nth-child(1n+1) {
+    clear: left; }
+  .L-11 {
+    display: block;
+    width: 91.66667%; }
+  .row--clearfix .L-11:nth-child(n) {
+    clear: none; }
+  .row--clearfix .L-11:nth-child(1n+1) {
+    clear: left; }
+  .L-all {
+    display: block;
+    margin-left: 0;
+    width: 100%; } }
+
+/*------------------------------------*    $BASE ELEMENTS
+\*------------------------------------*/
+html {
+  font-size: 16px; }
+  @media screen and (min-width: 1024px) {
+    html {
+      font-size: 18px; } }
+
+body {
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.5rem;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+  @media screen and (min-width: 640px) {
+    body:after {
+      content: '';
+      background: #000;
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 396px;
+      bottom: 0;
+      z-index: 100;
+      -webkit-transition: opacity .2s ease;
+              transition: opacity .2s ease;
+      pointer-events: none; }
+    body.menu-active:after {
+      opacity: .5; } }
+
+/*
+
+---
+name: Paragraph
+category:
+ - Base
+ - Base/Paragraph
+---
+
+## Base Type Styles
+
+All of the spacing throughout the website is based from the type styling, conforming to a rule of 1.5 times the font-size.
+
+```html
+<p>The <em>quick</em> brown fox jumped over the <strong>lazy</strong> dog</p>
+<small>The quick brown fox jumped over the lazy dog</small>
+```
+
+### Example Paragraphs
+
+Here you can see two paragraphs of generated lorem-ipsum to get a feel of the line-height and spacing.
+
+```html
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu porttitor mauris. Duis a viverra dolor, lacinia porta massa. Aliquam faucibus libero viverra rhoncus lobortis. Quisque malesuada euismod lorem ac luctus. Sed sit amet nunc tellus. Suspendisse maximus nunc sed mi vehicula rutrum. Praesent lobortis euismod turpis sit amet venenatis. Nullam eu enim suscipit, accumsan arcu ut, fringilla odio. Pellentesque ultrices accumsan leo, sit amet vulputate ipsum feugiat id. Pellentesque a pharetra quam. Aliquam rutrum, turpis hendrerit varius pulvinar, libero nisi congue augue, in condimentum diam urna volutpat lectus. Praesent at ipsum a lacus accumsan accumsan. Integer mollis velit ac urna efficitur, eget ultricies nisl posuere. Nullam elementum nunc ac ante fermentum, ac consequat felis scelerisque. Cras dui lacus, posuere semper magna et, ornare porta arcu.
+<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin sit amet erat accumsan, sagittis metus eget, bibendum nisl. Curabitur dolor enim, bibendum id libero non, cursus iaculis libero. Vivamus orci nisl, posuere vel nibh eu, maximus ullamcorper augue. Vivamus scelerisque laoreet tristique. Donec ut urna lacus. Morbi et nisi sit amet leo vehicula pharetra sed ut elit. Pellentesque tincidunt, quam ut viverra tincidunt, lorem risus facilisis sapien, at gravida lorem dui fermentum arcu. Nam varius felis risus. Morbi a ipsum imperdiet, posuere lorem quis, tincidunt augue. Sed sed metus vitae nunc ullamcorper elementum. Vestibulum ornare augue tellus, vel accumsan augue euismod at. Quisque vitae convallis dolor, id tempus ipsum. Phasellus nisl ante, ullamcorper sit amet tortor at, suscipit venenatis sapien. Sed commodo odio in dolor tempus, eget rhoncus mauris bibendum.</p>
+```
+
+*/
+p,
+ul,
+ol,
+dl {
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem; }
+
+small {
+  font-size: .8rem; }
+
+address {
+  font-style: normal; }
+
+strong,
+b {
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+i,
+em {
+  font-style: italic; }
+
+time {
+  font-weight: 600;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #000;
+  letter-spacing: .1px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 1em; }
+  @media screen and (min-width: 640px) {
+    time {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 1024px) {
+    time {
+      font-size: 16px;
+      font-size: 0.88889rem; } }
+  @media screen and (min-width: 640px) {
+    time {
+      margin-bottom: 0.875em; } }
+
+::-moz-selection {
+  background: #000;
+  color: #FFF;
+  text-shadow: none; }
+
+::selection {
+  background: #000;
+  color: #FFF;
+  text-shadow: none; }
+
+/*
+
+---
+name: Blockquote
+category:
+ - Base
+ - Base/Blockquote
+---
+
+## Default Styling
+
+This is the default markup and styling for a blockquote.
+
+```html
+<blockquote>
+	<p>The quick brown fox jumped over</p>
+	<footer> - The Lazy dog</footer>
+</blockquote>
+```
+
+*/
+blockquote {
+  padding: 0.5em 1em;
+  margin: 0 0 1em;
+  font-size: 20px;
+  font-size: 1.25rem;
+  border-left: 5px solid #000; }
+  blockquote p {
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 0.75rem; }
+  blockquote footer {
+    display: block; }
+
+/*
+
+---
+name: Horizontal Rule
+category:
+ - Base
+ - Base/Horizontal Rule
+---
+
+## Default Styling
+
+This is the default markup and styling for a horizontal rule.
+
+```html
+<hr>
+```
+
+*/
+hr {
+  border-style: solid;
+  border-color: #000;
+  border-top-width: 1px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  height: 1px;
+  margin: 0 0 1em; }
+
+/*
+
+---
+name: Utilities
+category:
+ - Layout
+ - Layout/Utilities
+---
+
+## List of Utility Classes
+
+
+### Color
+
+These classes enforce the colour of the text to change:
+- `.is-grey`
+
+```html
+<h1 class="is-grey">The brown fox</h1>
+```
+
+### Clearfix
+
+> .cf
+
+This is used to apply a clearfix.
+
+Use this on container elements with floated children.
+
+
+### Hidden
+
+> .is-hidden
+
+This is used to completely remove an element from the document flow and from screen-readers.
+
+This is usually applied or removed with JavaScript.
+
+> .is-visually-hidden
+
+This is still visible to screen-readers, so it is used for accessibility purposes.
+
+
+### Floats
+
+> .pull-right
+
+This is used to apply a right float.
+
+> .pull-left
+
+This is used to apply a left float.
+
+
+### Alignment
+
+> .align-right
+
+This is used to apply `text-align: right;`
+
+> .align-center
+
+This is used to apply `text-align: center;`
+
+> .align-left
+
+This is used to apply `text-align: left;`
+
+*/
+.is-grey {
+  color: #999 !important; }
+
+.is-bg-grey {
+  background-color: #999 !important; }
+
+.cf, .band, .nav {
+  *zoom: 1; }
+
+.cf:before, .band:before, .nav:before,
+.cf:after,
+.band:after,
+.nav:after {
+  content: ' ';
+  display: table; }
+
+.cf:after, .band:after, .nav:after {
+  clear: both; }
+
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important; }
+
+.is-visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px); }
+
+.pull-right {
+  float: right; }
+
+.pull-left {
+  float: left; }
+
+.align-right {
+  text-align: right; }
+
+.align-center {
+  text-align: center; }
+
+.align-left {
+  text-align: left; }
+
+/*------------------------------------*    LINKS
+\*------------------------------------*/
+a {
+  text-decoration: underline;
+  word-wrap: break-word; }
+  a:hover, a:focus {
+    text-decoration: none; }
+  a:active {
+    text-decoration: underline; }
+
+.site-footer a {
+  text-decoration: none; }
+  .site-footer a:hover, .site-footer a:focus {
+    text-decoration: underline; }
+  .site-footer a:active {
+    text-decoration: none; }
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  text-decoration: none; }
+  h1 a:hover, h1 a:focus,
+  h2 a:hover,
+  h2 a:focus,
+  h3 a:hover,
+  h3 a:focus,
+  h4 a:hover,
+  h4 a:focus,
+  h5 a:hover,
+  h5 a:focus {
+    text-decoration: underline; }
+  h1 a:active,
+  h2 a:active,
+  h3 a:active,
+  h4 a:active,
+  h5 a:active {
+    text-decoration: none; }
+
+tbody tr a {
+  color: inherit;
+  text-decoration: underline; }
+  tbody tr a:hover, tbody tr a:focus {
+    text-decoration: none; }
+  tbody tr a:active {
+    text-decoration: underline; }
+
+/*
+
+---
+name: Headings
+category:
+ - Base
+ - Base/Headings
+---
+
+## Base Headings
+
+The class structure follows the structure discussed by Harry Roberts in his article [practical font sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/) on CSS Wizardry.
+
+```html
+<h1 class="alpha">The brown fox</h1>
+<h2 class="beta">The brown fox</h2>
+<h3 class="gamma">The brown fox</h3>
+<h4 class="delta">The brown fox</h4>
+<h5 class="epsilon">The brown fox</h5>
+<h6 class="zeta">The brown fox</h6>
+```
+
+## Utilities
+
+
+### Style
+
+Use the `.is-uppercase` class to enforce a heading to be in capitals.
+
+```html
+<h1 class="is-uppercase">The brown fox</h1>
+```
+
+### Spacing
+
+Using `.drop` class applies only half the regular bottom bottom.
+
+```html
+<h1 class="drop">The brown fox</h1>
+<h1>The brown fox</h1>
+<h1>The brown fox</h1>
+```
+
+*/
+h1,
+.alpha,
+h2,
+.beta,
+h3,
+.gamma,
+.post-card__title,
+h4,
+.delta,
+h5,
+.epsilon,
+h6,
+.zeta {
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  margin-bottom: 1.5rem; }
+  h1.is-uppercase,
+  .alpha.is-uppercase,
+  h2.is-uppercase,
+  .beta.is-uppercase,
+  h3.is-uppercase,
+  .gamma.is-uppercase,
+  .is-uppercase.post-card__title,
+  h4.is-uppercase,
+  .delta.is-uppercase,
+  h5.is-uppercase,
+  .epsilon.is-uppercase,
+  h6.is-uppercase,
+  .zeta.is-uppercase {
+    text-transform: uppercase; }
+  h1.drop,
+  .alpha.drop,
+  h2.drop,
+  .beta.drop,
+  h3.drop,
+  .gamma.drop,
+  .drop.post-card__title,
+  h4.drop,
+  .delta.drop,
+  h5.drop,
+  .epsilon.drop,
+  h6.drop,
+  .zeta.drop {
+    margin-bottom: .75rem; }
+
+h1,
+.alpha {
+  font-size: 20px;
+  font-size: 1.25rem; }
+  @media screen and (min-width: 640px) {
+    h1,
+    .alpha {
+      font-size: 30px;
+      font-size: 1.875rem; } }
+  @media screen and (min-width: 1024px) {
+    h1,
+    .alpha {
+      font-size: 46px;
+      font-size: 2.55556rem; } }
+  h1.alt-font,
+  .alpha.alt-font {
+    font-size: 22px;
+    font-size: 1.375rem; }
+    @media screen and (min-width: 640px) {
+      h1.alt-font,
+      .alpha.alt-font {
+        font-size: 22px;
+        font-size: 1.375rem; } }
+    @media screen and (min-width: 1024px) {
+      h1.alt-font,
+      .alpha.alt-font {
+        font-size: 36px;
+        font-size: 2rem; } }
+
+h2,
+.beta {
+  font-size: 18px;
+  font-size: 1.125rem; }
+  @media screen and (min-width: 640px) {
+    h2,
+    .beta {
+      font-size: 24px;
+      font-size: 1.5rem; } }
+  @media screen and (min-width: 1024px) {
+    h2,
+    .beta {
+      font-size: 40px;
+      font-size: 2.22222rem; } }
+
+h3,
+.gamma,
+.post-card__title {
+  font-size: 15px;
+  font-size: 0.9375rem; }
+  @media screen and (min-width: 640px) {
+    h3,
+    .gamma,
+    .post-card__title {
+      font-size: 19px;
+      font-size: 1.1875rem; } }
+  @media screen and (min-width: 1024px) {
+    h3,
+    .gamma,
+    .post-card__title {
+      font-size: 35px;
+      font-size: 1.94444rem; } }
+
+h4,
+.delta {
+  font-size: 13px;
+  font-size: 0.8125rem; }
+  @media screen and (min-width: 640px) {
+    h4,
+    .delta {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 1024px) {
+    h4,
+    .delta {
+      font-size: 22px;
+      font-size: 1.22222rem; } }
+
+h5,
+.epsilon {
+  font-size: 12px;
+  font-size: 0.75rem; }
+  @media screen and (min-width: 640px) {
+    h5,
+    .epsilon {
+      font-size: 15px;
+      font-size: 0.9375rem; } }
+  @media screen and (min-width: 1024px) {
+    h5,
+    .epsilon {
+      font-size: 20px;
+      font-size: 1.11111rem; } }
+
+h6,
+.zeta {
+  font-size: 12px;
+  font-size: 0.75rem; }
+  @media screen and (min-width: 640px) {
+    h6,
+    .zeta {
+      font-size: 12px;
+      font-size: 0.75rem; } }
+  @media screen and (min-width: 1024px) {
+    h6,
+    .zeta {
+      font-size: 18px;
+      font-size: 1rem; } }
+
+/*
+
+---
+name: Lists
+category:
+ - Base
+ - Base/Lists
+---
+
+## Unordered List
+
+This is just a plain unordered list, no special classes have been applied.
+
+```html
+<ul>
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ul>
+```
+
+## Ordered List
+
+This is just a plain ordered list, no special classes have been applied.
+
+```html
+<ol>
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ol>
+```
+
+## Plain List
+
+Using the `.is-plain` class on any list to remove margin and padding.
+
+```html
+<ul class="is-plain">
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ul>
+```
+
+*/
+ul {
+  list-style: disc; }
+
+ol,
+ul {
+  margin-bottom: 1.5rem; }
+  ol.is-plain,
+  ul.is-plain {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+
+ul ul,
+ol ol {
+  margin-bottom: 0; }
+
+/*------------------------------------*    MEDIA ELEMENTS
+\*------------------------------------*/
+audio,
+canvas,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+iframe,
+img {
+  max-width: 100%;
+  width: 100%; }
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: auto; }
+
+a img {
+  border: 0; }
+
+/*
+
+---
+name: Input
+category:
+ - Base
+ - Base/Forms
+---
+
+## Default Styling
+
+This is the default markup and styling for a form input fields.
+
+```html
+<input type="text" placeholder="text" />
+<input type="search" placeholder="search" />
+<input type="number" placeholder="number" />
+<input type="range" />
+<input type="date" />
+<textarea placeholder="Text area"></textarea>
+```
+
+*/
+fieldset,
+form {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+label,
+legend {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  color: #000;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0;
+  cursor: pointer; }
+
+abbr[title="Required"] {
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000; }
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+input[type="number"],
+input[type="color"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="datetime"],
+input[type="datetime-local"],
+textarea {
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-size: 0.75rem;
+  color: #000;
+  background-color: #FFF;
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 0.625em 0.375em;
+  margin-bottom: 0.75rem; }
+  @media screen and (min-width: 640px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"],
+    input[type="number"],
+    input[type="color"],
+    input[type="range"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    textarea {
+      font-size: 12px;
+      font-size: 0.75rem; } }
+  @media screen and (min-width: 1024px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"],
+    input[type="number"],
+    input[type="color"],
+    input[type="range"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    textarea {
+      font-size: 14px;
+      font-size: 0.77778rem; } }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="url"]:focus,
+  input[type="number"]:focus,
+  input[type="color"]:focus,
+  input[type="range"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="week"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  textarea:focus {
+    box-shadow: none;
+    outline: none; }
+  @media screen and (min-width: 1024px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"],
+    input[type="number"],
+    input[type="color"],
+    input[type="range"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    textarea {
+      padding: 1.14286em 0.85714em; } }
+
+input[type="color"] {
+  width: 1em; }
+
+textarea {
+  line-height: 1.5rem; }
+
+::-webkit-input-placeholder {
+  color: #999; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #999; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #999; }
+
+:-ms-input-placeholder {
+  color: #999; }
+
+/*
+
+---
+name: Flex Input
+category:
+ - Base
+ - Base/Forms
+---
+
+## Default Styling
+
+This allows you to have a button in the same row as its input field.
+
+```html
+<form class="flex-input">
+	<input type="text" placeholder="text" />
+	<button>Submit</button>
+</form>
+```
+
+*/
+.flex-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .flex-input input {
+    border-right: 0;
+    border-radius: 4px 0 0 4px; }
+  .flex-input button {
+    padding: 0 1em;
+    border-radius: 0 4px 4px 0; }
+
+/*------------------------------------*    TABLES
+\*------------------------------------*/
+table {
+  color: #000;
+  background: #FFF;
+  width: 100%;
+  text-align: center;
+  border-spacing: 0;
+  border-right: 1px solid #000; }
+  table:before {
+    content: attr(aria-label) ""; }
+    @media screen and (min-width: 640px) {
+      table:before {
+        display: none; } }
+  table:last-child {
+    margin-bottom: 1.5rem; }
+
+th {
+  padding: 13px;
+  display: block; }
+  @media screen and (min-width: 640px) {
+    th {
+      font-size: 13px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #000;
+      padding: 8px;
+      display: table-cell; } }
+  @media screen and (min-width: 640px) and (min-width: 640px) {
+    th {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 640px) and (min-width: 1024px) {
+    th {
+      font-size: 22px;
+      font-size: 1.22222rem; } }
+  @media screen and (min-width: 1024px) {
+    th {
+      font-weight: 600;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding: 16px; } }
+
+td {
+  display: block;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+  padding: 10px; }
+  @media screen and (min-width: 640px) {
+    td {
+      padding: 17px;
+      display: table-cell; } }
+  @media screen and (min-width: 1024px) {
+    td {
+      padding: 30px; } }
+
+thead tr {
+  color: transparent;
+  font: 0/0 a; }
+  @media screen and (min-width: 640px) {
+    thead tr {
+      color: inherit;
+      font: inherit; } }
+
+tbody tr {
+  padding: 1em; }
+
+/*------------------------------------*    $LAYOUT
+\*------------------------------------*/
+/*------------------------------------*	BAND
+\*------------------------------------*/
+.band {
+  margin-bottom: 1.5rem; }
+
+.band--thin {
+  margin-bottom: 0.75rem; }
+
+.band--thick {
+  margin-bottom: 3rem; }
+
+.band--extra-thick {
+  margin-bottom: 4.5rem; }
+
+.band--double-thick {
+  margin-bottom: 6rem; }
+
+.flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (min-width: 640px) {
+    .flex-container {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+
+.flex-container--wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+@media screen and (min-width: 640px) {
+  .flex-container--3 .flex-container__item {
+    -ms-flex-preferred-size: 33.33%;
+        flex-basis: 33.33%;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0; } }
+
+@media screen and (min-width: 640px) {
+  .flex-container--3 .flex-container__item--large {
+    -ms-flex-preferred-size: 66.66%;
+        flex-basis: 66.66%;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0; } }
+
+@media screen and (min-width: 640px) {
+  .flex-container--2 .flex-container__item {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0; } }
+
+.flex-container__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+  .flex-container--border .flex-container__item:nth-child(odd) {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000; }
+    @media screen and (min-width: 640px) {
+      .flex-container--border .flex-container__item:nth-child(odd) {
+        border-top: 0;
+        border-bottom: 0;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000; } }
+
+/*
+
+---
+name: Footer
+category:
+ - Layout
+ - Layout/Footer
+---
+
+```html
+<footer class="site-footer">
+
+	<div class="wrapper wrapper--padded">
+
+		<section class="row">
+
+			<div class="col S-all M-4">
+
+				<h6 class="is-grey is-uppercase">Address</h6>
+
+				<address class="site-footer__address">
+					<ul class="is-plain">
+						<li>Number 4</li>
+						<li>The Crescent</li>
+						<li>Taunton</li>
+						<li>TA1 4EA</li>
+					</ul>
+				</address>
+
+				<ul class="is-plain">
+					<li>Email: <a href="mailto:hello@theideabureau.co">hello@theideabureau.co</a></li>
+				</ul>
+
+			</div>
+
+			<div class="site-footer__colophon / col S-hide M-all">
+				<span>&copy; 2016 The Idea Bureau. All rights reserved.</span>
+				<span class="pull-right">Designed and Built by <a href="https://theideabureau.co">The Idea Bureau</a></span>
+			</div>
+
+		</section>
+
+	</div>
+
+</footer>
+```
+
+*/
+.site-footer {
+  background-color: #FFF;
+  color: #000;
+  padding: 2.625em 0 3.125em; }
+  @media screen and (min-width: 640px) {
+    .site-footer {
+      padding: 3em 0 1.5em; } }
+  @media screen and (min-width: 1024px) {
+    .site-footer {
+      padding: 5.0625em 0 1.6875em; } }
+  .site-footer a {
+    color: inherit; }
+  .site-footer h6 {
+    margin-bottom: 10px; }
+
+.site-footer__address {
+  margin-bottom: 40px; }
+  @media screen and (min-width: 640px) {
+    .site-footer__address {
+      margin-bottom: 20px; } }
+  @media screen and (min-width: 1024px) {
+    .site-footer__address {
+      margin-bottom: 40px; } }
+
+.site-footer__colophon {
+  font-size: 10px;
+  font-size: 0.625rem;
+  clear: both;
+  margin-top: 38px; }
+  @media screen and (min-width: 640px) {
+    .site-footer__colophon {
+      font-size: 10px;
+      font-size: 0.625rem; } }
+  @media screen and (min-width: 1024px) {
+    .site-footer__colophon {
+      font-size: 12px;
+      font-size: 0.66667rem; } }
+  @media screen and (min-width: 1024px) {
+    .site-footer__colophon {
+      margin-top: 54px; } }
+  .site-footer__colophon a {
+    font-weight: 700;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+/*
+
+---
+name: Hamburger
+category:
+ - Layout
+ - Layout/Hamburger
+---
+
+The hamburger animates on click to a cross. It is used to show the menu on smaller screens. Here we're using the `.hamburger--demo` class for presentation purposes only.
+
+```html
+<div class="hamburger hamburger--demo">
+	<div class="hamburger-box">
+		<div class="hamburger-inner"></div>
+	</div>
+</div>
+<div class="menu-active">
+	<div class="hamburger hamburger--demo">
+		<div class="hamburger-box">
+			<div class="hamburger-inner"></div>
+		</div>
+	</div>
+</div>
+```
+
+*/
+.hamburger--demo {
+  display: block !important;
+  position: static !important;
+  float: left !important;
+  margin-right: 1.5rem; }
+
+.hamburger {
+  overflow: visible;
+  height: 30px;
+  float: right;
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 100;
+  cursor: pointer;
+  -webkit-transition: top .2s ease;
+          transition: top .2s ease; }
+  @media screen and (min-width: 640px) {
+    .hamburger {
+      top: 23px;
+      right: 34px; }
+      .site-header__container--scrolling .hamburger {
+        top: 19px; } }
+  @media screen and (min-width: 1024px) {
+    .hamburger {
+      top: 26px; }
+      .site-header__container--scrolling .hamburger {
+        top: 24px; } }
+  @media screen and (min-width: 1440px) {
+    .hamburger {
+      display: none; } }
+  .menu-active .hamburger .hamburger-inner {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transition-delay: .14s;
+            transition-delay: .14s;
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .menu-active .hamburger .hamburger-inner, .menu-active .hamburger .hamburger-inner:before, .menu-active .hamburger .hamburger-inner:after {
+      border-radius: 0;
+      height: 6px; }
+    .menu-active .hamburger .hamburger-inner:before {
+      top: 0;
+      opacity: 0;
+      -webkit-transition: top .1s ease, opacity .1s .14s ease;
+              transition: top .1s ease, opacity .1s .14s ease; }
+    .menu-active .hamburger .hamburger-inner:after {
+      width: 30px;
+      bottom: 0;
+      -webkit-transform: rotate(-90deg);
+              transform: rotate(-90deg);
+      -webkit-transition: bottom 0.1s ease, -webkit-transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
+              transition: bottom 0.1s ease, transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+.hamburger-box {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+  -webkit-transition-duration: .1s;
+          transition-duration: .1s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    border-radius: 1px;
+    position: absolute;
+    -webkit-transition-property: -webkit-transform;
+            transition-property: transform;
+    -webkit-transition-duration: .15s;
+            transition-duration: .15s;
+    -webkit-transition-timing-function: ease;
+            transition-timing-function: ease; }
+  .hamburger-inner:before, .hamburger-inner:after {
+    content: '';
+    display: block; }
+  .hamburger-inner:before {
+    top: -10px;
+    -webkit-transition: top .1s .14s ease, opacity .1s ease;
+            transition: top .1s .14s ease, opacity .1s ease; }
+  .hamburger-inner:after {
+    bottom: -10px;
+    -webkit-transition: bottom 0.1s 0.14s ease, -webkit-transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            transition: bottom 0.1s 0.14s ease, transform 0.1s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+/*
+
+---
+name: Header
+category:
+ - Layout
+ - Layout/Header
+---
+
+This is a presentation preview of the main header, the style changes slightly at the different breakpoints, and when the page is scrolled.
+
+
+```html
+<header class="site-header__container">
+
+	<div class="wrapper wrapper--padded">
+
+		<div class="site-header">
+
+			<div class="site-header__logo">
+				<a href="/">
+					<img class="logo logo--desktop" src="../../../aigis_assets/images/bureau-crest-with-text.svg">
+					<img class="logo logo--desktop logo--desktop-scrolled" src="../../../aigis_assets/images/bureau-crest-with-text.svg">
+					<img class="logo logo--mobile" src="../../../aigis_assets/images/bureau-crest-with-text.svg">
+				</a>
+			</div>
+
+			<nav class="site-nav__container">
+
+				<ul class="nav / site-nav">
+
+					<li>
+						<a href="#">About</a>
+					</li>
+
+					<li>
+						<a href="#">Our Work</a>
+					</li>
+
+					<li>
+						<a href="#">Our People</a>
+					</li>
+
+					<li>
+						<a href="#">Contact</a>
+					</li>
+
+				</ul> <!-- / .site-nav -->
+
+			</nav> <!-- / .site-nav__container -->
+
+		</div>
+
+		<div class="hamburger">
+			<div class="hamburger-box">
+				<div class="hamburger-inner"></div>
+			</div>
+		</div>
+
+	</div>
+
+</header>
+```
+
+*/
+.site-header__spacer {
+  height: 3.9375em;
+  background: #FFF; }
+  @media screen and (min-width: 640px) {
+    .site-header__spacer {
+      height: 5em; } }
+  @media screen and (min-width: 1024px) {
+    .site-header__spacer {
+      height: 5em; } }
+  @media screen and (min-width: 1440px) {
+    .site-header__spacer {
+      height: 5.5em; } }
+
+.site-header__container {
+  background: #FFF;
+  padding: 0.625em 0;
+  padding-right: 1.0625em; }
+  @media screen and (min-width: 640px) {
+    .site-header__container {
+      padding: 1.1875em 0; } }
+  @media screen and (min-width: 1440px) {
+    .site-header__container {
+      padding: 1.5625em 0; } }
+
+.site-header__container--fixed {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  -webkit-transition: all .2s ease;
+          transition: all .2s ease; }
+
+.site-header__container--scrolling {
+  background: rgba(153, 153, 153, 0.95);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1); }
+  @media screen and (min-width: 640px) {
+    .site-header__container--scrolling {
+      padding: 1em 0; } }
+  @media screen and (min-width: 1440px) {
+    .site-header__container--scrolling {
+      padding: 0.88889em 0; } }
+  @media screen and (min-width: 640px) {
+    .site-header__container--scrolling .site-header__logo {
+      height: 2.5em; } }
+  @media screen and (min-width: 1024px) {
+    .site-header__container--scrolling .site-header__logo {
+      height: 2.22222em; } }
+  .site-header__container--scrolling .logo--desktop {
+    opacity: 0; }
+  .site-header__container--scrolling .logo--desktop-scrolled {
+    opacity: 1; }
+
+@media screen and (min-width: 1440px) {
+  .site-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; } }
+
+.site-header__logo {
+  position: relative;
+  float: left;
+  width: 2.6875em;
+  -webkit-transition: all .2s ease;
+          transition: all .2s ease; }
+  @media screen and (min-width: 640px) {
+    .site-header__logo {
+      width: 8.25em;
+      height: 2.625em; } }
+  @media screen and (min-width: 1440px) {
+    .site-header__logo {
+      width: 8.33333em;
+      height: 2.33333em; } }
+
+.logo {
+  -webkit-transition: opacity .2s ease;
+          transition: opacity .2s ease; }
+
+@media screen and (min-width: 640px) {
+  .logo--mobile {
+    display: none; } }
+
+.logo--desktop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none; }
+  @media screen and (min-width: 640px) {
+    .logo--desktop {
+      display: block; } }
+
+.logo--desktop-scrolled {
+  opacity: 0; }
+
+.site-nav__container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  padding-top: 6em;
+  background: #FFF;
+  text-align: center;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  opacity: 0;
+  -webkit-transition: all .2s ease;
+          transition: all .2s ease; }
+  .menu-active .site-nav__container {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1; }
+  @media screen and (min-width: 640px) {
+    .site-nav__container {
+      width: 22em;
+      left: auto;
+      padding-left: 1.875em;
+      text-align: left; } }
+  @media screen and (min-width: 1440px) {
+    .site-nav__container {
+      position: static;
+      top: auto;
+      right: auto;
+      left: auto;
+      bottom: auto;
+      -webkit-transform: none;
+              transform: none;
+      opacity: 1;
+      width: auto;
+      background: none;
+      display: block;
+      float: right;
+      padding-top: 0;
+      padding-left: 0; } }
+  .site-nav__container .site-nav {
+    position: relative; }
+    .site-nav__container .site-nav li {
+      padding-left: 0;
+      margin-top: 1.5em; }
+      @media screen and (min-width: 1440px) {
+        .site-nav__container .site-nav li {
+          margin-top: 0;
+          margin-left: 2.55556em;
+          float: left;
+          text-transform: uppercase; } }
+      .site-nav__container .site-nav li:first-child {
+        margin-top: 0; }
+        @media screen and (min-width: 1440px) {
+          .site-nav__container .site-nav li:first-child {
+            display: none; } }
+    .site-nav__container .site-nav a {
+      font-weight: 700;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 28px;
+      font-size: 1.75rem;
+      color: #000;
+      text-decoration: none;
+      display: block; }
+      @media screen and (min-width: 640px) {
+        .site-nav__container .site-nav a {
+          font-size: 28px;
+          font-size: 1.75rem; } }
+      @media screen and (min-width: 1024px) {
+        .site-nav__container .site-nav a {
+          font-size: 28px;
+          font-size: 1.55556rem; } }
+      @media screen and (min-width: 1440px) {
+        .site-nav__container .site-nav a {
+          font-size: 14px;
+          font-size: 0.77778rem; } }
+      .site-nav__container .site-nav a.active, .site-nav__container .site-nav a:hover, .site-nav__container .site-nav a:active, .site-nav__container .site-nav a:focus {
+        color: #999;
+        text-decoration: none; }
+
+/*------------------------------------*	ISLAND
+\*------------------------------------*/
+.island {
+  padding: 1.5rem 0; }
+  @media screen and (min-width: 640px) {
+    .island {
+      padding: 3rem 0; } }
+  @media screen and (min-width: 1024px) {
+    .island {
+      padding: 6rem 0; } }
+
+.island--slim {
+  padding: 1.5rem 0; }
+  @media screen and (min-width: 640px) {
+    .island--slim {
+      padding: 3rem 0; } }
+
+@media screen and (min-width: 640px) {
+  .island--thick {
+    padding: 3.125em 3.125em 6.25em; } }
+
+.island--flat-bottom {
+  padding-bottom: 0; }
+
+.island--bordered {
+  border: 1px solid #000;
+  padding: 0.625em; }
+
+/*------------------------------------*    LAYOUT
+\*------------------------------------*/
+.wrapper {
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1440px; }
+
+.wrapper--padded {
+  padding: 0 1.5rem; }
+  @media screen and (min-width: 1024px) {
+    .wrapper--padded {
+      padding: 0 3rem; } }
+
+/*------------------------------------*    NAVIGATION
+\*------------------------------------*/
+.nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+  .nav a {
+    text-decoration: none; }
+    .nav a:hover, .nav a:focus {
+      text-decoration: underline; }
+    .nav a:active {
+      text-decoration: none; }
+  .nav li {
+    list-style: none; }
+
+.nav--horizontal li {
+  float: left;
+  padding-left: 0; }
+
+.nav--horizontal a {
+  display: block; }
+
+.nav--vertical li {
+  margin-bottom: 1em; }
+  .nav--vertical li:last-child {
+    margin-bottom: 0; }
+
+.nav--vertical a {
+  display: inline-block; }
+
+/*------------------------------------*    SIDEBAR
+\*------------------------------------*/
+/*------------------------------------*    $MODULAR
+\*------------------------------------*/
+/*
+
+---
+name: Buttons
+category:
+ - Components
+ - Components/Buttons
+---
+
+## Button Sizes
+
+Buttons are created by either using the `.button` class, button element, or submit input. Use the `.button--large` modifier to use a bigger button style.
+
+```html
+<a class="button">Button</a>
+<a class="button button--large">Button</a>
+```
+
+## Variations
+
+### Colour
+
+* Use the `.button--grey` modifier.
+
+```html
+<a class="button button--grey">Button</a>
+<a class="button button--large button--grey">Button</a>
+```
+
+### Style
+
+* Use the `.button--ghost` modifier.
+
+```html
+<a class="button button--ghost">Button</a>
+<a class="button button--ghost button--grey">Button</a>
+```
+
+*/
+.button,
+button,
+input[type="submit"] {
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-size: 0.75rem;
+  background: #000;
+  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.3;
+  display: inline-block;
+  padding: 0.58333em 1.875em;
+  margin-bottom: 0.75rem;
+  vertical-align: middle;
+  border: 2px solid #000;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-transition: background .2s ease, color .2s ease;
+          transition: background .2s ease, color .2s ease; }
+  @media screen and (min-width: 640px) {
+    .button,
+    button,
+    input[type="submit"] {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 1024px) {
+    .button,
+    button,
+    input[type="submit"] {
+      font-size: 18px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 640px) {
+    .button,
+    button,
+    input[type="submit"] {
+      padding: 0.625em 2.1875em; } }
+  @media screen and (min-width: 1024px) {
+    .button,
+    button,
+    input[type="submit"] {
+      padding: 0.66667em 2.27778em;
+      line-height: 1.1;
+      border-radius: 4px; } }
+  .button svg,
+  button svg,
+  input[type="submit"] svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor; }
+    @media screen and (min-width: 1024px) {
+      .button svg,
+      button svg,
+      input[type="submit"] svg {
+        width: 1.3em;
+        height: 1.3em; } }
+  .button:hover, .button:active, .button:focus,
+  button:hover,
+  button:active,
+  button:focus,
+  input[type="submit"]:hover,
+  input[type="submit"]:active,
+  input[type="submit"]:focus {
+    background: transparent;
+    color: #000; }
+    .button:hover svg, .button:active svg, .button:focus svg,
+    button:hover svg,
+    button:active svg,
+    button:focus svg,
+    input[type="submit"]:hover svg,
+    input[type="submit"]:active svg,
+    input[type="submit"]:focus svg {
+      fill: currentColor; }
+
+.button--large {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  padding: 0.71429em 1.42857em; }
+  @media screen and (min-width: 640px) {
+    .button--large {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 1024px) {
+    .button--large {
+      font-size: 20px;
+      font-size: 1.11111rem; } }
+  @media screen and (min-width: 640px) {
+    .button--large {
+      line-height: 1.3;
+      padding: 0.625em 2.1875em; } }
+  @media screen and (min-width: 1024px) {
+    .button--large {
+      line-height: 1;
+      padding: 1em 3.1em; } }
+
+.button--ghost {
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: transparent;
+  color: #000; }
+  .button--ghost:hover, .button--ghost:active, .button--ghost:focus {
+    background: #000;
+    color: #FFF; }
+
+.button--grey {
+  background: #999;
+  border-color: #999; }
+  .button--grey:hover, .button--grey:active, .button--grey:focus {
+    background: #FFF;
+    color: #999; }
+
+.button--ghost.button--grey {
+  background: transparent;
+  color: #999;
+  border-color: #999; }
+  .button--ghost.button--grey:hover, .button--ghost.button--grey:active, .button--ghost.button--grey:focus {
+    background: #999;
+    color: #FFF; }
+
+.button--flat {
+  margin: 0; }
+
+/*
+
+---
+name: Content Block
+category:
+ - Components
+ - Components/Content Block
+---
+
+## Default Styling
+
+This is the default markup and styling for a generic section of content. It usually consists of:
+
+* A title
+* A paragraph
+* [Optional] A button
+
+```html
+<section class="content-block">
+
+	<h3 class="content-block__title">Section Title</h3>
+
+	<p>This is a paragraph in a block of content.</p>
+
+	<a href="#" class="button button--ghost button--flat">Find out more</a>
+
+</section>
+```
+
+*/
+.content-block {
+  color: #000;
+  padding: 3em 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.content-block__title {
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-size: 1.25rem;
+  letter-spacing: .2px;
+  line-height: 1;
+  margin-bottom: 0.6em; }
+  @media screen and (min-width: 640px) {
+    .content-block__title {
+      font-size: 19px;
+      font-size: 1.1875rem; } }
+  @media screen and (min-width: 1024px) {
+    .content-block__title {
+      font-size: 30px;
+      font-size: 1.66667rem; } }
+  @media screen and (min-width: 640px) {
+    .content-block__title {
+      font-weight: 600;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      letter-spacing: .1px;
+      margin-bottom: 0.63158em; } }
+  @media screen and (min-width: 1024px) {
+    .content-block__title {
+      letter-spacing: .4px;
+      margin-bottom: 0.9em; } }
+  .content-block__title p {
+    margin-bottom: 1.5em; }
+    @media screen and (min-width: 640px) {
+      .content-block__title p {
+        margin-bottom: 0.75em; } }
+    @media screen and (min-width: 1024px) {
+      .content-block__title p {
+        margin-bottom: 1.5em; } }
+
+/*
+
+---
+name: Dropdown
+category:
+ - Components
+ - Components/Dropdown
+---
+
+```html
+<div class="dropdown dropdown-custom">
+	<span class="dropdown-custom__view">Month</span>
+	<div class="dropdown-custom__container">
+		<div>
+			<a>January</a>
+			<a>February</a>
+			<a>March</a>
+			<a>April</a>
+		</div>
+	</div>
+</div>
+```
+
+*/
+.dropdown {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: #FFF;
+  border: 1px solid #000;
+  margin-bottom: 1em;
+  z-index: 0; }
+  @media screen and (min-width: 1024px) {
+    .dropdown {
+      border-radius: 4px; } }
+  .dropdown:before {
+    position: absolute;
+    content: '';
+    height: 9px;
+    width: 15px;
+    top: 0;
+    right: 1.5em;
+    bottom: 0;
+    margin: auto;
+    background: url("../img/icon-dropdown.svg") no-repeat;
+    background-size: contain;
+    pointer-events: none; }
+
+.dropdown-custom {
+  font-size: 11px;
+  font-size: 0.6875rem;
+  position: relative;
+  overflow: visible;
+  color: #000;
+  padding: 1em;
+  cursor: pointer; }
+  @media screen and (min-width: 1024px) {
+    .dropdown-custom {
+      font-size: 14px;
+      font-size: 0.875rem; } }
+  .dropdown-custom.is-visible {
+    border-radius: 4px 4px 0 0; }
+  .dropdown-custom span,
+  .dropdown-custom a {
+    display: block; }
+  .dropdown-custom a {
+    text-decoration: none;
+    color: #000; }
+
+.dropdown-custom__container {
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  right: -1px;
+  padding: 0 1em 1em;
+  border-radius: 0 0 4px 4px;
+  background-color: #FFF;
+  border: 1px solid #000;
+  display: none; }
+  .dropdown-custom.is-visible .dropdown-custom__container {
+    display: block; }
+  .dropdown-custom__container div {
+    margin-top: 1em; }
+    .dropdown-custom__container div:first-child {
+      margin-top: 0; }
+  .dropdown-custom__container span {
+    font-weight: 700;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .dropdown-custom__container a {
+    margin: .5em 0;
+    padding: .5em 1em; }
+    @media screen and (min-width: 1024px) {
+      .dropdown-custom__container a {
+        font-weight: 400;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif; } }
+    .dropdown-custom__container a:hover {
+      color: #000;
+      background-color: #999; }
+
+/*
+
+---
+name: Hero
+category:
+ - Components
+ - Components/Hero
+---
+
+This is the default hero with just a title, hero's can also contain:
+- Paragraph copy
+- Buttons
+- Image left
+
+```html
+<section class="hero">
+	<div class="wrapper">
+		<div class="hero__content">
+			<h1>We are <span class="is-grey">The Idea Bureau</span></h1>
+		</div>
+	</div>
+</section>
+```
+
+### Slim
+
+The slim variation has reduced padding top and bottom.
+
+```html
+<section class="hero hero--slim">
+	<div class="wrapper">
+		<div class="hero__content">
+			<h1>We are <span class="is-grey">The Idea Bureau</span></h1>
+		</div>
+	</div>
+</section>
+```
+
+### With Extras
+
+This hero includes a paragraph and some buttons.
+
+```html
+<section class="hero hero--slim">
+	<div class="wrapper">
+		<div class="hero__content">
+			<h1>We are <span class="is-grey">The Idea Bureau</span></h1>
+			<p>Want to find out more?</p>
+			<a class="button">Our People</a>
+			<a class="button button--ghost">Contact us</a>
+		</div>
+	</div>
+</section>
+```
+
+*/
+.hero {
+  padding: 3.125em 0;
+  background-color: #FFF;
+  text-align: center; }
+  @media screen and (min-width: 640px) {
+    .hero {
+      padding: 4.1875em 0;
+      text-align: left; } }
+  @media screen and (min-width: 1440px) {
+    .hero {
+      padding: 6.11111em 0; } }
+
+.hero--slim {
+  padding: 1.5em 0; }
+  @media screen and (min-width: 640px) {
+    .hero--slim {
+      padding: 3.0625em 0; } }
+  @media screen and (min-width: 1440px) {
+    .hero--slim {
+      padding: 2.94444em 0; } }
+
+@media screen and (min-width: 640px) {
+  .hero__content {
+    max-width: 80%; } }
+
+@media screen and (min-width: 1024px) {
+  .hero__content {
+    max-width: 90%; } }
+
+@media screen and (min-width: 1440px) {
+  .hero__content {
+    max-width: 60%; } }
+
+.hero__content h1 {
+  margin-bottom: 0.65em; }
+  @media screen and (min-width: 640px) {
+    .hero__content h1 {
+      margin-bottom: 0.83333em; } }
+  @media screen and (min-width: 1024px) {
+    .hero__content h1 {
+      margin-bottom: 0.67391em; } }
+
+.hero__content p {
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  letter-spacing: .1px;
+  margin-bottom: 1.6em; }
+  @media screen and (min-width: 640px) {
+    .hero__content p {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 1024px) {
+    .hero__content p {
+      font-size: 22px;
+      font-size: 1.22222rem; } }
+  @media screen and (min-width: 640px) {
+    .hero__content p {
+      margin-bottom: 1.5em; } }
+  @media screen and (min-width: 1024px) {
+    .hero__content p {
+      margin-bottom: 1.22727em; } }
+
+.hero__content .button:nth-of-type(1) {
+  margin-right: 1.25em; }
+  @media screen and (min-width: 1024px) {
+    .hero__content .button:nth-of-type(1) {
+      margin-right: 3.33333em; } }
+
+/*------------------------------------*	ICONS
+\*------------------------------------*/
+/*
+
+---
+name: Image Block
+category:
+ - Components
+ - Components/Image Block
+---
+
+This component contains an image with some text overlayed and is normally half of a row.
+
+```html
+<section class="image-block" style="background-image: url(http://unsplash.it/g/818/261?blur)">
+	<h3>Section Title</h3>
+	<p>The quick brown fox jumps over the lazy lorem ipsum</p>
+</section>
+```
+
+*/
+.image-block {
+  color: #FFF;
+  padding: 1em 1.25em 2.9375em;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  @media screen and (min-width: 640px) {
+    .image-block {
+      padding: 1.75em 2.1875em; } }
+  @media screen and (min-width: 1024px) {
+    .image-block {
+      padding: 3em 3.55556em; } }
+
+/*
+
+---
+name: Media Object
+category:
+ - Layout
+ - Layout/Media Object
+---
+
+This object is used with other objects to create floated elements. [Read more about it.](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/)
+
+```html
+<section class="media">
+	<div class="media__object">
+		<img src="http://placehold.it/76x63" alt="" />
+	</div>
+	<div class="media__body">
+		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+	</div>
+</section>
+```
+
+*/
+.media {
+  display: block; }
+
+.media__object {
+  float: left;
+  margin-right: 1em; }
+
+.media--reversed .media__object {
+  float: right;
+  margin-left: 1em;
+  margin-right: 0; }
+
+.media__body {
+  overflow: hidden;
+  display: block; }
+
+/*
+
+---
+name: Newsletter Signup
+category:
+ - Components
+ - Components/Newsletter Signup
+---
+
+This component contains a newsletter signup and is normally half of a row.
+
+```html
+<section class="newsletter-block">
+
+	<h3>Want to keep up to date?</h3>
+
+	<p>Get involved with our private mailing list.</p>
+
+	<form class="flex-input">
+		<input type="email" placeholder="Email">
+		<button type="submit">Join</button>
+	</form>
+
+</section>
+```
+
+*/
+.newsletter-block {
+  background-color: #FFF;
+  color: #000;
+  padding: 3.0625em 1.25em; }
+  @media screen and (min-width: 640px) {
+    .newsletter-block {
+      padding: 4.5em 4em; } }
+  @media screen and (min-width: 1024px) {
+    .newsletter-block {
+      padding: 6.11111em 7.22222em; } }
+  .newsletter-block h3 {
+    color: currentColor; }
+
+/*
+
+---
+name: Post Card
+category:
+ - Components
+ - Components/Post Card
+---
+
+This is the default card object that links to a news post.
+
+```html
+<article class="post-card">
+	<a class="post-card__link">
+		<h2 class="post-card__title">This is a post object</h2>
+		<time class="post-card__date">10th February 2016</time>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis at unde libero voluptate quia repudiandae consectetur possimus sit blanditiis harum! Ad, consequuntur fuga itaque natus tenetur omnis, obcaecati dolores aliquam&hellip;</p>
+		<span class="post-object__more">Read more</span>
+	</a>
+</article>
+<article class="post-card">
+	<a class="post-card__link">
+		<h2 class="post-card__title">This is a post object</h2>
+		<time class="post-card__date">10th February 2016</time>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis at unde libero voluptate quia repudiandae consectetur possimus sit blanditiis harum! Ad, consequuntur fuga itaque natus tenetur omnis, obcaecati dolores aliquam&hellip;</p>
+		<span class="post-object__more">Read more</span>
+	</a>
+</article>
+<article class="post-card">
+	<a class="post-card__link">
+		<h2 class="post-card__title">This is a post object</h2>
+		<time class="post-card__date">10th February 2016</time>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis at unde libero voluptate quia repudiandae consectetur possimus sit blanditiis harum! Ad, consequuntur fuga itaque natus tenetur omnis, obcaecati dolores aliquam&hellip;</p>
+		<span class="post-object__more">Read more</span>
+	</a>
+</article>
+```
+
+*/
+.post-card__link {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding-bottom: 1.875em;
+  margin-bottom: 1.875em;
+  border-bottom: 1px solid #000; }
+  @media screen and (min-width: 1024px) {
+    .post-card__link {
+      padding-bottom: 3em;
+      margin-bottom: 3em;
+      -webkit-transition: box-shadow .2s ease;
+              transition: box-shadow .2s ease; } }
+  .post-card__link:hover, .post-card__link:active, .post-card__link:focus {
+    text-decoration: none; }
+    @media screen and (min-width: 1024px) {
+      .post-card__link:hover, .post-card__link:active, .post-card__link:focus {
+        box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, 0.1); } }
+  .post-card:last-child .post-card__link {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0; }
+
+.post-card__title {
+  color: #000;
+  margin-bottom: 0.33333em; }
+  @media screen and (min-width: 640px) {
+    .post-card__title {
+      margin-bottom: 0.73684em; } }
+  @media screen and (min-width: 1024px) {
+    .post-card__title {
+      margin-bottom: 0.4em; } }
+
+.post-card__date {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+  display: block;
+  margin-bottom: 0.71429em; }
+  @media screen and (min-width: 640px) {
+    .post-card__date {
+      font-size: 18px;
+      font-size: 1.125rem; } }
+  @media screen and (min-width: 1024px) {
+    .post-card__date {
+      font-size: 20px;
+      font-size: 1.11111rem; } }
+  @media screen and (min-width: 640px) {
+    .post-card__date {
+      margin-bottom: 1.5em; } }
+  @media screen and (min-width: 1024px) {
+    .post-card__date {
+      margin-bottom: 1.35em; } }
+
+.post-card p {
+  letter-spacing: .1px;
+  margin-bottom: 0.9375em; }
+  @media screen and (min-width: 1024px) {
+    .post-card p {
+      padding-right: 1.5rem;
+      margin-bottom: 0.83333em; } }
+
+.post-object__more {
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+  letter-spacing: .1px;
+  line-height: 1; }
+  @media screen and (min-width: 640px) {
+    .post-object__more {
+      font-size: 14px;
+      font-size: 0.875rem; } }
+  @media screen and (min-width: 1024px) {
+    .post-object__more {
+      font-size: 14px;
+      font-size: 0.77778rem; } }
+
+/*
+
+---
+name: Service Card
+category:
+ - Components
+ - Components/Service Card
+---
+
+This is a card that's used to act as a call-to-action for the services offered, it consists of:
+- An icon
+- A title
+- A description
+- [Optional] A Button
+
+```html
+<div class="service-card">
+	<img class="service-card__icon" src="http://placehold.it/100" />
+	<h3 class="service-card__title">We Offer This</h3>
+	<p class="service-card__copy">Do you want to know more?</p>
+	<a class="button button--green button--ghost">Find out more</a>
+</div>
+```
+
+*/
+.service-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2.5em 0;
+  color: #000;
+  text-align: center; }
+  @media screen and (min-width: 640px) {
+    .service-card {
+      padding: 2.5em 0; } }
+  @media screen and (min-width: 1024px) {
+    .service-card {
+      padding: 4.44444em 0; } }
+
+.service-card__icon {
+  height: 3.75em;
+  margin-bottom: 3em;
+  -webkit-transition: -webkit-transform .2s ease;
+          transition: transform .2s ease; }
+  @media screen and (min-width: 640px) {
+    .service-card__icon {
+      margin-bottom: 2em; } }
+  @media screen and (min-width: 1024px) {
+    .service-card__icon {
+      height: 3.88889em;
+      margin-bottom: 2.66667em; } }
+
+.service-card__title {
+  font-size: 18px;
+  font-size: 1.125rem;
+  color: #000;
+  margin-bottom: .5em; }
+  @media screen and (min-width: 640px) {
+    .service-card__title {
+      font-size: 15px;
+      font-size: 0.9375rem; } }
+  @media screen and (min-width: 1024px) {
+    .service-card__title {
+      font-size: 22px;
+      font-size: 1.22222rem; } }
+  @media screen and (min-width: 640px) {
+    .service-card__title {
+      margin-bottom: .8em; } }
+  @media screen and (min-width: 1024px) {
+    .service-card__title {
+      margin-bottom: 1em; } }
+
+.service-card__copy {
+  font-size: 16px;
+  font-size: 1rem;
+  max-width: 60%; }
+  @media screen and (min-width: 640px) {
+    .service-card__copy {
+      font-size: 14px;
+      font-size: 0.875rem; } }
+  @media screen and (min-width: 1024px) {
+    .service-card__copy {
+      font-size: 18px;
+      font-size: 1rem; } }
+  .service-card--panel .service-card__copy {
+    margin-bottom: 0; }
+  @media screen and (min-width: 640px) {
+    .service-card__copy {
+      max-width: 75%; } }
+  @media screen and (min-width: 1440px) {
+    .service-card__copy {
+      max-width: 60%; } }
+
+/*------------------------------------*    $SHARE
+\*------------------------------------*/
+.share {
+  list-style-type: none;
+  margin: 5px 0 0;
+  padding: 0; }
+  .share li {
+    float: left;
+    margin-left: .5em; }
+  .share a {
+    text-decoration: none; }
+
+/*------------------------------------*    SOCIAL
+\*------------------------------------*/
+.social--youtube {
+  color: #CC181E; }
+  .social--youtube:hover, .social--youtube:active, .social--youtube:focus {
+    color: #9e1317; }
+
+.social--twitter {
+  color: #00ACEE; }
+  .social--twitter:hover, .social--twitter:active, .social--twitter:focus {
+    color: #0087bb; }
+
+.social--facebook {
+  color: #3B5998; }
+  .social--facebook:hover, .social--facebook:active, .social--facebook:focus {
+    color: #2d4373; }
+
+.social--google {
+  color: #DD4B39; }
+  .social--google:hover, .social--google:active, .social--google:focus {
+    color: #c23321; }
+
+.social--linkedin {
+  color: #007BB6; }
+  .social--linkedin:hover, .social--linkedin:active, .social--linkedin:focus {
+    color: #005983; }
+
+/*------------------------------------*	$PRINT STYLES
+\*------------------------------------*/
+/*------------------------------------*    PRINT STYLES
+\*------------------------------------*/
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ''; }
+  pre,
+  blockquote {
+    border: 1px solid #000;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }
