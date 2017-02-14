@@ -336,6 +336,7 @@
 .aigis-module > h2,
 .aigis-module > h3,
 .aigis-module > h4 {
+	position: relative;
 	font-weight: normal;
 	color: #4C4C4C;
 	line-height: 1.3333333;
@@ -344,7 +345,6 @@
 .aigis-module__heading {
 	font-size: 2.25rem;
 	margin-bottom: 1.11111em;
-	position: relative;
 }
 
 .aigis-module > h2 {
@@ -366,19 +366,16 @@
 	color: #4C4C4C;
 }
 
-.aigis-module__heading:hover a {
-	position: relative;
+.preview-link {
+	font-size: 1rem;
+	margin-left: .5rem;
+	cursor: pointer;
 }
 
-.aigis-module__heading:hover a:before {
-	content: "\00a7";
-	position: absolute;
-	right: 100%;
-	bottom: 5px;
-	font-size: 20px;
-	color: #000;
-	padding-right: 5px;
-	padding-left: 5px;
+.preview-link:hover {
+	text-decoration: none;
+}
+
 .aigis-modal {
 	display: none;
 	position: fixed;
