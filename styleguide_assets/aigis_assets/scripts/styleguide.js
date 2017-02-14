@@ -3,23 +3,23 @@ class Styleguide {
 	constructor(container) {
 
 		this.container = container;
+		this.modal = document.querySelector('.aigis-modal');
 
-		// save the original html of the page
-		this.base_html = this.container.innerHTML;
+		this.modal_template = document.createElement('div');
+		this.modal_template.classList.add('aigis-modal__item');
 
-		// add a listener for the browser back button
-		window.addEventListener('popstate', () => {
+	}
 
-			// set the html to the stored markup from the event
-			this.container.innerHTML = window.history.state;
+	checkHash() {
 
-			// reset the page
-			this.initialisePage();
+		const hash = window.location.hash;
 
-		});
-
-		this.setActiveDropdown();
-		this.initialiseMenu();
+		if ( hash ) {
+			this.addPreview(document.querySelector(window.location.hash));
+		}
+		else {
+			this.modal.classList.remove('is-active');
+		}
 
 	}
 
@@ -27,16 +27,23 @@ class Styleguide {
 
 		// search up through the menu to expand the current dropdown
 		let current_item = document.querySelector('[data-tree-current]');
+
 		let searching = true;
 
+		// search up through the menu items
+		// until the top level
 		while (searching) {
 
 			// if the current item is the top-level parent
 			// set active class and stop searching
 			if ( current_item.dataset.pathDepth === '0' ) {
+
 				current_item.classList.add('is-active');
+
 				searching = false;
-			} else {
+
+			}
+			else {
 				current_item = current_item.parentNode;
 			}
 
@@ -76,31 +83,95 @@ class Styleguide {
 
 	}
 
-	clickHandler() {
+	/**
+	 * hash_selector: the selected element using the URL hash as an ID
+	 */
+	addPreview(hash_selector) {
 
-		// this pushes a new state in window.history
-		// allowing you to use the back button to return to the previous view
-		// it passes in the original html in order to revert later
-		window.history.pushState(null, null, window.location.href);
+		let current_item = hash_selector.nextElementSibling;
 
-		// change the html to the markup of the target preview
-		document.getElementById('styleguide-app').innerHTML = this.innerHTML;
+		let searching = true;
+
+		// search through next siblings
+		// until the preview code is found
+		while ( searching ) {
+
+			if ( current_item.classList.contains('aigis-preview') === true ) {
+
+				searching = false;
+
+				// clone in the modal template wrapper
+				let modal_item = this.modal_template.cloneNode();
+
+				// set the modal html as the current preview code
+				modal_item.innerHTML = current_item.innerHTML;
+
+				this.modal.classList.add('is-active');
+
+				// append the modal wrapper
+				this.modal.innerHTML = modal_item.innerHTML;
+
+			}
+			else {
+				current_item = current_item.nextElementSibling;
+			}
+
+		}
+
+	}
+
+	setPreviewLinks() {
+
+		// setup the hash anchor element
+		let link_template = document.createElement('a');
+		link_template.appendChild(document.createTextNode('🔗'));
+		link_template.classList.add('preview-link');
+
+		// get all preview titles
+		const preview_titles = Array.from( document.querySelectorAll('.aigis-module > [id]') );
+
+		// loop through each title
+		preview_titles.forEach(title => {
+
+			// get the title id
+			// replace all non-alphanumeric characters with dashes
+			// e.g. spaces, ampersands
+			// convert it to lowercase
+			const new_title_id = title.id
+							.replace(/\W+/g, '-')
+							.toLowerCase();
+
+			// replace the title id with the new clean version
+			title.id = new_title_id;
+
+			// clone the hash anchor
+			let title_link = link_template.cloneNode(true);
+
+			// apply the current id as the href
+			title_link.href = `#${new_title_id}`;
+
+			// append the anchor to the title
+			title.appendChild(title_link);
+
+		});
 
 	}
 
 	initialisePage() {
 
-		// get all preview sections
-		const previews = Array.from( document.querySelectorAll('.aigis-preview') );
+		this.setActiveDropdown();
+		this.initialiseMenu();
 
-		// !! forces a boolean value
-		// this checks that there are preview elements before continuing
-		if ( !! previews.length ) {
+		// add a listener for a hash change
+		window.addEventListener('hashchange', () => {
+			this.checkHash();
+		});
 
-			// add a click handler to each
-			previews.forEach(preview => preview.addEventListener('click', this.clickHandler.bind(preview), false));
+		// check to see if we've loaded in with a hash link
+		this.checkHash();
 
-		}
+		// setup the preview links next to the titles
+		this.setPreviewLinks();
 
 	}
 
@@ -115,11 +186,6 @@ class Styleguide {
 
 	// create a new instance of the Styleguide class
 	const app = new Styleguide(container);
-
-	// this sets the base markup as that contained within the container
-	// this stops things outside of the app being replaced
-	// for example: the script tag referencing this script
-	window.history.replaceState(container.innerHTML, null, null);
 
 	// initialise the page
 	app.initialisePage();
