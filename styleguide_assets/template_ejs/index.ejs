@@ -15,27 +15,34 @@
 		<link href="../<%- root %>dist/styles/styles.css" rel="stylesheet">
 
 	</head>
-<body class="aigis-body">
+	<body class="aigis-body">
 
 		<div class="aigis-container">
 
-		<%- include('sidemenu') %>
+			<%- include('sidemenu') %>
 
-		<div class="aigis-contents">
+			<div class="aigis-contents">
 
-			<div class="aigis-contents__body">
-				<%- include('components') %>
+				<div class="aigis-contents__body">
+					<%- include('components') %>
+				</div>
+
+			</div>
+
+			<div class="aigis-modal__wrapper">
+
+				<div class="aigis-modal"></div>
+
+				<svg class="aigis-modal__close" xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 26 30">
+					<path fill="#4C4C4C" fill-rule="evenodd" d="M3 10.76l-8.5-8.5-4.23 4.25 8.5 8.5-8.5 8.5 4.24 4.23 8.5-8.5 8.5 8.5 4.23-4.24-8.5-8.5 8.5-8.5-4.24-4.23-8.5 8.5z"/>
+				</svg>
+
 			</div>
 
 		</div>
 
-		<div class="aigis-modal">
-		</div>
+		<script src="<%- root %>aigis_assets/scripts/styleguide.js"></script>
+		<script src="../<%- root %>dist/scripts/main.min.js"></script>
 
-	</div>
-
-	<script src="<%- root %>aigis_assets/scripts/styleguide.js"></script>
-	<script src="../<%- root %>dist/scripts/main.min.js"></script>
-
-</body>
+	</body>
 </html>
