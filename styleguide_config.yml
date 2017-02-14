@@ -18,5 +18,3 @@ color_palette: true
 
 output_collection:
  - category
-
-timestamp_format: 'Do MMMM YYYY'
