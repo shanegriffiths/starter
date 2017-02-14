@@ -1,24 +1,60 @@
 class Styleguide {
 
-	constructor(container) {
+	constructor() {
 
-		this.container = container;
+		this.options = {
+			previews: this.checkPreviews(),
+		};
+
 		this.modal = document.querySelector('.aigis-modal');
 
+		// create a template modal wrapper
+		// this will be cloned to wrap the single component preview code
 		this.modal_template = document.createElement('div');
 		this.modal_template.classList.add('aigis-modal__item');
 
+		// initialise the page
+		this.initialiseStyleguide();
+
+	}
+
+	checkPreviews() {
+
+		const preview_array = Array.from(document.querySelectorAll('.aigis-preview'));
+
+		return preview_array.length ? true : false;
+
+	}
+
+	openModal() {
+		document.body.classList.add('aigis-modal--active');
+	}
+
+	closeModal() {
+		document.body.classList.remove('aigis-modal--active');
 	}
 
 	checkHash() {
 
+		// get the URL hash
 		const hash = window.location.hash;
+		let preview;
 
+		// if there is a hash
 		if ( hash ) {
-			this.addPreview(document.querySelector(window.location.hash));
+
+			// check that the hash relates to an element
+			preview = document.querySelector(hash);
+
+			// if it does, open the single component view
+			if ( preview !== null ) {
+				this.addPreview(preview);
+			}
+
 		}
+		// else close the modal
 		else {
-			this.modal.classList.remove('is-active');
+			this.closeModal();
 		}
 
 	}
@@ -28,26 +64,31 @@ class Styleguide {
 		// search up through the menu to expand the current dropdown
 		let current_item = document.querySelector('[data-tree-current]');
 
-		let searching = true;
+		if ( current_item !== null ) {
 
-		// search up through the menu items
-		// until the top level
-		while (searching) {
+			let searching = true;
 
-			// if the current item is the top-level parent
-			// set active class and stop searching
-			if ( current_item.dataset.pathDepth === '0' ) {
+			// search up through the menu items
+			// until the top level
+			while (searching) {
 
-				current_item.classList.add('is-active');
+				// if the current item is the top-level parent
+				// set active class and stop searching
+				if ( current_item.dataset.pathDepth === '0' ) {
 
-				searching = false;
+					current_item.classList.add('is-active');
 
-			}
-			else {
-				current_item = current_item.parentNode;
+					searching = false;
+
+				}
+				else {
+					current_item = current_item.parentNode;
+				}
+
 			}
 
 		}
+
 	}
 
 	initialiseMenu() {
@@ -77,8 +118,10 @@ class Styleguide {
 
 	toggleMenu() {
 
+		// prevent the event bubbling to the anchor
 		event.preventDefault();
 
+		// toggle the dropdown menu state
 		this.classList.toggle('is-active');
 
 	}
@@ -106,10 +149,10 @@ class Styleguide {
 				// set the modal html as the current preview code
 				modal_item.innerHTML = current_item.innerHTML;
 
-				this.modal.classList.add('is-active');
-
 				// append the modal wrapper
 				this.modal.innerHTML = modal_item.innerHTML;
+
+				this.openModal();
 
 			}
 			else {
@@ -150,6 +193,16 @@ class Styleguide {
 			// apply the current id as the href
 			title_link.href = `#${new_title_id}`;
 
+			// if there's a hash already and the same link has been clicked
+			// re-open the modal
+			title_link.addEventListener('click', (event) => {
+
+				if ( event.target.hash === window.location.hash ) {
+					this.openModal();
+				}
+
+			}, false);
+
 			// append the anchor to the title
 			title.appendChild(title_link);
 
@@ -157,21 +210,31 @@ class Styleguide {
 
 	}
 
-	initialisePage() {
-
-		this.setActiveDropdown();
-		this.initialiseMenu();
+	setupPreviews() {
 
 		// add a listener for a hash change
 		window.addEventListener('hashchange', () => {
 			this.checkHash();
 		});
 
+		// setup the preview links next to the titles
+		this.setPreviewLinks();
+
 		// check to see if we've loaded in with a hash link
 		this.checkHash();
 
-		// setup the preview links next to the titles
-		this.setPreviewLinks();
+		document.querySelector('.aigis-modal__close').addEventListener('click', this.closeModal, false);
+
+	}
+
+	initialiseStyleguide() {
+
+		this.initialiseMenu();
+		this.setActiveDropdown();
+
+		if ( this.options.previews ) {
+			this.setupPreviews();
+		}
 
 	}
 
@@ -181,13 +244,7 @@ class Styleguide {
 // doesn't pollute the global scope
 (() => {
 
-	// define the container
-	const container = document.getElementById('styleguide-app');
-
 	// create a new instance of the Styleguide class
-	const app = new Styleguide(container);
-
-	// initialise the page
-	app.initialisePage();
+	const app = new Styleguide();
 
 })();
