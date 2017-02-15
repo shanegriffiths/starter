@@ -1,3 +1,5 @@
+import MenuFilter from './menu-filter';
+
 class Styleguide {
 
 	constructor() {
@@ -246,5 +248,10 @@ class Styleguide {
 
 	// create a new instance of the Styleguide class
 	const app = new Styleguide();
+
+	const menu = document.querySelector('.aigis-categoryList');
+	const search_input = document.querySelector('.aigis-search');
+
+	const search = new MenuFilter(menu, search_input);
 
 })();

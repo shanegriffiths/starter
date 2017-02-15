@@ -8206,6 +8206,10 @@
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
+	var _menuFilter = __webpack_require__(357);
+
+	var _menuFilter2 = _interopRequireDefault(_menuFilter);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Styleguide = function () {
@@ -8454,6 +8458,11 @@
 
 		// create a new instance of the Styleguide class
 		var app = new Styleguide();
+
+		var menu = document.querySelector('.aigis-categoryList');
+		var search_input = document.querySelector('.aigis-search');
+
+		var search = new _menuFilter2.default(menu, search_input);
 	})();
 
 /***/ },
@@ -9397,6 +9406,277 @@
 	var $export = __webpack_require__(307);
 	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 	$export($export.S + $export.F * !__webpack_require__(317), 'Object', {defineProperty: __webpack_require__(313).f});
+
+/***/ },
+/* 357 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getIterator2 = __webpack_require__(358);
+
+	var _getIterator3 = _interopRequireDefault(_getIterator2);
+
+	var _classCallCheck2 = __webpack_require__(352);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(353);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var MenuFilter = function () {
+
+		// pass in the table
+		function MenuFilter(menu, search_input) {
+			(0, _classCallCheck3.default)(this, MenuFilter);
+
+
+			// set defaults
+			// all nodes are selected by looking under the passed in table node
+			// this prevents cross-contamination
+			this.filter = '';
+			this.menu = menu;
+			this.dropdowns = menu.querySelectorAll('li[data-path-depth="0"]');
+			this.menu_items = menu.querySelectorAll('[data-path-depth="1"] a');
+
+			// set event listeners
+			this.setSearch(search_input);
+		}
+
+		(0, _createClass3.default)(MenuFilter, [{
+			key: 'setSearch',
+			value: function setSearch(search_input) {
+				var _this = this;
+
+				// add a click event listener to each
+				search_input.addEventListener('input', function () {
+
+					// update filter
+					_this.filter = search_input.value.toLowerCase();
+
+					// then refresh the view
+					_this.refreshFilter();
+				}, false);
+			}
+		}, {
+			key: 'refreshFilter',
+			value: function refreshFilter() {
+
+				// if there is a filter set
+				if (this.filter.length) {
+
+					this.menu.classList.add('search-active');
+
+					// loop through each table row
+					var _iteratorNormalCompletion = true;
+					var _didIteratorError = false;
+					var _iteratorError = undefined;
+
+					try {
+						for (var _iterator = (0, _getIterator3.default)(this.menu_items), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+							var item = _step.value;
+
+
+							// hide the row
+							item.parentNode.style.display = 'none';
+
+							// if the item matches the filter
+							// display the item
+							if (item.textContent.toLowerCase().indexOf(this.filter) !== -1) {
+								item.parentNode.style.display = 'block';
+							}
+						}
+					} catch (err) {
+						_didIteratorError = true;
+						_iteratorError = err;
+					} finally {
+						try {
+							if (!_iteratorNormalCompletion && _iterator.return) {
+								_iterator.return();
+							}
+						} finally {
+							if (_didIteratorError) {
+								throw _iteratorError;
+							}
+						}
+					}
+				}
+				// otherwise reset all of the items
+				else {
+
+						this.menu.classList.remove('search-active');
+
+						// loop through each table row
+						var _iteratorNormalCompletion2 = true;
+						var _didIteratorError2 = false;
+						var _iteratorError2 = undefined;
+
+						try {
+							for (var _iterator2 = (0, _getIterator3.default)(this.menu_items), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+								var _item = _step2.value;
+
+								_item.parentNode.style.display = 'block';
+							}
+						} catch (err) {
+							_didIteratorError2 = true;
+							_iteratorError2 = err;
+						} finally {
+							try {
+								if (!_iteratorNormalCompletion2 && _iterator2.return) {
+									_iterator2.return();
+								}
+							} finally {
+								if (_didIteratorError2) {
+									throw _iteratorError2;
+								}
+							}
+						}
+					}
+			}
+		}, {
+			key: 'clearFilter',
+			value: function clearFilter() {
+
+				// reset the filter
+				this.filter = '';
+
+				this.menu.classList.remove('search-active');
+
+				// reset each table row
+				var _iteratorNormalCompletion3 = true;
+				var _didIteratorError3 = false;
+				var _iteratorError3 = undefined;
+
+				try {
+					for (var _iterator3 = (0, _getIterator3.default)(this.menu_items), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+						var item = _step3.value;
+
+						item.parentNode.style.display = 'block';
+					}
+				} catch (err) {
+					_didIteratorError3 = true;
+					_iteratorError3 = err;
+				} finally {
+					try {
+						if (!_iteratorNormalCompletion3 && _iterator3.return) {
+							_iterator3.return();
+						}
+					} finally {
+						if (_didIteratorError3) {
+							throw _iteratorError3;
+						}
+					}
+				}
+			}
+		}]);
+		return MenuFilter;
+	}();
+
+	exports.default = MenuFilter;
+
+/***/ },
+/* 358 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(359), __esModule: true };
+
+/***/ },
+/* 359 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(360);
+	__webpack_require__(301);
+	module.exports = __webpack_require__(364);
+
+/***/ },
+/* 360 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(361);
+	var global        = __webpack_require__(308)
+	  , hide          = __webpack_require__(312)
+	  , Iterators     = __webpack_require__(324)
+	  , TO_STRING_TAG = __webpack_require__(342)('toStringTag');
+
+	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
+	  var NAME       = collections[i]
+	    , Collection = global[NAME]
+	    , proto      = Collection && Collection.prototype;
+	  if(proto && !proto[TO_STRING_TAG])hide(proto, TO_STRING_TAG, NAME);
+	  Iterators[NAME] = Iterators.Array;
+	}
+
+/***/ },
+/* 361 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	var addToUnscopables = __webpack_require__(362)
+	  , step             = __webpack_require__(363)
+	  , Iterators        = __webpack_require__(324)
+	  , toIObject        = __webpack_require__(330);
+
+	// 22.1.3.4 Array.prototype.entries()
+	// 22.1.3.13 Array.prototype.keys()
+	// 22.1.3.29 Array.prototype.values()
+	// 22.1.3.30 Array.prototype[@@iterator]()
+	module.exports = __webpack_require__(305)(Array, 'Array', function(iterated, kind){
+	  this._t = toIObject(iterated); // target
+	  this._i = 0;                   // next index
+	  this._k = kind;                // kind
+	// 22.1.5.2.1 %ArrayIteratorPrototype%.next()
+	}, function(){
+	  var O     = this._t
+	    , kind  = this._k
+	    , index = this._i++;
+	  if(!O || index >= O.length){
+	    this._t = undefined;
+	    return step(1);
+	  }
+	  if(kind == 'keys'  )return step(0, index);
+	  if(kind == 'values')return step(0, O[index]);
+	  return step(0, [index, O[index]]);
+	}, 'values');
+
+	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
+	Iterators.Arguments = Iterators.Array;
+
+	addToUnscopables('keys');
+	addToUnscopables('values');
+	addToUnscopables('entries');
+
+/***/ },
+/* 362 */
+/***/ function(module, exports) {
+
+	module.exports = function(){ /* empty */ };
+
+/***/ },
+/* 363 */
+/***/ function(module, exports) {
+
+	module.exports = function(done, value){
+	  return {value: value, done: !!done};
+	};
+
+/***/ },
+/* 364 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var anObject = __webpack_require__(314)
+	  , get      = __webpack_require__(349);
+	module.exports = __webpack_require__(309).getIterator = function(it){
+	  var iterFn = get(it);
+	  if(typeof iterFn != 'function')throw TypeError(it + ' is not iterable!');
+	  return anObject(iterFn.call(it));
+	};
 
 /***/ }
 /******/ ]);
