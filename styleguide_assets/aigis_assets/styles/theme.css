@@ -121,6 +121,19 @@
 	vertical-align: middle;
 }
 
+.aigis-search {
+	border-radius: 0 !important;
+	border-width: 1px 0 0 0 !important;
+	border-color: #ECECEC !important;
+	width: 100% !important;
+	font-size: 18px !important;
+	height: 3em !important;
+	line-height: 3 !important;
+	margin: -1px 0 0 !important;
+	padding: 0 1em 0 0 !important;
+	text-indent: 32px !important;
+}
+
 .aigis-welcome {
 	width: 30vw;
 	position: absolute;

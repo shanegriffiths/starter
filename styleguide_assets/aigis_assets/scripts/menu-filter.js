@@ -22,7 +22,7 @@ export default class MenuFilter {
 		search_input.addEventListener('input', () => {
 
 			// update filter
-			this.filter = search_input.value;
+			this.filter = search_input.value.toLowerCase();
 
 			// then refresh the view
 			this.refreshFilter();
@@ -46,7 +46,7 @@ export default class MenuFilter {
 
 				// if the item matches the filter
 				// display the item
-				if ( item.textContent.indexOf(this.filter) !== -1) {
+				if ( item.textContent.toLowerCase().indexOf(this.filter) !== -1) {
 					item.parentNode.style.display = 'block';
 				}
 
