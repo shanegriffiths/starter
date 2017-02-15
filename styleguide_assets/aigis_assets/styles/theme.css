@@ -294,11 +294,13 @@
 }
 
 .aigis-categoryList li.is-active ul[data-path-depth='1'],
+.aigis-categoryList.search-active ul[data-path-depth='1'],
 .aigis-categoryList li[data-path-depth] [data-tree-current] + ul {
 	display: block;
 }
 
 .aigis-categoryList li.is-active > a span,
+.aigis-categoryList.search-active li > a span,
 .aigis-categoryList li[data-path-depth] [data-tree-current] span {
 	transform: rotate(.5turn);
 }
