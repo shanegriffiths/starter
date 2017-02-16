@@ -170,9 +170,11 @@ class Styleguide {
 
 	setPreviewLinks() {
 
+		const link_icon = document.querySelector('.link-icon');
+
 		// setup the hash anchor element
 		let link_template = document.createElement('a');
-		link_template.appendChild(document.createTextNode('🔗'));
+		link_template.appendChild(link_icon.cloneNode(true));
 		link_template.classList.add('preview-link');
 
 		// get all preview titles
