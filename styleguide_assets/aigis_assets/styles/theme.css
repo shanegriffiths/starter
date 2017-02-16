@@ -346,6 +346,7 @@
 	color: #727272;
 	transition: color .2s ease;
 	padding: 16px 64px;
+	font-weight: 400;
 }
 
 .aigis-categoryList ul[data-path-depth='1'] a:hover {
