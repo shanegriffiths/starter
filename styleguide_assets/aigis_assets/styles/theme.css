@@ -360,6 +360,13 @@
 	color: #727272;
 }
 
+.aigis-contents__body > ul li,
+.aigis-contents__body > ol li,
+.aigis-module > ul li,
+.aigis-module > ol li {
+	margin-bottom: .5em;
+}
+
 .aigis-module__heading,
 .aigis-module > h2,
 .aigis-module > h3,
