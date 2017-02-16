@@ -128,10 +128,14 @@
 	width: 100% !important;
 	font-size: 18px !important;
 	height: 3em !important;
-	line-height: 3 !important;
+	line-height: 1.5 !important;
 	margin: -1px 0 0 !important;
 	padding: 0 1em 0 0 !important;
 	text-indent: 32px !important;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
 }
 
 .aigis-welcome {
