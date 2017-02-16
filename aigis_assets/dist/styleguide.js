@@ -8321,7 +8321,9 @@
 					var arrow = dropdown_element.cloneNode();
 
 					// add a click event to the dropdown item
-					arrow.addEventListener('click', _this.toggleMenu.bind(menu_item.parentNode), false);
+					arrow.addEventListener('click', function (event) {
+						return _this.toggleMenu(event);
+					}, false);
 
 					// append the dropdown item
 					menu_item.appendChild(arrow);
@@ -8329,13 +8331,14 @@
 			}
 		}, {
 			key: 'toggleMenu',
-			value: function toggleMenu() {
+			value: function toggleMenu(event) {
 
 				// prevent the event bubbling to the anchor
 				event.preventDefault();
+				event.stopPropagation();
 
 				// toggle the dropdown menu state
-				this.classList.toggle('is-active');
+				event.target.parentNode.parentNode.classList.toggle('is-active');
 			}
 
 			/**
@@ -8378,9 +8381,11 @@
 			value: function setPreviewLinks() {
 				var _this2 = this;
 
+				var link_icon = document.querySelector('.link-icon');
+
 				// setup the hash anchor element
 				var link_template = document.createElement('a');
-				link_template.appendChild(document.createTextNode('🔗'));
+				link_template.appendChild(link_icon.cloneNode(true));
 				link_template.classList.add('preview-link');
 
 				// get all preview titles
