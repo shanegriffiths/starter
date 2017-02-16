@@ -109,7 +109,7 @@ class Styleguide {
 			let arrow = dropdown_element.cloneNode();
 
 			// add a click event to the dropdown item
-			arrow.addEventListener('click', this.toggleMenu.bind(menu_item.parentNode), false);
+			arrow.addEventListener('click', (event) => this.toggleMenu(event), false);
 
 			// append the dropdown item
 			menu_item.appendChild(arrow);
@@ -118,13 +118,16 @@ class Styleguide {
 
 	}
 
-	toggleMenu() {
+	toggleMenu(event) {
 
 		// prevent the event bubbling to the anchor
 		event.preventDefault();
+		event.stopPropagation();
 
 		// toggle the dropdown menu state
-		this.classList.toggle('is-active');
+		event.target
+			.parentNode
+			.parentNode.classList.toggle('is-active');
 
 	}
 
