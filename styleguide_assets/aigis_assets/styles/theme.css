@@ -295,6 +295,7 @@
 
 .aigis-categoryList li[data-path-depth] [data-tree-current] {
 	color: #4C4C4C;
+	font-weight: 600;
 }
 
 .aigis-categoryList li[data-path-depth='0'] > a {
