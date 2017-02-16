@@ -295,6 +295,7 @@
 	right: 0;
 	content: '';
 	width: 62px;
+	border-left: 1px solid #ececec;
 	background: url('../images/down-arrow.svg') center / 10px 7px no-repeat;
 }
 
@@ -320,6 +321,8 @@
 .aigis-categoryList.search-active li > a span,
 .aigis-categoryList li[data-path-depth] [data-tree-current] span {
 	transform: rotate(.5turn);
+	border-left: none;
+	border-right: 1px solid #ececec;
 }
 
 .aigis-categoryList ul[data-path-depth='1'] a {
