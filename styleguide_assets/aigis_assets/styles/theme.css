@@ -16,7 +16,7 @@
 .aigis-body {
 	margin: 0;
 	padding: 0;
-	font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
 	font-size: 18px;
 	line-height: 1.5;
 
@@ -62,10 +62,12 @@
 .aigis-module > ol,
 .aigis-module > p,
 .aigis-module__heading,
+.aigis-sidemenu__heading,
+.aigis-module > h2,
 .aigis-module > h2,
 .aigis-module > h3,
 .aigis-module > h4 {
-	font-family: "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
 .aigis-contents__body > p {
@@ -224,17 +226,17 @@
 }
 
 .aigis-sidemenu__heading {
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: 600;
 	margin: 0;
 	color: #4C4C4C;
-	font-weight: normal;
 	padding-left: 0;
 	line-height: 1;
 }
 
 .aigis-sidemenu__heading a {
 	text-decoration: none;
-	padding: 27px 32px;
+	padding: 1em 2em;
 	border-top: 1px solid #ECECEC;
 	margin-top: -1px;
 	display: block;
@@ -262,7 +264,8 @@
 
 .aigis-categoryList ul {
 	padding: 3px 10px;
-	font-size: 18px;
+	font-size: 16px;
+	font-weight: 600;
 	line-height: 1;
 	padding: 0;
 	margin: 0;
@@ -297,7 +300,7 @@
 .aigis-categoryList li[data-path-depth='0'] > a {
 	position: relative;
 	color: #535353;
-	padding: 27px 32px;
+	padding: 1em 2em;
 	border-bottom: 1px solid #ECECEC;
 	margin-bottom: -1px;
 }
@@ -310,7 +313,7 @@
 	content: '';
 	width: 62px;
 	border-left: 1px solid #ececec;
-	background: url('../images/down-arrow.svg') center / 10px 7px no-repeat;
+	background: url('../images/down-arrow.svg') center / 14px no-repeat;
 }
 
 .aigis-categoryList ul[data-path-depth='1'] {
