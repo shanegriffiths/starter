@@ -8413,7 +8413,7 @@
 					// re-open the modal
 					title_link.addEventListener('click', function (event) {
 
-						if (event.target.hash === window.location.hash) {
+						if (event.currentTarget.hash === window.location.hash) {
 							_this2.openModal();
 						}
 					}, false);
