@@ -427,7 +427,7 @@
 }
 
 .preview-link .link-icon {
-	display: initial;
+	display: block;
 }
 
 .aigis-modal__wrapper {
