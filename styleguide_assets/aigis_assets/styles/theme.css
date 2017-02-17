@@ -405,12 +405,14 @@
 }
 
 .preview-link {
-	font-size: .8em;
-	margin-left: .5em;
+	font-size: 1em;
 	cursor: pointer;
 	text-decoration: none;
-	vertical-align: middle;
 	line-height: 1;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: calc(-0.85em - 16px);
 }
 
 .preview-link:hover {
@@ -418,10 +420,10 @@
 }
 
 .link-icon {
-	height: 1.3em;
-	width: 1.3em;
-	margin-top: -5px;
-	display:none;
+	height: .85em;
+	width: .85em;
+	margin-top: -0.2em;
+	display: none;
 }
 
 .preview-link .link-icon {
