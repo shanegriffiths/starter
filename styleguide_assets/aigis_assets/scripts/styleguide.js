@@ -204,7 +204,7 @@ class Styleguide {
 			// re-open the modal
 			title_link.addEventListener('click', (event) => {
 
-				if ( event.target.hash === window.location.hash ) {
+				if ( event.currentTarget.hash === window.location.hash ) {
 					this.openModal();
 				}
 
