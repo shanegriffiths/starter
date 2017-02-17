@@ -441,12 +441,30 @@
 	background: white;
 }
 
+.aigis-modal__header {
+	position: relative;
+	border-bottom: 1px solid #ECECEC;
+	margin-bottom: 16px;
+}
+
+.aigis-modal__logo {
+	display: inline-block;
+	padding: 16px 40px;
+	margin-right: 32px;
+	border-right: 1px solid #ECECEC;
+}
+
+.aigis-modal__logo img {
+	max-height: 32px;
+}
+
 .aigis-modal__close {
 	position: absolute;
-	bottom: 16px;
-	right: 16px;
-	height: 32px;
-	width: 32px;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 40px;
+	height: 16px;
+	width: 16px;
 	cursor: pointer;
 }
 
