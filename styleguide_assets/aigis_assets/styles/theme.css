@@ -372,7 +372,7 @@
 .aigis-module > h3,
 .aigis-module > h4 {
 	position: relative;
-	font-weight: normal;
+	font-weight: 600;
 	color: #4C4C4C;
 	line-height: 1.3333333;
 	margin-bottom: 1em;
