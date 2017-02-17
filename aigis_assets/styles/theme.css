@@ -456,6 +456,7 @@
 
 .aigis-modal__logo img {
 	max-height: 32px;
+	height: 100%;
 }
 
 .aigis-modal__close {
