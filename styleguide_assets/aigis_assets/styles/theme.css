@@ -272,6 +272,7 @@
 }
 
 .aigis-categoryList li {
+	list-style-type: none;
 	margin: 0;
 }
 
