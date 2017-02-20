@@ -9,6 +9,7 @@ This is the boilerplate for our web based projects.
 ### Required assets in order to run the boilerplate
 
 - [Install node](http://nodejs.org/download/)
+- [Install yarn](https://yarnpkg.com/en/)
 - [Install gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 - [Install sass](http://sass-lang.com/install)
 - [Install sass globbing](https://github.com/chriseppstein/sass-globbing)
@@ -20,12 +21,12 @@ This is the boilerplate for our web based projects.
 2. Type the following command:
 
 ```
-$ npm install
+$ yarn
 ```
 3. The npm command should install without error. Next, run:
 
 ```
-$ npm run
+$ yarn run
 ```
 You will then be presented with the development scripts you have available to run.
 
