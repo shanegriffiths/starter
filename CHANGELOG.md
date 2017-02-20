@@ -3,9 +3,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.1.5] - 2017-02-20
+
+### ADDED
+- Contributing.me
+
+### CHANGED
+- Updated readme for yarn
+
 ## [0.1.4] - 2017-02-02
 
-### Added
+### ADDED
 - Added issue template
 
 ## [0.1.3] - 2016-06-20
