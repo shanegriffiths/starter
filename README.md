@@ -1,6 +1,6 @@
 # Web boilerplate and style guide
 
-Version: 0.1.5
+Version: 0.2.0
 
 This is the boilerplate for our web based projects.
 
