@@ -1,5 +1,5 @@
 /*--------------------------------------------------*\
-	
+
 	Are you using the Styleguide?
 
 	if false, please remove /styleguide_assets/
@@ -36,6 +36,10 @@ var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
 	uglify = require('gulp-uglify'),
 
+	// webpack
+	runSequence = require('run-sequence'),
+	webpack = require('webpack-stream'),
+
 	// styleguide
 	aigis = require('gulp-aigis');
 
@@ -54,11 +58,42 @@ function onError(err) {
  //******
 // TASKS
 
-gulp.task('styleguide', function() {
+gulp.task('compile-styleguide', function() {
+  return gulp.src('./styleguide_assets/aigis_assets/scripts/styleguide.js')
+		.pipe(webpack({
+			module: {
+				loaders: [
+					{
+						test: /\.js$/,
+						exclude: /node_modules/,
+						loader: 'babel-loader',
+						query: {
+					        plugins: ['transform-runtime'],
+					        presets: ['es2015'],
+					    }
+					},
+				]
+			},
+			entry: {
+				styleguide: ['babel-polyfill', './styleguide_assets/aigis_assets/scripts/styleguide.js'],
+			},
+			output: {
+		        filename: '[name].js',
+		    },
+		}))
+	  .pipe(gulp.dest('./styleguide_assets/aigis_assets/dist/'))
+		.pipe(notify("Styleguide Assets Compiled"));
+});
+
+gulp.task('build-styleguide', function() {
 	return gulp
 		.src('./styleguide_config.yml')
 		.pipe(aigis())
 		.pipe(notify("Styleguide Generated"));
+});
+
+gulp.task('styleguide', function() {
+    runSequence('compile-styleguide', 'build-styleguide');
 });
 
 gulp.task('styles', function () {
