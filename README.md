@@ -4,6 +4,8 @@ Version: 0.1.5
 
 This is the boilerplate for our web based projects.
 
+Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) if you wish to improve this project.
+
 ## **Installation**
 
 ### Required assets in order to run the boilerplate
@@ -21,37 +23,38 @@ This is the boilerplate for our web based projects.
 2. Type the following command:
 
 ```
-$ yarn
+yarn
 ```
-3. The npm command should install without error. Next, run:
+3. The yarn command should install without error. Next, run:
 
 ```
-$ yarn run
+yarn run
 ```
 You will then be presented with the development scripts you have available to run.
 
 * **Build** - This is a one-time run script which generates all of the assets. This script is mainly run in the post-deploy process.
 * **Watch** - This enables the watch task on all assets, and triggers LiveReload.
-* **Modernizr** - This is a dedicated script which runs Modernizr. Remember to manually add your test conditiions to the `gulpfile`
-* **Styleguide** - This will generate a fresh styleguide under `/styleguide/`.
+* **Modernizr** - This is a dedicated script which runs Modernizr. Remember to manually add your test conditions to the `gulpfile`
+* **Style guide** - This will generate a fresh style guide under `/styleguide/`.
+* **Deploy style guide** - This will deploy the style guide to its appropriate GitHub Page.
 
 ---
 
-To run one of the above tasks, re-run the `$ npm run` command and add the task name, for example:
+To run one of the above tasks, re-run the `yarn run` command and add the task name, for example:
 
 ```
-$ npm run watch
+yarn run watch
 ```
 
 ## **Optional Extras**
 
 ### Live Reload
 
-In order to use livereload, you need to install the browser-extension. We use [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).
+In order to use live reload, you need to install the browser-extension. We use [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).
 
 ### Modernizr
 
-Modernizr functionality is provided in this boilerplate. Modernizr doesn't work inside the `Watch` script. Instead you need to manually set the tests you want to add inside the gulpfile then use the `Modernizr` script to run.
+Modernizr functionality is provided in this boilerplate. Modernizr doesn't work inside the `watch` script. Instead you need to manually set the tests you want to add inside the gulpfile then use the `modernizr` script to run.
 
 ---
 
@@ -70,21 +73,29 @@ We take inspiration from the [SMACSS architecture](https://smacss.com/).
 
 ### Background
 
-The styleguide we use is a custom, re-themed version of [Aigis](https://pxgrid.github.io/aigis/).
+The style guide we use is a custom, re-themed version of [Aigis](https://pxgrid.github.io/aigis/).
 
 ### Structure
 
-The styleguide template structure loosely follows that of Brad Frost's [Pattern Lab](http://patternlab.io/about.html), in that we take inspiration for the following template levels:
+The style guide template structure loosely follows that of Brad Frost's [Pattern Lab](http://patternlab.io/about.html), in that we take inspiration for the following template levels:
 
 - **Base** - This represents the atomic level (base styles)
 - **Components** - This represents the modular UI components
 - **Layout** - This represents structural framework components
 
+### Config
+
+There is a `styleguide_config.yml` file that dictates: where the style guide will search for references, the destination directory, and which assets get compiled into the destination.
+
+- **source:** - This references where you keep your working sass files.
+- **dest:** - This is the destination folder for the generated style guide, if this changes you will need to update the `deploy-styleguide` script in the `package.json`.
+- **dependencies:** - This will reference your destination folder for compiled assets: css, js, images etc.
+
 ### Usage
 
-The styleguide is generated through comments in the `.scss` that follow a simple structure detailed below. The generation is on-the-fly through `npm run watch` or manual via `npm run styleguide`.
+The style guide is generated through comments in the `.scss` that follow a simple structure detailed below. The generation is on-the-fly through `yarn run watch` or manual via `yarn run styleguide`.
 
-There is a boolean flag in the gulpfile incase you would rather not use the styleguide.
+There is a boolean flag in the gulpfile incase you would rather not use the style guide.
 
 ~~~
 /*
@@ -112,7 +123,7 @@ Hello Component!
 
 ## **HTACCESS**
 
-### Maintenance
+### WordPress Maintenance
 
 ```
 ErrorDocument 503 /maintenance.html
@@ -125,7 +136,7 @@ ErrorDocument 503 /maintenance.html
 # RewriteRule .* /maintenance.html [R=503,L]
 ```
 
-### Style guide redirect
+### WordPress Style guide redirect
 
 ```
 Redirect 301 /styleguide /wp-content/themes/\__theme__/styleguide
