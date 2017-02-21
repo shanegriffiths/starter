@@ -97,29 +97,29 @@ The style guide is generated through comments in the `.scss` that follow a simpl
 
 There is a boolean flag in the gulpfile incase you would rather not use the style guide.
 
-~~~
-/*
+	```
+	/*
 
----
-name: Title Here
-category:
- - Category
- - Category/Title
----
+	---
+	name: Title Here
+	category:
+	 - Category
+	 - Category/Title
+	---
 
-## Markdown description
+	## Markdown description
 
-Hello Component!
+	Hello Component!
 
-* Use the `.alt--class` modifier.
+	* Use the `.alt--class` modifier.
 
-```html
-<span>HTML Example</span>
-<span class="alt--class">HTML Example</span>
-```
+	```html
+	<span>HTML Example</span>
+	<span class="alt--class">HTML Example</span>
+	```
 
-*/
-~~~
+	*/
+	```
 
 ## **HTACCESS**
 
