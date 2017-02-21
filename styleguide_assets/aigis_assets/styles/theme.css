@@ -480,12 +480,12 @@ ul[data-path-depth="1"] {
 @media (min-width: 678px) {
 
 	.aigis-contents {
-		padding: 0 10px 0 356px;
+		padding: 0 10px 0 296px;
 	}
 
 	.aigis-contents__body {
 		min-height: 100vh;
-		padding: 104px 140px;
+		padding: 104px 80;
 		margin: 0 auto;
 	}
 
@@ -512,7 +512,7 @@ ul[data-path-depth="1"] {
 		bottom: 0;
 		left: 0;
 		z-index: 101;
-		width: 356px;
+		width: 296px;
 		overflow-x: scroll;
 		height: 100%;
 		border-right: 1px solid #ECECEC;
@@ -664,6 +664,22 @@ ul[data-path-depth="1"] {
 		right: 40px;
 		height: 16px;
 		width: 16px;
+	}
+
+}
+
+@media (min-width: 1024px) {
+
+	.aigis-contents {
+		padding: 0 10px 0 356px;
+	}
+
+	.aigis-contents__body {
+		padding: 104px 140px;
+	}
+
+	.aigis-sidemenu {
+		width: 356px;
 	}
 
 }
