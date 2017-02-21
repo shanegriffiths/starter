@@ -291,6 +291,7 @@
 	color: #4C4C4C;
 	white-space: nowrap;
 	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, .2);
 }
 
 .aigis-categoryList a:hover,
@@ -567,6 +568,11 @@ ul[data-path-depth="1"] {
 	.aigis-categoryList ul {
 		border-top: none;
 		border-bottom: none;
+	}
+
+	li[data-path-depth="0"],
+	li[data-path-depth="1"] {
+		display: block;
 	}
 
 	li[data-path-depth="0"] {
