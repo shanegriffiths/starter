@@ -121,9 +121,9 @@
 }
 
 .aigis-search-wrapper {
+	display: none;
 	position: relative;
 	font-size: 16px;
-	border-bottom: 1px solid #ECECEC;
 }
 
 .aigis-search-icon {
@@ -270,6 +270,7 @@
 	line-height: 1;
 	padding: 0;
 	margin: 0;
+	border-top: 1px solid #ECECEC;
 	border-bottom: 1px solid #ECECEC;
 }
 
@@ -311,6 +312,7 @@ li[data-path-depth="1"] {
 	display: block;
 	position: absolute;
 	top: 100%;
+	left: 0;
 	width: 100%;
 	overflow: scroll;
 	white-space: nowrap;
@@ -320,6 +322,7 @@ li[data-path-depth="1"] {
 
 ul[data-path-depth="1"] {
 	display: none;
+	border-top: none;
 }
 
 .aigis-categoryList ul[data-path-depth='1'] a {
@@ -488,7 +491,7 @@ ul[data-path-depth="1"] {
 	}
 
 	.aigis-search-wrapper {
-		border-bottom: none;
+		display: block;
 	}
 
 	.aigis-welcome {
@@ -555,6 +558,7 @@ ul[data-path-depth="1"] {
 	}
 
 	.aigis-categoryList ul {
+		border-top: none;
 		border-bottom: none;
 	}
 
@@ -591,6 +595,7 @@ ul[data-path-depth="1"] {
 	.aigis-categoryList li[data-path-depth] [data-tree-current] + ul {
 		position: relative;
 		top: auto;
+		left: auto;
 		width: auto;
 		white-space: inherit;
 		padding: 12px 0;
