@@ -291,6 +291,7 @@
 	color: #4C4C4C;
 	white-space: nowrap;
 	text-decoration: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, .2);
 }
 
 .aigis-categoryList a:hover,
@@ -485,7 +486,7 @@ ul[data-path-depth="1"] {
 
 	.aigis-contents__body {
 		min-height: 100vh;
-		padding: 104px 80;
+		padding: 104px 80px;
 		margin: 0 auto;
 	}
 
@@ -567,6 +568,11 @@ ul[data-path-depth="1"] {
 	.aigis-categoryList ul {
 		border-top: none;
 		border-bottom: none;
+	}
+
+	li[data-path-depth="0"],
+	li[data-path-depth="1"] {
+		display: block;
 	}
 
 	li[data-path-depth="0"] {
@@ -668,7 +674,7 @@ ul[data-path-depth="1"] {
 
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1240px) {
 
 	.aigis-contents {
 		padding: 0 10px 0 356px;
