@@ -315,6 +315,7 @@ li[data-path-depth="1"] {
 	left: 0;
 	width: 100%;
 	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
 	white-space: nowrap;
 	padding: 0 0 17px;
 	border-bottom: none;
