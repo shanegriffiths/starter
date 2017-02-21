@@ -485,7 +485,7 @@ ul[data-path-depth="1"] {
 
 	.aigis-contents__body {
 		min-height: 100vh;
-		padding: 104px 80;
+		padding: 104px 80px;
 		margin: 0 auto;
 	}
 
