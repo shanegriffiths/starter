@@ -445,10 +445,9 @@
 }
 
 .aigis-modal__logo {
-	display: inline-block;
-	padding: 16px 40px;
-	margin-right: 32px;
-	border-right: 1px solid #ECECEC;
+	display: block;
+	text-align: center;
+	padding: 16px 0;
 }
 
 .aigis-modal__logo img {
@@ -457,13 +456,27 @@
 }
 
 .aigis-modal__close {
+	cursor: pointer;
+}
+
+.aigis-modal__close-back {
+	font-size: 14px;
+	font-weight: 600;
+	color: #535353;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	right: 40px;
-	height: 16px;
-	width: 16px;
-	cursor: pointer;
+	left: 16px;
+}
+
+.aigis-modal__close-back svg {
+	width: 8px;
+	height: 11px;
+	margin-top: -1px;
+}
+
+.aigis-modal__close-cross {
+	display: none;
 }
 
 .aigis-body.aigis-modal--active .aigis-modal__wrapper {
@@ -573,6 +586,27 @@
 
 	.preview-link {
 		left: calc(-0.85em - 16px);
+	}
+
+	.aigis-modal__logo {
+		display: inline-block;
+		padding: 16px 40px;
+		margin-right: 32px;
+		border-right: 1px solid #ECECEC;
+	}
+
+	.aigis-modal__close-back {
+		display: none;
+	}
+
+	.aigis-modal__close-cross {
+		display: block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 40px;
+		height: 16px;
+		width: 16px;
 	}
 
 }
