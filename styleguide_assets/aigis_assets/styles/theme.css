@@ -331,6 +331,11 @@ ul[data-path-depth="1"] {
 	border-top: none;
 }
 
+/* Hide third tier menu */
+ul[data-path-depth="2"] {
+	display: none;
+}
+
 .aigis-categoryList ul[data-path-depth='1'] a {
 	color: #727272;
 	transition: color .2s ease;
