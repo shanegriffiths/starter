@@ -37,7 +37,7 @@ The hamburger animates on click to a cross. It is used to show the menu on small
 	overflow: visible;
 	height: 30px;
 	float: right;
-	position: fixed;
+	position: absolute;
 	top: 18px;
 	right: 18px;
 	z-index: 100;
