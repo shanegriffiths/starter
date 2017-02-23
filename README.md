@@ -1,6 +1,6 @@
 # Web boilerplate and style guide
 
-Version: 0.2.0
+Version: 0.2.1
 
 This is the boilerplate for our web based projects.
 
@@ -66,6 +66,15 @@ We take inspiration from the [SMACSS architecture](https://smacss.com/).
 - **Layout** - Spacing, major UI components, and layout structures
 - **Modular** - All repeatable UI components
 - **Tools** - Setup, Variables, Mixins, Fonts, Grid
+
+---
+
+## **Icons**
+
+- All of our SVG's are first run through [SVGOMG](https://jakearchibald.github.io/svgomg/) to optimise them.
+- Then they are sorted between being part of the icon-system or to be used as an image.
+	- The icon-system is filled with re-usable icons that are modifiable via CSS.
+	- To add to the icon-system the SVG must be placed at `/src/images/icons/` and then you run `gulp svgstore`
 
 ---
 

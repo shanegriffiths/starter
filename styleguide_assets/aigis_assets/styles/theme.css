@@ -14,6 +14,7 @@
 }
 
 .aigis-body {
+	background: white;
 	margin: 0;
 	padding: 0;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
@@ -64,6 +65,7 @@
 .aigis-module > h2,
 .aigis-module > h3,
 .aigis-module > h4 {
+	text-transform: none;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
@@ -190,7 +192,7 @@
 	position: relative;
 	padding: 16px;
 	border-radius: 2px;
-	margin: 0 auto calc(48px - 1px);
+	margin: 0 auto 47px;
 	overflow: scroll;
 	border: 1px solid #ECECEC;
 }
@@ -329,6 +331,11 @@ ul[data-path-depth="1"] {
 	border-top: none;
 }
 
+/* Hide third tier menu */
+ul[data-path-depth="2"] {
+	display: none;
+}
+
 .aigis-categoryList ul[data-path-depth='1'] a {
 	color: #727272;
 	transition: color .2s ease;
@@ -431,6 +438,7 @@ ul[data-path-depth="1"] {
 	left: 0;
 	z-index: 999;
 	background: white;
+	overflow: scroll;
 }
 
 .aigis-modal__header {
