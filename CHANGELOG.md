@@ -3,6 +3,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.1] - 2017-02-23
+
+### ADDED
+- Overflow scrolling in single component view
+- Icon AJAX and readme section for icons
+
+### CHANGED
+- Fixed CSS isolation issues
+- Hidden third tier menu
+
 ## [0.2.0] - 2017-02-21
 
 ### CHANGED
