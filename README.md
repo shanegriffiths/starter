@@ -69,6 +69,15 @@ We take inspiration from the [SMACSS architecture](https://smacss.com/).
 
 ---
 
+## **Icons**
+
+- All of our SVG's are first run through [SVGOMG](https://jakearchibald.github.io/svgomg/) to optimise them.
+- Then they are sorted between being part of the icon-system or to be used as an image.
+	- The icon-system is filled with re-usable icons that are modifiable via CSS.
+	- To add to the icon-system the SVG must be placed at `/src/images/icons/` and then you run `gulp svgstore`
+
+---
+
 ## **Style Guide**
 
 ### Background
