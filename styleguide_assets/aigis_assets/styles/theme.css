@@ -65,6 +65,7 @@
 .aigis-module > h2,
 .aigis-module > h3,
 .aigis-module > h4 {
+	text-transform: none;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
 }
 
