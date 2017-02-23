@@ -333,7 +333,7 @@ ul[data-path-depth="1"] {
 
 /* Hide third tier menu */
 ul[data-path-depth="2"] {
-	display: none;
+	display: none !important;
 }
 
 .aigis-categoryList ul[data-path-depth='1'] a {
