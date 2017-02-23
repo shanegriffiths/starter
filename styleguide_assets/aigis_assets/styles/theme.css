@@ -192,7 +192,7 @@
 	position: relative;
 	padding: 16px;
 	border-radius: 2px;
-	margin: 0 auto calc(48px - 1px);
+	margin: 0 auto 47px;
 	overflow: scroll;
 	border: 1px solid #ECECEC;
 }
