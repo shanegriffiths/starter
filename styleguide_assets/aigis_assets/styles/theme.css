@@ -666,6 +666,12 @@ ul[data-path-depth="2"] {
 		border-right: 1px solid #ECECEC;
 	}
 
+	.aigis-modal__logo:hover,
+	.aigis-modal__logo:active,
+	.aigis-modal__logo:focus {
+		border-right: 1px solid #ECECEC;
+	}
+
 	.aigis-modal__close-back {
 		display: none;
 	}
