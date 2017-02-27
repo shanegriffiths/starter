@@ -420,9 +420,8 @@ ul[data-path-depth="2"] {
 }
 
 .link-icon {
-	height: .85em;
-	width: .85em;
-	margin-top: -0.2em;
+	height: .6em;
+	width: .6em;
 	display: none;
 }
 
@@ -657,7 +656,7 @@ ul[data-path-depth="2"] {
 	}
 
 	.preview-link {
-		left: calc(-0.85em - 16px);
+		left: calc(-0.6em - 8px);
 	}
 
 	.aigis-modal__logo {
