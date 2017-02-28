@@ -2,11 +2,13 @@
 
 Version: 0.2.1
 
-This is the boilerplate for our web based projects.
+This is the boilerplate for our web based projects. It contains our front end tooling setup, and the styleguide system we use.
 
 Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) if you wish to improve this project.
 
 ## **Installation**
+
+> Disclaimer: this setup was built for use with OS X so you may need to adjust as necessary if you encounter any issues using a different system.
 
 ### Required assets in order to run the boilerplate
 
@@ -132,7 +134,13 @@ There is a boolean flag in the gulpfile incase you would rather not use the styl
 
 ## **HTACCESS**
 
-### WordPress Maintenance
+This section contains optional snippets of code that can be added to the root `.htaccess` file.
+
+### Maintenance
+
+The first line of this specifies that when the server is throwing a 503 error, the `maintenance.html` should be served.
+
+The remaining lines are prefixed with a # to denote they are commented out. Removing the hashes will throw a 503 and force a redirect to the maintenance page - while ignoring The Idea Bureau Studio's IP address.
 
 ```
 ErrorDocument 503 /maintenance.html
@@ -145,8 +153,10 @@ ErrorDocument 503 /maintenance.html
 # RewriteRule .* /maintenance.html [R=503,L]
 ```
 
-### WordPress Style guide redirect
+### Style guide redirect
+
+The following line contains two parameters, it states that when you navigate to `/styleguide` you will be redirected to `/wp-content/themes/wp-example/styleguide` - the actual location of the styleguide.
 
 ```
-Redirect 301 /styleguide /wp-content/themes/\__theme__/styleguide
+Redirect 301 /styleguide /wp-content/themes/wp-example/styleguide
 ```
