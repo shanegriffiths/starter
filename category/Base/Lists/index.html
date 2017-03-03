@@ -160,6 +160,21 @@
 
 		<img class="link-icon" src="../../../aigis_assets/images/link.svg" alt="Link to single component view">
 
+		<script>
+			var ajax = new XMLHttpRequest();
+			ajax.open('GET', '../../..//dist/images/icons.svg', true);
+			ajax.send();
+			ajax.onload = function(e) {
+
+				var div = document.createElement('div');
+				div.style.display = 'none';
+				div.style.visibility = 'hidden';
+				div.innerHTML = ajax.responseText;
+				document.body.insertBefore(div, document.body.childNodes[0]);
+
+			}
+		</script>
+
 		<script src="../../../aigis_assets/dist/styleguide.js"></script>
 		<script src="../../../dist/scripts/main.min.js"></script>
 

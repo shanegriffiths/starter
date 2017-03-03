@@ -226,7 +226,7 @@ button::-moz-focus-inner {
   margin-left: 0;
   width: 100%; }
 
-@media screen and (min-width: 640px) {
+@media screen and (false: 640px) {
   .M-hide {
     display: none; }
   .M-1 {
@@ -311,7 +311,7 @@ button::-moz-focus-inner {
     margin-left: 0;
     width: 100%; } }
 
-@media screen and (min-width: 1024px) {
+@media screen and (false: 1024px) {
   .L-hide {
     display: none; }
   .L-1 {
@@ -450,8 +450,8 @@ category:
 All of the spacing throughout the website is based from the type styling, conforming to a rule of 1.5 times the font-size.
 
 ```html
-<p>The <em>quick</em> brown fox jumped over the <strong>lazy</strong> dog</p>
-<small>The quick brown fox jumped over the lazy dog</small>
+<p>The <em>quick</em> fox jumped over the <strong>lazy</strong> dog</p>
+<small>The quick fox jumped over the lazy dog</small>
 ```
 
 ### Example Paragraphs
@@ -537,7 +537,7 @@ This is the default markup and styling for a blockquote.
 
 ```html
 <blockquote>
-	<p>The quick brown fox jumped over</p>
+	<p>The quick fox jumped over</p>
 	<footer> - The Lazy dog</footer>
 </blockquote>
 ```
@@ -591,8 +591,8 @@ hr {
 ---
 name: Utilities
 category:
- - Layout
- - Layout/Utilities
+ - Base
+ - Base/Utilities
 ---
 
 ## List of Utility Classes
@@ -604,7 +604,7 @@ These classes enforce the colour of the text to change:
 - `.is-grey`
 
 ```html
-<h1 class="is-grey">The brown fox</h1>
+<h1 class="is-grey">The fox</h1>
 ```
 
 ### Clearfix
@@ -764,12 +764,12 @@ category:
 The class structure follows the structure discussed by Harry Roberts in his article [practical font sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/) on CSS Wizardry.
 
 ```html
-<h1 class="alpha">The brown fox</h1>
-<h2 class="beta">The brown fox</h2>
-<h3 class="gamma">The brown fox</h3>
-<h4 class="delta">The brown fox</h4>
-<h5 class="epsilon">The brown fox</h5>
-<h6 class="zeta">The brown fox</h6>
+<h1 class="alpha">The fox</h1>
+<h2 class="beta">The fox</h2>
+<h3 class="gamma">The fox</h3>
+<h4 class="delta">The fox</h4>
+<h5 class="epsilon">The fox</h5>
+<h6 class="zeta">The fox</h6>
 ```
 
 ## Utilities
@@ -780,7 +780,7 @@ The class structure follows the structure discussed by Harry Roberts in his arti
 Use the `.is-uppercase` class to enforce a heading to be in capitals.
 
 ```html
-<h1 class="is-uppercase">The brown fox</h1>
+<h1 class="is-uppercase">The fox</h1>
 ```
 
 ### Spacing
@@ -788,9 +788,9 @@ Use the `.is-uppercase` class to enforce a heading to be in capitals.
 Using `.drop` class applies only half the regular bottom bottom.
 
 ```html
-<h1 class="drop">The brown fox</h1>
-<h1>The brown fox</h1>
-<h1>The brown fox</h1>
+<h1 class="drop">The fox</h1>
+<h1>The fox</h1>
+<h1>The fox</h1>
 ```
 
 */
@@ -1503,7 +1503,7 @@ The hamburger animates on click to a cross. It is used to show the menu on small
   overflow: visible;
   height: 30px;
   float: right;
-  position: fixed;
+  position: absolute;
   top: 18px;
   right: 18px;
   z-index: 100;
@@ -2410,7 +2410,7 @@ This component contains an image with some text overlayed and is normally half o
 ```html
 <section class="image-block" style="background-image: url(http://unsplash.it/g/818/261?blur)">
 	<h3>Section Title</h3>
-	<p>The quick brown fox jumps over the lazy lorem ipsum</p>
+	<p>The quick fox jumps over the lazy lorem ipsum</p>
 </section>
 ```
 
