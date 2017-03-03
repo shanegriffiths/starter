@@ -25,11 +25,11 @@ This component contains an image with some text overlayed and is normally half o
 	background-size: cover;
 	background-repeat: no-repeat;
 
-	@include mq(M) {
+	@include mq(S) {
 	    padding: em(28) em(35);
 	}
 
-	@include mq(L) {
-	    padding: em(54, $large-font-size) em(64, $large-font-size);
+	@include mq(M) {
+	    padding: em(54, 18) em(64, 18);
 	}
 }

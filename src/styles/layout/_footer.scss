@@ -53,11 +53,11 @@ category:
 
 	padding: em(42) 0 em(50);
 
-	@include mq(M) {
+	@include mq(S) {
 	    padding: em(48) 0 em(24);
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 	    padding: em(81) 0 em(27);
 	}
 
@@ -74,11 +74,11 @@ category:
 .site-footer__address {
 	margin-bottom: 40px;
 
-	@include mq(M) {
+	@include mq(S) {
 	    margin-bottom: 20px;
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 	    margin-bottom: 40px;
 	}
 }
@@ -88,7 +88,7 @@ category:
 	clear: both;
 	margin-top: 38px;
 
-	@include mq(L) {
+	@include mq(M) {
 	    margin-top: 54px;
 	}
 

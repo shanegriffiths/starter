@@ -7,11 +7,11 @@
 .island {
 	padding: $space 0;
 
-	@include mq(M) {
+	@include mq(S) {
 		padding: ($space * 2) 0;
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 		padding: ($space * 4) 0;
 	}
 }
@@ -19,14 +19,14 @@
 .island--slim {
 	padding: $space 0;
 
-	@include mq(M) {
+	@include mq(S) {
 		padding: ($space * 2) 0;
 	}
 }
 
 .island--thick {
 
-	@include mq(M) {
+	@include mq(S) {
 		padding: em(50) em(50) em(100);
 	}
 }

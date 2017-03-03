@@ -28,15 +28,15 @@ category:
     padding: 0;
     margin: 0;
     width: 100%;
-    border-radius: 3px;
+    border-radius: $border-radius - 1;
     overflow: hidden;
     background-color: color('white');
 	border: 1px solid color('black');
 	margin-bottom: 1em;
 	z-index: 0;
 
-	@include mq(L) {
-	    border-radius: 4px;
+	@include mq(M) {
+	    border-radius: $border-radius;
 	}
 
 	// enhancement
@@ -65,7 +65,7 @@ category:
 	padding: 1em;
 	cursor: pointer;
 
-	@include mq(L) {
+	@include mq(M) {
 		@include font-size(14);
 	}
 
@@ -115,7 +115,7 @@ category:
 		margin: .5em 0;
 		padding: .5em 1em;
 
-		@include mq(L) {
+		@include mq(M) {
 		    @include font;
 		}
 
