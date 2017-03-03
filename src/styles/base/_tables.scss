@@ -14,7 +14,7 @@ table {
 		// this is where the magic happens
 		content: attr(aria-label) '';
 
-		@include mq(M) {
+		@include mq(S) {
 			display: none;
 		}
 	}
@@ -28,7 +28,7 @@ th {
 	padding: 13px;
 	display: block;
 
-	@include mq(M) {
+	@include mq(S) {
 		@include font-size(13, 16, 22);
 		@include font('secondary', 'bold');
 		background-color: color('black');
@@ -36,7 +36,7 @@ th {
 		display: table-cell;
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 		@include font($weight: 'semibold');
 		padding: 16px;
 	}
@@ -48,12 +48,12 @@ td {
 	border-left: 1px solid color('black');
 	padding: 10px;
 
-	@include mq(M) {
+	@include mq(S) {
 		padding: 17px;
 		display: table-cell;
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 	    padding: 30px;
 	}
 }
@@ -62,12 +62,12 @@ thead tr {
 	color: transparent;
 	font: 0/0 a;
 
-	@include mq(M) {
+	@include mq(S) {
 		color: inherit;
 		font: inherit;
 	}
 }
 
 tbody tr {
-	padding: em(14, 14);
+	padding: 1em;
 }

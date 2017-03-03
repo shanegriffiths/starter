@@ -69,16 +69,16 @@ This is a presentation preview of the main header, the style changes slightly at
 
 	background: color('white');
 
-	@include mq(M) {
+	@include mq(S) {
 	    height: em(80);
 	}
 
-	@include mq(L) {
-	    height: em(90, $large-font-size);
+	@include mq(M) {
+	    height: em(90, 18);
 	}
 
-	@include mq(XL) {
-	    height: em(99, $large-font-size);
+	@include mq(L) {
+	    height: em(99, 18);
 	}
 }
 
@@ -88,11 +88,11 @@ This is a presentation preview of the main header, the style changes slightly at
 	padding: em(10) 0;
 	padding-right: em(17);
 
-	@include mq(M) {
+	@include mq(S) {
 	    padding: em(19) 0;
 	}
 
-	@include mq(XL) {
+	@include mq(L) {
 	    padding: em(25) 0;
 	}
 }
@@ -109,22 +109,18 @@ This is a presentation preview of the main header, the style changes slightly at
 	background: rgba(color('grey'), .95);
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
 
-	@include mq(M) {
-		padding: em(16) 0;
+	@include mq(S) {
+		padding: 1rem 0;
 	}
 
-	@include mq(XL) {
-		padding: em(16, $large-font-size) 0;
+	@include mq(L) {
+		padding: 1rem 0;
 	}
 
 	.site-header__logo {
 
-		@include mq(M) {
-		    height: em(40);
-		}
-
-		@include mq(L) {
-		    height: em(40, $large-font-size);
+		@include mq(S) {
+		    height: 2.5rem;
 		}
 	}
 
@@ -139,7 +135,7 @@ This is a presentation preview of the main header, the style changes slightly at
 
 .site-header {
 
-	@include mq(XL) {
+	@include mq(L) {
 	    display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -152,14 +148,14 @@ This is a presentation preview of the main header, the style changes slightly at
 	width: em(43);
 	transition: all .2s ease;
 
-	@include mq(M) {
+	@include mq(S) {
 		width: em(132);
 		height: em(42);
 	}
 
-	@include mq(XL) {
-	    width: em(150, $large-font-size);
-		height: em(42, $large-font-size);
+	@include mq(L) {
+	    width: em(150, 18);
+		height: em(42, 18);
 	}
 }
 
@@ -169,7 +165,7 @@ This is a presentation preview of the main header, the style changes slightly at
 
 .logo--mobile {
 
-	@include mq(M) {
+	@include mq(S) {
     	display: none;
 	}
 }
@@ -180,7 +176,7 @@ This is a presentation preview of the main header, the style changes slightly at
 	left: 0;
 	display: none;
 
-	@include mq(M) {
+	@include mq(S) {
 	    display: block;
 	}
 }
@@ -210,7 +206,7 @@ This is a presentation preview of the main header, the style changes slightly at
 		opacity: 1;
 	}
 
-	@include mq(M) {
+	@include mq(S) {
 	    width: em(352);
 		left: auto;
 
@@ -219,7 +215,7 @@ This is a presentation preview of the main header, the style changes slightly at
 		text-align: left;
 	}
 
-	@include mq(XL) {
+	@include mq(L) {
 		position: static;
 		top: auto;
 		right: auto;
@@ -243,9 +239,9 @@ This is a presentation preview of the main header, the style changes slightly at
 			padding-left: 0;
 			margin-top: em(24);
 
-			@include mq(XL) {
+			@include mq(L) {
 				margin-top: 0;
-				margin-left: em(46, $large-font-size);
+				margin-left: em(46, 18);
 				float: left;
 				text-transform: uppercase;
 			}
@@ -253,7 +249,7 @@ This is a presentation preview of the main header, the style changes slightly at
 			&:first-child {
 				margin-top: 0;
 
-				@include mq(XL) {
+				@include mq(L) {
 				    display: none;
 				}
 			}

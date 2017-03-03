@@ -52,8 +52,10 @@ input[type="password"],
 input[type="search"],
 input[type="url"],
 input[type="number"],
+input[type="tel"],
 input[type="color"],
 input[type="range"],
+input[type="time"],
 input[type="date"],
 input[type="month"],
 input[type="week"],
@@ -68,7 +70,7 @@ textarea {
 	width: 100%;
 	border: 1px solid color('black');
 	border-radius: $border-radius;
-	padding: em(10) em(6);
+	padding: .5rem 1rem;
 	margin-bottom: $space / 2;
 
 	&:focus {
@@ -76,7 +78,7 @@ textarea {
 		outline: none;
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 	    padding: em(16, 14) em(12, 14);
 	}
 }
@@ -86,7 +88,7 @@ input[type="color"] {
 }
 
 textarea {
-	line-height: $space;
+	line-height: 1.5;
 }
 
 input[type="text"].valid,
@@ -150,7 +152,6 @@ This allows you to have a button in the same row as its input field.
 
 	button {
 		padding: 0 1em;
-
 		border-radius: 0 $border-radius $border-radius 0;
 	}
 }

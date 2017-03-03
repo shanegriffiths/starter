@@ -62,51 +62,51 @@ This hero includes a paragraph and some buttons.
 
 	text-align: center;
 
-	@include mq(M) {
+	@include mq(S) {
 	    padding: em(67) 0;
 
 		text-align: left;
 	}
 
-	@include mq(XL) {
-	    padding: em(110, $large-font-size) 0;
+	@include mq(L) {
+	    padding: em(110, 18) 0;
 	}
 }
 
 .hero--slim {
 	padding: em(24) 0;
 
-	@include mq(M) {
+	@include mq(S) {
 	    padding: em(49) 0;
 	}
 
-	@include mq(XL) {
-	    padding: em(53, $large-font-size) 0;
+	@include mq(L) {
+	    padding: em(53, 18) 0;
 	}
 }
 
 .hero__content {
 
-	@include mq(M) {
+	@include mq(S) {
 	    max-width: 80%;
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 	    max-width: 90%;
 	}
 
-	@include mq(XL) {
+	@include mq(L) {
 	    max-width: 60%;
 	}
 
 	h1 {
 		margin-bottom: em(13, 20);
 
-		@include mq(M) {
+		@include mq(S) {
 		    margin-bottom: em(25, 30);
 		}
 
-		@include mq(L) {
+		@include mq(M) {
 		    margin-bottom: em(31, 46);
 		}
 	}
@@ -118,11 +118,11 @@ This hero includes a paragraph and some buttons.
 
 		margin-bottom: em(24, 15);
 
-		@include mq(M) {
-			margin-bottom: em(24, 16);
+		@include mq(S) {
+			margin-bottom: em(24);
 		}
 
-		@include mq(L) {
+		@include mq(M) {
 			margin-bottom: em(27, 22);
 		}
 	}
@@ -130,8 +130,8 @@ This hero includes a paragraph and some buttons.
 	.button:nth-of-type(1) {
 		margin-right: em(20);
 
-		@include mq(L) {
-		    margin-right: em(60, $large-font-size);
+		@include mq(M) {
+		    margin-right: em(60, 18);
 		}
 	}
 }

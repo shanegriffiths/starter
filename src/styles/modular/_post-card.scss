@@ -48,9 +48,9 @@ This is the default card object that links to a news post.
 	margin-bottom: em(30);
 	border-bottom: 1px solid color('black');
 
-	@include mq(L) {
-		padding-bottom: em(54, $large-font-size);
-		margin-bottom: em(54, $large-font-size);
+	@include mq(M) {
+		padding-bottom: em(54, 18);
+		margin-bottom: em(54, 18);
 		transition: box-shadow .2s ease;
 	}
 
@@ -60,7 +60,7 @@ This is the default card object that links to a news post.
 	&:focus {
 		text-decoration: none;
 
-		@include mq(L) {
+		@include mq(M) {
 		    box-shadow: 2px 3px 5px 0 rgba(0, 0, 0, .1);
 		}
 	}
@@ -77,11 +77,11 @@ This is the default card object that links to a news post.
 	color: color('black');
 	margin-bottom: em(5, 15);
 
-	@include mq(M) {
+	@include mq(S) {
 	    margin-bottom: em(14, 19);
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 	    margin-bottom: em(14, 35);
 	}
 }
@@ -95,11 +95,11 @@ This is the default card object that links to a news post.
 
 	margin-bottom: em(10, 14);
 
-	@include mq(M) {
+	@include mq(S) {
 	    margin-bottom: em(27, 18);
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 	    margin-bottom: em(27, 20);
 	}
 }
@@ -108,9 +108,9 @@ This is the default card object that links to a news post.
 	letter-spacing: .1px;
 	margin-bottom: em(15);
 
-	@include mq(L) {
+	@include mq(M) {
 		padding-right: $space;
-	    margin-bottom: em(15, $large-font-size);
+	    margin-bottom: em(15, 18);
 	}
 }
 

@@ -9,18 +9,18 @@
 	@extend .cf;
 }
 
-.band--thin {
+.band--half {
 	margin-bottom: $space / 2;
 }
 
-.band--thick {
+.band--2 {
 	margin-bottom: $space * 2;
 }
 
-.band--extra-thick {
+.band--3 {
 	margin-bottom: $space * 3;
 }
 
-.band--double-thick {
+.band--4 {
 	margin-bottom: $space * 4;
 }

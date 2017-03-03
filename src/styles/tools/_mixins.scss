@@ -47,9 +47,17 @@
  //***************************
 // TYPE AND LIST BASED MIXINS
 
-@mixin font-size($size: $base-font-size, $M-size: null, $L-size: null, $XL-size: null) {
+@mixin font-size($size: $base-font-size, $S-size: null, $M-size: null, $L-size: null) {
 	font-size: $size + px;
 	font-size: $size / $base-font-size + rem;
+
+	@if ($S-size != null) {
+
+		@include mq(S) {
+			font-size: $S-size + px;
+			font-size: $S-size / $base-font-size + rem;
+		}
+	}
 
 	@if ($M-size != null) {
 
@@ -63,15 +71,7 @@
 
 		@include mq(L) {
 			font-size: $L-size + px;
-			font-size: $L-size / $large-font-size + rem;
-		}
-	}
-
-	@if ($XL-size != null) {
-
-		@include mq(XL) {
-			font-size: $XL-size + px;
-			font-size: $XL-size / $large-font-size + rem;
+			font-size: $L-size / $base-font-size + rem;
 		}
 	}
 }
@@ -151,7 +151,7 @@
             @include font-size(14);
         }
 
-        @include mq(M) {
+        @include mq(S) {
             @include font-size(18);
         }
     }
