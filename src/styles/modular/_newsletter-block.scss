@@ -31,12 +31,12 @@ This component contains a newsletter signup and is normally half of a row.
 	color: color('black');
 	padding: em(49) em(20);
 
-	@include mq(M) {
+	@include mq(S) {
 	    padding: em(72) em(64);
 	}
 
-	@include mq(L) {
-	    padding: em(110, $large-font-size) em(130, $large-font-size);
+	@include mq(M) {
+	    padding: em(110, 18) em(130, 18);
 	}
 
 	h3 {

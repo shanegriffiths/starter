@@ -35,12 +35,12 @@ This is a card that's used to act as a call-to-action for the services offered, 
 	color: color('black');
 	text-align: center;
 
-	@include mq(M) {
+	@include mq(S) {
 	    padding: em(40) 0;
 	}
 
-	@include mq(L) {
-	    padding: em(80, $large-font-size) 0;
+	@include mq(M) {
+	    padding: em(80, 18) 0;
 	}
 }
 
@@ -51,14 +51,14 @@ This is a card that's used to act as a call-to-action for the services offered, 
 
 	transition: transform .2s ease;
 
-	@include mq(M) {
+	@include mq(S) {
 	    margin-bottom: em(32);
 	}
 
-	@include mq(L) {
-		height: em(70, $large-font-size);
+	@include mq(M) {
+		height: em(70, 18);
 
-		margin-bottom: em(48, $large-font-size);
+		margin-bottom: em(48, 18);
 	}
 }
 
@@ -68,11 +68,11 @@ This is a card that's used to act as a call-to-action for the services offered, 
 
 	margin-bottom: .5em;
 
-	@include mq(M) {
+	@include mq(S) {
 	    margin-bottom: .8em;
 	}
 
-	@include mq(L) {
+	@include mq(M) {
 	    margin-bottom: 1em;
 	}
 }
@@ -86,11 +86,11 @@ This is a card that's used to act as a call-to-action for the services offered, 
 		margin-bottom: 0;
 	}
 
-	@include mq(M) {
+	@include mq(S) {
 	    max-width: 75%;
 	}
 
-	@include mq(XL) {
+	@include mq(L) {
 	    max-width: 60%;
 	}
 }

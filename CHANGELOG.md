@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [0.2.2] - 2017-03-3
+
+### CHANGED
+- Removed style guide from post-deploy
+- Updated all of the sass files
+
 ## [0.2.1] - 2017-02-23
 
 ### ADDED

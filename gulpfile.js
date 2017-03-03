@@ -182,11 +182,11 @@ gulp.task('svgstore', function() {
  //******
 // TASKS
 
+// post deploy, for deploying to the server
+gulp.task('post-deploy', ['styles', 'scripts']);
+
 // if using styleguide
 if ( is_styleguide === true ) {
-
-	// post deploy, for deploying to the server
-	gulp.task('post-deploy', ['styles', 'scripts', 'styleguide']);
 
 	gulp.task('watch', function () {
 
@@ -202,8 +202,6 @@ if ( is_styleguide === true ) {
 	});
 
 } else {
-
-	gulp.task('post-deploy', ['styles', 'scripts']);
 
 	gulp.task('watch', function () {
 

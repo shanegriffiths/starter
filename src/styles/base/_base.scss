@@ -1,14 +1,11 @@
 html {
-    font-size: $base-font-size + px;
-
-	@include mq(L) {
-	    font-size: $large-font-size + px;
-	}
+    font-size: 100%;
 }
 
 body {
 	@include font;
-	line-height: $space;
+    @include font-size(16, 18);
+	line-height: 1.5;
 	color: color('black');
 
 	margin: 0;
@@ -22,7 +19,7 @@ body {
 	-moz-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 
-	@include mq(M) {
+	@include mq(S) {
 
 		// apply the overlay
 		&:after {
@@ -61,8 +58,8 @@ category:
 All of the spacing throughout the website is based from the type styling, conforming to a rule of 1.5 times the font-size.
 
 ```html
-<p>The <em>quick</em> fox jumped over the <strong>lazy</strong> dog</p>
-<small>The quick fox jumped over the lazy dog</small>
+<p>The <em>quick</em> brown fox jumped over the <strong>lazy</strong> dog</p>
+<small>The quick brown fox jumped over the lazy dog</small>
 ```
 
 ### Example Paragraphs
@@ -80,7 +77,7 @@ p,
 ul,
 ol,
 dl {
-	line-height: $space;
+	line-height: 1.5;
     margin-bottom: $space; // Typically the margin-bottom matches the line-height.
 }
 
@@ -115,7 +112,7 @@ time {
 	display: block;
 	margin-bottom: 1em;
 
-	@include mq(M) {
+	@include mq(S) {
 	    margin-bottom: em(14, 16);
 	}
 }
@@ -160,9 +157,9 @@ This is the default markup and styling for a blockquote.
 */
 
 blockquote {
-    padding: em(10, 20) em(20, 20);
-    margin: 0 0 em(20, 20);
-    @include font-size(20);
+	@include font-size(20);
+    padding: .5em 1em;
+    margin: 0 0 1em;
     border-left: 5px solid color('black');
 
     p {
@@ -204,5 +201,5 @@ hr {
 	border-left-width: 0;
 
 	height: 1px;
-	margin: 0 0 1em;
+	margin: 0 0 $space;
 }

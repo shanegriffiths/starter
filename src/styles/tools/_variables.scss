@@ -28,7 +28,6 @@ $social-colors: (
 // TYPE SETTINGS
 
 $base-font-size: 16;
-$large-font-size: 18;
 
 $copy: color('black');
 $border-radius: 4px;
@@ -39,12 +38,11 @@ $border-radius: 4px;
 
 $max-width: 1440;
 $space: 1.5rem; // NOTE: This is needs to be changed depending on the lineheight of the <p>
-$space-2: $space * 2;
 
 $breakpoints: (
-    M: 640,
-    L: 1024,
-	XL: 1440
+    S: 640,
+    M: 1024,
+	L: 1440
 );
 
 
