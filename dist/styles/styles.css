@@ -76,7 +76,7 @@ button::-moz-focus-inner {
             @include font-size(14);
         }
 
-        @include mq(M) {
+        @include mq(S) {
             @include font-size(18);
         }
     }
@@ -226,7 +226,7 @@ button::-moz-focus-inner {
   margin-left: 0;
   width: 100%; }
 
-@media screen and (false: 640px) {
+@media screen and (false: 1024px) {
   .M-hide {
     display: none; }
   .M-1 {
@@ -311,7 +311,7 @@ button::-moz-focus-inner {
     margin-left: 0;
     width: 100%; } }
 
-@media screen and (false: 1024px) {
+@media screen and (false: 1440px) {
   .L-hide {
     display: none; }
   .L-1 {
@@ -399,17 +399,16 @@ button::-moz-focus-inner {
 /*------------------------------------*    $BASE ELEMENTS
 \*------------------------------------*/
 html {
-  font-size: 16px; }
-  @media screen and (min-width: 1024px) {
-    html {
-      font-size: 18px; } }
+  font-size: 100%; }
 
 body {
   font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.5rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
   color: #000;
   margin: 0;
   padding: 0;
@@ -419,6 +418,10 @@ body {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
+  @media screen and (min-width: 640px) {
+    body {
+      font-size: 18px;
+      font-size: 1.125rem; } }
   @media screen and (min-width: 640px) {
     body:after {
       content: '';
@@ -450,8 +453,8 @@ category:
 All of the spacing throughout the website is based from the type styling, conforming to a rule of 1.5 times the font-size.
 
 ```html
-<p>The <em>quick</em> fox jumped over the <strong>lazy</strong> dog</p>
-<small>The quick fox jumped over the lazy dog</small>
+<p>The <em>quick</em> brown fox jumped over the <strong>lazy</strong> dog</p>
+<small>The quick brown fox jumped over the lazy dog</small>
 ```
 
 ### Example Paragraphs
@@ -468,7 +471,7 @@ p,
 ul,
 ol,
 dl {
-  line-height: 1.5rem;
+  line-height: 1.5;
   margin-bottom: 1.5rem; }
 
 small {
@@ -507,7 +510,7 @@ time {
   @media screen and (min-width: 1024px) {
     time {
       font-size: 16px;
-      font-size: 0.88889rem; } }
+      font-size: 1rem; } }
   @media screen and (min-width: 640px) {
     time {
       margin-bottom: 0.875em; } }
@@ -544,10 +547,10 @@ This is the default markup and styling for a blockquote.
 
 */
 blockquote {
-  padding: 0.5em 1em;
-  margin: 0 0 1em;
   font-size: 20px;
   font-size: 1.25rem;
+  padding: .5em 1em;
+  margin: 0 0 1em;
   border-left: 5px solid #000; }
   blockquote p {
     font-weight: 400;
@@ -584,7 +587,7 @@ hr {
   border-bottom-width: 0;
   border-left-width: 0;
   height: 1px;
-  margin: 0 0 1em; }
+  margin: 0 0 1.5rem; }
 
 /*
 
@@ -840,7 +843,7 @@ h6,
   .epsilon.drop,
   h6.drop,
   .zeta.drop {
-    margin-bottom: .75rem; }
+    margin-bottom: 0.75rem; }
 
 h1,
 .alpha {
@@ -855,7 +858,7 @@ h1,
     h1,
     .alpha {
       font-size: 46px;
-      font-size: 2.55556rem; } }
+      font-size: 2.875rem; } }
   h1.alt-font,
   .alpha.alt-font {
     font-size: 22px;
@@ -869,7 +872,7 @@ h1,
       h1.alt-font,
       .alpha.alt-font {
         font-size: 36px;
-        font-size: 2rem; } }
+        font-size: 2.25rem; } }
 
 h2,
 .beta {
@@ -884,7 +887,7 @@ h2,
     h2,
     .beta {
       font-size: 40px;
-      font-size: 2.22222rem; } }
+      font-size: 2.5rem; } }
 
 h3,
 .gamma,
@@ -902,7 +905,7 @@ h3,
     .gamma,
     .post-card__title {
       font-size: 35px;
-      font-size: 1.94444rem; } }
+      font-size: 2.1875rem; } }
 
 h4,
 .delta {
@@ -917,7 +920,7 @@ h4,
     h4,
     .delta {
       font-size: 22px;
-      font-size: 1.22222rem; } }
+      font-size: 1.375rem; } }
 
 h5,
 .epsilon {
@@ -932,7 +935,7 @@ h5,
     h5,
     .epsilon {
       font-size: 20px;
-      font-size: 1.11111rem; } }
+      font-size: 1.25rem; } }
 
 h6,
 .zeta {
@@ -947,7 +950,7 @@ h6,
     h6,
     .zeta {
       font-size: 18px;
-      font-size: 1rem; } }
+      font-size: 1.125rem; } }
 
 /*
 
@@ -1085,8 +1088,10 @@ input[type="password"],
 input[type="search"],
 input[type="url"],
 input[type="number"],
+input[type="tel"],
 input[type="color"],
 input[type="range"],
+input[type="time"],
 input[type="date"],
 input[type="month"],
 input[type="week"],
@@ -1104,7 +1109,7 @@ textarea {
   width: 100%;
   border: 1px solid #000;
   border-radius: 4px;
-  padding: 0.625em 0.375em;
+  padding: .5rem 1rem;
   margin-bottom: 0.75rem; }
   @media screen and (min-width: 640px) {
     input[type="text"],
@@ -1113,8 +1118,10 @@ textarea {
     input[type="search"],
     input[type="url"],
     input[type="number"],
+    input[type="tel"],
     input[type="color"],
     input[type="range"],
+    input[type="time"],
     input[type="date"],
     input[type="month"],
     input[type="week"],
@@ -1130,8 +1137,10 @@ textarea {
     input[type="search"],
     input[type="url"],
     input[type="number"],
+    input[type="tel"],
     input[type="color"],
     input[type="range"],
+    input[type="time"],
     input[type="date"],
     input[type="month"],
     input[type="week"],
@@ -1139,15 +1148,17 @@ textarea {
     input[type="datetime-local"],
     textarea {
       font-size: 14px;
-      font-size: 0.77778rem; } }
+      font-size: 0.875rem; } }
   input[type="text"]:focus,
   input[type="email"]:focus,
   input[type="password"]:focus,
   input[type="search"]:focus,
   input[type="url"]:focus,
   input[type="number"]:focus,
+  input[type="tel"]:focus,
   input[type="color"]:focus,
   input[type="range"]:focus,
+  input[type="time"]:focus,
   input[type="date"]:focus,
   input[type="month"]:focus,
   input[type="week"]:focus,
@@ -1163,8 +1174,10 @@ textarea {
     input[type="search"],
     input[type="url"],
     input[type="number"],
+    input[type="tel"],
     input[type="color"],
     input[type="range"],
+    input[type="time"],
     input[type="date"],
     input[type="month"],
     input[type="week"],
@@ -1177,7 +1190,7 @@ input[type="color"] {
   width: 1em; }
 
 textarea {
-  line-height: 1.5rem; }
+  line-height: 1.5; }
 
 ::-webkit-input-placeholder {
   color: #999; }
@@ -1225,8 +1238,39 @@ This allows you to have a button in the same row as its input field.
     padding: 0 1em;
     border-radius: 0 4px 4px 0; }
 
-/*------------------------------------*    TABLES
-\*------------------------------------*/
+/*
+
+---
+name: Table
+category:
+ - Base
+ - Base/Table
+---
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Header content 1</th>
+      <th>Header content 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Body content 1</td>
+      <td>Body content 2</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Footer content 1</td>
+      <td>Footer content 2</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+*/
 table {
   color: #000;
   background: #FFF;
@@ -1254,6 +1298,7 @@ th {
       -webkit-font-smoothing: antialiased;
       font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
       background-color: #000;
+      color: #FFF;
       padding: 8px;
       display: table-cell; } }
   @media screen and (min-width: 640px) and (min-width: 640px) {
@@ -1263,7 +1308,7 @@ th {
   @media screen and (min-width: 640px) and (min-width: 1024px) {
     th {
       font-size: 22px;
-      font-size: 1.22222rem; } }
+      font-size: 1.375rem; } }
   @media screen and (min-width: 1024px) {
     th {
       font-weight: 600;
@@ -1303,16 +1348,16 @@ tbody tr {
 .band {
   margin-bottom: 1.5rem; }
 
-.band--thin {
+.band--half {
   margin-bottom: 0.75rem; }
 
-.band--thick {
+.band--2 {
   margin-bottom: 3rem; }
 
-.band--extra-thick {
+.band--3 {
   margin-bottom: 4.5rem; }
 
-.band--double-thick {
+.band--4 {
   margin-bottom: 6rem; }
 
 .flex-container {
@@ -1456,7 +1501,7 @@ category:
   @media screen and (min-width: 1024px) {
     .site-footer__colophon {
       font-size: 12px;
-      font-size: 0.66667rem; } }
+      font-size: 0.75rem; } }
   @media screen and (min-width: 1024px) {
     .site-footer__colophon {
       margin-top: 54px; } }
@@ -1687,16 +1732,13 @@ This is a presentation preview of the main header, the style changes slightly at
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1); }
   @media screen and (min-width: 640px) {
     .site-header__container--scrolling {
-      padding: 1em 0; } }
+      padding: 1rem 0; } }
   @media screen and (min-width: 1440px) {
     .site-header__container--scrolling {
-      padding: 0.88889em 0; } }
+      padding: 1rem 0; } }
   @media screen and (min-width: 640px) {
     .site-header__container--scrolling .site-header__logo {
-      height: 2.5em; } }
-  @media screen and (min-width: 1024px) {
-    .site-header__container--scrolling .site-header__logo {
-      height: 2.22222em; } }
+      height: 2.5rem; } }
   .site-header__container--scrolling .logo--desktop {
     opacity: 0; }
   .site-header__container--scrolling .logo--desktop-scrolled {
@@ -1823,11 +1865,11 @@ This is a presentation preview of the main header, the style changes slightly at
       @media screen and (min-width: 1024px) {
         .site-nav__container .site-nav a {
           font-size: 28px;
-          font-size: 1.55556rem; } }
+          font-size: 1.75rem; } }
       @media screen and (min-width: 1440px) {
         .site-nav__container .site-nav a {
           font-size: 14px;
-          font-size: 0.77778rem; } }
+          font-size: 0.875rem; } }
       .site-nav__container .site-nav a.active, .site-nav__container .site-nav a:hover, .site-nav__container .site-nav a:active, .site-nav__container .site-nav a:focus {
         color: #999;
         text-decoration: none; }
@@ -1980,7 +2022,7 @@ input[type="submit"] {
     button,
     input[type="submit"] {
       font-size: 18px;
-      font-size: 1rem; } }
+      font-size: 1.125rem; } }
   @media screen and (min-width: 640px) {
     .button,
     button,
@@ -2035,7 +2077,7 @@ input[type="submit"] {
   @media screen and (min-width: 1024px) {
     .button--large {
       font-size: 20px;
-      font-size: 1.11111rem; } }
+      font-size: 1.25rem; } }
   @media screen and (min-width: 640px) {
     .button--large {
       line-height: 1.3;
@@ -2138,7 +2180,7 @@ This is the default markup and styling for a generic section of content. It usua
   @media screen and (min-width: 1024px) {
     .content-block__title {
       font-size: 30px;
-      font-size: 1.66667rem; } }
+      font-size: 1.875rem; } }
   @media screen and (min-width: 640px) {
     .content-block__title {
       font-weight: 600;
@@ -2380,7 +2422,7 @@ This hero includes a paragraph and some buttons.
   @media screen and (min-width: 1024px) {
     .hero__content p {
       font-size: 22px;
-      font-size: 1.22222rem; } }
+      font-size: 1.375rem; } }
   @media screen and (min-width: 640px) {
     .hero__content p {
       margin-bottom: 1.5em; } }
@@ -2595,7 +2637,7 @@ This is the default card object that links to a news post.
   @media screen and (min-width: 1024px) {
     .post-card__date {
       font-size: 20px;
-      font-size: 1.11111rem; } }
+      font-size: 1.25rem; } }
   @media screen and (min-width: 640px) {
     .post-card__date {
       margin-bottom: 1.5em; } }
@@ -2628,7 +2670,7 @@ This is the default card object that links to a news post.
   @media screen and (min-width: 1024px) {
     .post-object__more {
       font-size: 14px;
-      font-size: 0.77778rem; } }
+      font-size: 0.875rem; } }
 
 /*
 
@@ -2704,7 +2746,7 @@ This is a card that's used to act as a call-to-action for the services offered, 
   @media screen and (min-width: 1024px) {
     .service-card__title {
       font-size: 22px;
-      font-size: 1.22222rem; } }
+      font-size: 1.375rem; } }
   @media screen and (min-width: 640px) {
     .service-card__title {
       margin-bottom: .8em; } }
@@ -2723,7 +2765,7 @@ This is a card that's used to act as a call-to-action for the services offered, 
   @media screen and (min-width: 1024px) {
     .service-card__copy {
       font-size: 18px;
-      font-size: 1rem; } }
+      font-size: 1.125rem; } }
   .service-card--panel .service-card__copy {
     margin-bottom: 0; }
   @media screen and (min-width: 640px) {

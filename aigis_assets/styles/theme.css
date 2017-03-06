@@ -126,6 +126,7 @@
 	display: none;
 	position: relative;
 	font-size: 16px;
+	margin-bottom: 0;
 }
 
 .aigis-search-icon {
@@ -333,7 +334,7 @@ ul[data-path-depth="1"] {
 
 /* Hide third tier menu */
 ul[data-path-depth="2"] {
-	display: none;
+	display: none !important;
 }
 
 .aigis-categoryList ul[data-path-depth='1'] a {
@@ -419,9 +420,8 @@ ul[data-path-depth="2"] {
 }
 
 .link-icon {
-	height: .85em;
-	width: .85em;
-	margin-top: -0.2em;
+	height: .6em;
+	width: .6em;
 	display: none;
 }
 
@@ -656,13 +656,19 @@ ul[data-path-depth="2"] {
 	}
 
 	.preview-link {
-		left: calc(-0.85em - 16px);
+		left: calc(-0.6em - 8px);
 	}
 
 	.aigis-modal__logo {
 		display: inline-block;
 		padding: 16px 40px;
 		margin-right: 32px;
+		border-right: 1px solid #ECECEC;
+	}
+
+	.aigis-modal__logo:hover,
+	.aigis-modal__logo:active,
+	.aigis-modal__logo:focus {
 		border-right: 1px solid #ECECEC;
 	}
 
