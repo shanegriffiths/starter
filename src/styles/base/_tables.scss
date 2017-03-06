@@ -1,6 +1,36 @@
-/*------------------------------------*\
-    TABLES
-\*------------------------------------*/
+/*
+
+---
+name: Table
+category:
+ - Base
+ - Base/Table
+---
+
+```html
+<table>
+  <thead>
+    <tr>
+      <th>Header content 1</th>
+      <th>Header content 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Body content 1</td>
+      <td>Body content 2</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Footer content 1</td>
+      <td>Footer content 2</td>
+    </tr>
+  </tfoot>
+</table>
+```
+
+*/
 
 table {
 	color: color('black');
@@ -32,6 +62,7 @@ th {
 		@include font-size(13, 16, 22);
 		@include font('secondary', 'bold');
 		background-color: color('black');
+		color: color('white');
 		padding: 8px;
 		display: table-cell;
 	}
