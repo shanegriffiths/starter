@@ -3,8 +3,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-## ADDED
+### ADDED
 - GitHub labels
+- Pull Request template
+- Label information to readme
+
+### CHANGED
+- Moved contributing to .github
+- Updated issue template with user story
 
 ## [0.2.2] - 2017-03-3
 
