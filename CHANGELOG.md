@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## ADDED
+- GitHub labels
+
 ## [0.2.2] - 2017-03-3
 
 ### CHANGED

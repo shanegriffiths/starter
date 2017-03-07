@@ -1,4 +1,5 @@
 [
+  { "name": "Epic", "color": "#3E4B9E" },
   { "name": "Question", "color": "#9C1954" },
   { "name": "Ready for: Requirements", "color": "#9C1954" },
   { "name": "Ready for: Design", "color": "#9C1954" },
