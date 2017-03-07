@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 ### CHANGED
 - Moved contributing to .github
 - Updated issue template with user story
+- Updated contributing with our git workflow
 
 ## [0.2.2] - 2017-03-3
 
