@@ -21,19 +21,15 @@ partial in the specified directory .
 @import 'tools/mixins';
 @import 'tools/variables';
 @import 'tools/grid';
+@import 'tools/utilities';
+@import 'tools/document';
+@import 'tools/print';
 
 
 /*------------------------------------*\
     $BASE ELEMENTS
 \*------------------------------------*/
-@import 'base/base';
-@import 'base/utilities';
-@import 'base/links';
-@import 'base/headings';
-@import 'base/lists';
-@import 'base/media';
-@import 'base/forms';
-@import 'base/tables';
+@import 'base/*';
 
 
 /*------------------------------------*\
