@@ -55,3 +55,25 @@ This element is intended for short quotations that don't require paragraph break
 q {
 
 }
+
+
+/*
+
+---
+name: Cite
+category:
+ - Base
+ - Base/Quotes
+---
+
+Used for referencing external sources.
+
+```html
+<cite><a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/">Bruce Lawson</a></cite>
+```
+
+*/
+
+cite {
+
+}
