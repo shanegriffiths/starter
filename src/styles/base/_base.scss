@@ -1,26 +1,18 @@
 /*
 
 ---
-name: Paragraph
+name: Base Paragraph Styles
 category:
  - Base
- - Base/Paragraph
+ - Base/Type
 ---
 
-## Base Type Styles
-
-All of the spacing throughout the website is based from the type styling, conforming to a rule of 1.5 times the font-size.
-
-```html
-<p>The <em>quick</em> brown fox jumped over the <strong>lazy</strong> dog</p>
-<small>The quick brown fox jumped over the lazy dog</small>
-```
-
-### Example Paragraphs
-
-Here you can see two paragraphs of generated lorem-ipsum to get a feel of the line-height and spacing.
+All of the spacing throughout the website is based from the type styling,
+conforming to a rule of 1.5 times the font-size. Here you can see two paragraphs
+of generated lorem-ipsum to get a feel of the line-height and spacing.
 
 ```html
+<p>The quick brown fox jumped over the lazy dog</p>
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu porttitor mauris. Duis a viverra dolor, lacinia porta massa. Aliquam faucibus libero viverra rhoncus lobortis. Quisque malesuada euismod lorem ac luctus. Sed sit amet nunc tellus. Suspendisse maximus nunc sed mi vehicula rutrum. Praesent lobortis euismod turpis sit amet venenatis. Nullam eu enim suscipit, accumsan arcu ut, fringilla odio. Pellentesque ultrices accumsan leo, sit amet vulputate ipsum feugiat id. Pellentesque a pharetra quam. Aliquam rutrum, turpis hendrerit varius pulvinar, libero nisi congue augue, in condimentum diam urna volutpat lectus. Praesent at ipsum a lacus accumsan accumsan. Integer mollis velit ac urna efficitur, eget ultricies nisl posuere. Nullam elementum nunc ac ante fermentum, ac consequat felis scelerisque. Cras dui lacus, posuere semper magna et, ornare porta arcu.
 <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin sit amet erat accumsan, sagittis metus eget, bibendum nisl. Curabitur dolor enim, bibendum id libero non, cursus iaculis libero. Vivamus orci nisl, posuere vel nibh eu, maximus ullamcorper augue. Vivamus scelerisque laoreet tristique. Donec ut urna lacus. Morbi et nisi sit amet leo vehicula pharetra sed ut elit. Pellentesque tincidunt, quam ut viverra tincidunt, lorem risus facilisis sapien, at gravida lorem dui fermentum arcu. Nam varius felis risus. Morbi a ipsum imperdiet, posuere lorem quis, tincidunt augue. Sed sed metus vitae nunc ullamcorper elementum. Vestibulum ornare augue tellus, vel accumsan augue euismod at. Quisque vitae convallis dolor, id tempus ipsum. Phasellus nisl ante, ullamcorper sit amet tortor at, suscipit venenatis sapien. Sed commodo odio in dolor tempus, eget rhoncus mauris bibendum.</p>
 ```
@@ -32,22 +24,35 @@ ul,
 ol,
 dl {
 	line-height: 1.5;
-    margin-bottom: $space; // Typically the margin-bottom matches the line-height.
+    margin-bottom: $space;
 }
 
 small {
 	font-size: .8rem;
 }
 
-address {
-	font-style: normal;
-}
 
-abbr {
-}
+/*
 
-strong,
-b {
+---
+name: Bold and Strong; Italic and Emphasis
+category:
+ - Base
+ - Base/Type
+---
+
+The __bold__ and __italic__ elements are used for presentational purposes, whereas the
+__strong__ and __emphasis__ elements represent structure.
+
+```html
+<p>The quick <b>brown</b> fox jumped over the <strong>lazy</strong> dog</p>
+<p>The quick <i>brown</i> fox jumped over the <em>lazy</em> dog</p>
+```
+
+*/
+
+b,
+strong {
 	@include font('primary', 'bold');
 }
 
@@ -55,6 +60,24 @@ i,
 em {
 	font-style: italic;
 }
+
+
+/*
+
+---
+name: Time
+category:
+ - Base
+ - Base/Type
+---
+
+The time element represents either a time on a 24-hour clock or a precise date in the Gregorian calendar
+
+```html
+<p>The concert starts at <time>20:00</time>.</p>
+```
+
+*/
 
 time {
 	@include font('secondary', 'semibold');
@@ -71,89 +94,54 @@ time {
 	}
 }
 
+/*
 
- //**********
-// SELECTION
+---
+name: Address
+category:
+ - Base
+ - Base/Type
+---
 
-::-moz-selection {
-   background: color('black');
-   color: color('white');
-   text-shadow: none;
-}
+The address element supplies contact information for its nearest article
+or body ancestor; in the latter case, it applies to the whole document.
 
-::selection {
-   background: color('black');
-   color: color('white');
-   text-shadow: none;
+```html
+<address>
+    You can contact author at <a href="http://www.somedomain.com/contact">www.somedomain.com</a>.<br>
+    If you see any bugs, please <a href="mailto:webmaster@somedomain.com">contact webmaster</a>.<br>
+    You may also want to visit us:<br>
+    Mozilla Foundation<br>
+    1981 Landings Drive<br>
+    Building K<br>
+    Mountain View, CA 94043-0801<br>
+    USA
+</address>
+```
+
+*/
+
+address {
+	font-style: normal;
 }
 
 
 /*
 
 ---
-name: Blockquote
+name: Abbreviation
 category:
  - Base
- - Base/Blockquote
+ - Base/Type
 ---
 
-## Default Styling
-
-This is the default markup and styling for a blockquote.
+Use the title attribute to define the full description of the abbreviation. Many user agents present this as a tooltip.
 
 ```html
-<blockquote>
-	<p>The quick fox jumped over</p>
-	<footer> - The Lazy dog</footer>
-</blockquote>
+<p>Welcome to the <abbr title="World Wide Web">WWW</abbr>!</p>
 ```
 
 */
 
-blockquote {
-	@include font-size(20);
-    padding: .5em 1em;
-    margin: 0 0 1em;
-    border-left: 5px solid color('black');
-
-    p {
-        @include font;
-        margin-bottom: $space / 2;
-    }
-
-    footer {
-        display: block;
-    }
-}
-
-
-/*
-
----
-name: Horizontal Rule
-category:
- - Base
- - Base/Horizontal Rule
----
-
-## Default Styling
-
-This is the default markup and styling for a horizontal rule.
-
-```html
-<hr>
-```
-
-*/
-
-hr {
-	border-style: solid;
-	border-color: color('black');
-	border-top-width: 1px;
-	border-right-width: 0;
-	border-bottom-width: 0;
-	border-left-width: 0;
-
-	height: 1px;
-	margin: 0 0 $space;
+abbr {
 }
