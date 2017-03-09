@@ -1,0 +1,30 @@
+/*
+
+---
+name: Horizontal Rule
+category:
+ - Base
+ - Base/Horizontal Rule
+---
+
+## Default Styling
+
+This is the default markup and styling for a horizontal rule.
+
+```html
+<hr>
+```
+
+*/
+
+hr {
+	border-style: solid;
+	border-color: color('black');
+	border-top-width: 1px;
+	border-right-width: 0;
+	border-bottom-width: 0;
+	border-left-width: 0;
+
+	height: 1px;
+	margin: 0 0 $space;
+}
