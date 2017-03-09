@@ -100,7 +100,6 @@
 	} @else {
 		@return $color;
 	}
-
 }
 
 
@@ -136,7 +135,6 @@
     @media screen and (#{$feature}: $value) {
         @content;
     }
-
 }
 
 
@@ -168,7 +166,7 @@
 @mixin aspect-ratio($width, $height) {
 	position: relative;
 
-	&:before {
+	&::before {
 		display: block;
 		content: '';
 		width: 100%;

@@ -29,13 +29,13 @@ $old_ie_support: false;
 	margin-left: -$space;
 	*zoom: 1;
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: ' '; /* 1 */
 		display: table; /* 2 */
 	}
 
-	&:after {
+	&::after {
 		clear: both;
 	}
 }
@@ -56,7 +56,6 @@ $old_ie_support: false;
 
 	display: block;
 	width: ($one_col * $num) + ($gutter_pc * ($num - 1));
-
 }
 
 @mixin span_first {
@@ -85,14 +84,13 @@ $old_ie_support: false;
 		.row--clearfix .#{$prefix}-#{$i}:nth-child(#{$clear-number}n+1) {
 			clear: left;
 		}
-
 	}
 
 	.#{$prefix}-all {
 		@include span_first;
+
 		width: 100%;
 	}
-
 }
 
 @each $grid in $grids {
@@ -105,9 +103,7 @@ $old_ie_support: false;
 		@include mq(nth($grid, 3), $old_ie_support) {
 			@include grid(nth($grid, 1), nth($grid, 2));
 		}
-
 	} @else {
 		@include grid(nth($grid, 1), nth($grid, 2));
 	}
-
 }
