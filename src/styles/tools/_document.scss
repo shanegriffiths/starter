@@ -22,7 +22,7 @@ body {
 	@include mq(S) {
 
 		// apply the overlay
-		&:after {
+		&::after {
 			content: '';
 			background: color('black');
 			opacity: 0;
@@ -37,7 +37,7 @@ body {
 			pointer-events: none;
 		}
 
-		&.menu-active:after {
+		&.menu-active::after {
 			opacity: .5;
 		}
 	}
