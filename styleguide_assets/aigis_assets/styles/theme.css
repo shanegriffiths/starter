@@ -4,11 +4,6 @@
 	box-sizing: inherit;
 }
 
-* ~ * {
-	margin-top: 0;
-	margin-bottom: 16px;
-}
-
 .aigis-html {
 	box-sizing: border-box;
 }
