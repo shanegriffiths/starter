@@ -34,6 +34,29 @@ object {
 iframe {
 }
 
+
+/*
+
+---
+name: Figure
+category:
+ - Base
+ - Base/Figure
+---
+
+Usually an image, illustration, diagram, code snippet, etc. followed by a figcaption.
+
+```html
+<figure>
+  <img
+  src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png"
+  alt="An awesome picture">
+  <figcaption>Fig1. MDN Logo</figcaption>
+</figure>
+```
+
+*/
+
 figure {
 
 	img {
