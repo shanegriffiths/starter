@@ -75,7 +75,11 @@ We take inspiration from the [SMACSS architecture](https://smacss.com/).
 
 ---
 
-## **Icons**
+## **SVG's**
+
+We're making use of an SVG icon system that is loaded into the HTML document, this is so we can use JS and CSS to change specific parts of an icon - and dynamically colour it. Our current method is to use AJAX to request the `icons.svg` and insert it in a hidden div at the start of the body.
+
+The code for this can be found at the bottom of the style guide's `index.ejs`. It is currently within inline script tags in order to run as soon as possible before the rest of the JS is downloaded.
 
 - All of our SVG's are first run through [SVGOMG](https://jakearchibald.github.io/svgomg/) to optimise them.
 - Then they are sorted between being part of the icon-system or to be used as an image.
