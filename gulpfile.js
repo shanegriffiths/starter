@@ -27,7 +27,6 @@ var gulp = require('gulp'),
 
 	// styles
 	sass = require('gulp-sass'),
-	scsslint = require('gulp-scss-lint'),
 	autoprefixer = require('gulp-autoprefixer'),
 	cleanCss = require('gulp-clean-css'),
 	globbing = require('gulp-css-globbing'),
@@ -115,14 +114,16 @@ gulp.task('styles', function () {
 
 });
 
-gulp.task('scss-lint', function() {
+gulp.task('scss-lint', function lintCssTask() {
+  const gulpStylelint = require('gulp-stylelint');
 
-	// lint the styles whilst developing
-
-	return gulp
-		.src('src/styles/**/*.scss')
-		.pipe(scsslint({'config': 'lint.yml'}));
-
+  return gulp
+    .src('src/styles/**/*.scss')
+    .pipe(gulpStylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }));
 });
 
 gulp.task('scripts', function () {
