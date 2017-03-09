@@ -40,7 +40,7 @@ table {
 	border-spacing: 0;
 	border-right: 1px solid color('black');
 
-	&:before {
+	&::before {
 		// this is where the magic happens
 		content: attr(aria-label) '';
 

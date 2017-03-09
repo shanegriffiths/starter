@@ -88,13 +88,13 @@ This is used to apply `text-align: left;`
     *zoom: 1;
 }
 
-.cf:before,
-.cf:after {
+.cf::before,
+.cf::after {
     content: ' ';
     display: table;
 }
 
-.cf:after {
+.cf::after {
     clear: both;
 }
 

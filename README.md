@@ -48,6 +48,10 @@ To run one of the above tasks, re-run the `yarn run` command and add the task na
 yarn run watch
 ```
 
+## **Labels**
+
+We use a custom label structure, to get them installed in the repository use [git-labelmaker](https://github.com/himynameisdave/git-labelmaker) to remove all the old labels, and install the new ones found in `.github/labels.json`
+
 ## **Optional Extras**
 
 ### Live Reload

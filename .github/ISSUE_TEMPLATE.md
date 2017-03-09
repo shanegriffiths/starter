@@ -1,4 +1,4 @@
-<!--- Provide a general summary of the component -->
+<!--- As a <type of user>, I want <a goal> so that <benefit> -->
 
 ## Component Requirements
 <!--- List out the component requirements -->
@@ -12,7 +12,3 @@
 - [ ] Functionality test
 - [ ] Accurate to the design
 - [ ] Browser / device test
-
-## QA
-<!--- List out QA issues here -->
-<!--- Components should *not* be QA'd until the developer is sure it is ready for sign-off -->

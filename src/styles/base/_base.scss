@@ -22,7 +22,7 @@ body {
 	@include mq(S) {
 
 		// apply the overlay
-		&:after {
+		&::after {
 			content: '';
 			background: color('black');
 			opacity: 0;
@@ -37,7 +37,7 @@ body {
 			pointer-events: none;
 		}
 
-		&.menu-active:after {
+		&.menu-active::after {
 			opacity: .5;
 		}
 	}
@@ -89,8 +89,8 @@ address {
 	font-style: normal;
 }
 
-abbr {
-}
+// abbr {
+// }
 
 strong,
 b {
@@ -195,10 +195,7 @@ This is the default markup and styling for a horizontal rule.
 hr {
 	border-style: solid;
 	border-color: color('black');
-	border-top-width: 1px;
-	border-right-width: 0;
-	border-bottom-width: 0;
-	border-left-width: 0;
+	border-width: 1px 0 0;
 
 	height: 1px;
 	margin: 0 0 $space;

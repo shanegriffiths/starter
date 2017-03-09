@@ -41,7 +41,7 @@ category:
 
 	// enhancement
 
-	&:before {
+	&::before {
 		position: absolute;
 		content: '';
 		height: 9px;
@@ -54,7 +54,6 @@ category:
 		background-size: contain;
 		pointer-events: none;
 	}
-
 }
 
 .dropdown-custom {
@@ -123,7 +122,5 @@ category:
 			color: color('black');
 			background-color: color('grey');
 		}
-
 	}
-
 }

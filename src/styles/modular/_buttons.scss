@@ -59,8 +59,9 @@ input[type="submit"] {
 
 	cursor: pointer;
 
-	transition: background .2s ease,
-				color .2s ease;
+	transition:
+		background .2s ease,
+		color .2s ease;
 
 	@include mq(S) {
 	    padding: em(10, 16) em(35, 16);
