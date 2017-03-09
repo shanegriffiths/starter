@@ -7,6 +7,8 @@ category:
  - Base/Lists
 ---
 
+Use the `.is-plain` class on any list to remove type-styling, margin, and padding.
+
 ## Unordered List
 
 This is just a plain unordered list, no special classes have been applied.
@@ -33,7 +35,7 @@ This is just a plain ordered list, no special classes have been applied.
 
 ## Plain List
 
-Using the `.is-plain` class on any list to remove margin and padding.
+Use the `.is-plain` class on any list to remove type-styling, margin, and padding.
 
 ```html
 <ul class="is-plain">
@@ -67,8 +69,39 @@ ol ol {
 }
 
 
- //*****************
-// DEFINITION LISTS
+/*
+
+---
+name: Definition List
+category:
+ - Base
+ - Base/Lists
+---
+
+Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).
+
+```html
+<dl>
+  <div>
+    <dt>Name</dt>
+    <dd>Godzilla</dd>
+  </div>
+  <div>
+    <dt>Born</dt>
+    <dd>1952</dd>
+  </div>
+  <div>
+    <dt>Birthplace</dt>
+    <dd>Japan</dd>
+  </div>
+  <div>
+    <dt>Color</dt>
+    <dd>Green</dd>
+  </div>
+</dl>
+```
+
+*/
 
 dl {
 }
