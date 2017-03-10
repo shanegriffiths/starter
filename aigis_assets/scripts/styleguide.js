@@ -1,49 +1,5 @@
+import classPolyfill from './class-polyfill';
 import MenuFilter from './menu-filter';
-
-const addClass = function (el, className) {
-
-	if ( el.classList ) {
-		el.classList.add(className);
-	} else {
-		el.className += ' ' + className;
-	}
-};
-
-const removeClass = function (el, className) {
-
-	if ( el.classList ) {
-		el.classList.remove(className);
-	} else {
-		el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-	}
-};
-
-const toggleClass = function (el, className) {
-
-	if ( el.classList ) {
-		el.classList.toggle(className);
-	} else {
-		let classes = el.className.split(' ');
-		let existingIndex = classes.indexOf(className);
-
-		if (existingIndex >= 0) {
-			classes.splice(existingIndex, 1);
-		} else {
-			classes.push(className);
-		}
-
-		el.className = classes.join(' ');
-	}
-};
-
-const hasClass = function (el, className) {
-
-	if ( el.classList ) {
-		return el.classList.contains(className);
-	} else {
-		return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
-	}
-};
 
 class Styleguide {
 
@@ -58,7 +14,7 @@ class Styleguide {
 		// create a template modal wrapper
 		// this will be cloned to wrap the single component preview code
 		this.modal_template = document.createElement('div');
-		addClass(this.modal_template, 'aigis-modal__item');
+		classPolyfill.addClass(this.modal_template, 'aigis-modal__item');
 
 		// initialise the page
 		this.initialiseStyleguide();
@@ -74,11 +30,11 @@ class Styleguide {
 	}
 
 	openModal() {
-		addClass(document.body, 'aigis-modal--active');
+		classPolyfill.addClass(document.body, 'aigis-modal--active');
 	}
 
 	closeModal() {
-		removeClass(document.body, 'aigis-modal--active');
+		classPolyfill.removeClass(document.body, 'aigis-modal--active');
 	}
 
 	checkHash() {
@@ -123,7 +79,7 @@ class Styleguide {
 				// set active class and stop searching
 				if ( current_item.getAttribute('data-path-depth') === '0' ) {
 
-					addClass(current_item, 'is-active');
+					classPolyfill.addClass(current_item, 'is-active');
 
 					searching = false;
 
@@ -145,7 +101,7 @@ class Styleguide {
 
 		// create a span element for the menu dropdown
 		let dropdown_element = document.createElement('span');
-		addClass(dropdown_element, 'menu-toggle');
+		classPolyfill.addClass(dropdown_element, 'menu-toggle');
 
 		// loop through each top-level menu item
 		menu_items.forEach(menu_item => {
@@ -170,7 +126,7 @@ class Styleguide {
 		event.stopPropagation();
 
 		// toggle the dropdown menu state
-		toggleClass(event.target.parentNode.parentNode, 'is-active');
+		classPolyfill.toggleClass(event.target.parentNode.parentNode, 'is-active');
 
 	}
 
@@ -187,7 +143,7 @@ class Styleguide {
 		// until the preview code is found
 		while ( searching ) {
 
-			if ( hasClass(current_item, 'aigis-preview') === true ) {
+			if ( classPolyfill.hasClass(current_item, 'aigis-preview') === true ) {
 
 				searching = false;
 
@@ -218,7 +174,7 @@ class Styleguide {
 		// setup the hash anchor element
 		let link_template = document.createElement('a');
 		link_template.appendChild(link_icon.cloneNode(true));
-		addClass(link_template, 'preview-link');
+		classPolyfill.addClass(link_template, 'preview-link');
 
 		// get all preview titles
 		const preview_titles = Array.from( document.querySelectorAll('.aigis-module > [id]') );

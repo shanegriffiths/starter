@@ -8206,56 +8206,15 @@
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
-	var _menuFilter = __webpack_require__(357);
+	var _classPolyfill = __webpack_require__(357);
+
+	var _classPolyfill2 = _interopRequireDefault(_classPolyfill);
+
+	var _menuFilter = __webpack_require__(358);
 
 	var _menuFilter2 = _interopRequireDefault(_menuFilter);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var addClass = function addClass(el, className) {
-
-		if (el.classList) {
-			el.classList.add(className);
-		} else {
-			el.className += ' ' + className;
-		}
-	};
-
-	var removeClass = function removeClass(el, className) {
-
-		if (el.classList) {
-			el.classList.remove(className);
-		} else {
-			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-		}
-	};
-
-	var toggleClass = function toggleClass(el, className) {
-
-		if (el.classList) {
-			el.classList.toggle(className);
-		} else {
-			var classes = el.className.split(' ');
-			var existingIndex = classes.indexOf(className);
-
-			if (existingIndex >= 0) {
-				classes.splice(existingIndex, 1);
-			} else {
-				classes.push(className);
-			}
-
-			el.className = classes.join(' ');
-		}
-	};
-
-	var hasClass = function hasClass(el, className) {
-
-		if (el.classList) {
-			return el.classList.contains(className);
-		} else {
-			return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
-		}
-	};
 
 	var Styleguide = function () {
 		function Styleguide() {
@@ -8271,7 +8230,7 @@
 			// create a template modal wrapper
 			// this will be cloned to wrap the single component preview code
 			this.modal_template = document.createElement('div');
-			addClass(this.modal_template, 'aigis-modal__item');
+			_classPolyfill2.default.addClass(this.modal_template, 'aigis-modal__item');
 
 			// initialise the page
 			this.initialiseStyleguide();
@@ -8288,12 +8247,12 @@
 		}, {
 			key: 'openModal',
 			value: function openModal() {
-				addClass(document.body, 'aigis-modal--active');
+				_classPolyfill2.default.addClass(document.body, 'aigis-modal--active');
 			}
 		}, {
 			key: 'closeModal',
 			value: function closeModal() {
-				removeClass(document.body, 'aigis-modal--active');
+				_classPolyfill2.default.removeClass(document.body, 'aigis-modal--active');
 			}
 		}, {
 			key: 'checkHash',
@@ -8338,7 +8297,7 @@
 						// set active class and stop searching
 						if (current_item.getAttribute('data-path-depth') === '0') {
 
-							addClass(current_item, 'is-active');
+							_classPolyfill2.default.addClass(current_item, 'is-active');
 
 							searching = false;
 						} else {
@@ -8357,7 +8316,7 @@
 
 				// create a span element for the menu dropdown
 				var dropdown_element = document.createElement('span');
-				addClass(dropdown_element, 'menu-toggle');
+				_classPolyfill2.default.addClass(dropdown_element, 'menu-toggle');
 
 				// loop through each top-level menu item
 				menu_items.forEach(function (menu_item) {
@@ -8383,7 +8342,7 @@
 				event.stopPropagation();
 
 				// toggle the dropdown menu state
-				toggleClass(event.target.parentNode.parentNode, 'is-active');
+				_classPolyfill2.default.toggleClass(event.target.parentNode.parentNode, 'is-active');
 			}
 
 			/**
@@ -8402,7 +8361,7 @@
 				// until the preview code is found
 				while (searching) {
 
-					if (hasClass(current_item, 'aigis-preview') === true) {
+					if (_classPolyfill2.default.hasClass(current_item, 'aigis-preview') === true) {
 
 						searching = false;
 
@@ -8431,7 +8390,7 @@
 				// setup the hash anchor element
 				var link_template = document.createElement('a');
 				link_template.appendChild(link_icon.cloneNode(true));
-				addClass(link_template, 'preview-link');
+				_classPolyfill2.default.addClass(link_template, 'preview-link');
 
 				// get all preview titles
 				var preview_titles = (0, _from2.default)(document.querySelectorAll('.aigis-module > [id]'));
@@ -9467,7 +9426,87 @@
 		value: true
 	});
 
-	var _getIterator2 = __webpack_require__(358);
+	var _classCallCheck2 = __webpack_require__(352);
+
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+
+	var _createClass2 = __webpack_require__(353);
+
+	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var classPolyfill = function () {
+		function classPolyfill() {
+			(0, _classCallCheck3.default)(this, classPolyfill);
+		}
+
+		(0, _createClass3.default)(classPolyfill, [{
+			key: 'addClass',
+			value: function addClass(el, className) {
+
+				if (el.classList) {
+					el.classList.add(className);
+				} else {
+					el.className += ' ' + className;
+				}
+			}
+		}, {
+			key: 'removeClass',
+			value: function removeClass(el, className) {
+
+				if (el.classList) {
+					el.classList.remove(className);
+				} else {
+					el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+				}
+			}
+		}, {
+			key: 'toggleClass',
+			value: function toggleClass(el, className) {
+
+				if (el.classList) {
+					el.classList.toggle(className);
+				} else {
+					var classes = el.className.split(' ');
+					var existingIndex = classes.indexOf(className);
+
+					if (existingIndex >= 0) {
+						classes.splice(existingIndex, 1);
+					} else {
+						classes.push(className);
+					}
+
+					el.className = classes.join(' ');
+				}
+			}
+		}, {
+			key: 'hasClass',
+			value: function hasClass(el, className) {
+
+				if (el.classList) {
+					return el.classList.contains(className);
+				} else {
+					return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+				}
+			}
+		}]);
+		return classPolyfill;
+	}();
+
+	exports.default = classPolyfill;
+
+/***/ },
+/* 358 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _getIterator2 = __webpack_require__(359);
 
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 
@@ -9478,6 +9517,10 @@
 	var _createClass2 = __webpack_require__(353);
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
+
+	var _classPolyfill = __webpack_require__(357);
+
+	var _classPolyfill2 = _interopRequireDefault(_classPolyfill);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -9522,7 +9565,7 @@
 				// if there is a filter set
 				if (this.filter.length) {
 
-					this.menu.classList.add('search-active');
+					_classPolyfill2.default.addClass(this.menu, 'search-active');
 
 					// loop through each table row
 					var _iteratorNormalCompletion = true;
@@ -9561,7 +9604,7 @@
 				// otherwise reset all of the items
 				else {
 
-						this.menu.classList.remove('search-active');
+						_classPolyfill2.default.removeClass(this.menu, 'search-active');
 
 						// loop through each table row
 						var _iteratorNormalCompletion2 = true;
@@ -9597,7 +9640,7 @@
 				// reset the filter
 				this.filter = '';
 
-				this.menu.classList.remove('search-active');
+				_classPolyfill2.default.removeClass(this.menu, 'search-active');
 
 				// reset each table row
 				var _iteratorNormalCompletion3 = true;
@@ -9632,24 +9675,24 @@
 	exports.default = MenuFilter;
 
 /***/ },
-/* 358 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(359), __esModule: true };
-
-/***/ },
 /* 359 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(360);
-	__webpack_require__(301);
-	module.exports = __webpack_require__(364);
+	module.exports = { "default": __webpack_require__(360), __esModule: true };
 
 /***/ },
 /* 360 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(361);
+	__webpack_require__(301);
+	module.exports = __webpack_require__(365);
+
+/***/ },
+/* 361 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(362);
 	var global        = __webpack_require__(308)
 	  , hide          = __webpack_require__(312)
 	  , Iterators     = __webpack_require__(324)
@@ -9664,12 +9707,12 @@
 	}
 
 /***/ },
-/* 361 */
+/* 362 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
-	var addToUnscopables = __webpack_require__(362)
-	  , step             = __webpack_require__(363)
+	var addToUnscopables = __webpack_require__(363)
+	  , step             = __webpack_require__(364)
 	  , Iterators        = __webpack_require__(324)
 	  , toIObject        = __webpack_require__(330);
 
@@ -9703,13 +9746,13 @@
 	addToUnscopables('entries');
 
 /***/ },
-/* 362 */
+/* 363 */
 /***/ function(module, exports) {
 
 	module.exports = function(){ /* empty */ };
 
 /***/ },
-/* 363 */
+/* 364 */
 /***/ function(module, exports) {
 
 	module.exports = function(done, value){
@@ -9717,7 +9760,7 @@
 	};
 
 /***/ },
-/* 364 */
+/* 365 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(314)
