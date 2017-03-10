@@ -65,33 +65,33 @@ The hamburger animates on click to a cross. It is used to show the menu on small
 		display: none;
 	}
 
-	.menu-active & {
-		.hamburger-inner {
-			transform: rotate(45deg);
-			transition-delay: .14s;
-			transition-timing-function: cubic-bezier(.215, .61, .355, 1);
+	.menu-active & .hamburger-inner {
+		transform: rotate(45deg);
+		transition-delay: .14s;
+		transition-timing-function: cubic-bezier(.215, .61, .355, 1);
 
-			&,
-			&:before,
-			&:after {
-				border-radius: 0;
-				height: 6px;
-			}
+		&,
+		&::before,
+		&::after {
+			border-radius: 0;
+			height: 6px;
+		}
 
-			&:before {
-				top: 0;
-				opacity: 0;
-				transition: top .1s ease,
-							opacity .1s .14s ease;
-			}
+		&::before {
+			top: 0;
+			opacity: 0;
+			transition:
+				top .1s ease,
+				opacity .1s .14s ease;
+		}
 
-			&:after {
-				width: 30px;
-				bottom: 0;
-				transform: rotate(-90deg);
-				transition: bottom .1s ease,
-							transform .1s .14s cubic-bezier(.215, .61, .355, 1);
-			}
+		&::after {
+			width: 30px;
+			bottom: 0;
+			transform: rotate(-90deg);
+			transition:
+				bottom .1s ease,
+				transform .1s .14s cubic-bezier(.215, .61, .355, 1);
 		}
 	}
 }
@@ -111,8 +111,8 @@ The hamburger animates on click to a cross. It is used to show the menu on small
 	transition-timing-function: cubic-bezier(.55, .055, .675, .19);
 
 	&,
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		width: 30px;
 		height: 4px;
 		background-color: color('black');
@@ -123,21 +123,23 @@ The hamburger animates on click to a cross. It is used to show the menu on small
 		transition-timing-function: ease;
 	}
 
-	&:before,
-	&:after {
+	&::before,
+	&::after {
 		content: '';
 		display: block;
 	}
 
-	&:before {
+	&::before {
 		top: -10px;
-		transition: top .1s .14s ease,
-					opacity .1s ease;
+		transition:
+			top .1s .14s ease,
+			opacity .1s ease;
 	}
 
-	&:after {
+	&::after {
 		bottom: -10px;
-		transition: bottom .1s .14s ease,
-					transform .1s cubic-bezier(.55, .055, .675, .19);
+		transition:
+			bottom .1s .14s ease,
+			transform .1s cubic-bezier(.55, .055, .675, .19);
 	}
 }
