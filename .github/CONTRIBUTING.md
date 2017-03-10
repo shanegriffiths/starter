@@ -28,6 +28,6 @@ Then when you are ready to create a release:
 3. Version bump the required areas
 4. Use git-flow to finish the release and push your changes up
 
-Handy git-flow pocket diagram:
+The handy git-flow pocket diagram:
 
 ![](https://datasift.github.io/gitflow/GitFlowMasterBranch.png)
