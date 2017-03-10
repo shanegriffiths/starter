@@ -396,199 +396,6 @@ button::-moz-focus-inner {
     margin-left: 0;
     width: 100%; } }
 
-/*------------------------------------*    $BASE ELEMENTS
-\*------------------------------------*/
-html {
-  font-size: 100%; }
-
-body {
-  font-weight: 400;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #000;
-  margin: 0;
-  padding: 0;
-  background-color: #FFF;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%; }
-  @media screen and (min-width: 640px) {
-    body {
-      font-size: 18px;
-      font-size: 1.125rem; } }
-  @media screen and (min-width: 640px) {
-    body:after {
-      content: '';
-      background: #000;
-      opacity: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 396px;
-      bottom: 0;
-      z-index: 100;
-      -webkit-transition: opacity .2s ease;
-              transition: opacity .2s ease;
-      pointer-events: none; }
-    body.menu-active:after {
-      opacity: .5; } }
-
-/*
-
----
-name: Paragraph
-category:
- - Base
- - Base/Paragraph
----
-
-## Base Type Styles
-
-All of the spacing throughout the website is based from the type styling, conforming to a rule of 1.5 times the font-size.
-
-```html
-<p>The <em>quick</em> brown fox jumped over the <strong>lazy</strong> dog</p>
-<small>The quick brown fox jumped over the lazy dog</small>
-```
-
-### Example Paragraphs
-
-Here you can see two paragraphs of generated lorem-ipsum to get a feel of the line-height and spacing.
-
-```html
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu porttitor mauris. Duis a viverra dolor, lacinia porta massa. Aliquam faucibus libero viverra rhoncus lobortis. Quisque malesuada euismod lorem ac luctus. Sed sit amet nunc tellus. Suspendisse maximus nunc sed mi vehicula rutrum. Praesent lobortis euismod turpis sit amet venenatis. Nullam eu enim suscipit, accumsan arcu ut, fringilla odio. Pellentesque ultrices accumsan leo, sit amet vulputate ipsum feugiat id. Pellentesque a pharetra quam. Aliquam rutrum, turpis hendrerit varius pulvinar, libero nisi congue augue, in condimentum diam urna volutpat lectus. Praesent at ipsum a lacus accumsan accumsan. Integer mollis velit ac urna efficitur, eget ultricies nisl posuere. Nullam elementum nunc ac ante fermentum, ac consequat felis scelerisque. Cras dui lacus, posuere semper magna et, ornare porta arcu.
-<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin sit amet erat accumsan, sagittis metus eget, bibendum nisl. Curabitur dolor enim, bibendum id libero non, cursus iaculis libero. Vivamus orci nisl, posuere vel nibh eu, maximus ullamcorper augue. Vivamus scelerisque laoreet tristique. Donec ut urna lacus. Morbi et nisi sit amet leo vehicula pharetra sed ut elit. Pellentesque tincidunt, quam ut viverra tincidunt, lorem risus facilisis sapien, at gravida lorem dui fermentum arcu. Nam varius felis risus. Morbi a ipsum imperdiet, posuere lorem quis, tincidunt augue. Sed sed metus vitae nunc ullamcorper elementum. Vestibulum ornare augue tellus, vel accumsan augue euismod at. Quisque vitae convallis dolor, id tempus ipsum. Phasellus nisl ante, ullamcorper sit amet tortor at, suscipit venenatis sapien. Sed commodo odio in dolor tempus, eget rhoncus mauris bibendum.</p>
-```
-
-*/
-p,
-ul,
-ol,
-dl {
-  line-height: 1.5;
-  margin-bottom: 1.5rem; }
-
-small {
-  font-size: .8rem; }
-
-address {
-  font-style: normal; }
-
-strong,
-b {
-  font-weight: 700;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-
-i,
-em {
-  font-style: italic; }
-
-time {
-  font-weight: 600;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-size: 0.875rem;
-  color: #000;
-  letter-spacing: .1px;
-  line-height: 1;
-  display: block;
-  margin-bottom: 1em; }
-  @media screen and (min-width: 640px) {
-    time {
-      font-size: 16px;
-      font-size: 1rem; } }
-  @media screen and (min-width: 1024px) {
-    time {
-      font-size: 16px;
-      font-size: 1rem; } }
-  @media screen and (min-width: 640px) {
-    time {
-      margin-bottom: 0.875em; } }
-
-::-moz-selection {
-  background: #000;
-  color: #FFF;
-  text-shadow: none; }
-
-::selection {
-  background: #000;
-  color: #FFF;
-  text-shadow: none; }
-
-/*
-
----
-name: Blockquote
-category:
- - Base
- - Base/Blockquote
----
-
-## Default Styling
-
-This is the default markup and styling for a blockquote.
-
-```html
-<blockquote>
-	<p>The quick fox jumped over</p>
-	<footer> - The Lazy dog</footer>
-</blockquote>
-```
-
-*/
-blockquote {
-  font-size: 20px;
-  font-size: 1.25rem;
-  padding: .5em 1em;
-  margin: 0 0 1em;
-  border-left: 5px solid #000; }
-  blockquote p {
-    font-weight: 400;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    margin-bottom: 0.75rem; }
-  blockquote footer {
-    display: block; }
-
-/*
-
----
-name: Horizontal Rule
-category:
- - Base
- - Base/Horizontal Rule
----
-
-## Default Styling
-
-This is the default markup and styling for a horizontal rule.
-
-```html
-<hr>
-```
-
-*/
-hr {
-  border-style: solid;
-  border-color: #000;
-  border-top-width: 1px;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  border-left-width: 0;
-  height: 1px;
-  margin: 0 0 1.5rem; }
-
 /*
 
 ---
@@ -705,337 +512,99 @@ This is used to apply `text-align: left;`
 .align-left {
   text-align: left; }
 
-/*------------------------------------*    LINKS
-\*------------------------------------*/
-a {
-  text-decoration: underline;
-  word-wrap: break-word; }
-  a:hover, a:focus {
-    text-decoration: none; }
-  a:active {
-    text-decoration: underline; }
+html {
+  font-size: 100%; }
 
-.site-footer a {
-  text-decoration: none; }
-  .site-footer a:hover, .site-footer a:focus {
-    text-decoration: underline; }
-  .site-footer a:active {
-    text-decoration: none; }
-
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a {
-  text-decoration: none; }
-  h1 a:hover, h1 a:focus,
-  h2 a:hover,
-  h2 a:focus,
-  h3 a:hover,
-  h3 a:focus,
-  h4 a:hover,
-  h4 a:focus,
-  h5 a:hover,
-  h5 a:focus {
-    text-decoration: underline; }
-  h1 a:active,
-  h2 a:active,
-  h3 a:active,
-  h4 a:active,
-  h5 a:active {
-    text-decoration: none; }
-
-tbody tr a {
-  color: inherit;
-  text-decoration: underline; }
-  tbody tr a:hover, tbody tr a:focus {
-    text-decoration: none; }
-  tbody tr a:active {
-    text-decoration: underline; }
-
-/*
-
----
-name: Headings
-category:
- - Base
- - Base/Headings
----
-
-## Base Headings
-
-The class structure follows the structure discussed by Harry Roberts in his article [practical font sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/) on CSS Wizardry.
-
-```html
-<h1 class="alpha">The fox</h1>
-<h2 class="beta">The fox</h2>
-<h3 class="gamma">The fox</h3>
-<h4 class="delta">The fox</h4>
-<h5 class="epsilon">The fox</h5>
-<h6 class="zeta">The fox</h6>
-```
-
-## Utilities
-
-
-### Style
-
-Use the `.is-uppercase` class to enforce a heading to be in capitals.
-
-```html
-<h1 class="is-uppercase">The fox</h1>
-```
-
-### Spacing
-
-Using `.drop` class applies only half the regular bottom bottom.
-
-```html
-<h1 class="drop">The fox</h1>
-<h1>The fox</h1>
-<h1>The fox</h1>
-```
-
-*/
-h1,
-.alpha,
-h2,
-.beta,
-h3,
-.gamma,
-.post-card__title,
-h4,
-.delta,
-h5,
-.epsilon,
-h6,
-.zeta {
-  font-weight: 700;
+body {
+  font-weight: 400;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.3;
-  margin-bottom: 1.5rem; }
-  h1.is-uppercase,
-  .alpha.is-uppercase,
-  h2.is-uppercase,
-  .beta.is-uppercase,
-  h3.is-uppercase,
-  .gamma.is-uppercase,
-  .is-uppercase.post-card__title,
-  h4.is-uppercase,
-  .delta.is-uppercase,
-  h5.is-uppercase,
-  .epsilon.is-uppercase,
-  h6.is-uppercase,
-  .zeta.is-uppercase {
-    text-transform: uppercase; }
-  h1.drop,
-  .alpha.drop,
-  h2.drop,
-  .beta.drop,
-  h3.drop,
-  .gamma.drop,
-  .drop.post-card__title,
-  h4.drop,
-  .delta.drop,
-  h5.drop,
-  .epsilon.drop,
-  h6.drop,
-  .zeta.drop {
-    margin-bottom: 0.75rem; }
-
-h1,
-.alpha {
-  font-size: 20px;
-  font-size: 1.25rem; }
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
   @media screen and (min-width: 640px) {
-    h1,
-    .alpha {
-      font-size: 30px;
-      font-size: 1.875rem; } }
-  @media screen and (min-width: 1024px) {
-    h1,
-    .alpha {
-      font-size: 46px;
-      font-size: 2.875rem; } }
-  h1.alt-font,
-  .alpha.alt-font {
-    font-size: 22px;
-    font-size: 1.375rem; }
-    @media screen and (min-width: 640px) {
-      h1.alt-font,
-      .alpha.alt-font {
-        font-size: 22px;
-        font-size: 1.375rem; } }
-    @media screen and (min-width: 1024px) {
-      h1.alt-font,
-      .alpha.alt-font {
-        font-size: 36px;
-        font-size: 2.25rem; } }
-
-h2,
-.beta {
-  font-size: 18px;
-  font-size: 1.125rem; }
-  @media screen and (min-width: 640px) {
-    h2,
-    .beta {
-      font-size: 24px;
-      font-size: 1.5rem; } }
-  @media screen and (min-width: 1024px) {
-    h2,
-    .beta {
-      font-size: 40px;
-      font-size: 2.5rem; } }
-
-h3,
-.gamma,
-.post-card__title {
-  font-size: 15px;
-  font-size: 0.9375rem; }
-  @media screen and (min-width: 640px) {
-    h3,
-    .gamma,
-    .post-card__title {
-      font-size: 19px;
-      font-size: 1.1875rem; } }
-  @media screen and (min-width: 1024px) {
-    h3,
-    .gamma,
-    .post-card__title {
-      font-size: 35px;
-      font-size: 2.1875rem; } }
-
-h4,
-.delta {
-  font-size: 13px;
-  font-size: 0.8125rem; }
-  @media screen and (min-width: 640px) {
-    h4,
-    .delta {
-      font-size: 16px;
-      font-size: 1rem; } }
-  @media screen and (min-width: 1024px) {
-    h4,
-    .delta {
-      font-size: 22px;
-      font-size: 1.375rem; } }
-
-h5,
-.epsilon {
-  font-size: 12px;
-  font-size: 0.75rem; }
-  @media screen and (min-width: 640px) {
-    h5,
-    .epsilon {
-      font-size: 15px;
-      font-size: 0.9375rem; } }
-  @media screen and (min-width: 1024px) {
-    h5,
-    .epsilon {
-      font-size: 20px;
-      font-size: 1.25rem; } }
-
-h6,
-.zeta {
-  font-size: 12px;
-  font-size: 0.75rem; }
-  @media screen and (min-width: 640px) {
-    h6,
-    .zeta {
-      font-size: 12px;
-      font-size: 0.75rem; } }
-  @media screen and (min-width: 1024px) {
-    h6,
-    .zeta {
+    body {
       font-size: 18px;
       font-size: 1.125rem; } }
+  @media screen and (min-width: 640px) {
+    body:after {
+      content: '';
+      background: #000;
+      opacity: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 396px;
+      bottom: 0;
+      z-index: 100;
+      -webkit-transition: opacity .2s ease;
+              transition: opacity .2s ease;
+      pointer-events: none; }
+    body.menu-active:after {
+      opacity: .5; } }
 
-/*
+::-moz-selection {
+  background: #000;
+  color: #FFF;
+  text-shadow: none; }
 
----
-name: Lists
-category:
- - Base
- - Base/Lists
----
+::selection {
+  background: #000;
+  color: #FFF;
+  text-shadow: none; }
 
-## Unordered List
-
-This is just a plain unordered list, no special classes have been applied.
-
-```html
-<ul>
-	<li>List item</li>
-	<li>List item</li>
-	<li>List item</li>
-</ul>
-```
-
-## Ordered List
-
-This is just a plain ordered list, no special classes have been applied.
-
-```html
-<ol>
-	<li>List item</li>
-	<li>List item</li>
-	<li>List item</li>
-</ol>
-```
-
-## Plain List
-
-Using the `.is-plain` class on any list to remove margin and padding.
-
-```html
-<ul class="is-plain">
-	<li>List item</li>
-	<li>List item</li>
-	<li>List item</li>
-</ul>
-```
-
-*/
-ul {
-  list-style: disc; }
-
-ol,
-ul {
-  margin-bottom: 1.5rem; }
-  ol.is-plain,
-  ul.is-plain {
-    list-style-type: none;
-    margin: 0;
-    padding: 0; }
-
-ul ul,
-ol ol {
-  margin-bottom: 0; }
-
-/*------------------------------------*    MEDIA ELEMENTS
+/*------------------------------------*    PRINT STYLES
 \*------------------------------------*/
-audio,
-canvas,
-img,
-svg,
-video {
-  vertical-align: middle; }
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: ''; }
+  pre,
+  blockquote {
+    border: 1px solid #000;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group; }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }
 
-iframe,
-img {
-  max-width: 100%;
-  width: 100%; }
-
-img {
-  vertical-align: middle;
-  height: auto;
-  width: auto; }
-
-a img {
-  border: 0; }
-
+/*------------------------------------*    $BASE ELEMENTS
+\*------------------------------------*/
 /*
 
 ---
@@ -1241,6 +810,636 @@ This allows you to have a button in the same row as its input field.
 /*
 
 ---
+name: Headings
+category:
+ - Base
+ - Base/Headings
+---
+
+## Base Headings
+
+The class structure follows the structure discussed by Harry Roberts in his article [practical font sizing in CSS](http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/) on CSS Wizardry.
+
+```html
+<h1 class="alpha">The fox</h1>
+<h2 class="beta">The fox</h2>
+<h3 class="gamma">The fox</h3>
+<h4 class="delta">The fox</h4>
+<h5 class="epsilon">The fox</h5>
+<h6 class="zeta">The fox</h6>
+```
+
+## Utilities
+
+
+### Style
+
+Use the `.is-uppercase` class to enforce a heading to be in capitals.
+
+```html
+<h1 class="is-uppercase">The fox</h1>
+```
+
+### Spacing
+
+Using `.drop` class applies only half the regular bottom bottom.
+
+```html
+<h1 class="drop">The fox</h1>
+<h1>The fox</h1>
+<h1>The fox</h1>
+```
+
+*/
+h1,
+.alpha,
+h2,
+.beta,
+h3,
+.gamma,
+.post-card__title,
+h4,
+.delta,
+h5,
+.epsilon,
+h6,
+.zeta {
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  margin-bottom: 1.5rem; }
+  h1.is-uppercase,
+  .alpha.is-uppercase,
+  h2.is-uppercase,
+  .beta.is-uppercase,
+  h3.is-uppercase,
+  .gamma.is-uppercase,
+  .is-uppercase.post-card__title,
+  h4.is-uppercase,
+  .delta.is-uppercase,
+  h5.is-uppercase,
+  .epsilon.is-uppercase,
+  h6.is-uppercase,
+  .zeta.is-uppercase {
+    text-transform: uppercase; }
+  h1.drop,
+  .alpha.drop,
+  h2.drop,
+  .beta.drop,
+  h3.drop,
+  .gamma.drop,
+  .drop.post-card__title,
+  h4.drop,
+  .delta.drop,
+  h5.drop,
+  .epsilon.drop,
+  h6.drop,
+  .zeta.drop {
+    margin-bottom: 0.75rem; }
+
+h1,
+.alpha {
+  font-size: 20px;
+  font-size: 1.25rem; }
+  @media screen and (min-width: 640px) {
+    h1,
+    .alpha {
+      font-size: 30px;
+      font-size: 1.875rem; } }
+  @media screen and (min-width: 1024px) {
+    h1,
+    .alpha {
+      font-size: 46px;
+      font-size: 2.875rem; } }
+  h1.alt-font,
+  .alpha.alt-font {
+    font-size: 22px;
+    font-size: 1.375rem; }
+    @media screen and (min-width: 640px) {
+      h1.alt-font,
+      .alpha.alt-font {
+        font-size: 22px;
+        font-size: 1.375rem; } }
+    @media screen and (min-width: 1024px) {
+      h1.alt-font,
+      .alpha.alt-font {
+        font-size: 36px;
+        font-size: 2.25rem; } }
+
+h2,
+.beta {
+  font-size: 18px;
+  font-size: 1.125rem; }
+  @media screen and (min-width: 640px) {
+    h2,
+    .beta {
+      font-size: 24px;
+      font-size: 1.5rem; } }
+  @media screen and (min-width: 1024px) {
+    h2,
+    .beta {
+      font-size: 40px;
+      font-size: 2.5rem; } }
+
+h3,
+.gamma,
+.post-card__title {
+  font-size: 15px;
+  font-size: 0.9375rem; }
+  @media screen and (min-width: 640px) {
+    h3,
+    .gamma,
+    .post-card__title {
+      font-size: 19px;
+      font-size: 1.1875rem; } }
+  @media screen and (min-width: 1024px) {
+    h3,
+    .gamma,
+    .post-card__title {
+      font-size: 35px;
+      font-size: 2.1875rem; } }
+
+h4,
+.delta {
+  font-size: 13px;
+  font-size: 0.8125rem; }
+  @media screen and (min-width: 640px) {
+    h4,
+    .delta {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 1024px) {
+    h4,
+    .delta {
+      font-size: 22px;
+      font-size: 1.375rem; } }
+
+h5,
+.epsilon {
+  font-size: 12px;
+  font-size: 0.75rem; }
+  @media screen and (min-width: 640px) {
+    h5,
+    .epsilon {
+      font-size: 15px;
+      font-size: 0.9375rem; } }
+  @media screen and (min-width: 1024px) {
+    h5,
+    .epsilon {
+      font-size: 20px;
+      font-size: 1.25rem; } }
+
+h6,
+.zeta {
+  font-size: 12px;
+  font-size: 0.75rem; }
+  @media screen and (min-width: 640px) {
+    h6,
+    .zeta {
+      font-size: 12px;
+      font-size: 0.75rem; } }
+  @media screen and (min-width: 1024px) {
+    h6,
+    .zeta {
+      font-size: 18px;
+      font-size: 1.125rem; } }
+
+/*
+
+---
+name: Horizontal Rule
+category:
+ - Base
+ - Base/Horizontal Rule
+---
+
+## Default Styling
+
+This is the default markup and styling for a horizontal rule.
+
+```html
+<hr>
+```
+
+*/
+hr {
+  border-style: solid;
+  border-color: #000;
+  border-top-width: 1px;
+  border-right-width: 0;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  height: 1px;
+  margin: 0 0 1.5rem; }
+
+/*------------------------------------*    LINKS
+\*------------------------------------*/
+a {
+  text-decoration: underline;
+  word-wrap: break-word; }
+  a:hover, a:focus {
+    text-decoration: none; }
+  a:active {
+    text-decoration: underline; }
+
+.site-footer a {
+  text-decoration: none; }
+  .site-footer a:hover, .site-footer a:focus {
+    text-decoration: underline; }
+  .site-footer a:active {
+    text-decoration: none; }
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  text-decoration: none; }
+  h1 a:hover, h1 a:focus,
+  h2 a:hover,
+  h2 a:focus,
+  h3 a:hover,
+  h3 a:focus,
+  h4 a:hover,
+  h4 a:focus,
+  h5 a:hover,
+  h5 a:focus {
+    text-decoration: underline; }
+  h1 a:active,
+  h2 a:active,
+  h3 a:active,
+  h4 a:active,
+  h5 a:active {
+    text-decoration: none; }
+
+tbody tr a {
+  color: inherit;
+  text-decoration: underline; }
+  tbody tr a:hover, tbody tr a:focus {
+    text-decoration: none; }
+  tbody tr a:active {
+    text-decoration: underline; }
+
+/*
+
+---
+name: Lists
+category:
+ - Base
+ - Base/Lists
+---
+
+## Unordered List
+
+This is just a plain unordered list, no special classes have been applied.
+
+```html
+<ul>
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ul>
+```
+
+## Ordered List
+
+This is just a plain ordered list, no special classes have been applied.
+
+```html
+<ol>
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ol>
+```
+
+## Plain List
+
+Using the `.is-plain` class on any list to remove margin and padding.
+
+```html
+<ul class="is-plain">
+	<li>List item</li>
+	<li>List item</li>
+	<li>List item</li>
+</ul>
+```
+
+*/
+ul {
+  list-style: disc; }
+
+ol,
+ul {
+  margin-bottom: 1.5rem; }
+  ol.is-plain,
+  ul.is-plain {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+
+ul ul,
+ol ol {
+  margin-bottom: 0; }
+
+/*------------------------------------*    MEDIA ELEMENTS
+\*------------------------------------*/
+audio,
+canvas,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+iframe,
+img {
+  max-width: 100%;
+  width: 100%; }
+
+img {
+  vertical-align: middle;
+  height: auto;
+  width: auto; }
+
+a img {
+  border: 0; }
+
+/*
+
+---
+name: Blockquote
+category:
+ - Base
+ - Base/Quotes
+---
+
+The Block Quotation Element indicates that the enclosed text is an extended quotation.
+
+```html
+<blockquote cite="http://developer.mozilla.org">
+  <p>This is a quotation taken from
+  the Mozilla Developer Center.</p>
+</blockquote>
+```
+
+*/
+blockquote {
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding: .5em 1em;
+  margin: 0 0 1em;
+  border-left: 5px solid #000; }
+  blockquote p {
+    font-weight: 400;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 0.75rem; }
+  blockquote footer {
+    display: block; }
+
+/*
+
+---
+name: Quote
+category:
+ - Base
+ - Base/Quotes
+---
+
+This element is intended for short quotations that don't require paragraph breaks.
+
+```html
+<p>According to Mozilla's website, <q cite="https://www.mozilla.org/en-US/about/history/details/">Firefox 1.0was released in 2004 and became a big success.</q></p>
+```
+
+*/
+/*
+
+---
+name: Cite
+category:
+ - Base
+ - Base/Quotes
+---
+
+Used for referencing external sources.
+
+```html
+<cite><a href="http://www.brucelawson.co.uk/2013/on-citing-quotations-again/">Bruce Lawson</a></cite>
+```
+
+*/
+/*
+
+---
+name: Header
+category:
+ - Base
+ - Base/Structure
+---
+
+Used to denote the main banner area, or a heading group inside a content section.
+
+```html
+<header role="banner">Hero Content</header>
+<article>
+	<header>
+		<h1>Main title</h1>
+		<p>Sub title</p>
+	</header>
+</article>
+```
+
+*/
+/*
+
+---
+name: Nav
+category:
+ - Base
+ - Base/Structure
+---
+
+For major page navigation, including pagination.
+
+```html
+<nav>
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Blog</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+</nav>
+```
+
+*/
+/*
+
+---
+name: Main
+category:
+ - Base
+ - Base/Structure
+---
+
+Only one per page, for the main content.
+
+```html
+<main>
+	<header>
+  		<h1>Apples</h1>
+		<p>The apple is the pomaceous fruit of the apple tree.</p>
+	</header>
+
+	<article>
+		<h2>Red Delicious</h2>
+		<p>These bright red apples are the most common found in many
+		supermarkets.</p>
+		<p>... </p>
+		<p>... </p>
+	</article>
+
+	<article>
+		<h2>Granny Smith</h2>
+		<p>These juicy, green apples make a great filling for
+		apple pies.</p>
+		<p>... </p>
+		<p>... </p>
+	</article>
+</main>
+```
+
+*/
+/*
+
+---
+name: Aside
+category:
+ - Base
+ - Base/Structure
+---
+
+Contains complementary content to it's parent section. (often used as a sidebar)
+
+```html
+<article>
+  <p>
+    The Disney movie <em>The Little Mermaid</em> was
+    first released to theatres in 1989.
+  </p>
+  <aside>
+    <p>
+      The movie earned $87 million during its initial release.
+    </p>
+  </aside>
+  <p>
+    More info about the movie...
+  </p>
+</article>
+```
+
+*/
+/*
+
+---
+name: Article
+category:
+ - Base
+ - Base/Structure
+---
+
+The article element should contain a piece of self-contained content that could be distributed outside the context of the page.
+This includes things like:
+- news articles
+- blog posts
+- user comments
+
+```html
+<article class="film_review">
+  <header>
+    <h2>Jurassic Park</h2>
+  </header>
+  <section class="main_review">
+    <p>Dinos were great!</p>
+  </section>
+  <section class="user_reviews">
+    <article class="user_review">
+      <p>Way too scary for me.</p>
+      <footer>
+        <p>
+          Posted on
+          <time datetime="2015-05-16 19:00">May 16</time>
+          by Lisa.
+        </p>
+      </footer>
+    </article>
+    <article class="user_review">
+      <p>I agree, dinos are my favorite.</p>
+      <footer>
+        <p>
+          Posted on
+          <time datetime="2015-05-17 19:00">May 17</time>
+          by Tom.
+        </p>
+      </footer>
+    </article>
+  </section>
+  <footer>
+    <p>
+      Posted on
+      <time datetime="2015-05-15 19:00">May 15</time>
+      by Staff.
+    </p>
+  </footer>
+</article>
+```
+
+*/
+/*
+
+---
+name: Section
+category:
+ - Base
+ - Base/Structure
+---
+
+For groups of content that have headings.
+
+```html
+<section>
+	<h1>Test</h1>
+	<p>Some content</p>
+</section>
+```
+
+*/
+/*
+
+---
+name: Footer
+category:
+ - Base
+ - Base/Structure
+---
+
+A footer typically contains information about the author of the section, copyright data or links to related documents.
+
+```html
+<footer>
+  Some copyright info or perhaps some author
+  info for an &lt;article&gt;?
+</footer>
+```
+
+*/
+/*
+
+---
 name: Table
 category:
  - Base
@@ -1341,6 +1540,243 @@ thead tr {
 tbody tr {
   padding: 1em; }
 
+/*
+
+---
+name: Base Paragraph Styles
+category:
+ - Base
+ - Base/Type
+---
+
+All of the spacing throughout the website is based from the type styling,
+conforming to a rule of 1.5 times the font-size. Here you can see two paragraphs
+of generated lorem-ipsum to get a feel of the line-height and spacing.
+
+```html
+<p>The quick brown fox jumped over the lazy dog</p>
+<p>The quick brown fox jumped <small>over the lazy dog</small></p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu porttitor mauris. Duis a viverra dolor, lacinia porta massa. Aliquam faucibus libero viverra rhoncus lobortis. Quisque malesuada euismod lorem ac luctus. Sed sit amet nunc tellus. Suspendisse maximus nunc sed mi vehicula rutrum. Praesent lobortis euismod turpis sit amet venenatis. Nullam eu enim suscipit, accumsan arcu ut, fringilla odio. Pellentesque ultrices accumsan leo, sit amet vulputate ipsum feugiat id. Pellentesque a pharetra quam. Aliquam rutrum, turpis hendrerit varius pulvinar, libero nisi congue augue, in condimentum diam urna volutpat lectus. Praesent at ipsum a lacus accumsan accumsan. Integer mollis velit ac urna efficitur, eget ultricies nisl posuere. Nullam elementum nunc ac ante fermentum, ac consequat felis scelerisque. Cras dui lacus, posuere semper magna et, ornare porta arcu.
+<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin sit amet erat accumsan, sagittis metus eget, bibendum nisl. Curabitur dolor enim, bibendum id libero non, cursus iaculis libero. Vivamus orci nisl, posuere vel nibh eu, maximus ullamcorper augue. Vivamus scelerisque laoreet tristique. Donec ut urna lacus. Morbi et nisi sit amet leo vehicula pharetra sed ut elit. Pellentesque tincidunt, quam ut viverra tincidunt, lorem risus facilisis sapien, at gravida lorem dui fermentum arcu. Nam varius felis risus. Morbi a ipsum imperdiet, posuere lorem quis, tincidunt augue. Sed sed metus vitae nunc ullamcorper elementum. Vestibulum ornare augue tellus, vel accumsan augue euismod at. Quisque vitae convallis dolor, id tempus ipsum. Phasellus nisl ante, ullamcorper sit amet tortor at, suscipit venenatis sapien. Sed commodo odio in dolor tempus, eget rhoncus mauris bibendum.</p>
+```
+
+*/
+p,
+ul,
+ol,
+dl {
+  line-height: 1.5;
+  margin-bottom: 1.5rem; }
+
+small {
+  font-size: .8rem; }
+
+/*
+
+---
+name: Bold and Strong; Italic and Emphasis
+category:
+ - Base
+ - Base/Type
+---
+
+The __bold__ and __italic__ elements are used for presentational purposes, whereas the
+__strong__ and __emphasis__ elements represent structure.
+
+```html
+<p>The quick <b>brown</b> fox jumped over the <strong>lazy</strong> dog</p>
+<p>The quick <i>brown</i> fox jumped over the <em>lazy</em> dog</p>
+```
+
+*/
+b,
+strong {
+  font-weight: 700;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+i,
+em {
+  font-style: italic; }
+
+/*
+
+---
+name: Sup
+category:
+ - Base
+ - Base/Type
+---
+
+For text that should be displayed, for typographic reasons, higher, and often smaller, than the main span of text.
+
+```html
+<p>This text is <sup>superscripted</sup></p>
+```
+
+*/
+/*
+
+---
+name: Sub
+category:
+ - Base
+ - Base/Type
+---
+
+For text that should be displayed, for typographic reasons, lower, and often smaller, than the main span of text.
+
+```html
+<p>This text is <sub>superscripted</sub></p>
+```
+
+*/
+/*
+
+---
+name: Strikethrough
+category:
+ - Base
+ - Base/Type
+---
+
+Use the strikethrough element to represent things that are no longer relevant or no longer accurate.
+
+```html
+<p>This text is <sub>superscripted</sub></p>
+```
+
+*/
+/*
+
+---
+name: Mark
+category:
+ - Base
+ - Base/Type
+---
+
+For a run of text marked for reference purpose, due to its relevance in a particular context.
+For example it can be used in a page showing search results to highlight every instance of the searched-for word.
+
+```html
+<p>The &lt;mark&gt; element is used to <mark>highlight</mark> text</p>
+```
+
+*/
+/*
+
+---
+name: Code and Pre
+category:
+ - Base
+ - Base/Type
+---
+
+The code element is for displaying raw computer code.
+Note: whitepsace and new lines aren't considered important.
+
+While the pre element is for preformatted text, and it preserves whitespace and line breaks.
+
+```html
+<p>This is how we declare a Javascript variable:<br\>
+<code>var i = 0;</code>
+</p>
+
+<pre>
+body {
+  color:red;
+}
+</pre>
+```
+
+*/
+/*
+
+---
+name: Time
+category:
+ - Base
+ - Base/Type
+---
+
+The time element represents either a time on a 24-hour clock or a precise date in the Gregorian calendar
+
+```html
+<p>The concert starts at <time>20:00</time>.</p>
+```
+
+*/
+time {
+  font-weight: 600;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  font-family: "sans-serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  color: #000;
+  letter-spacing: .1px;
+  line-height: 1;
+  display: block;
+  margin-bottom: 1em; }
+  @media screen and (min-width: 640px) {
+    time {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 1024px) {
+    time {
+      font-size: 16px;
+      font-size: 1rem; } }
+  @media screen and (min-width: 640px) {
+    time {
+      margin-bottom: 0.875em; } }
+
+/*
+
+---
+name: Address
+category:
+ - Base
+ - Base/Type
+---
+
+The address element supplies contact information for its nearest article
+or body ancestor; in the latter case, it applies to the whole document.
+
+```html
+<address>
+    You can contact author at <a href="http://www.somedomain.com/contact">www.somedomain.com</a>.<br>
+    If you see any bugs, please <a href="mailto:webmaster@somedomain.com">contact webmaster</a>.<br>
+    You may also want to visit us:<br>
+    Mozilla Foundation<br>
+    1981 Landings Drive<br>
+    Building K<br>
+    Mountain View, CA 94043-0801<br>
+    USA
+</address>
+```
+
+*/
+address {
+  font-style: normal; }
+
+/*
+
+---
+name: Abbreviation
+category:
+ - Base
+ - Base/Type
+---
+
+Use the title attribute to define the full description of the abbreviation. Many user agents present this as a tooltip.
+
+```html
+<p>Welcome to the <abbr title="World Wide Web">WWW</abbr>!</p>
+```
+
+*/
 /*------------------------------------*    $LAYOUT
 \*------------------------------------*/
 /*------------------------------------*	BAND
@@ -2813,45 +3249,3 @@ This is a card that's used to act as a call-to-action for the services offered, 
   color: #007BB6; }
   .social--linkedin:hover, .social--linkedin:active, .social--linkedin:focus {
     color: #005983; }
-
-/*------------------------------------*	$PRINT STYLES
-\*------------------------------------*/
-/*------------------------------------*    PRINT STYLES
-\*------------------------------------*/
-@media print {
-  *,
-  *:before,
-  *:after {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important; }
-  a,
-  a:visited {
-    text-decoration: underline; }
-  a[href]:after {
-    content: " (" attr(href) ")"; }
-  abbr[title]:after {
-    content: " (" attr(title) ")"; }
-  a[href^="#"]:after,
-  a[href^="javascript:"]:after {
-    content: ''; }
-  pre,
-  blockquote {
-    border: 1px solid #000;
-    page-break-inside: avoid; }
-  thead {
-    display: table-header-group; }
-  tr,
-  img {
-    page-break-inside: avoid; }
-  img {
-    max-width: 100% !important; }
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3; }
-  h2,
-  h3 {
-    page-break-after: avoid; } }

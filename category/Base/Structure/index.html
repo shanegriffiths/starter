@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="aigis-html">
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+
+		<title>Styleguide</title>
+
+		<!-- <script src="https://use.typekit.net/jaj0dkp.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script> -->
+
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+
+		<link href="../../../dist/styles/styles.css" rel="stylesheet">
+
+		<link href="../../../aigis_assets/styles/highlight/prism.css" rel="stylesheet">
+		<link href="../../../aigis_assets/styles/theme.css" rel="stylesheet">
+
+	</head>
+	<body class="aigis-body">
+
+		<div class="aigis-container">
+
+			<div class="aigis-sidemenu">
+
+    <header class="aigis-header">
+        <a href="../../../index.html"><img src="../../../aigis_assets/images/bureau-shield.svg" alt=""></a>
+    </header>
+
+	<label class="aigis-search-wrapper">
+        <svg class="aigis-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="32 19 16 16" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <path id="a" d="M0 16V0h16v16z"/>
+            </defs>
+	        <g fill="none" fill-rule="evenodd" transform="translate(32 19)">
+                <mask id="b" fill="#fff">
+                    <use xlink:href="#a"/>
+                </mask>
+                <path fill="#999" d="M6 1.33c2.57 0 4.67 2.1 4.67 4.67S8.57 10.67 6 10.67 1.33 8.57 1.33 6 3.43 1.33 6 1.33M6 12c1.42 0 2.73-.5 3.76-1.33l5.1 5.13c.26.27.68.27.94 0 .27-.25.27-.68 0-.94l-5.1-5.13C11.5 8.7 12 7.4 12 6c0-3.3-2.7-6-6-6S0 2.7 0 6s2.7 6 6 6" mask="url(#b)"/>
+            </g>
+        </svg>
+
+    	<input type="search" class="aigis-search" placeholder="Search">
+	</label>
+
+    <h2 class="aigis-sidemenu__heading"><a href="../../../color.html">Colours</a></h2>
+
+    <nav class="aigis-categoryList">
+        <ul data-path-depth="0"><li data-path-depth="0"><a href="../../../category/Base/index.html">Base</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Base/Figure/index.html">Figure</a></li><li data-path-depth="1"><a href="../../../category/Base/Forms/index.html">Forms</a></li><li data-path-depth="1"><a href="../../../category/Base/Headings/index.html">Headings</a></li><li data-path-depth="1"><a href="../../../category/Base/Horizontal-Rule/index.html">Horizontal Rule</a></li><li data-path-depth="1"><a href="../../../category/Base/Lists/index.html">Lists</a></li><li data-path-depth="1"><a href="../../../category/Base/Quotes/index.html">Quotes</a></li><li data-path-depth="1"><a href="../../../category/Base/Structure/index.html" data-tree-current>Structure</a></li><li data-path-depth="1"><a href="../../../category/Base/Table/index.html">Table</a></li><li data-path-depth="1"><a href="../../../category/Base/Type/index.html">Type</a></li><li data-path-depth="1"><a href="../../../category/Base/Utilities/index.html">Utilities</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Components/index.html">Components</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Components/Buttons/index.html">Buttons</a></li><li data-path-depth="1"><a href="../../../category/Components/Content-Block/index.html">Content Block</a></li><li data-path-depth="1"><a href="../../../category/Components/Dropdown/index.html">Dropdown</a></li><li data-path-depth="1"><a href="../../../category/Components/Hero/index.html">Hero</a></li><li data-path-depth="1"><a href="../../../category/Components/Image-Block/index.html">Image Block</a></li><li data-path-depth="1"><a href="../../../category/Components/Newsletter-Signup/index.html">Newsletter Signup</a></li><li data-path-depth="1"><a href="../../../category/Components/Post-Card/index.html">Post Card</a></li><li data-path-depth="1"><a href="../../../category/Components/Service-Card/index.html">Service Card</a></li></ul></li><li data-path-depth="0"><a href="../../../category/Layout/index.html">Layout</a><ul data-path-depth="1"><li data-path-depth="1"><a href="../../../category/Layout/Flex-Input/index.html">Flex Input</a></li><li data-path-depth="1"><a href="../../../category/Layout/Footer/index.html">Footer</a></li><li data-path-depth="1"><a href="../../../category/Layout/Hamburger/index.html">Hamburger</a></li><li data-path-depth="1"><a href="../../../category/Layout/Header/index.html">Header</a></li><li data-path-depth="1"><a href="../../../category/Layout/Media-Object/index.html">Media Object</a></li></ul></li></ul>
+    </nav>
+
+</div>
+
+
+			<div class="aigis-contents">
+
+				<div class="aigis-contents__body">
+					
+
+	<div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Header">
+					Header
+				</h1>
+
+				<p>Used to denote the main banner area, or a heading group inside a content section.</p>
+<div class="aigis-preview">
+  <header role="banner">Hero Content</header>
+<article>
+    <header>
+        <h1>Main title</h1>
+        <p>Sub title</p>
+    </header>
+</article></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span> <span class="token attr-name">role</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>banner<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hero Content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Main title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Sub title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Nav">
+					Nav
+				</h1>
+
+				<p>For major page navigation, including pagination.</p>
+<div class="aigis-preview">
+  <nav>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</nav></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>About<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Blog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Contact<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Main">
+					Main
+				</h1>
+
+				<p>Only one per page, for the main content.</p>
+<div class="aigis-preview">
+  <main>
+    <header>
+        <h1>Apples</h1>
+        <p>The apple is the pomaceous fruit of the apple tree.</p>
+    </header>
+    <article>
+        <h2>Red Delicious</h2>
+        <p>These bright red apples are the most common found in many supermarkets.</p>
+        <p>... </p>
+        <p>... </p>
+    </article>
+    <article>
+        <h2>Granny Smith</h2>
+        <p>These juicy, green apples make a great filling for apple pies.</p>
+        <p>... </p>
+        <p>... </p>
+    </article>
+</main></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>main</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Apples<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>The apple is the pomaceous fruit of the apple tree.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Red Delicious<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>These bright red apples are the most common found in many
+        supermarkets.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Granny Smith<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>These juicy, green apples make a great filling for
+        apple pies.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>... <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Aside">
+					Aside
+				</h1>
+
+				<p>Contains complementary content to it&#39;s parent section. (often used as a sidebar)</p>
+<div class="aigis-preview">
+  <article>
+    <p> The Disney movie <em>The Little Mermaid</em> was first released to theatres in 1989. </p>
+    <aside>
+        <p> The movie earned $87 million during its initial release. </p>
+    </aside>
+    <p> More info about the movie... </p>
+</article></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    The Disney movie <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>em</span><span class="token punctuation">></span></span>The Little Mermaid<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>em</span><span class="token punctuation">></span></span> was
+    first released to theatres in 1989.
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>aside</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      The movie earned $87 million during its initial release.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>aside</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    More info about the movie...
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Article">
+					Article
+				</h1>
+
+				<p>The article element should contain a piece of self-contained content that could be distributed outside the context of the page.
+This includes things like:</p>
+<ul>
+<li>news articles</li>
+<li>blog posts</li>
+<li>user comments</li>
+</ul>
+<div class="aigis-preview">
+  <article class="film_review">
+    <header>
+        <h2>Jurassic Park</h2>
+    </header>
+    <section class="main_review">
+        <p>Dinos were great!</p>
+    </section>
+    <section class="user_reviews">
+        <article class="user_review">
+            <p>Way too scary for me.</p>
+            <footer>
+                <p> Posted on <time datetime="2015-05-16 19:00">May 16</time> by Lisa. </p>
+            </footer>
+        </article>
+        <article class="user_review">
+            <p>I agree, dinos are my favorite.</p>
+            <footer>
+                <p> Posted on <time datetime="2015-05-17 19:00">May 17</time> by Tom. </p>
+            </footer>
+        </article>
+    </section>
+    <footer>
+        <p> Posted on <time datetime="2015-05-15 19:00">May 15</time> by Staff. </p>
+    </footer>
+</article></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>film_review<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span>Jurassic Park<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>header</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>main_review<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Dinos were great!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user_reviews<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user_review<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Way too scary for me.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+          Posted on
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>time</span> <span class="token attr-name">datetime</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2015-05-16 19:00<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>May 16<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>time</span><span class="token punctuation">></span></span>
+          by Lisa.
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>article</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>user_review<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>I agree, dinos are my favorite.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+          Posted on
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>time</span> <span class="token attr-name">datetime</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2015-05-17 19:00<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>May 17<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>time</span><span class="token punctuation">></span></span>
+          by Tom.
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+      Posted on
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>time</span> <span class="token attr-name">datetime</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2015-05-15 19:00<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>May 15<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>time</span><span class="token punctuation">></span></span>
+      by Staff.
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>article</span><span class="token punctuation">></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Section">
+					Section
+				</h1>
+
+				<p>For groups of content that have headings.</p>
+<div class="aigis-preview">
+  <section>
+    <h1>Test</h1>
+    <p>Some content</p>
+</section></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>section</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">></span></span>Test<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>Some content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>section</span><span class="token punctuation">></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+			<div class="aigis-module">
+
+				<h1 class="aigis-module__heading" id="Footer">
+					Footer
+				</h1>
+
+				<p>A footer typically contains information about the author of the section, copyright data or links to related documents.</p>
+<div class="aigis-preview">
+  <footer> Some copyright info or perhaps some author info for an &lt;article&gt;? </footer></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>footer</span><span class="token punctuation">></span></span>
+  Some copyright info or perhaps some author
+  info for an <span class="token entity" title="&lt;">&amp;lt;</span>article<span class="token entity" title="&gt;">&amp;gt;</span>?
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>footer</span><span class="token punctuation">></span></span>
+</code></pre>
+
+
+			</div>
+
+		
+
+	</div>
+
+
+
+				</div>
+
+			</div>
+
+			<div class="aigis-modal__wrapper">
+
+				<div class="aigis-modal__header">
+
+					<a href="../../../index.html" class="aigis-modal__logo">
+						<img src="../../../aigis_assets/images/bureau-shield.svg" alt="Website Logo">
+					</a>
+
+					<div class="aigis-modal__close">
+
+						<div class="aigis-modal__close-back">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="16 30 9 11">
+								<path fill="#535353" fill-rule="evenodd" d="M16.75 35.37l5.35 4.58c.04.04.1.05.15.05.05 0 .1-.03.13-.07l.9-1.03c.06-.08.05-.2-.04-.28l-3.97-3.4 3.97-3.4c.1-.08.1-.2.03-.3l-.9-1c-.03-.06-.08-.1-.14-.1-.04 0-.1.03-.13.06l-5.35 4.6c-.04.02-.07.08-.07.14 0 .06.03.1.07.15"/>
+							</svg>
+							Back
+						</div>
+
+						<svg class="aigis-modal__close-cross" xmlns="http://www.w3.org/2000/svg" viewBox="1384 27 16 16">
+							<path fill="#535353" fill-rule="evenodd" d="M1400 28.62l-1.62-1.62-6.38 6.38-6.38-6.38-1.62 1.62 6.38 6.38-6.38 6.38 1.62 1.62 6.38-6.38 6.38 6.38 1.62-1.62-6.38-6.38"/>
+						</svg>
+
+					</div>
+
+				</div>
+
+				<div class="aigis-modal"></div>
+
+			</div>
+
+		</div>
+
+		<img class="link-icon" src="../../../aigis_assets/images/link.svg" alt="Link to single component view">
+
+		<script>
+			var ajax = new XMLHttpRequest();
+			ajax.open('GET', '../../../dist/images/icons.svg', true);
+			ajax.send();
+			ajax.onload = function(e) {
+
+				var div = document.createElement('div');
+				div.style.display = 'none';
+				div.style.visibility = 'hidden';
+				div.innerHTML = ajax.responseText;
+				document.body.insertBefore(div, document.body.childNodes[0]);
+
+			}
+		</script>
+
+		<script src="../../../aigis_assets/dist/styleguide.js"></script>
+		<script src="../../../dist/scripts/main.min.js"></script>
+
+	</body>
+</html>
