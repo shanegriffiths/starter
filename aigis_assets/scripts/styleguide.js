@@ -76,7 +76,7 @@ class Styleguide {
 
 				// if the current item is the top-level parent
 				// set active class and stop searching
-				if ( current_item.dataset.pathDepth === '0' ) {
+				if ( current_item.getAttribute('data-path-depth') === '0' ) {
 
 					current_item.classList.add('is-active');
 
