@@ -50,7 +50,7 @@ yarn run watch
 
 ## **Labels**
 
-We use a custom label structure, to get them installed in the repository use [git-labelmaker](https://github.com/himynameisdave/git-labelmaker) to remove all the old labels, and install the new ones found in `.github/labels.json`
+We use a custom label structure, to install them in the repository use [git-labelmaker](https://github.com/himynameisdave/git-labelmaker) to remove all the old labels, and install the new ones found in `.github/labels.json`
 
 ## **Optional Extras**
 
