@@ -56,6 +56,7 @@
 .aigis-module > p,
 .aigis-module__heading,
 .aigis-sidemenu__heading,
+.aigis-contents__body > h1,
 .aigis-module > h2,
 .aigis-module > h2,
 .aigis-module > h3,
@@ -359,6 +360,16 @@ ul[data-path-depth="2"] {
 .aigis-module > ul li,
 .aigis-module > ol li {
 	margin-bottom: .5em;
+}
+
+.aigis-contents__body > h1 {
+	position: relative;
+	font-size: 36px;
+	font-weight: 600;
+	color: #4C4C4C;
+	line-height: 1.3333333;
+	margin-top: 0;
+	margin-bottom: 1.11111em;
 }
 
 .aigis-module__heading,
