@@ -1,4 +1,4 @@
-import classPolyfill from './class-polyfill';
+import ClasslistPolyfill from './class-polyfill';
 
 export default class MenuFilter {
 
@@ -38,7 +38,7 @@ export default class MenuFilter {
 		// if there is a filter set
 		if ( this.filter.length ) {
 
-			classPolyfill.addClass(this.menu, 'search-active');
+			ClasslistPolyfill.addClass(this.menu, 'search-active');
 
 			// loop through each table row
 			for ( let item of this.menu_items ) {
@@ -58,7 +58,7 @@ export default class MenuFilter {
 		// otherwise reset all of the items
 		else {
 
-			classPolyfill.removeClass(this.menu, 'search-active');
+			ClasslistPolyfill.removeClass(this.menu, 'search-active');
 
 			// loop through each table row
 			for ( let item of this.menu_items ) {
@@ -74,7 +74,7 @@ export default class MenuFilter {
 		// reset the filter
 		this.filter = '';
 
-		classPolyfill.removeClass(this.menu, 'search-active');
+		ClasslistPolyfill.removeClass(this.menu, 'search-active');
 
 		// reset each table row
 		for ( let item of this.menu_items ) {

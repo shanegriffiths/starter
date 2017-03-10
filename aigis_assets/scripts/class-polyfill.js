@@ -1,6 +1,6 @@
-export default class classPolyfill {
+export default class ClasslistPolyfill {
 
-	addClass(el, className) {
+	static addClass(el, className) {
 
 		if ( el.classList ) {
 			el.classList.add(className);
@@ -9,7 +9,7 @@ export default class classPolyfill {
 		}
 	}
 
-	removeClass(el, className) {
+	static removeClass(el, className) {
 
 		if ( el.classList ) {
 			el.classList.remove(className);
@@ -18,7 +18,7 @@ export default class classPolyfill {
 		}
 	}
 
-	toggleClass(el, className) {
+	static toggleClass(el, className) {
 
 		if ( el.classList ) {
 			el.classList.toggle(className);
@@ -36,7 +36,7 @@ export default class classPolyfill {
 		}
 	}
 
-	hasClass(el, className) {
+	static hasClass(el, className) {
 
 		if ( el.classList ) {
 			return el.classList.contains(className);

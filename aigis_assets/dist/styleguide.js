@@ -9436,12 +9436,12 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var classPolyfill = function () {
-		function classPolyfill() {
-			(0, _classCallCheck3.default)(this, classPolyfill);
+	var ClasslistPolyfill = function () {
+		function ClasslistPolyfill() {
+			(0, _classCallCheck3.default)(this, ClasslistPolyfill);
 		}
 
-		(0, _createClass3.default)(classPolyfill, [{
+		(0, _createClass3.default)(ClasslistPolyfill, null, [{
 			key: 'addClass',
 			value: function addClass(el, className) {
 
@@ -9491,10 +9491,10 @@
 				}
 			}
 		}]);
-		return classPolyfill;
+		return ClasslistPolyfill;
 	}();
 
-	exports.default = classPolyfill;
+	exports.default = ClasslistPolyfill;
 
 /***/ },
 /* 358 */

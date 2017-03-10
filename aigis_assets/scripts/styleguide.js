@@ -1,4 +1,4 @@
-import classPolyfill from './class-polyfill';
+import ClasslistPolyfill from './class-polyfill';
 import MenuFilter from './menu-filter';
 
 class Styleguide {
@@ -14,7 +14,7 @@ class Styleguide {
 		// create a template modal wrapper
 		// this will be cloned to wrap the single component preview code
 		this.modal_template = document.createElement('div');
-		classPolyfill.addClass(this.modal_template, 'aigis-modal__item');
+		ClasslistPolyfill.addClass(this.modal_template, 'aigis-modal__item');
 
 		// initialise the page
 		this.initialiseStyleguide();
@@ -30,11 +30,11 @@ class Styleguide {
 	}
 
 	openModal() {
-		classPolyfill.addClass(document.body, 'aigis-modal--active');
+		ClasslistPolyfill.addClass(document.body, 'aigis-modal--active');
 	}
 
 	closeModal() {
-		classPolyfill.removeClass(document.body, 'aigis-modal--active');
+		ClasslistPolyfill.removeClass(document.body, 'aigis-modal--active');
 	}
 
 	checkHash() {
@@ -79,7 +79,7 @@ class Styleguide {
 				// set active class and stop searching
 				if ( current_item.getAttribute('data-path-depth') === '0' ) {
 
-					classPolyfill.addClass(current_item, 'is-active');
+					ClasslistPolyfill.addClass(current_item, 'is-active');
 
 					searching = false;
 
@@ -101,7 +101,7 @@ class Styleguide {
 
 		// create a span element for the menu dropdown
 		let dropdown_element = document.createElement('span');
-		classPolyfill.addClass(dropdown_element, 'menu-toggle');
+		ClasslistPolyfill.addClass(dropdown_element, 'menu-toggle');
 
 		// loop through each top-level menu item
 		menu_items.forEach(menu_item => {
@@ -126,7 +126,7 @@ class Styleguide {
 		event.stopPropagation();
 
 		// toggle the dropdown menu state
-		classPolyfill.toggleClass(event.target.parentNode.parentNode, 'is-active');
+		ClasslistPolyfill.toggleClass(event.target.parentNode.parentNode, 'is-active');
 
 	}
 
@@ -143,7 +143,7 @@ class Styleguide {
 		// until the preview code is found
 		while ( searching ) {
 
-			if ( classPolyfill.hasClass(current_item, 'aigis-preview') === true ) {
+			if ( ClasslistPolyfill.hasClass(current_item, 'aigis-preview') === true ) {
 
 				searching = false;
 
@@ -174,7 +174,7 @@ class Styleguide {
 		// setup the hash anchor element
 		let link_template = document.createElement('a');
 		link_template.appendChild(link_icon.cloneNode(true));
-		classPolyfill.addClass(link_template, 'preview-link');
+		ClasslistPolyfill.addClass(link_template, 'preview-link');
 
 		// get all preview titles
 		const preview_titles = Array.from( document.querySelectorAll('.aigis-module > [id]') );
