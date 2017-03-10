@@ -8212,6 +8212,51 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var addClass = function addClass(el, className) {
+
+		if (el.classList) {
+			el.classList.add(className);
+		} else {
+			el.className += ' ' + className;
+		}
+	};
+
+	var removeClass = function removeClass(el, className) {
+
+		if (el.classList) {
+			el.classList.remove(className);
+		} else {
+			el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+		}
+	};
+
+	var toggleClass = function toggleClass(el, className) {
+
+		if (el.classList) {
+			el.classList.toggle(className);
+		} else {
+			var classes = el.className.split(' ');
+			var existingIndex = classes.indexOf(className);
+
+			if (existingIndex >= 0) {
+				classes.splice(existingIndex, 1);
+			} else {
+				classes.push(className);
+			}
+
+			el.className = classes.join(' ');
+		}
+	};
+
+	var hasClass = function hasClass(el, className) {
+
+		if (el.classList) {
+			el.classList.contains(className);
+		} else {
+			new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+		}
+	};
+
 	var Styleguide = function () {
 		function Styleguide() {
 			(0, _classCallCheck3.default)(this, Styleguide);
@@ -8226,7 +8271,7 @@
 			// create a template modal wrapper
 			// this will be cloned to wrap the single component preview code
 			this.modal_template = document.createElement('div');
-			this.modal_template.classList.add('aigis-modal__item');
+			addClass(this.modal_template, 'aigis-modal__item');
 
 			// initialise the page
 			this.initialiseStyleguide();
@@ -8243,12 +8288,12 @@
 		}, {
 			key: 'openModal',
 			value: function openModal() {
-				document.body.classList.add('aigis-modal--active');
+				addClass(document.body, 'aigis-modal--active');
 			}
 		}, {
 			key: 'closeModal',
 			value: function closeModal() {
-				document.body.classList.remove('aigis-modal--active');
+				removeClass(document.body, 'aigis-modal--active');
 			}
 		}, {
 			key: 'checkHash',
@@ -8293,7 +8338,7 @@
 						// set active class and stop searching
 						if (current_item.getAttribute('data-path-depth') === '0') {
 
-							current_item.classList.add('is-active');
+							addClass(current_item, 'is-active');
 
 							searching = false;
 						} else {
@@ -8312,7 +8357,7 @@
 
 				// create a span element for the menu dropdown
 				var dropdown_element = document.createElement('span');
-				dropdown_element.classList.add('menu-toggle');
+				addClass(dropdown_element, 'menu-toggle');
 
 				// loop through each top-level menu item
 				menu_items.forEach(function (menu_item) {
@@ -8338,7 +8383,7 @@
 				event.stopPropagation();
 
 				// toggle the dropdown menu state
-				event.target.parentNode.parentNode.classList.toggle('is-active');
+				toggleClass(event.target.parentNode.parentNode, 'is-active');
 			}
 
 			/**
@@ -8357,7 +8402,7 @@
 				// until the preview code is found
 				while (searching) {
 
-					if (current_item.classList.contains('aigis-preview') === true) {
+					if (hasClass(current_item, 'aigis-preview') === true) {
 
 						searching = false;
 
@@ -8386,7 +8431,7 @@
 				// setup the hash anchor element
 				var link_template = document.createElement('a');
 				link_template.appendChild(link_icon.cloneNode(true));
-				link_template.classList.add('preview-link');
+				addClass(link_template, 'preview-link');
 
 				// get all preview titles
 				var preview_titles = (0, _from2.default)(document.querySelectorAll('.aigis-module > [id]'));
