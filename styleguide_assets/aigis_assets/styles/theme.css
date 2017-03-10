@@ -1,12 +1,7 @@
-*
-*:before
+*,
+*:before,
 *:after {
 	box-sizing: inherit;
-}
-
-* ~ * {
-	margin-top: 0;
-	margin-bottom: 16px;
 }
 
 .aigis-html {
@@ -410,6 +405,7 @@ ul[data-path-depth="2"] {
 	text-decoration: none;
 	line-height: 1;
 	position: absolute;
+	z-index: 1;
 	top: 50%;
 	transform: translateY(-50%);
 	left: 0;
