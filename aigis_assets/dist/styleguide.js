@@ -8249,11 +8249,11 @@
 	};
 
 	var hasClass = function hasClass(el, className) {
-		debugger;
+
 		if (el.classList) {
-			el.classList.contains(className);
+			return el.classList.contains(className);
 		} else {
-			new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+			return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
 		}
 	};
 
