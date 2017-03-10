@@ -115,15 +115,15 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scss-lint', function lintCssTask() {
-  const gulpStylelint = require('gulp-stylelint');
+	const gulpStylelint = require('gulp-stylelint');
 
-  return gulp
-    .src('src/styles/**/*.scss')
-    .pipe(gulpStylelint({
-      reporters: [
-        {formatter: 'string', console: true}
-      ]
-    }));
+	return gulp
+		.src('src/styles/**/*.scss')
+		.pipe(gulpStylelint({
+			reporters: [
+				{formatter: 'string', console: true}
+			]
+		}));
 });
 
 gulp.task('scripts', function () {
