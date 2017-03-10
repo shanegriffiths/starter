@@ -11,18 +11,18 @@ category:
 
 ```html
 <form action="" method="post">
-  <fieldset>
+	<fieldset>
 
-    <legend>Title</legend>
+		<legend>Title</legend>
 
-    <input type="radio" id="radio">
-    <label for="radio">Click me</label>
+		<input type="radio" id="radio">
+		<label for="radio">Click me</label>
 
-    <label for="radio">
-		<input type="radio" id="radio">Click me
-	</label>
+		<label for="radio">
+			<input type="radio" id="radio">Click me
+		</label>
 
-  </fieldset>
+	</fieldset>
 </form>
 ```
 
