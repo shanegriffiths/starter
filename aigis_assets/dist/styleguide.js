@@ -8249,7 +8249,7 @@
 	};
 
 	var hasClass = function hasClass(el, className) {
-
+		debugger;
 		if (el.classList) {
 			el.classList.contains(className);
 		} else {
