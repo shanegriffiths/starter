@@ -430,8 +430,6 @@ ul[data-path-depth="2"] {
 	position: fixed;
 	top: 0;
 	right: 0;
-	bottom: 0;
-	left: 0;
 	z-index: 999;
 	background: white;
 	overflow: scroll;
@@ -480,6 +478,8 @@ ul[data-path-depth="2"] {
 
 .aigis-body.aigis-modal--active .aigis-modal__wrapper {
 	display: block;
+	bottom: 0;
+	left: 0;
 }
 
 @media (min-width: 678px) {
