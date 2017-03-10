@@ -58,7 +58,7 @@ function onError(err) {
 // TASKS
 
 gulp.task('compile-styleguide', function() {
-  return gulp.src('./styleguide_assets/aigis_assets/scripts/styleguide.js')
+	return gulp.src('./styleguide_assets/aigis_assets/scripts/styleguide.js')
 		.pipe(webpack({
 			module: {
 				loaders: [
@@ -67,9 +67,9 @@ gulp.task('compile-styleguide', function() {
 						exclude: /node_modules/,
 						loader: 'babel-loader',
 						query: {
-					        plugins: ['transform-runtime'],
-					        presets: ['es2015'],
-					    }
+							plugins: ['transform-runtime'],
+							presets: ['es2015'],
+						}
 					},
 				]
 			},
@@ -77,10 +77,10 @@ gulp.task('compile-styleguide', function() {
 				styleguide: ['babel-polyfill', './styleguide_assets/aigis_assets/scripts/styleguide.js'],
 			},
 			output: {
-		        filename: '[name].js',
-		    },
+				filename: '[name].js',
+			},
 		}))
-	  .pipe(gulp.dest('./styleguide_assets/aigis_assets/dist/'))
+		.pipe(gulp.dest('./styleguide_assets/aigis_assets/dist/'))
 		.pipe(notify("Styleguide Assets Compiled"));
 });
 
@@ -92,7 +92,7 @@ gulp.task('build-styleguide', function() {
 });
 
 gulp.task('styleguide', function() {
-    runSequence('compile-styleguide', 'build-styleguide');
+	runSequence('compile-styleguide', 'build-styleguide');
 });
 
 gulp.task('styles', function () {
@@ -171,11 +171,11 @@ gulp.task('svgstore', function() {
 	// create a unified icon file from a range of svgs,
 	// the compiled svg file will need including below the <body> tag
 
-    return gulp
-        .src('src/images/icons/*.svg')
+	return gulp
+		.src('src/images/icons/*.svg')
 		.pipe(svgmin())
-        .pipe(svgstore({ inlineSvg: true }))
-        .pipe(gulp.dest('dist/images/'));
+		.pipe(svgstore({ inlineSvg: true }))
+		.pipe(gulp.dest('dist/images/'));
 
 });
 
