@@ -90,6 +90,8 @@
 	position: relative;
 	width: 100%;
 	height: 120px;
+	display: flex;
+	align-items: flex-end;
 }
 
 .aigis-colorpalette__swatches--main {
@@ -101,18 +103,9 @@
 }
 
 .aigis-colorpalette__swatches--small {
-	position: absolute;
 	height: 33%;
-	bottom: 0;
-	width: 50%;
-}
-
-.aigis-colorpalette__swatches--left {
-	left: 0;
-}
-
-.aigis-colorpalette__swatches--right {
-	left: 50%;
+	width: 100%;
+	flex: 1;
 }
 
 .aigis-colorpalette__label {
@@ -264,6 +257,8 @@
 	border: none;
 	padding: 0;
 	margin-bottom: 48px;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .aigis-preview.aigis-preview--color + pre {
