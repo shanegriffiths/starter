@@ -15,8 +15,7 @@ compile: true
 ```ejs
 <% for(var i=0; i < colours.length; i++) { %>
 <div class="aigis-colorpalette">
-	<div class="aigis-colorpalette__swatches">
-		<div class="aigis-colorpalette__swatches--main" style="background-color: #<%= colours[i][1] %>;"></div><% if (colours[i][2]) { %>
+	<div class="aigis-colorpalette__swatches" style="background-color: #<%= colours[i][1] %>;"><% if (colours[i][2]) { %>
 		<div class="aigis-colorpalette__swatches--small aigis-colorpalette__swatches--left" style="background-color: #<%= colours[i][2] %>;"></div><% } %><% if (colours[i][3]) { %>
 		<div class="aigis-colorpalette__swatches--small aigis-colorpalette__swatches--right" style="background-color: #<%= colours[i][3] %>;"></div><% } %>
 	</div>
@@ -67,8 +66,7 @@ compile: true
 ```ejs
 <% for(var i=0; i < colours.length; i++) { %>
 <div class="aigis-colorpalette">
-	<div class="aigis-colorpalette__swatches">
-		<div class="aigis-colorpalette__swatches--main" style="background-color: #<%= colours[i][1] %>;"></div><% if (colours[i][2]) { %>
+	<div class="aigis-colorpalette__swatches" style="background-color: #<%= colours[i][1] %>;"><% if (colours[i][2]) { %>
 		<div class="aigis-colorpalette__swatches--small aigis-colorpalette__swatches--left" style="background-color: #<%= colours[i][2] %>;"></div><% } %><% if (colours[i][3]) { %>
 		<div class="aigis-colorpalette__swatches--small aigis-colorpalette__swatches--right" style="background-color: #<%= colours[i][3] %>;"></div><% } %>
 	</div>
