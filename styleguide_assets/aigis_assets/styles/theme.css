@@ -78,7 +78,7 @@
 }
 
 .aigis-colorpalette {
-	width: 29%;
+	width: 46%;
 	float: left;
 	margin: 2%;
 	border-radius: 4px;
@@ -557,6 +557,11 @@ ul[data-path-depth="2"] {
 }
 
 @media (min-width: 678px) {
+
+	.aigis-colorpalette {
+		width: 29%;
+		margin: 2%;
+	}
 
 	.aigis-contents {
 		padding: 0 10px 0 296px;
