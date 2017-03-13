@@ -253,21 +253,30 @@
 	margin-top: 39px;
 }
 
-.aigis-preview.aigis-preview--color {
+.aigis-preview.aigis-preview--color,
+.aigis-preview.aigis-preview--icon {
 	border: none;
 	padding: 0;
 	margin-bottom: 48px;
+}
+
+.aigis-preview.aigis-preview--color {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.aigis-preview.aigis-preview--color + pre {
+.aigis-preview.aigis-preview--color + pre,
+.aigis-preview.aigis-preview--icon + pre {
 	display: none;
 }
 
 .aigis-preview + pre {
 	border-radius: 0 0 2px 2px;
 	margin-top: -1px;
+}
+
+.aigis-icon {
+	margin-right: 16px;
 }
 
 .aigis-sidemenu {
