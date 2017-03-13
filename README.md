@@ -1,6 +1,6 @@
 # Web boilerplate and style guide
 
-Version: 0.2.2
+Version: 1.0.0
 
 This is the boilerplate for our web based projects. It contains our front end tooling setup, and the styleguide system we use.
 
