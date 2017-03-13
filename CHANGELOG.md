@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 - GitHub labels
 - Pull Request template
 - Label information to readme
+- Design/Colours page
 
 ### CHANGED
 - Moved contributing to .github

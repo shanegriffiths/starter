@@ -77,6 +77,57 @@
 	font-size: 24px;
 }
 
+.aigis-colorpalette {
+	width: 46%;
+	float: left;
+	margin: 2%;
+	border-radius: 4px;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .24);
+	overflow: hidden;
+}
+
+.aigis-colorpalette__swatches {
+	position: relative;
+	width: 100%;
+	height: 120px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.aigis-colorpalette__swatches--main {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.aigis-colorpalette__swatches--small {
+	height: 33%;
+	width: 100%;
+	flex: 1;
+}
+
+.aigis-colorpalette__label {
+	padding: 16px 13px;
+}
+
+.aigis-colorpalette__label div span {
+	display: block;
+	font-size: 14px;
+	color: #000;
+}
+
+.aigis-colorpalette__label div span:last-child {
+	font-size: 13px;
+	color: #444;
+	margin-bottom: 10px;
+}
+
+.aigis-colorpalette__label div:last-child span:last-child {
+	margin-bottom: 0;
+}
+
 .aigis-colorPalette {
 	width: 21%;
 	float: left;
@@ -200,6 +251,18 @@
 	border-radius: 2px 2px 0 0;
 	padding: 24px;
 	margin-top: 39px;
+}
+
+.aigis-preview.aigis-preview--color {
+	border: none;
+	padding: 0;
+	margin-bottom: 48px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.aigis-preview.aigis-preview--color + pre {
+	display: none;
 }
 
 .aigis-preview + pre {
@@ -494,6 +557,11 @@ ul[data-path-depth="2"] {
 }
 
 @media (min-width: 678px) {
+
+	.aigis-colorpalette {
+		width: 29%;
+		margin: 2%;
+	}
 
 	.aigis-contents {
 		padding: 0 10px 0 296px;
