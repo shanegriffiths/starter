@@ -1,6 +1,6 @@
 # Web boilerplate and style guide
 
-Version: 0.2.2
+Version: 1.0.0
 
 This is the boilerplate for our web based projects. It contains our front end tooling setup, and the styleguide system we use.
 
@@ -48,6 +48,10 @@ To run one of the above tasks, re-run the `yarn run` command and add the task na
 yarn run watch
 ```
 
+## **Labels**
+
+We use a custom label structure, to install them in the repository use [git-labelmaker](https://github.com/himynameisdave/git-labelmaker) to remove all the old labels, and install the new ones found in `.github/labels.json`
+
 ## **Optional Extras**
 
 ### Live Reload
@@ -71,7 +75,11 @@ We take inspiration from the [SMACSS architecture](https://smacss.com/).
 
 ---
 
-## **Icons**
+## **SVG's**
+
+We're making use of an SVG icon system that is loaded into the HTML document, this is so we can use JS and CSS to change specific parts of an icon - and dynamically colour it. Our current method is to use AJAX to request the `icons.svg` and insert it in a hidden div at the start of the body.
+
+The code for this can be found at the bottom of the style guide's `index.ejs`. It is currently within inline script tags in order to run as soon as possible before the rest of the JS is downloaded.
 
 - All of our SVG's are first run through [SVGOMG](https://jakearchibald.github.io/svgomg/) to optimise them.
 - Then they are sorted between being part of the icon-system or to be used as an image.
@@ -132,6 +140,28 @@ There is a boolean flag in the gulpfile incase you would rather not use the styl
 	*/
 	```
 
+### Colours
+
+Style guide colours are handled through `_colours.scss`. The markup is created through compiling an EJS code block, you just have to provide the data. The documentation parameters accept a colours dataset that must be filled out as follows:
+- Colour name
+- Colour hex code
+- [optional] Light colour hex code
+- [optional] Dark colour hex code
+
+```
+---
+name: Brand
+category:
+ - Design
+ - Design/Colours
+colours: [
+  ['Purple', 'AE4C90', 'C584B1', '8B3C73'],
+  ['Blue', '66CAE1', '97DAE9', '3BBBD9']
+ ]
+compile: true
+---
+```
+---
 ## **HTACCESS**
 
 This section contains optional snippets of code that can be added to the root `.htaccess` file.

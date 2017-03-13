@@ -3,6 +3,19 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.0.0] - 2017-03-13
+
+### ADDED
+- GitHub labels
+- Pull Request template
+- Label information to readme
+- Design/Colours page
+
+### CHANGED
+- Moved contributing to .github
+- Updated issue template with user story
+- Updated contributing with our git workflow
+
 ## [0.2.2] - 2017-03-3
 
 ### CHANGED
