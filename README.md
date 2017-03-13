@@ -140,6 +140,28 @@ There is a boolean flag in the gulpfile incase you would rather not use the styl
 	*/
 	```
 
+### Colours
+
+Style guide colours are handled through `_colours.scss`. The markup is created through compiling an EJS code block, you just have to provide the data. The documentation parameters accept a colours dataset that must be filled out as follows:
+- Colour name
+- Colour hex code
+- [optional] Light colour hex code
+- [optional] Dark colour hex code
+
+```
+---
+name: Brand
+category:
+ - Design
+ - Design/Colours
+colours: [
+  ['Purple', 'AE4C90', 'C584B1', '8B3C73'],
+  ['Blue', '66CAE1', '97DAE9', '3BBBD9']
+ ]
+compile: true
+---
+```
+---
 ## **HTACCESS**
 
 This section contains optional snippets of code that can be added to the root `.htaccess` file.
