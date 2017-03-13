@@ -8445,11 +8445,25 @@
 				document.querySelector('.aigis-modal__close').addEventListener('click', this.closeModal, false);
 			}
 		}, {
+			key: 'setupColors',
+			value: function setupColors() {
+
+				var colors = (0, _from2.default)(document.querySelectorAll('.aigis-preview > .aigis-colorpalette'));
+
+				if (colors.length) {
+
+					colors.forEach(function (color) {
+						_classPolyfill2.default.addClass(color.parentNode, 'aigis-preview--color');
+					});
+				}
+			}
+		}, {
 			key: 'initialiseStyleguide',
 			value: function initialiseStyleguide() {
 
 				this.initialiseMenu();
 				this.setActiveDropdown();
+				this.setupColors();
 
 				if (this.options.previews) {
 					this.setupPreviews();
