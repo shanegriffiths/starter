@@ -233,10 +233,25 @@ class Styleguide {
 
 	}
 
+	setupColors() {
+
+		let colors = Array.from(document.querySelectorAll('.aigis-preview > .aigis-colorpalette'));
+
+		if ( colors.length ) {
+
+			colors.forEach(color => {
+				ClasslistPolyfill.addClass(color.parentNode, 'aigis-preview--color');
+			});
+
+		}
+
+	}
+
 	initialiseStyleguide() {
 
 		this.initialiseMenu();
 		this.setActiveDropdown();
+		this.setupColors();
 
 		if ( this.options.previews ) {
 			this.setupPreviews();
