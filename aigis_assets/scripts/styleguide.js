@@ -247,26 +247,11 @@ class Styleguide {
 
 	}
 
-	setupIcons() {
-
-		let icons = Array.from(document.querySelectorAll('.aigis-icon'));
-
-		if ( icons.length ) {
-
-			icons.forEach(icon => {
-				ClasslistPolyfill.addClass(icon.parentNode, 'aigis-preview--icon');
-			});
-
-		}
-
-	}
-
 	initialiseStyleguide() {
 
 		this.initialiseMenu();
 		this.setActiveDropdown();
 		this.setupColors();
-		this.setupIcons();
 
 		if ( this.options.previews ) {
 			this.setupPreviews();

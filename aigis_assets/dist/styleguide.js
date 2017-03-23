@@ -8458,26 +8458,12 @@
 				}
 			}
 		}, {
-			key: 'setupIcons',
-			value: function setupIcons() {
-
-				var icons = (0, _from2.default)(document.querySelectorAll('.aigis-icon'));
-
-				if (icons.length) {
-
-					icons.forEach(function (icon) {
-						_classPolyfill2.default.addClass(icon.parentNode, 'aigis-preview--icon');
-					});
-				}
-			}
-		}, {
 			key: 'initialiseStyleguide',
 			value: function initialiseStyleguide() {
 
 				this.initialiseMenu();
 				this.setActiveDropdown();
 				this.setupColors();
-				this.setupIcons();
 
 				if (this.options.previews) {
 					this.setupPreviews();
