@@ -353,13 +353,14 @@
 	padding: 16px;
 	color: #4C4C4C;
 	white-space: nowrap;
-	text-decoration: none;
+	text-decoration: none !important;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, .2);
 }
 
 .aigis-categoryList a:hover,
 .aigis-sidemenu__heading a:hover {
 	color: #4C4C4C;
+	text-decoration: none !important;
 }
 
 .aigis-categoryList li[data-path-depth] [data-tree-current] {
