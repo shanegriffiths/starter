@@ -15,6 +15,7 @@ var is_styleguide = true;
 var gulp = require('gulp'),
 
 	// general
+	fs = require('fs'),
 	watch = require('gulp-watch'),
 	livereload = require('gulp-livereload'),
 	rename = require('gulp-rename')
@@ -92,7 +93,12 @@ gulp.task('build-styleguide', function() {
 });
 
 gulp.task('styleguide', function() {
-	runSequence('compile-styleguide', 'build-styleguide');
+	if ( fs.existsSync('./dist') ) {
+		runSequence('compile-styleguide', 'build-styleguide');
+	} else {
+		console.log('\x1b[31m%s\x1b[0m', '\n ABORTED: directory "/dist" does not exist');
+		console.log(' Run `yarn run build` to first compile project assets \n');
+	}
 });
 
 gulp.task('styles', function () {
