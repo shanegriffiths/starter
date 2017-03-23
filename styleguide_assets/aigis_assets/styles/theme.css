@@ -371,6 +371,7 @@
 li[data-path-depth="0"],
 li[data-path-depth="1"] {
 	display: inline-block;
+	width: 100% !important;
 }
 
 .aigis-categoryList li.is-active ul[data-path-depth='1'],
