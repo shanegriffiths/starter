@@ -52,6 +52,7 @@
 .aigis-module > h3,
 .aigis-module > h4 {
 	text-transform: none;
+	letter-spacing: normal;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
 
 	text-rendering: optimizeLegibility;
