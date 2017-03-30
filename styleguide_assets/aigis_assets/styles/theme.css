@@ -541,6 +541,7 @@ ul[data-path-depth="2"] {
 }
 
 .aigis-modal__close-back {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
 	font-size: 14px;
 	font-weight: 600;
 	color: #535353;
