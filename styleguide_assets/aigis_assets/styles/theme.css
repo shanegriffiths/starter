@@ -189,6 +189,8 @@ input[type="search"].aigis-search {
 	border-width: 1px 0 0 0 !important;
 	border-color: #ECECEC !important;
 	border-style: solid !important;
+	background-color: white !important;
+	color: #4C4C4C !important;
 	width: 100% !important;
 	font-size: 1em !important;
 	height: 3em !important;
@@ -560,6 +562,34 @@ ul[data-path-depth="2"] {
 
 .aigis-body.aigis-modal--active .aigis-modal__wrapper {
 	display: block;
+}
+
+::-webkit-input-placeholder {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-weight: normal;
+	text-transform: none;
+	color: #4C4C4C;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-weight: normal;
+	text-transform: none;
+	color: #4C4C4C;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-weight: normal;
+	text-transform: none;
+	color: #4C4C4C;
+   }
+
+:-ms-input-placeholder {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, arial, sans-serif;
+	font-weight: normal;
+	text-transform: none;
+	color: #4C4C4C;
 }
 
 @media (min-width: 678px) {
