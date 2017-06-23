@@ -166,6 +166,17 @@ compile: true
 
 This section contains optional snippets of code that can be added to the root `.htaccess` file.
 
+### Auth Page
+
+This snippet is used to redirect to a login page (`auth.php`) if a cookie is not met.
+
+```
+# RewriteEngine on
+# RewriteCond %{REQUEST_URI} !^/auth.php [NC]
+# RewriteCond %{HTTP_COOKIE} !ib_auth=5d04a0c093053a04d00d7e1d9bc01490
+# RewriteRule (.*) /auth.php?r=$1 [R=302,L]
+```
+
 ### Maintenance
 
 The first line of this specifies that when the server is throwing a 503 error, the `maintenance.html` should be served.
