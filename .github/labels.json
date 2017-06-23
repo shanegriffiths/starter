@@ -21,6 +21,6 @@
   { "name": "Enhancement", "color": "#A0CDB2" },
   { "name": "Optimization", "color": "#A0CDB2" },
   { "name": "StyleGuide", "color": "#C5A6C2" },
-  { "name": "Website", "color": "#C5A6C2" }
+  { "name": "Website", "color": "#C5A6C2" },
   { "name": "Design", "color": "#C5A6C2" }
 ]
