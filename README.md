@@ -1,8 +1,8 @@
-# Web boilerplate and style guide
+# The Idea Bureau, Style Guide
 
 Version: 1.0.0
 
-This is the boilerplate for our web based projects. It contains our front end tooling setup, and the styleguide system we use.
+This is the front-end boilerplate for our web based projects. It contains our front end tooling setup, and the style guide system we use.
 
 Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) if you wish to improve this project.
 
