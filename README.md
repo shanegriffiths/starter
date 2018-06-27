@@ -1,8 +1,8 @@
-# Web boilerplate and style guide
+# The Idea Bureau, Style Guide
 
-Version: 1.0.0
+Version: 1.2.0
 
-This is the boilerplate for our web based projects. It contains our front end tooling setup, and the styleguide system we use.
+This is the front-end boilerplate for our web based projects. It contains our front end tooling setup, and the style guide system we use.
 
 Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) if you wish to improve this project.
 
@@ -14,13 +14,12 @@ Please refer to the [CONTRIBUTING.md](./CONTRIBUTING.md) if you wish to improve 
 
 - [Install node](http://nodejs.org/download/)
 - [Install yarn](https://yarnpkg.com/en/)
-- [Install gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 - [Install sass](http://sass-lang.com/install)
 - [Install sass globbing](https://github.com/chriseppstein/sass-globbing)
 
 ### Setup process
 
-1. Clone the repository and fire up a terminal window inside the root folder
+1. Download the repository (don't clone) and fire up a terminal window inside the root folder
 
 2. Type the following command:
 
@@ -34,11 +33,11 @@ yarn run
 ```
 You will then be presented with the development scripts you have available to run.
 
-* **Build** - This is a one-time run script which generates all of the assets. This script is mainly run in the post-deploy process.
-* **Watch** - This enables the watch task on all assets, and triggers LiveReload.
-* **Modernizr** - This is a dedicated script which runs Modernizr. Remember to manually add your test conditions to the `gulpfile`
-* **Style guide** - This will generate a fresh style guide under `/styleguide/`.
-* **Deploy style guide** - This will deploy the style guide to its appropriate GitHub Page.
+* **watch** - Listen for file changes and run `dev` each time
+* **dev** - Immediately compile all assets without minifying
+* **production** - Immediately compile all assets with minifying
+* **build-styleguide** - Generate a fresh style guide under `/styleguide/`.
+* **deploy-styleguide** - Runs `build-styleguide` and deploys to GitHub Pages.
 
 ---
 
@@ -48,30 +47,17 @@ To run one of the above tasks, re-run the `yarn run` command and add the task na
 yarn run watch
 ```
 
-## **Labels**
-
-We use a custom label structure, to install them in the repository use [git-labelmaker](https://github.com/himynameisdave/git-labelmaker) to remove all the old labels, and install the new ones found in `.github/labels.json`
-
-## **Optional Extras**
-
-### Live Reload
-
-In order to use live reload, you need to install the browser-extension. We use [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei?hl=en).
-
-### Modernizr
-
-Modernizr functionality is provided in this boilerplate. Modernizr doesn't work inside the `watch` script. Instead you need to manually set the tests you want to add inside the gulpfile then use the `modernizr` script to run.
-
 ---
 
 ## **Asset Structure**
 
 We take inspiration from the [SMACSS architecture](https://smacss.com/).
 
-- **Base** - Base elements and utilities
-- **Layout** - Spacing, major UI components, and layout structures
-- **Modular** - All repeatable UI components
-- **Tools** - Setup, Variables, Mixins, Fonts, Grid
+- **base** - Base elements and utilities
+- **layout** - Spacing, major UI components, and layout structures
+- **modular** - All repeatable UI components
+- **non-modular** - All repeatable UI components
+- **tools** - Setup, variables, mixins, fonts, grid
 
 ---
 
@@ -84,7 +70,7 @@ The code for this can be found at the bottom of the style guide's `index.ejs`. I
 - All of our SVG's are first run through [SVGOMG](https://jakearchibald.github.io/svgomg/) to optimise them.
 - Then they are sorted between being part of the icon-system or to be used as an image.
 	- The icon-system is filled with re-usable icons that are modifiable via CSS.
-	- To add to the icon-system the SVG must be placed at `/src/images/icons/` and then you run `gulp svgstore`
+	- To add to the icon-system the SVG must be placed at `/resources/svg/` and then, whilst running `yarn run watch` save the placeholder `svg.js` file.
 
 ---
 
@@ -112,33 +98,31 @@ There is a `styleguide_config.yml` file that dictates: where the style guide wil
 
 ### Usage
 
-The style guide is generated through comments in the `.scss` that follow a simple structure detailed below. The generation is on-the-fly through `yarn run watch` or manual via `yarn run styleguide`.
+The style guide is generated through comments in `.scss` and `.vue` files, that follow a simple structure detailed below. The generation is on-the-fly through `yarn run watch` or manual via `yarn run build-styleguide`.
 
-There is a boolean flag in the gulpfile incase you would rather not use the style guide.
+```
+/*
 
-	```
-	/*
+---
+name: Title Here
+category:
+ - Category
+ - Category/Title
+---
 
-	---
-	name: Title Here
-	category:
-	 - Category
-	 - Category/Title
-	---
+## Markdown description
 
-	## Markdown description
+Hello Component!
 
-	Hello Component!
+* Use the `.alt--class` modifier.
 
-	* Use the `.alt--class` modifier.
+```html
+<span>HTML Example</span>
+<span class="alt--class">HTML Example</span>
+```
 
-	```html
-	<span>HTML Example</span>
-	<span class="alt--class">HTML Example</span>
-	```
-
-	*/
-	```
+*/
+```
 
 ### Colours
 
