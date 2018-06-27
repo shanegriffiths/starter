@@ -5,14 +5,14 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 
-		<title>Styleguide</title>
+		<title>Style Guide</title>
 
 		<!-- <script src="https://use.typekit.net/jaj0dkp.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script> -->
 
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 
-		<link href="<%- root %>dist/styles/styles.css" rel="stylesheet">
+		<link href="<%- root %>dist/css/styles.css" rel="stylesheet">
 
 		<link href="<%- root %>aigis_assets/styles/highlight/prism.css" rel="stylesheet">
 		<link href="<%- root %>aigis_assets/styles/theme.css" rel="stylesheet">
@@ -67,7 +67,7 @@
 
 		<script>
 			var ajax = new XMLHttpRequest();
-			ajax.open('GET', '<%- root %>dist/images/icons.svg', true);
+			ajax.open('GET', '<%- root %>dist/svg/icons.svg', true);
 			ajax.send();
 			ajax.onload = function(e) {
 
@@ -81,7 +81,7 @@
 		</script>
 
 		<script src="<%- root %>aigis_assets/dist/styleguide.js"></script>
-		<script src="<%- root %>dist/scripts/main.min.js"></script>
+		<script src="<%- root %>dist/js/scripts.js"></script>
 
 	</body>
 </html>
