@@ -9,16 +9,6 @@ category:
 
 ## List of Utility Classes
 
-
-### Color
-
-These classes enforce the colour of the text to change:
-- `.is-grey`
-
-```html
-<h1 class="is-grey">The fox</h1>
-```
-
 ### Clearfix
 
 > .cf
@@ -67,18 +57,6 @@ This is used to apply `text-align: center;`
 This is used to apply `text-align: left;`
 
 */
-
-
- //********
-// Colours
-
-&.is-grey {
-   color: color('grey') !important;
-}
-
-&.is-bg-grey {
-   background-color: color('grey') !important;
-}
 
 
  //*********

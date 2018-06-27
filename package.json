@@ -1,10 +1,10 @@
 {
-	"name": "pattern-library",
+	"name": "bureau-style-guide",
 	"version": "1.0.1",
-	"description": "Frontend Pattern Library",
+	"description": "The Idea Bureau, Style Guide",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/theideabureau/pattern-library"
+		"url": "https://github.com/theideabureau/bureau-style-guide"
 	},
 	"author": {
 		"name": "The Idea Bureau",
@@ -12,56 +12,33 @@
 	},
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/theideabureau/pattern-library/issues"
+		"url": "https://github.com/theideabureau/bureau-style-guide/issues"
 	},
-	"homepage": "https://github.com/theideabureau/pattern-library",
+	"homepage": "https://github.com/theideabureau/bureau-style-guide",
 	"scripts": {
-		"build": "gulp post-deploy",
-		"watch": "gulp watch",
-		"modernizr": "gulp modernizr",
-		"styleguide": "gulp styleguide",
-		"deploy-styleguide": "gh-pages -d styleguide"
-	},
+		"dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+		"build-styleguide": "node_modules/.bin/aigis run -c ./styleguide_config.yml",
+		"deploy-styleguide": "node_modules/.bin/aigis run -c ./styleguide_config.yml && node_modules/gh-pages/bin/gh-pages -d styleguide"
+    },
 	"devDependencies": {
-		"babel": "^6.1.18",
-		"babel-cli": "^6.23.0",
-		"babel-core": "^6.23.1",
-		"babel-loader": "^6.3.0",
-		"babel-plugin-transform-runtime": "^6.23.0",
-		"babel-preset-env": "^1.1.8",
-		"babel-preset-es2015": "^6.3.13",
-		"gulp": "^3.9.0",
-		"gulp-aigis": "^1.1.2",
-		"gulp-autoprefixer": "^2.2.0",
-		"gulp-clean-css": "^2.0.6",
-		"gulp-concat": "^2.5.2",
-		"gulp-css-globbing": "^0.1.7",
-		"gulp-jshint": "^1.10.0",
-		"gulp-livereload": "^3.8.0",
-		"gulp-modernizr": "^1.0.0-alpha",
-		"gulp-notify": "^2.2.0",
-		"gulp-plumber": "^1.0.1",
-		"gulp-rename": "^1.2.2",
-		"gulp-sass": "^2.0.0",
-		"gulp-stylelint": "^3.9.0",
-		"gulp-svgmin": "^1.2.0",
-		"gulp-svgstore": "^5.0.5",
-		"gulp-theideabureau-pattern-library": "^0.1.7",
-		"gulp-uglify": "^1.2.0",
-		"gulp-watch": "^4.2.4",
-		"jshint-stylish": "^1.0.2",
-		"node-aigis": "1.1.3",
-		"node-libs-browser": "1.0.0",
-		"run-sequence": "^1.2.2",
-		"webpack": "^2.1.0-beta.25",
-		"webpack-stream": "^3.2.0"
+		"babel-polyfill": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"babel-preset-stage-3": "^6.24.1",
+		"country-to-emoji-flag": "^1.0.0",
+		"cross-env": "^5.1.3",
+		"css-element-queries": "^1.0.2",
+		"gh-pages": "^1.1.0",
+		"import-glob-loader": "^1.1.0",
+		"laravel-mix": "^2.0.0",
+		"node-aigis": "^1.4.1",
+		"raven-js": "^3.22.4",
+		"slugify": "^1.3.0",
+		"susy": "^3.0.3",
+		"underscore": "^1.8.3",
+		"webpack-svgstore-plugin": "^4.0.1"
 	},
-	"dependencies": {
-		"babel-polyfill": "^6.23.0",
-		"babel-runtime": "^6.22.0",
-		"gh-pages": "^0.12.0",
-		"jquery": "^3.1.1",
-		"lodash": "^4.2.1",
-		"vue": "1.0.26"
-	}
+	"dependencies": {}
 }

@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### CHANGED
+- Moved from gulp to Laravel Mix (webpack wrapper)
+
 ## [1.0.0] - 2017-03-13
 
 ### ADDED
