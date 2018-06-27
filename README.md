@@ -102,31 +102,32 @@ The style guide is generated through comments in `.scss` and `.vue` files, that 
 
 ```
 /*
-
----
-name: Title Here
-category:
- - Category
- - Category/Title
----
-
-## Markdown description
-
-Hello Component!
-
-* Use the `.alt--class` modifier.
-
-```html
-<span>HTML Example</span>
-<span class="alt--class">HTML Example</span>
-```
-
+	
+	---
+	name: Title Here
+	category:
+	 - Category
+	 - Category/Title
+	---
+	
+	## Markdown description
+	
+	Hello Component!
+	
+	* Use the `.alt--class` modifier.
+	
+	```html
+	<span>HTML Example</span>
+	<span class="alt--class">HTML Example</span>
+	```
+	
 */
 ```
 
 ### Colours
 
 Style guide colours are handled through `_colours.scss`. The markup is created through compiling an EJS code block, you just have to provide the data. The documentation parameters accept a colours dataset that must be filled out as follows:
+
 - Colour name
 - Colour hex code
 - [optional] Light colour hex code
