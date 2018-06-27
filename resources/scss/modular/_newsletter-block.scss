@@ -1,0 +1,45 @@
+/*
+
+---
+name: Newsletter Signup
+category:
+ - Components
+ - Components/Newsletter Signup
+---
+
+This component contains a newsletter signup and is normally half of a row.
+
+```html
+<section class="newsletter-block">
+
+	<h3>Want to keep up to date?</h3>
+
+	<p>Get involved with our private mailing list.</p>
+
+	<form class="flex-input">
+		<input type="email" placeholder="Email">
+		<button type="submit">Join</button>
+	</form>
+
+</section>
+```
+
+*/
+
+.newsletter-block {
+	background-color: color('white');
+	color: color('black');
+	padding: em(49) em(20);
+
+	@include mq(S) {
+	    padding: em(72) em(64);
+	}
+
+	@include mq(M) {
+	    padding: em(110, 18) em(130, 18);
+	}
+
+	h3 {
+		color: currentColor;
+	}
+}

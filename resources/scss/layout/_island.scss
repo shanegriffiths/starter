@@ -1,0 +1,43 @@
+/*------------------------------------*\
+	ISLAND
+\*------------------------------------*/
+// The island object is used to create a standard square shaped widget.
+// This object will handle padding, colour, text shadow etc.
+
+.island {
+	padding: $space 0;
+
+	@include mq(S) {
+		padding: ($space * 2) 0;
+	}
+
+	@include mq(M) {
+		padding: ($space * 4) 0;
+	}
+}
+
+.island--slim {
+	padding: $space 0;
+
+	@include mq(S) {
+		padding: ($space * 2) 0;
+	}
+}
+
+.island--thick {
+
+	@include mq(S) {
+		padding: em(50) em(50) em(100);
+	}
+}
+
+// Island with zero margin-bottom
+.island--flat-bottom {
+	padding-bottom: 0;
+}
+
+// Island with a border around it
+.island--bordered {
+	border: 1px solid color('black');
+	padding: em(10);
+}

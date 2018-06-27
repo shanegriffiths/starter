@@ -1,0 +1,75 @@
+/*
+
+---
+name: Content Block
+category:
+ - Components
+ - Components/Content Block
+---
+
+## Default Styling
+
+This is the default markup and styling for a generic section of content. It usually consists of:
+
+* A title
+* A paragraph
+* [Optional] A button
+
+```html
+<section class="content-block">
+
+	<h3 class="content-block__title">Section Title</h3>
+
+	<p>This is a paragraph in a block of content.</p>
+
+	<a href="#" class="button button--ghost button--flat">Find out more</a>
+
+</section>
+```
+
+*/
+
+.content-block {
+	color: color('black');
+
+	padding: em(48) $space;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.content-block__title {
+	@include font('secondary', 'bold');
+	@include font-size(20, 19, 30);
+	letter-spacing: .2px;
+	line-height: 1;
+
+	margin-bottom: em(12, 20);
+
+	@include mq(S) {
+	    @include font('secondary', 'semibold');
+		letter-spacing: .1px;
+
+		margin-bottom: em(12, 19);
+	}
+
+	@include mq(M) {
+	    letter-spacing: .4px;
+
+		margin-bottom: em(27, 30);
+	}
+
+	p {
+		margin-bottom: em(24);
+
+		@include mq(S) {
+		    margin-bottom: em(12);
+		}
+
+		@include mq(M) {
+		    margin-bottom: em(27, 18);
+		}
+	}
+}
