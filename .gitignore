@@ -8,3 +8,4 @@ styleguide/
 
 # Assets
 dist/
+/yarn-error.log

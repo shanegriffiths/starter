@@ -1,6 +1,6 @@
 # The Idea Bureau, Style Guide
 
-Version: 1.2.0
+Version: 1.3.0
 
 This is the front-end boilerplate for our web based projects. It contains our front end tooling setup, and the style guide system we use.
 
@@ -102,25 +102,25 @@ The style guide is generated through comments in `.scss` and `.vue` files, that 
 
 ```
 /*
-	
+
 	---
 	name: Title Here
 	category:
 	 - Category
 	 - Category/Title
 	---
-	
+
 	## Markdown description
-	
+
 	Hello Component!
-	
+
 	* Use the `.alt--class` modifier.
-	
+
 	```html
 	<span>HTML Example</span>
 	<span class="alt--class">HTML Example</span>
 	```
-	
+
 */
 ```
 
