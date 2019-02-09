@@ -8,14 +8,14 @@ if ( ! mix.inProduction() ) {
 	mix.js('styleguide_assets/aigis_assets/scripts/styleguide.js', 'styleguide_assets/aigis_assets/dist')
 		.webpackConfig({
 			module: {
-				loaders: [
+				rules: [
 					{
 						test: /\.js$/,
 						exclude: /node_modules/,
 						loader: 'babel-loader',
 						query: {
-							plugins: ['transform-runtime'],
-							presets: ['es2015'],
+							plugins: ['@babel/transform-runtime'],
+							presets: ['@babel/env']
 						}
 					},
 				]
