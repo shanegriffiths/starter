@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.3.0] - 2019-02-09
+
+### CHANGED
+- Upgraded to Laravel Mix 4
+
 ## [1.2.0] - 2018-06-27
 
 ### CHANGED
