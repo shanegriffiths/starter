@@ -1,6 +1,6 @@
 # The Idea Bureau, Style Guide
 
-Version: 1.3.0
+Version: 1.4.0
 
 This is the front-end boilerplate for our web based projects. It contains our front end tooling setup, and the style guide system we use.
 

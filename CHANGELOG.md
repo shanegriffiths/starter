@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [1.4.0] - 2019-10-01
+
+### CHANGED
+- Upgraded to Laravel Mix 5
+- Removed search
+- Moved the navigation to horizontal bar
+
 ## [1.3.0] - 2019-02-09
 
 ### CHANGED
