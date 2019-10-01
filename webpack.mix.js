@@ -25,6 +25,7 @@ if ( ! mix.inProduction() ) {
 }
 
 mix.sass('resources/scss/styles.scss', 'dist/css')
+	.sass('styleguide_assets/aigis_assets/styles/theme.scss', 'styleguide_assets/aigis_assets/dist')
 	.options({
 		processCssUrls: false
 	});
